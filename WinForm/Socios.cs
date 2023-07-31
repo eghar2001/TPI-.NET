@@ -9,11 +9,12 @@ namespace WinForm
             InitializeComponent();
         }
 
-        
+
         public void Listar()
         {
-            
+            dgvSocios.DataSource = null;
             dgvSocios.DataSource = negocio_socio.find_all();
+            dgvSocios.Refresh();
         }
         private void Socios_Load(object sender, EventArgs e)
         {
@@ -22,6 +23,7 @@ namespace WinForm
         public void btnActualizar_Click(object sender, EventArgs e)
         {
             Listar();
+
         }
         public void btnSalir_Click(object sender, EventArgs e)
         {
@@ -30,7 +32,7 @@ namespace WinForm
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            AgregarSocio socioForm = new AgregarSocio();
+            AgregarSocioForm socioForm = new AgregarSocioForm();
             socioForm.ShowDialog();
             if (socioForm.DialogResult == DialogResult.OK)
             {
@@ -38,6 +40,24 @@ namespace WinForm
             }
         }
 
-        
+        private void tsbEditar_Click(object sender, EventArgs e)
+        {
+            EditarSocioForm socioForm = new EditarSocioForm();
+            socioForm.ShowDialog();
+            if (socioForm.DialogResult == DialogResult.OK)
+            {
+                Listar();
+            }
+        }
+
+        private void tsbBorrar_Click(object sender, EventArgs e)
+        {
+            BorrarSocioForm socioForm = new BorrarSocioForm();
+            socioForm.ShowDialog();
+            if (socioForm.DialogResult == DialogResult.OK)
+            {
+                Listar();
+            }
+        }
     }
 }

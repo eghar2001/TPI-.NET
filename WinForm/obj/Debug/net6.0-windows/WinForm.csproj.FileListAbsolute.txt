@@ -23,4 +23,6 @@ K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.genruntimeco
 K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\ref\WinForm.dll
 K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.Socios.resources
 K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.Properties.Resources.resources
-K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.AgregarSocio.resources
+K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.AgregarSocioForm.resources
+K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.EditarSocioForm.resources
+K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.BorrarSocioForm.resources

@@ -63,7 +63,9 @@ namespace Entidades
 
         public string Contrasenia
         {
-            get;
+            get {
+                return this.contrasenia;
+            }
             set
             {
                 this.contrasenia = value;

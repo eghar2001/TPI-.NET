@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace WinForm
 {
-    public partial class AgregarSocio : Form
+    public partial class AgregarSocioForm : Form
     {
         Negocio.Socio negocio_socio = new Negocio.Socio();
-        public AgregarSocio()
+        public AgregarSocioForm()
         {
 
             InitializeComponent();

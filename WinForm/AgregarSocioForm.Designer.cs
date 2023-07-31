@@ -1,6 +1,6 @@
 ﻿namespace WinForm
 {
-    partial class AgregarSocio
+    partial class AgregarSocioForm
     {
         /// <summary>
         /// Required designer variable.
