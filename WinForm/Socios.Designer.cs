@@ -6,7 +6,6 @@
         ///  Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private Negocio.Socio negocio_socio = new Negocio.Socio();
 
         /// <summary>
         ///  Clean up any resources being used.
@@ -56,15 +55,15 @@
             // 
             // socioBindingSource
             // 
-            socioBindingSource.DataSource = typeof(Negocio.Socio);
+            socioBindingSource.DataSource = typeof(Negocio.Usuario);
             // 
             // socioBindingSource1
             // 
-            socioBindingSource1.DataSource = typeof(Negocio.Socio);
+            socioBindingSource1.DataSource = typeof(Negocio.Usuario);
             // 
             // socioBindingSource2
             // 
-            socioBindingSource2.DataSource = typeof(Entidades.Socio);
+            socioBindingSource2.DataSource = typeof(Entidades.Usuario);
             // 
             // tcSocios
             // 
@@ -140,7 +139,7 @@
             tsSocios.Items.AddRange(new ToolStripItem[] { tsbNuevo, tsbEditar, tsbBorrar });
             tsSocios.Location = new Point(4, 0);
             tsSocios.Name = "tsSocios";
-            tsSocios.Size = new Size(139, 27);
+            tsSocios.Size = new Size(100, 27);
             tsSocios.TabIndex = 0;
             // 
             // tsbNuevo

@@ -12,9 +12,9 @@ namespace WinForm
 {
     public partial class EditarSocioForm : Form
     {
-        Negocio.Socio negocio_socio = new Negocio.Socio();
+        Negocio.Usuario negocio_usuario = new Negocio.Usuario();
 
-        private Entidades.Socio socio_a_editar = null;
+        private Entidades.Usuario socio_a_editar = null;
         public EditarSocioForm()
         {
 
@@ -34,7 +34,7 @@ namespace WinForm
             {
                 MessageBox.Show("No ingreso un id numerico", "Error de Id", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            socio_a_editar = negocio_socio.get(id);
+            socio_a_editar = negocio_usuario.get(id);
             if (socio_a_editar == null)
             {
                 MessageBox.Show("No se encontró el socio", "Error de busqueda", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -68,7 +68,7 @@ namespace WinForm
             socio_a_editar.Dni = dni;
             socio_a_editar.NombreUsuario = txtNombreUsuario.Text;
             socio_a_editar.Contrasenia = txtContrasenia.Text;
-            negocio_socio.modificar_socio(socio_a_editar);
+            negocio_usuario.modificar_usuario(socio_a_editar);
             MessageBox.Show("Su socio se ha modificado con exito", "Socio Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.DialogResult = DialogResult.OK;
         }

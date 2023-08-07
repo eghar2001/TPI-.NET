@@ -12,7 +12,7 @@ namespace WinForm
 {
     public partial class AgregarSocioForm : Form
     {
-        Negocio.Socio negocio_socio = new Negocio.Socio();
+        Negocio.Usuario negocio_usuario = new Negocio.Usuario();
         public AgregarSocioForm()
         {
 
@@ -27,9 +27,9 @@ namespace WinForm
             string nombre_usuario = txtNombreUsuario.Text;
             string contrasenia = txtContrasenia.Text;
 
-            Entidades.Socio socio = new Entidades.Socio(dni, nombre, apellido, nombre_usuario, contrasenia);
+            Entidades.Usuario socio = new Entidades.Usuario(dni, nombre, apellido, nombre_usuario, contrasenia);
 
-            negocio_socio.agregar_socio(socio);
+            negocio_usuario.agregar_usuario(socio);
             this.DialogResult = DialogResult.OK;
 
         }

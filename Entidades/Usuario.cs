@@ -5,11 +5,10 @@ using System.Text;
 
 namespace Entidades
 {
-    public class Socio
+    public class Usuario
     {
 
-        private static int last_id;
-        //VER COMO SE ASIGNA ID
+        
         private int id;
         private int dni;
         private string nombre;
@@ -18,23 +17,28 @@ namespace Entidades
         private string contrasenia;
 
 
-        private static int next_id()
+         
+        public Usuario( int id,int dni, string nombre, string apellido, string nombreUsuario, string contrasenia)
         {
-            
-            Socio.last_id = Socio.last_id + 1;
-            return Socio.last_id;
-        }
-        public Socio( int dni, string nombre, string apellido, string nombreUsuario, string contrasenia)
-        {
-            
-            this.id = Socio.next_id();
+
+            this.id = id;
             Dni = dni;
             Nombre = nombre;
             Apellido = apellido;
             NombreUsuario = nombreUsuario;
             Contrasenia = contrasenia;
         }
-        
+
+        public Usuario(int dni, string nombre, string apellido, string nombreUsuario, string contrasenia)
+        {
+
+            Dni = dni;
+            Nombre = nombre;
+            Apellido = apellido;
+            NombreUsuario = nombreUsuario;
+            Contrasenia = contrasenia;
+        }
+
         public Boolean ContraseniaValida(string contra_a_validar)
         {
             return this.contrasenia == contra_a_validar;

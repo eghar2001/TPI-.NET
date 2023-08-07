@@ -7,6 +7,9 @@
     <Compile Update="BorrarSocioForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Socios.cs">
       <SubType>Form</SubType>
     </Compile>

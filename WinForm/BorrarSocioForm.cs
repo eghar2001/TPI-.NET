@@ -12,7 +12,7 @@ namespace WinForm
 {
     public partial class BorrarSocioForm : Form
     {
-        private Negocio.Socio negocio_socio = new Negocio.Socio();
+        private Negocio.Usuario negocio_usuario = new Negocio.Usuario();
         public BorrarSocioForm()
         {
             InitializeComponent();
@@ -29,12 +29,12 @@ namespace WinForm
             {
                 MessageBox.Show("No ingreso un id numerico", "Error de Id", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            Entidades.Socio socio = negocio_socio.get(id);
-            if (socio == null)
+            Entidades.Usuario usuario = negocio_usuario.get(id);
+            if (usuario == null)
             {
                 MessageBox.Show("No se encontró el socio", "Error de busqueda", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            negocio_socio.borrar_socio(socio);
+            negocio_usuario.borrar_usuario(usuario);
             MessageBox.Show("El socio se ha borrado", "Socio borrado con exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.DialogResult = DialogResult.OK;
         }

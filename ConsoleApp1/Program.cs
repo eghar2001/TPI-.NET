@@ -6,7 +6,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Negocio.Socio negocio_socio = new Negocio.Socio();
+            Negocio.Usuario negocio_usuario = new Negocio.Usuario();
             void menu()
             {
                 Console.WriteLine("MENU SOCIOS");
@@ -42,23 +42,33 @@ namespace ConsoleApp1
                     Console.WriteLine("Ingrese contraseña: ");
                     contrasenia = Console.ReadLine();
 
-                    Entidades.Socio socio_nuevo = new Entidades.Socio(dni, nombre, apellido, nombre_usuario, contrasenia);
-                    negocio_socio.agregar_socio(socio_nuevo);
-                    
+                    Entidades.Usuario socio_nuevo = new Entidades.Usuario(dni, nombre, apellido, nombre_usuario, contrasenia);
+                    try { 
+                        negocio_usuario.agregar_usuario(socio_nuevo);
+                    }
+                    catch (DniRepetidoException){
+                        Console.WriteLine("El Dni se encuentra repetido");
+                    }
+                    catch(NombreUsuarioRepetidoException)
+                    {
+                        Console.WriteLine("El nombre de usuario se encuentra repetido");
+                    }
+
+
                 }
                 else if (opcion_menu.Key == ConsoleKey.D2)
                 {
                     Console.WriteLine("MENU BORRAR SOCIO");
                     Console.WriteLine("Ingrese el dni: ");
                     dni = Int32.Parse(Console.ReadLine());
-                    Entidades.Socio socio_a_eliminar = negocio_socio.get_by_dni(dni);
+                    Entidades.Usuario socio_a_eliminar = negocio_usuario.get_by_dni(dni);
                     if (socio_a_eliminar == null)
                     {
                         Console.WriteLine("No se encontro el socio!");
                     }
                     else
                     {
-                        negocio_socio.borrar_socio(socio_a_eliminar);
+                        negocio_usuario.borrar_usuario(socio_a_eliminar);
                         Console.WriteLine("El socio se ha eliminado correctamente");
                     }
 
@@ -70,7 +80,7 @@ namespace ConsoleApp1
                     Console.WriteLine("Ingrese el id del socio a modificar: ");
                     id = Int32.Parse(Console.ReadLine());
 
-                    Entidades.Socio socio_a_modificar = negocio_socio.get(id);
+                    Entidades.Usuario socio_a_modificar = negocio_usuario.get(id);
                     if (socio_a_modificar == null)
                     {
                         Console.WriteLine("No se ha encontrado al socio");
@@ -98,7 +108,7 @@ namespace ConsoleApp1
                         socio_a_modificar.NombreUsuario = nombre_usuario;
                         socio_a_modificar.Contrasenia = contrasenia;
 
-                        negocio_socio.modificar_socio(socio_a_modificar);
+                        negocio_usuario.modificar_usuario(socio_a_modificar);
                         Console.WriteLine("El socio fue modificado con exito!!");
                        
                     }
@@ -107,7 +117,7 @@ namespace ConsoleApp1
                 else if (opcion_menu.Key == ConsoleKey.D4)
                 {
                     Console.WriteLine("ID --- DNI --- NOMBRE --- APELLIDO --- NOMBRE USUARIO");
-                    foreach (Entidades.Socio socio in negocio_socio.find_all())
+                    foreach (Entidades.Usuario socio in negocio_usuario.find_all())
                     {
                         Console.WriteLine($"{socio.Id}   {socio.Dni}   {socio.Nombre}   {socio.Apellido}   {socio.NombreUsuario}");
                     }
