@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,7 @@ namespace WinForm
     {
         Negocio.Usuario negocio_usuario = new Negocio.Usuario();
 
-        private Entidades.Usuario socio_a_editar = null;
+        private Entidades.Usuario? socio_a_editar = null;
         public EditarSocioForm()
         {
 
@@ -35,15 +36,20 @@ namespace WinForm
                 MessageBox.Show("No ingreso un id numerico", "Error de Id", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             socio_a_editar = negocio_usuario.get(id);
+            
             if (socio_a_editar == null)
             {
                 MessageBox.Show("No se encontró el socio", "Error de busqueda", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            txtNombre.Text = socio_a_editar.Nombre;
-            txtApellido.Text = socio_a_editar.Apellido;
-            txtDni.Text = socio_a_editar.Dni.ToString();
-            txtNombreUsuario.Text = socio_a_editar.NombreUsuario;
-            txtContrasenia.Text = socio_a_editar.Contrasenia;
+            else
+            {
+                txtNombre.Text = socio_a_editar.Nombre;
+                txtApellido.Text = socio_a_editar.Apellido;
+                txtDni.Text = socio_a_editar.Dni.ToString();
+                txtNombreUsuario.Text = socio_a_editar.NombreUsuario;
+                txtContrasenia.Text = socio_a_editar.Contrasenia;
+            }
+            
 
         }
 
@@ -68,9 +74,23 @@ namespace WinForm
             socio_a_editar.Dni = dni;
             socio_a_editar.NombreUsuario = txtNombreUsuario.Text;
             socio_a_editar.Contrasenia = txtContrasenia.Text;
-            negocio_usuario.modificar_usuario(socio_a_editar);
-            MessageBox.Show("Su socio se ha modificado con exito", "Socio Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.DialogResult = DialogResult.OK;
+            try {
+                negocio_usuario.modificar_usuario(socio_a_editar);
+                MessageBox.Show("Su socio se ha modificado con exito", "Socio Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+            }
+            catch (DniRepetidoException)
+            {
+                MessageBox.Show("El DNI se encuentra repetido", "Problema de socio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (NombreUsuarioRepetidoException)
+            {
+                MessageBox.Show("El nombre de usuario se encuentra repetido", "Problema de socio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un error inesperado. Por favor, intente mas tarde", "Hubo un problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

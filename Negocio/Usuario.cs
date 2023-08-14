@@ -75,9 +75,18 @@ namespace Negocio
             datos_usuario.agregar_usuario(usuario);
             
         }
-        public void modificar_usuario(Entidades.Usuario usuario)
+        public void modificar_usuario(Entidades.Usuario usuario_modificado)
         {
-            datos_usuario.modificar_usuario(usuario);
+            Entidades.Usuario user_original = datos_usuario.get(usuario_modificado.Id);
+            if (usuario_modificado.Dni != user_original.Dni && datos_usuario.get_by_dni(usuario_modificado.Dni) != null )
+            {
+                throw new DniRepetidoException();
+            }
+            if (usuario_modificado.NombreUsuario != user_original.NombreUsuario && datos_usuario.get_by_nombre_usuario(usuario_modificado.NombreUsuario) != null)
+            {
+                throw new NombreUsuarioRepetidoException();
+            }
+            datos_usuario.modificar_usuario(usuario_modificado);
         }
         public List<Entidades.Usuario> find_all()
         {
