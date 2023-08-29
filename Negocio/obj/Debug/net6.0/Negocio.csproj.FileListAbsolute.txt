@@ -32,3 +32,22 @@ K:\Proyectos\.NET\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.dll
 K:\Proyectos\.NET\TPI-.NET\Negocio\obj\Debug\net6.0\refint\Negocio.dll
 K:\Proyectos\.NET\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.pdb
 K:\Proyectos\.NET\TPI-.NET\Negocio\obj\Debug\net6.0\ref\Negocio.dll
+C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\bin\Debug\net6.0\Negocio.deps.json
+C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\bin\Debug\net6.0\Negocio.runtimeconfig.json
+C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\bin\Debug\net6.0\Negocio.dll
+C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\bin\Debug\net6.0\Negocio.pdb
+C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\bin\Debug\net6.0\Datos.dll
+C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\bin\Debug\net6.0\Entidades.dll
+C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\bin\Debug\net6.0\Datos.pdb
+C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\bin\Debug\net6.0\Entidades.pdb
+C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.csproj.AssemblyReference.cache
+C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.AssemblyInfoInputs.cache
+C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.AssemblyInfo.cs
+C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.csproj.CopyComplete
+C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.dll
+C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\obj\Debug\net6.0\refint\Negocio.dll
+C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.pdb
+C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.genruntimeconfig.cache
+C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\obj\Debug\net6.0\ref\Negocio.dll

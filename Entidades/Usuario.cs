@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
 namespace Entidades
 {
     public class Usuario
@@ -50,20 +51,20 @@ namespace Entidades
             }
         }
         public string Apellido
-        { 
-            get;set;
-        }
+        {
+            get; set;
+        } = null!;
 
 
         public string Nombre
         {
             get; set;
-        }
+        }=null!;
 
         public int Dni
         {
             get; set;
-        }
+        } 
 
         public string Contrasenia
         {
@@ -74,11 +75,11 @@ namespace Entidades
             {
                 this.contrasenia = value;
             }
-        }
+        } 
 
         public string NombreUsuario
         {
             get; set;
-        }
+        } = null!;
     }
 }
