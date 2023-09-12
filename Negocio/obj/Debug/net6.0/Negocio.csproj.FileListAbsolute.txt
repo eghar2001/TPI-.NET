@@ -51,3 +51,5 @@ C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\obj\
 C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.pdb
 C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.genruntimeconfig.cache
 C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\obj\Debug\net6.0\ref\Negocio.dll
+K:\Proyectos\.NET\TPI-.NET\Negocio\bin\Debug\net6.0\Negocio.runtimeconfig.json
+K:\Proyectos\.NET\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.genruntimeconfig.cache

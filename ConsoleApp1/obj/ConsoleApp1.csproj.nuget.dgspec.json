@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\ConsoleApp1\\ConsoleApp1.csproj": {}
+    "K:\\Proyectos\\.NET\\TPI-.NET\\ConsoleApp1\\ConsoleApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\ConsoleApp1\\ConsoleApp1.csproj": {
+    "K:\\Proyectos\\.NET\\TPI-.NET\\ConsoleApp1\\ConsoleApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "K:\\Proyectos\\.NET\\TPI-.NET\\ConsoleApp1\\ConsoleApp1.csproj",
         "projectName": "ConsoleApp1",
-        "projectPath": "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\ConsoleApp1\\ConsoleApp1.csproj",
-        "packagesPath": "C:\\Users\\rinor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\ConsoleApp1\\obj\\",
+        "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\ConsoleApp1\\ConsoleApp1.csproj",
+        "packagesPath": "C:\\Users\\eghar\\.nuget\\packages\\",
+        "outputPath": "K:\\Proyectos\\.NET\\TPI-.NET\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\rinor\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\eghar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\Entidades\\Entidades.csproj"
+              "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj": {
+                "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj"
               },
-              "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\Negocio\\Negocio.csproj": {
-                "projectPath": "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\Negocio\\Negocio.csproj"
+              "K:\\Proyectos\\.NET\\TPI-.NET\\Negocio\\Negocio.csproj": {
+                "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Negocio\\Negocio.csproj"
               }
             }
           }
@@ -82,21 +78,17 @@
         }
       }
     },
-    "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\Datos\\Datos.csproj": {
+    "K:\\Proyectos\\.NET\\TPI-.NET\\Datos\\Datos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\Datos\\Datos.csproj",
+        "projectUniqueName": "K:\\Proyectos\\.NET\\TPI-.NET\\Datos\\Datos.csproj",
         "projectName": "Datos",
-        "projectPath": "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\Datos\\Datos.csproj",
-        "packagesPath": "C:\\Users\\rinor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\Datos\\obj\\",
+        "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Datos\\Datos.csproj",
+        "packagesPath": "C:\\Users\\eghar\\.nuget\\packages\\",
+        "outputPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Datos\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\rinor\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\eghar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -110,8 +102,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\Entidades\\Entidades.csproj"
+              "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj": {
+                "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj"
               }
             }
           }
@@ -161,21 +153,17 @@
         }
       }
     },
-    "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\Entidades\\Entidades.csproj": {
+    "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\Entidades\\Entidades.csproj",
-        "packagesPath": "C:\\Users\\rinor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\Entidades\\obj\\",
+        "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj",
+        "packagesPath": "C:\\Users\\eghar\\.nuget\\packages\\",
+        "outputPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\rinor\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\eghar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -232,21 +220,17 @@
         }
       }
     },
-    "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\Negocio\\Negocio.csproj": {
+    "K:\\Proyectos\\.NET\\TPI-.NET\\Negocio\\Negocio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\Negocio\\Negocio.csproj",
+        "projectUniqueName": "K:\\Proyectos\\.NET\\TPI-.NET\\Negocio\\Negocio.csproj",
         "projectName": "Negocio",
-        "projectPath": "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\Negocio\\Negocio.csproj",
-        "packagesPath": "C:\\Users\\rinor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\Negocio\\obj\\",
+        "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Negocio\\Negocio.csproj",
+        "packagesPath": "C:\\Users\\eghar\\.nuget\\packages\\",
+        "outputPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Negocio\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\rinor\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\eghar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -260,11 +244,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\Datos\\Datos.csproj": {
-                "projectPath": "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\Datos\\Datos.csproj"
+              "K:\\Proyectos\\.NET\\TPI-.NET\\Datos\\Datos.csproj": {
+                "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Datos\\Datos.csproj"
               },
-              "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\rinor\\Desktop\\FACU\\4° Año\\ELECTIVAS\\.Net\\TP GIT\\TPI-.NET\\Entidades\\Entidades.csproj"
+              "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj": {
+                "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj"
               }
             }
           }

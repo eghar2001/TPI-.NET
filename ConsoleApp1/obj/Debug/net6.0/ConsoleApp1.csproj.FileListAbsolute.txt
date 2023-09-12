@@ -155,3 +155,26 @@ C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\ConsoleApp1\
 C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.pdb
 C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.genruntimeconfig.cache
 C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\ConsoleApp1\obj\Debug\net6.0\ref\ConsoleApp1.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\Humanizer.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\Mono.TextTemplating.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\NETCore.Encrypt.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\Newtonsoft.Json.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\System.CodeDom.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\System.Text.Json.dll
+K:\Proyectos\.NET\TPI-.NET\ConsoleApp1\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll

@@ -128,3 +128,25 @@ C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\WinForm\obj\
 C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.pdb
 C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.genruntimeconfig.cache
 C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\WinForm\obj\Debug\net6.0-windows\ref\WinForm.dll
+K:\Proyectos\.NET\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Humanizer.dll
+K:\Proyectos\.NET\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
+K:\Proyectos\.NET\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+K:\Proyectos\.NET\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Design.dll
+K:\Proyectos\.NET\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+K:\Proyectos\.NET\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+K:\Proyectos\.NET\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+K:\Proyectos\.NET\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Memory.dll
+K:\Proyectos\.NET\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+K:\Proyectos\.NET\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.dll
+K:\Proyectos\.NET\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+K:\Proyectos\.NET\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyModel.dll
+K:\Proyectos\.NET\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.dll
+K:\Proyectos\.NET\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+K:\Proyectos\.NET\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.dll
+K:\Proyectos\.NET\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
+K:\Proyectos\.NET\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Mono.TextTemplating.dll
+K:\Proyectos\.NET\TPI-.NET\WinForm\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
+K:\Proyectos\.NET\TPI-.NET\WinForm\bin\Debug\net6.0-windows\System.Text.Json.dll
+K:\Proyectos\.NET\TPI-.NET\WinForm\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.ListadoProductosForm.resources
+K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.ComprarProductoForm.resources

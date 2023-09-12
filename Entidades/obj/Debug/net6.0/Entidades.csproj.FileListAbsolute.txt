@@ -36,3 +36,5 @@ C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Entidades\ob
 C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Entidades\obj\Debug\net6.0\Entidades.pdb
 C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Entidades\obj\Debug\net6.0\Entidades.genruntimeconfig.cache
 C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Entidades\obj\Debug\net6.0\ref\Entidades.dll
+K:\Proyectos\.NET\TPI-.NET\Entidades\bin\Debug\net6.0\Entidades.runtimeconfig.json
+K:\Proyectos\.NET\TPI-.NET\Entidades\obj\Debug\net6.0\Entidades.genruntimeconfig.cache

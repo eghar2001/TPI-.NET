@@ -45,3 +45,5 @@ C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Datos\obj\De
 C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Datos\obj\Debug\net6.0\Datos.pdb
 C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Datos\obj\Debug\net6.0\Datos.genruntimeconfig.cache
 C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Datos\obj\Debug\net6.0\ref\Datos.dll
+K:\Proyectos\.NET\TPI-.NET\Datos\bin\Debug\net6.0\Datos.runtimeconfig.json
+K:\Proyectos\.NET\TPI-.NET\Datos\obj\Debug\net6.0\Datos.genruntimeconfig.cache
