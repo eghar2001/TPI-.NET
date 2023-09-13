@@ -13,7 +13,7 @@ namespace Entidades.Configuraciones
         public void Configure(EntityTypeBuilder<Venta> builder)
         {
             builder.HasKey(v => new { v.UsuarioId, v.FechaVenta , v.ProductoId});
-            builder.Property(v => v.FechaVenta).HasDefaultValue(DateTime.Now.ToString());
+            builder.Property(v => v.FechaVenta).HasDefaultValue(DateTime.Now);
 
 
         }

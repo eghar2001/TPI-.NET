@@ -53,3 +53,22 @@ C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\obj\
 C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Negocio\obj\Debug\net6.0\ref\Negocio.dll
 K:\Proyectos\.NET\TPI-.NET\Negocio\bin\Debug\net6.0\Negocio.runtimeconfig.json
 K:\Proyectos\.NET\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.genruntimeconfig.cache
+C:\Users\Pedro\Source\Repos\TPI-.NET\Negocio\bin\Debug\net6.0\Negocio.deps.json
+C:\Users\Pedro\Source\Repos\TPI-.NET\Negocio\bin\Debug\net6.0\Negocio.runtimeconfig.json
+C:\Users\Pedro\Source\Repos\TPI-.NET\Negocio\bin\Debug\net6.0\Negocio.dll
+C:\Users\Pedro\Source\Repos\TPI-.NET\Negocio\bin\Debug\net6.0\Negocio.pdb
+C:\Users\Pedro\Source\Repos\TPI-.NET\Negocio\bin\Debug\net6.0\Datos.dll
+C:\Users\Pedro\Source\Repos\TPI-.NET\Negocio\bin\Debug\net6.0\Entidades.dll
+C:\Users\Pedro\Source\Repos\TPI-.NET\Negocio\bin\Debug\net6.0\Datos.pdb
+C:\Users\Pedro\Source\Repos\TPI-.NET\Negocio\bin\Debug\net6.0\Entidades.pdb
+C:\Users\Pedro\Source\Repos\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.csproj.AssemblyReference.cache
+C:\Users\Pedro\Source\Repos\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pedro\Source\Repos\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.AssemblyInfoInputs.cache
+C:\Users\Pedro\Source\Repos\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.AssemblyInfo.cs
+C:\Users\Pedro\Source\Repos\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Pedro\Source\Repos\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.csproj.CopyComplete
+C:\Users\Pedro\Source\Repos\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.dll
+C:\Users\Pedro\Source\Repos\TPI-.NET\Negocio\obj\Debug\net6.0\refint\Negocio.dll
+C:\Users\Pedro\Source\Repos\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.pdb
+C:\Users\Pedro\Source\Repos\TPI-.NET\Negocio\obj\Debug\net6.0\Negocio.genruntimeconfig.cache
+C:\Users\Pedro\Source\Repos\TPI-.NET\Negocio\obj\Debug\net6.0\ref\Negocio.dll

@@ -36,19 +36,22 @@
             // dgvProductos
             // 
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductos.Location = new Point(44, 40);
+            dgvProductos.Location = new Point(38, 30);
+            dgvProductos.Margin = new Padding(3, 2, 3, 2);
             dgvProductos.Name = "dgvProductos";
+            dgvProductos.ReadOnly = true;
             dgvProductos.RowHeadersWidth = 51;
             dgvProductos.RowTemplate.Height = 29;
-            dgvProductos.Size = new Size(709, 277);
+            dgvProductos.Size = new Size(620, 208);
             dgvProductos.TabIndex = 0;
             dgvProductos.CellClick += dgvProductos_CellClick;
             // 
             // btnRefrescar
             // 
-            btnRefrescar.Location = new Point(548, 399);
+            btnRefrescar.Location = new Point(480, 299);
+            btnRefrescar.Margin = new Padding(3, 2, 3, 2);
             btnRefrescar.Name = "btnRefrescar";
-            btnRefrescar.Size = new Size(94, 29);
+            btnRefrescar.Size = new Size(82, 22);
             btnRefrescar.TabIndex = 1;
             btnRefrescar.Text = "Refrescar";
             btnRefrescar.UseVisualStyleBackColor = true;
@@ -56,11 +59,12 @@
             // 
             // ListadoProductosForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(btnRefrescar);
             Controls.Add(dgvProductos);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ListadoProductosForm";
             Text = "ListadoProductosForm";
             Load += ListadoProductosForm_Load;

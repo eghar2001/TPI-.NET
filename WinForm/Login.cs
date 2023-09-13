@@ -24,12 +24,16 @@ namespace WinForm
         {
             try
             {
-                if (negocio_usuario.login(txtNombreUsuario.Text, txtContrasenia.Text))
+                Entidades.Usuario usuario = negocio_usuario.login(txtNombreUsuario.Text, txtContrasenia.Text);
+                if (usuario != null)
                 {
                     MessageBox.Show("Se ha logueado correctamente", "Login correcto",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
 
+                    DatosLogin.UsuarioLogueado = usuario;
+                    ListadoProductosForm listadoProductos = new ListadoProductosForm();
+                    listadoProductos.Show();
                 }
 
             }

@@ -46,7 +46,7 @@ namespace Negocio
         private const int MAX_USUARIOS = 10;
 
 
-        public bool login(string username, string password)
+        public Entidades.Usuario login(string username, string password)
         {
             Entidades.Usuario usuario = datos_usuario.get_by_nombre_usuario(username);
             if (usuario == null)
@@ -58,7 +58,7 @@ namespace Negocio
                 throw new ContraseniaIncorrectaException();  
                 
             }
-            return true;
+            return usuario;
 
 
         }

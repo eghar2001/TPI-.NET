@@ -108,7 +108,9 @@ namespace Datos.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("FechaVenta")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2023, 9, 13, 17, 47, 54, 178, DateTimeKind.Local).AddTicks(986));
 
                     b.Property<int>("ProductoId")
                         .HasColumnType("int");
@@ -116,13 +118,12 @@ namespace Datos.Migrations
                     b.Property<int>("Cantidad")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Fecha")
-                        .HasColumnType("datetime2");
-
-                    b.Property<decimal>("Precio")
+                    b.Property<decimal>("PrecioUnitario")
                         .HasColumnType("decimal(10,2)");
 
                     b.HasKey("UsuarioId", "FechaVenta", "ProductoId");
+
+                    b.HasIndex("ProductoId");
 
                     b.ToTable("Ventas");
                 });
@@ -134,6 +135,17 @@ namespace Datos.Migrations
                         .HasForeignKey("ProductoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Entidades.Venta", b =>
+                {
+                    b.HasOne("Entidades.Producto", "Producto")
+                        .WithMany()
+                        .HasForeignKey("ProductoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Producto");
                 });
 
             modelBuilder.Entity("Entidades.Producto", b =>

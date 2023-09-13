@@ -12,10 +12,6 @@ namespace Datos
     public class Producto
     {
         private readonly ApplicationDbContext context;
-        private  static string ADOConnectionString
-        {
-            get { return "Server=EGHARMACHINE;Database=TPISocios;Integrated Security=True;TrustServerCertificate=True"; }
-        }
         public Producto()
         {
             this.context = new ApplicationDbContext();
@@ -33,8 +29,8 @@ namespace Datos
         }
         public decimal get_ultimo_precio(int productoId)
         {
-            Microsoft.Data.SqlClient.SqlConnection conn = new SqlConnection(ADOConnectionString);
-
+            Microsoft.Data.SqlClient.SqlConnection conn = new SqlConnection(ApplicationDbContext.ConnectionString);
+            
 
             SqlCommand buscar_ult_fecha = new SqlCommand();
 
@@ -59,6 +55,7 @@ namespace Datos
             decimal ult_precio = 0;
             if (ult_fecha is DBNull)
             {
+                conn.Close();
                 return ult_precio;
             }
 
@@ -66,11 +63,19 @@ namespace Datos
             buscar_precio.Parameters.Add("@UltFecha", System.Data.SqlDbType.DateTime).Value = ult_fecha;
             ult_precio = (decimal)buscar_precio.ExecuteScalar();
 
+            conn.Close() ;
             return ult_precio;
 
 
 
             
+        }
+
+        public void modificar_producto(Entidades.Producto producto_modificado)
+        {
+
+            context.Update(producto_modificado);
+            context.SaveChanges();
         }
     }
 }

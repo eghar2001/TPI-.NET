@@ -47,3 +47,20 @@ C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Datos\obj\De
 C:\Users\rinor\Desktop\FACU\4° Año\ELECTIVAS\.Net\TP GIT\TPI-.NET\Datos\obj\Debug\net6.0\ref\Datos.dll
 K:\Proyectos\.NET\TPI-.NET\Datos\bin\Debug\net6.0\Datos.runtimeconfig.json
 K:\Proyectos\.NET\TPI-.NET\Datos\obj\Debug\net6.0\Datos.genruntimeconfig.cache
+C:\Users\Pedro\Source\Repos\TPI-.NET\Datos\bin\Debug\net6.0\Datos.deps.json
+C:\Users\Pedro\Source\Repos\TPI-.NET\Datos\bin\Debug\net6.0\Datos.runtimeconfig.json
+C:\Users\Pedro\Source\Repos\TPI-.NET\Datos\bin\Debug\net6.0\Datos.dll
+C:\Users\Pedro\Source\Repos\TPI-.NET\Datos\bin\Debug\net6.0\Datos.pdb
+C:\Users\Pedro\Source\Repos\TPI-.NET\Datos\bin\Debug\net6.0\Entidades.dll
+C:\Users\Pedro\Source\Repos\TPI-.NET\Datos\bin\Debug\net6.0\Entidades.pdb
+C:\Users\Pedro\Source\Repos\TPI-.NET\Datos\obj\Debug\net6.0\Datos.csproj.AssemblyReference.cache
+C:\Users\Pedro\Source\Repos\TPI-.NET\Datos\obj\Debug\net6.0\Datos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pedro\Source\Repos\TPI-.NET\Datos\obj\Debug\net6.0\Datos.AssemblyInfoInputs.cache
+C:\Users\Pedro\Source\Repos\TPI-.NET\Datos\obj\Debug\net6.0\Datos.AssemblyInfo.cs
+C:\Users\Pedro\Source\Repos\TPI-.NET\Datos\obj\Debug\net6.0\Datos.csproj.CoreCompileInputs.cache
+C:\Users\Pedro\Source\Repos\TPI-.NET\Datos\obj\Debug\net6.0\Datos.csproj.CopyComplete
+C:\Users\Pedro\Source\Repos\TPI-.NET\Datos\obj\Debug\net6.0\Datos.dll
+C:\Users\Pedro\Source\Repos\TPI-.NET\Datos\obj\Debug\net6.0\refint\Datos.dll
+C:\Users\Pedro\Source\Repos\TPI-.NET\Datos\obj\Debug\net6.0\Datos.pdb
+C:\Users\Pedro\Source\Repos\TPI-.NET\Datos\obj\Debug\net6.0\Datos.genruntimeconfig.cache
+C:\Users\Pedro\Source\Repos\TPI-.NET\Datos\obj\Debug\net6.0\ref\Datos.dll

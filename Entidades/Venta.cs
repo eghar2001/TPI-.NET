@@ -11,6 +11,7 @@ namespace Entidades
         private int cantidad;
         public int UsuarioId { get; set; }
         public int ProductoId { get; set; }
+        public Entidades.Producto Producto { get; set; }
         public DateTime FechaVenta { get; set; }
         public int Cantidad
         {
@@ -28,7 +29,9 @@ namespace Entidades
             }
         }
 
-        public decimal Precio { get; set; } 
+
+
+        public decimal PrecioUnitario { get; set; } 
 
     }
 }

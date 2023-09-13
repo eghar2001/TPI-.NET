@@ -12,9 +12,14 @@ public class ApplicationDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Server=EGHARMACHINE;Database=TPISocios;Integrated Security=True;TrustServerCertificate=True");
+        optionsBuilder.UseSqlServer(ConnectionString);
 
 
+    }
+
+    public static string ConnectionString
+    {
+        get { return "Server=DESKTOP-NOSG56K\\SQLEXPRESS;Database=TPISocios;Integrated Security=True;TrustServerCertificate=True"; }
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

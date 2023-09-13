@@ -14,6 +14,8 @@ namespace WinForm
     public partial class ComprarProductoForm : Form
     {
         private readonly Negocio.Producto negocio_producto = new Negocio.Producto();
+        private readonly Negocio.Venta negocio_venta = new Negocio.Venta();
+        private decimal ult_precio = 0;
         private Entidades.Producto producto;
         public ComprarProductoForm(Entidades.Producto prod)
         {
@@ -24,7 +26,7 @@ namespace WinForm
         private void ComprarProductoForm_Load(object sender, EventArgs e)
         {
             this.lblNombreProducto.Text = this.producto.Nombre;
-            decimal ult_precio = negocio_producto.get_ultimo_precio(producto.Id);
+            this.ult_precio = negocio_producto.get_ultimo_precio(producto.Id);
             this.lblPrecio.Text += " $" + ult_precio;
         }
 
@@ -36,6 +38,20 @@ namespace WinForm
             }
         }
 
+        private void btnComprar_Click(object sender, EventArgs e)
+        {
+            Entidades.Venta nuevaVenta = new Entidades.Venta() 
+            { 
+                UsuarioId = DatosLogin.UsuarioLogueado.Id,
+                Producto = producto,
+                ProductoId = producto.Id,
+                Cantidad = int.Parse(txtCantidad.Text),
+                PrecioUnitario = this.ult_precio
+            };
+            negocio_venta.agregar_venta(nuevaVenta);
 
+
+
+        }
     }
 }

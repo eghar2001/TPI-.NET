@@ -17,18 +17,16 @@ namespace WinForm
         {
             InitializeComponent();
 
+
         }
         private void Listar()
         {
             this.dgvProductos.DataSource = null;
             this.dgvProductos.DataSource = this.negocio_producto.find_all();
-            DataGridViewButtonColumn comprarCol = new DataGridViewButtonColumn();
-            comprarCol.Name = "Comprar";
-            dgvProductos.Columns.Add(comprarCol);
-            int indexComprarCol = dgvProductos.Columns.IndexOf(comprarCol);
+
             for (int i = 0; i < dgvProductos.Rows.Count; i++)
             {
-                dgvProductos.Rows[i].Cells[indexComprarCol].Value = "Comprar";
+                dgvProductos.Rows[i].Cells["Comprar"].Value = "Comprar";
             }
 
 
@@ -37,7 +35,16 @@ namespace WinForm
 
         private void ListadoProductosForm_Load(object sender, EventArgs e)
         {
+
+            DataGridViewButtonColumn comprarCol = new DataGridViewButtonColumn();
+            int indexComprarCol = dgvProductos.Columns.IndexOf(comprarCol);
+            if (indexComprarCol == -1)
+            {
+                comprarCol.Name = "Comprar";
+                dgvProductos.Columns.Add(comprarCol);
+            }
             this.Listar();
+
         }
 
         private void btnRefrescar_Click(object sender, EventArgs e)
@@ -47,6 +54,10 @@ namespace WinForm
 
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+            {
+                return;
+            }
             if (this.dgvProductos.Columns[e.ColumnIndex].Name == "Comprar")
             {
                 this.Comprar((int)dgvProductos.CurrentRow.Cells["id"].Value);
