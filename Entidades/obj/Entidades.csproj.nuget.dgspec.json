@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pedro\\Source\\Repos\\TPI-.NET\\Entidades\\Entidades.csproj": {}
+    "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pedro\\Source\\Repos\\TPI-.NET\\Entidades\\Entidades.csproj": {
+    "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pedro\\Source\\Repos\\TPI-.NET\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\Pedro\\Source\\Repos\\TPI-.NET\\Entidades\\Entidades.csproj",
-        "packagesPath": "C:\\Users\\Pedro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pedro\\Source\\Repos\\TPI-.NET\\Entidades\\obj\\",
+        "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj",
+        "packagesPath": "C:\\Users\\eghar\\.nuget\\packages\\",
+        "outputPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\eghar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
