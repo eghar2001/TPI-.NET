@@ -17,6 +17,7 @@ namespace Datos
 
         public void agregar_venta(Entidades.Venta venta)
         {
+            context.Update(venta.Producto);
             context.Add(venta);
             context.SaveChanges();
         }

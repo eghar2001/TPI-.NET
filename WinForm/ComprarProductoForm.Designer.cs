@@ -33,65 +33,78 @@
             txtCantidad = new TextBox();
             lblPrecio = new Label();
             btnComprar = new Button();
+            lblDescripcion = new Label();
             SuspendLayout();
             // 
             // lblNombreProducto
             // 
             lblNombreProducto.AutoSize = true;
-            lblNombreProducto.Location = new Point(269, 31);
+            lblNombreProducto.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNombreProducto.ForeColor = SystemColors.MenuHighlight;
+            lblNombreProducto.Location = new Point(226, 41);
             lblNombreProducto.Name = "lblNombreProducto";
-            lblNombreProducto.Size = new Size(103, 15);
+            lblNombreProducto.Size = new Size(291, 46);
             lblNombreProducto.TabIndex = 0;
             lblNombreProducto.Text = "Nombre Producto";
             // 
             // lblCantidad
             // 
             lblCantidad.AutoSize = true;
-            lblCantidad.Location = new Point(77, 83);
+            lblCantidad.Location = new Point(67, 154);
             lblCantidad.Name = "lblCantidad";
-            lblCantidad.Size = new Size(55, 15);
+            lblCantidad.Size = new Size(69, 20);
             lblCantidad.TabIndex = 1;
             lblCantidad.Text = "Cantidad";
             // 
             // txtCantidad
             // 
-            txtCantidad.Location = new Point(290, 80);
-            txtCantidad.Margin = new Padding(3, 2, 3, 2);
+            txtCantidad.Location = new Point(310, 150);
             txtCantidad.Name = "txtCantidad";
-            txtCantidad.Size = new Size(110, 23);
+            txtCantidad.Size = new Size(125, 27);
             txtCantidad.TabIndex = 2;
             txtCantidad.KeyPress += txtCantidad_KeyPress;
             // 
             // lblPrecio
             // 
             lblPrecio.AutoSize = true;
-            lblPrecio.Location = new Point(165, 146);
+            lblPrecio.Location = new Point(168, 238);
             lblPrecio.Name = "lblPrecio";
-            lblPrecio.Size = new Size(46, 15);
+            lblPrecio.Size = new Size(57, 20);
             lblPrecio.TabIndex = 3;
             lblPrecio.Text = "Precio: ";
             // 
             // btnComprar
             // 
-            btnComprar.Location = new Point(494, 286);
+            btnComprar.Location = new Point(565, 381);
+            btnComprar.Margin = new Padding(3, 4, 3, 4);
             btnComprar.Name = "btnComprar";
-            btnComprar.Size = new Size(75, 23);
+            btnComprar.Size = new Size(86, 31);
             btnComprar.TabIndex = 4;
             btnComprar.Text = "Comprar";
             btnComprar.UseVisualStyleBackColor = true;
             btnComprar.Click += btnComprar_Click;
             // 
+            // lblDescripcion
+            // 
+            lblDescripcion.AutoSize = true;
+            lblDescripcion.ForeColor = SystemColors.Desktop;
+            lblDescripcion.Location = new Point(310, 97);
+            lblDescripcion.Name = "lblDescripcion";
+            lblDescripcion.Size = new Size(87, 20);
+            lblDescripcion.TabIndex = 5;
+            lblDescripcion.Text = "Descripcion";
+            // 
             // ComprarProductoForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(800, 451);
+            Controls.Add(lblDescripcion);
             Controls.Add(btnComprar);
             Controls.Add(lblPrecio);
             Controls.Add(txtCantidad);
             Controls.Add(lblCantidad);
             Controls.Add(lblNombreProducto);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "ComprarProductoForm";
             Text = "ComprarProductoForm";
             Load += ComprarProductoForm_Load;
@@ -106,5 +119,6 @@
         private TextBox txtCantidad;
         private Label lblPrecio;
         private Button btnComprar;
+        private Label lblDescripcion;
     }
 }

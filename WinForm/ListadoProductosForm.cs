@@ -69,6 +69,10 @@ namespace WinForm
             Entidades.Producto prod = negocio_producto.get_one(idProducto);
             ComprarProductoForm comprarForm = new ComprarProductoForm(prod);
             comprarForm.ShowDialog();
+            if (comprarForm.DialogResult == DialogResult.OK)
+            {
+                this.Listar();
+            }
         }
     }
 }

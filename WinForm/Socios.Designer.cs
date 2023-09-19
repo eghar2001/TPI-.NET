@@ -179,7 +179,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(tcSocios);
             Name = "Socios";
-            Text = "Form1";
+            Text = "Administrar socios";
             Load += Socios_Load;
             ((System.ComponentModel.ISupportInitialize)socioBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)socioBindingSource1).EndInit();

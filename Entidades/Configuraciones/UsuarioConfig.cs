@@ -15,6 +15,7 @@ namespace Entidades.Configuraciones
         {
            builder.HasKey(u => u.Id);
            builder.HasIndex(u => u.Dni).IsUnique();
+           builder.Property(u => u.TipoUsuarioId).IsRequired(); 
            
         }
     }

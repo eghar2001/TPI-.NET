@@ -81,5 +81,22 @@ namespace Entidades
         {
             get; set;
         } = null!;
+        public int TipoUsuarioId { get; set; }
+
+        public bool EsTipoUsuario(TiposUsuarioEnum tipo) 
+        {
+            if (tipo == TiposUsuarioEnum.EMPLEADO)
+            {
+                return this.TipoUsuarioId == 2;
+            }
+            else if(tipo == TiposUsuarioEnum.SOCIO) 
+            {
+                return this.TipoUsuarioId == 1;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

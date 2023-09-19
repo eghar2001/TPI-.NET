@@ -1,4 +1,5 @@
 ﻿using Datos;
+using Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,6 +27,7 @@ namespace WinForm
         private void ComprarProductoForm_Load(object sender, EventArgs e)
         {
             this.lblNombreProducto.Text = this.producto.Nombre;
+            this.lblDescripcion.Text = this.producto.Descripcion;
             this.ult_precio = negocio_producto.get_ultimo_precio(producto.Id);
             this.lblPrecio.Text += " $" + ult_precio;
         }
@@ -40,15 +42,23 @@ namespace WinForm
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
-            Entidades.Venta nuevaVenta = new Entidades.Venta() 
-            { 
+            Entidades.Venta nuevaVenta = new Entidades.Venta()
+            {
                 UsuarioId = DatosLogin.UsuarioLogueado.Id,
                 Producto = producto,
                 ProductoId = producto.Id,
                 Cantidad = int.Parse(txtCantidad.Text),
                 PrecioUnitario = this.ult_precio
             };
-            negocio_venta.agregar_venta(nuevaVenta);
+            try 
+            {
+                negocio_venta.agregar_venta(nuevaVenta);
+                this.DialogResult = DialogResult.OK;
+            }
+            catch (StockInsuficienteException x) 
+            {
+                MessageBox.Show("El stock es insuficiente", "Stock insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
 

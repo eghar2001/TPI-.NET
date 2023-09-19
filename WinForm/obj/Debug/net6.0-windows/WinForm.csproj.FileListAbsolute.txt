@@ -227,3 +227,5 @@ C:\Users\Pedro\Source\Repos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\refint\Win
 C:\Users\Pedro\Source\Repos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.pdb
 C:\Users\Pedro\Source\Repos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.genruntimeconfig.cache
 C:\Users\Pedro\Source\Repos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\ref\WinForm.dll
+K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.MenuEmpleado.resources
+K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.MenuSocio.resources

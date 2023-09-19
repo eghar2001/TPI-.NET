@@ -49,6 +49,7 @@ using Entidades.Configuraciones;
             modelBuilder.ApplyConfiguration(new ValorProductoConfig());
             modelBuilder.ApplyConfiguration(new ProductoConfig());
             modelBuilder.ApplyConfiguration(new VentaConfig());
+            modelBuilder.ApplyConfiguration(new TipoUsuarioConfig());
         }
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
@@ -62,6 +63,7 @@ using Entidades.Configuraciones;
         public DbSet<Producto> Productos => Set<Producto>();
         public DbSet<ValorProducto> ValoresProducto => Set<ValorProducto>();
         public DbSet<Venta> Ventas => Set<Venta>();
+        public DbSet<TipoUsuario> TiposUsuario => Set<TipoUsuario>();
 
     
     }

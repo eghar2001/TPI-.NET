@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Datos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230913204754_fechaVenta")]
+    [Migration("20230918190934_fechaVenta")]
     partial class fechaVenta
     {
         /// <inheritdoc />
@@ -113,7 +113,7 @@ namespace Datos.Migrations
                     b.Property<DateTime>("FechaVenta")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 9, 13, 17, 47, 54, 178, DateTimeKind.Local).AddTicks(986));
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<int>("ProductoId")
                         .HasColumnType("int");

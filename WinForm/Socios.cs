@@ -20,16 +20,17 @@ namespace WinForm
         }
         private void Socios_Load(object sender, EventArgs e)
         {
-            Login loginForm = new Login();
-            loginForm.ShowDialog();
-            if (loginForm.DialogResult == DialogResult.OK)
-            {
-                Listar();
-            }
-            else
-            {
-                this.Close();
-            }
+            Listar();
+            dgvSocios.Columns.Remove("Contrasenia");
+            dgvSocios.Columns.Remove("TipoUsuarioId");
+            dgvSocios.Columns.Remove("Id");
+            dgvSocios.Columns.Remove("NombreUsuario");
+
+            DataGridViewButtonColumn colBorrar = new DataGridViewButtonColumn();
+            colBorrar.Text = "Borrar";
+            this.dgvSocios.Columns.Add(colBorrar);
+
+
 
         }
         public void btnActualizar_Click(object sender, EventArgs e)

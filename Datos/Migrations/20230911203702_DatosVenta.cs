@@ -14,7 +14,7 @@ namespace Datos.Migrations
             
 
             migrationBuilder.AddColumn<decimal>(
-                name: "Precio",
+                name: "PrecioUnitario",
                 table: "Ventas",
                 type: "decimal(10,2)",
                 nullable: false,
@@ -27,7 +27,7 @@ namespace Datos.Migrations
             
 
             migrationBuilder.DropColumn(
-                name: "Precio",
+                name: "PrecioUnitario",
                 table: "Ventas");
         }
     }

@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Entidades;
+using Microsoft.Data.SqlClient;
 using Negocio;
 using System;
 using System.Collections.Generic;
@@ -28,12 +29,21 @@ namespace WinForm
                 if (usuario != null)
                 {
                     MessageBox.Show("Se ha logueado correctamente", "Login correcto",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.DialogResult = DialogResult.OK;
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     DatosLogin.UsuarioLogueado = usuario;
-                    ListadoProductosForm listadoProductos = new ListadoProductosForm();
-                    listadoProductos.Show();
+
+                    
+
+                    if (usuario.EsTipoUsuario(Entidades.TiposUsuarioEnum.EMPLEADO)){
+                        MenuEmpleado menuEmpleado = new MenuEmpleado();
+                        menuEmpleado.Show();
+                    }
+                    else if (usuario.EsTipoUsuario(Entidades.TiposUsuarioEnum.SOCIO)){
+                        MenuSocio menuSocio = new MenuSocio();
+                        menuSocio.Show();
+                    }
+                    this.Hide();
                 }
 
             }
