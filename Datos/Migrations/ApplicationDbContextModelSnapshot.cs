@@ -70,6 +70,9 @@ namespace Datos.Migrations
 
                     b.HasIndex("UsuarioId");
 
+                    b.HasIndex("FechaHoraInscripcion", "UsuarioId")
+                        .IsUnique();
+
                     b.ToTable("InscripcionesTurno");
                 });
 
@@ -179,9 +182,10 @@ namespace Datos.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("InstalacionId");
-
                     b.HasIndex("UsuarioId");
+
+                    b.HasIndex("InstalacionId", "FechaHoraReserva")
+                        .IsUnique();
 
                     b.ToTable("Reservas");
                 });
@@ -200,6 +204,9 @@ namespace Datos.Migrations
                         .HasColumnType("nvarchar(150)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Descripcion")
+                        .IsUnique();
 
                     b.ToTable("TiposUsuario");
                 });
@@ -273,6 +280,12 @@ namespace Datos.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Dni")
+                        .IsUnique();
+
+                    b.HasIndex("NombreUsuario")
+                        .IsUnique();
+
                     b.HasIndex("TipoUsuarioId");
 
                     b.ToTable("Usuarios");
@@ -290,14 +303,17 @@ namespace Datos.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("FechaDesde")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<decimal>("Precio")
                         .HasColumnType("decimal(10,2)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ActividadId");
+                    b.HasIndex("ActividadId", "FechaDesde")
+                        .IsUnique();
 
                     b.ToTable("ValoresActividad");
                 });
@@ -311,7 +327,9 @@ namespace Datos.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("FechaDesde")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<decimal>("Precio")
                         .HasColumnType("decimal(10,2)");
@@ -321,7 +339,8 @@ namespace Datos.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductoId");
+                    b.HasIndex("ProductoId", "FechaDesde")
+                        .IsUnique();
 
                     b.ToTable("ValoresProducto");
                 });
@@ -335,7 +354,9 @@ namespace Datos.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("FechaDesde")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<int>("InstalacionId")
                         .HasColumnType("int");
@@ -345,7 +366,8 @@ namespace Datos.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("InstalacionId");
+                    b.HasIndex("InstalacionId", "FechaDesde")
+                        .IsUnique();
 
                     b.ToTable("ValoresReserva");
                 });
@@ -362,7 +384,9 @@ namespace Datos.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("FechaVenta")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<decimal>("PrecioUnitario")
                         .HasColumnType("decimal(10,2)");
@@ -375,9 +399,10 @@ namespace Datos.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductoId");
-
                     b.HasIndex("UsuarioId");
+
+                    b.HasIndex("ProductoId", "UsuarioId", "FechaVenta")
+                        .IsUnique();
 
                     b.ToTable("Ventas");
                 });

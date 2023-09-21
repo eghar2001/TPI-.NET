@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Entidades.Configuraciones
 {
-    public class ReservaConfig : IEntityTypeConfiguration<Reserva>
+    public class ReservaConfig : IEntityTypeConfiguration<Entidades.Reserva>
     {
-        public void Configure(EntityTypeBuilder<Reserva> builder)
+        public void Configure(EntityTypeBuilder<Entidades.Reserva> builder)
         {
             builder.HasIndex(r => new {r.InstalacionId, r.FechaHoraReserva}).IsUnique();
 

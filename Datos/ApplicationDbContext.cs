@@ -45,7 +45,16 @@ public class ConnectionStringNotFoundException: Exception
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-           
+            //modelBuilder.ApplyConfiguration(new InscripcionTurnoConfig());
+            //modelBuilder.ApplyConfiguration(new ReservaConfig());
+            //modelBuilder.ApplyConfiguration(new TipoUsuarioConfig());
+            //modelBuilder.ApplyConfiguration(new UsuarioConfig());
+            //modelBuilder.ApplyConfiguration(new ValorActividadConfig());
+            //modelBuilder.ApplyConfiguration(new ValorProductoConfig());
+            //modelBuilder.ApplyConfiguration(new ValorReservaConfig());
+            //modelBuilder.ApplyConfiguration(new VentaConfig());
+
+
     }
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
@@ -71,13 +80,7 @@ public class ConnectionStringNotFoundException: Exception
         
         public DbSet<InscripcionTurno> InscripcionesTurno => Set<InscripcionTurno>();
 
-        
-        
-    
-        
-        
-       
-        
+
         
         public DbSet<ValorActividad> ValoresActividad => Set<ValorActividad>();
         public DbSet<ValorProducto> ValoresProducto => Set<ValorProducto>();

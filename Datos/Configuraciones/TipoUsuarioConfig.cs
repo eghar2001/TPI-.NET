@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Entidades.Configuraciones
 {
-    public class TipoUsuarioConfig : IEntityTypeConfiguration<TipoUsuario>
+    public class TipoUsuarioConfig : IEntityTypeConfiguration<Entidades.TipoUsuario>
     {
-        public void Configure(EntityTypeBuilder<TipoUsuario> builder)
+        public void Configure(EntityTypeBuilder<Entidades.TipoUsuario> builder)
         {
             builder.HasIndex(tu => tu.Descripcion).IsUnique();
             

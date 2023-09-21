@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Entidades.Configuraciones
 {
-    public class ValorProductoConfig : IEntityTypeConfiguration<ValorProducto>
+    public class ValorProductoConfig : IEntityTypeConfiguration<Entidades.ValorProducto>
     {
-        public void Configure(EntityTypeBuilder<ValorProducto> builder)
+        public void Configure(EntityTypeBuilder<Entidades.ValorProducto> builder)
         {
             builder.HasIndex(vp => new { vp.ProductoId, vp.FechaDesde }).IsUnique();
             builder.Property(v => v.FechaDesde).HasDefaultValueSql("GETDATE()");

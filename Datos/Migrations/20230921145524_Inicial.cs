@@ -90,7 +90,7 @@ namespace Datos.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ActividadId = table.Column<int>(type: "int", nullable: false),
-                    FechaDesde = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    FechaDesde = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETDATE()"),
                     Precio = table.Column<decimal>(type: "decimal(10,2)", nullable: false)
                 },
                 constraints: table =>
@@ -111,7 +111,7 @@ namespace Datos.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     InstalacionId = table.Column<int>(type: "int", nullable: false),
-                    FechaDesde = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    FechaDesde = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETDATE()"),
                     Precio = table.Column<decimal>(type: "decimal(10,2)", nullable: false)
                 },
                 constraints: table =>
@@ -132,7 +132,7 @@ namespace Datos.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ProductoId = table.Column<int>(type: "int", nullable: false),
-                    FechaDesde = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    FechaDesde = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETDATE()"),
                     Precio = table.Column<decimal>(type: "decimal(10,2)", nullable: false)
                 },
                 constraints: table =>
@@ -269,7 +269,7 @@ namespace Datos.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UsuarioId = table.Column<int>(type: "int", nullable: false),
-                    FechaVenta = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    FechaVenta = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETDATE()"),
                     ProductoId = table.Column<int>(type: "int", nullable: false),
                     Cantidad = table.Column<int>(type: "int", nullable: false),
                     PrecioUnitario = table.Column<decimal>(type: "decimal(10,2)", nullable: false)
@@ -292,6 +292,12 @@ namespace Datos.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_InscripcionesTurno_FechaHoraInscripcion_UsuarioId",
+                table: "InscripcionesTurno",
+                columns: new[] { "FechaHoraInscripcion", "UsuarioId" },
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_InscripcionesTurno_TurnoId",
                 table: "InscripcionesTurno",
                 column: "TurnoId");
@@ -302,14 +308,21 @@ namespace Datos.Migrations
                 column: "UsuarioId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Reservas_InstalacionId",
+                name: "IX_Reservas_InstalacionId_FechaHoraReserva",
                 table: "Reservas",
-                column: "InstalacionId");
+                columns: new[] { "InstalacionId", "FechaHoraReserva" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Reservas_UsuarioId",
                 table: "Reservas",
                 column: "UsuarioId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TiposUsuario_Descripcion",
+                table: "TiposUsuario",
+                column: "Descripcion",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Turnos_ActividadId",
@@ -327,29 +340,45 @@ namespace Datos.Migrations
                 column: "ProfesorId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Usuarios_Dni",
+                table: "Usuarios",
+                column: "Dni",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Usuarios_NombreUsuario",
+                table: "Usuarios",
+                column: "NombreUsuario",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Usuarios_TipoUsuarioId",
                 table: "Usuarios",
                 column: "TipoUsuarioId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ValoresActividad_ActividadId",
+                name: "IX_ValoresActividad_ActividadId_FechaDesde",
                 table: "ValoresActividad",
-                column: "ActividadId");
+                columns: new[] { "ActividadId", "FechaDesde" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_ValoresProducto_ProductoId",
+                name: "IX_ValoresProducto_ProductoId_FechaDesde",
                 table: "ValoresProducto",
-                column: "ProductoId");
+                columns: new[] { "ProductoId", "FechaDesde" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_ValoresReserva_InstalacionId",
+                name: "IX_ValoresReserva_InstalacionId_FechaDesde",
                 table: "ValoresReserva",
-                column: "InstalacionId");
+                columns: new[] { "InstalacionId", "FechaDesde" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Ventas_ProductoId",
+                name: "IX_Ventas_ProductoId_UsuarioId_FechaVenta",
                 table: "Ventas",
-                column: "ProductoId");
+                columns: new[] { "ProductoId", "UsuarioId", "FechaVenta" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Ventas_UsuarioId",

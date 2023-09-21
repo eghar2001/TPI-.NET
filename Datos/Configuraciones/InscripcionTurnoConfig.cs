@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Entidades.Configuraciones
 {
-    public class InscripcionTurnoConfig : IEntityTypeConfiguration<InscripcionTurno>
+    public class InscripcionTurnoConfig : IEntityTypeConfiguration<Entidades.InscripcionTurno>
     {
-        public void Configure(EntityTypeBuilder<InscripcionTurno> builder)
+        public void Configure(EntityTypeBuilder<Entidades.InscripcionTurno> builder)
         {
             builder.HasIndex(i => new { i.FechaHoraInscripcion, i.UsuarioId }).IsUnique();
 
