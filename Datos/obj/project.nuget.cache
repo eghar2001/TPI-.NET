@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/fbI6E7awp6tM5x8fsieoF+BZoKCG2lFofgQDIW/VpdAc0KY24bYkDZhOTrsOa4Qu5shKmGmi5ICrHa/SUaWGw==",
+  "dgSpecHash": "Ahgl8T6pxWlTveTdUhR8VLyOw0Itaz9TRKy2AgCEL8Ed8dzENt1vmD9PlbKCpZsdTQrNDbq+tjXZMBtxRlVwhQ==",
   "success": true,
-  "projectFilePath": "K:\\Proyectos\\.NET\\TPI-.NET\\Datos\\Datos.csproj",
+  "projectFilePath": "D:\\Proyectos\\TPI-.NET\\Datos\\Datos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eghar\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\eghar\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

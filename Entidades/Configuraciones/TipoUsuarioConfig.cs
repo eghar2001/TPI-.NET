@@ -12,10 +12,8 @@ namespace Entidades.Configuraciones
     {
         public void Configure(EntityTypeBuilder<TipoUsuario> builder)
         {
-
-            builder.Property(tu => tu.Descripcion).IsRequired();
             builder.HasIndex(tu => tu.Descripcion).IsUnique();
-
+            
 
 
         }

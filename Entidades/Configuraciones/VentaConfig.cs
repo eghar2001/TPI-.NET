@@ -12,7 +12,7 @@ namespace Entidades.Configuraciones
     {
         public void Configure(EntityTypeBuilder<Venta> builder)
         {
-            builder.HasKey(v => new { v.UsuarioId, v.FechaVenta , v.ProductoId});
+            builder.HasIndex(v => new { v.ProductoId,v.UsuarioId, v.FechaVenta }).IsUnique();
             builder.Property(v => v.FechaVenta).HasDefaultValueSql("GETDATE()");
 
 

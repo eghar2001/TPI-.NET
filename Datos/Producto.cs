@@ -25,8 +25,8 @@ namespace Datos
         {
 
             return  this.context.Productos.FirstOrDefault(p => p.Id == id);
-           
         }
+
         public decimal get_ultimo_precio(int productoId)
         {
             Microsoft.Data.SqlClient.SqlConnection conn = new SqlConnection(ApplicationDbContext.ConnectionString);

@@ -21,6 +21,84 @@ namespace Datos.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Entidades.Actividad", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Actividades");
+                });
+
+            modelBuilder.Entity("Entidades.InscripcionTurno", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("FechaHoraBaja")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaHoraInscripcion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("TurnoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TurnoId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("InscripcionesTurno");
+                });
+
+            modelBuilder.Entity("Entidades.Instalacion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Cupo")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Instalaciones");
+                });
+
             modelBuilder.Entity("Entidades.Producto", b =>
                 {
                     b.Property<int>("Id")
@@ -31,8 +109,8 @@ namespace Datos.Migrations
 
                     b.Property<string>("Descripcion")
                         .IsRequired()
-                        .HasMaxLength(400)
-                        .HasColumnType("nvarchar(400)");
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -45,6 +123,67 @@ namespace Datos.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Productos");
+                });
+
+            modelBuilder.Entity("Entidades.Profesor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Apellido")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<decimal>("Salario")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Profesores");
+                });
+
+            modelBuilder.Entity("Entidades.Reserva", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CantidadAsitentes")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DuracionEnHoras")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("FechaHoraReserva")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaHoraUso")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("InstalacionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InstalacionId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("Reservas");
                 });
 
             modelBuilder.Entity("Entidades.TipoUsuario", b =>
@@ -62,10 +201,40 @@ namespace Datos.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Descripcion")
-                        .IsUnique();
-
                     b.ToTable("TiposUsuario");
+                });
+
+            modelBuilder.Entity("Entidades.Turno", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ActividadId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<int>("InstalacionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProfesorId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ActividadId");
+
+                    b.HasIndex("InstalacionId");
+
+                    b.HasIndex("ProfesorId");
+
+                    b.ToTable("Turnos");
                 });
 
             modelBuilder.Entity("Entidades.Usuario", b =>
@@ -104,17 +273,20 @@ namespace Datos.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Dni")
-                        .IsUnique();
-
                     b.HasIndex("TipoUsuarioId");
 
                     b.ToTable("Usuarios");
                 });
 
-            modelBuilder.Entity("Entidades.ValorProducto", b =>
+            modelBuilder.Entity("Entidades.ValorActividad", b =>
                 {
-                    b.Property<int>("ProductoId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ActividadId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("FechaDesde")
@@ -123,35 +295,156 @@ namespace Datos.Migrations
                     b.Property<decimal>("Precio")
                         .HasColumnType("decimal(10,2)");
 
-                    b.HasKey("ProductoId", "FechaDesde");
+                    b.HasKey("Id");
 
-                    b.ToTable("ValoresProducto");
+                    b.HasIndex("ActividadId");
+
+                    b.ToTable("ValoresActividad");
                 });
 
-            modelBuilder.Entity("Entidades.Venta", b =>
+            modelBuilder.Entity("Entidades.ValorProducto", b =>
                 {
-                    b.Property<int>("UsuarioId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("FechaVenta")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("GETDATE()");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("FechaDesde")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("Precio")
+                        .HasColumnType("decimal(10,2)");
 
                     b.Property<int>("ProductoId")
                         .HasColumnType("int");
 
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductoId");
+
+                    b.ToTable("ValoresProducto");
+                });
+
+            modelBuilder.Entity("Entidades.ValorReserva", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("FechaDesde")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("InstalacionId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Precio")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InstalacionId");
+
+                    b.ToTable("ValoresReserva");
+                });
+
+            modelBuilder.Entity("Entidades.Venta", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
                     b.Property<int>("Cantidad")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("FechaVenta")
+                        .HasColumnType("datetime2");
 
                     b.Property<decimal>("PrecioUnitario")
                         .HasColumnType("decimal(10,2)");
 
-                    b.HasKey("UsuarioId", "FechaVenta", "ProductoId");
+                    b.Property<int>("ProductoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("ProductoId");
 
+                    b.HasIndex("UsuarioId");
+
                     b.ToTable("Ventas");
+                });
+
+            modelBuilder.Entity("Entidades.InscripcionTurno", b =>
+                {
+                    b.HasOne("Entidades.Turno", "Turno")
+                        .WithMany()
+                        .HasForeignKey("TurnoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Entidades.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Turno");
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("Entidades.Reserva", b =>
+                {
+                    b.HasOne("Entidades.Instalacion", "Instalacion")
+                        .WithMany()
+                        .HasForeignKey("InstalacionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Entidades.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Instalacion");
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("Entidades.Turno", b =>
+                {
+                    b.HasOne("Entidades.Actividad", "Actividad")
+                        .WithMany()
+                        .HasForeignKey("ActividadId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Entidades.Instalacion", "Instalacion")
+                        .WithMany()
+                        .HasForeignKey("InstalacionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Entidades.Profesor", "Profesor")
+                        .WithMany()
+                        .HasForeignKey("ProfesorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Actividad");
+
+                    b.Navigation("Instalacion");
+
+                    b.Navigation("Profesor");
                 });
 
             modelBuilder.Entity("Entidades.Usuario", b =>
@@ -165,6 +458,17 @@ namespace Datos.Migrations
                     b.Navigation("TipoUsuario");
                 });
 
+            modelBuilder.Entity("Entidades.ValorActividad", b =>
+                {
+                    b.HasOne("Entidades.Actividad", "Actividad")
+                        .WithMany()
+                        .HasForeignKey("ActividadId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Actividad");
+                });
+
             modelBuilder.Entity("Entidades.ValorProducto", b =>
                 {
                     b.HasOne("Entidades.Producto", null)
@@ -172,6 +476,17 @@ namespace Datos.Migrations
                         .HasForeignKey("ProductoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Entidades.ValorReserva", b =>
+                {
+                    b.HasOne("Entidades.Instalacion", "Instalacion")
+                        .WithMany()
+                        .HasForeignKey("InstalacionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Instalacion");
                 });
 
             modelBuilder.Entity("Entidades.Venta", b =>
@@ -182,7 +497,15 @@ namespace Datos.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Entidades.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Producto");
+
+                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("Entidades.Producto", b =>

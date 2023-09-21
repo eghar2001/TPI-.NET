@@ -63,9 +63,9 @@
             lblNombre.AutoSize = true;
             lblNombre.Font = new Font("Segoe UI Semilight", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             lblNombre.ForeColor = Color.Maroon;
-            lblNombre.Location = new Point(612, 387);
+            lblNombre.Location = new Point(536, 290);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(243, 38);
+            lblNombre.Size = new Size(193, 30);
             lblNombre.TabIndex = 0;
             lblNombre.Text = "Nombre y Apellido";
             // 
@@ -74,9 +74,9 @@
             lblDni.AutoSize = true;
             lblDni.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             lblDni.ForeColor = Color.Black;
-            lblDni.Location = new Point(805, 430);
+            lblDni.Location = new Point(704, 322);
             lblDni.Name = "lblDni";
-            lblDni.Size = new Size(50, 30);
+            lblDni.Size = new Size(43, 25);
             lblDni.TabIndex = 1;
             lblDni.Text = "DNI";
             // 
@@ -93,8 +93,9 @@
             panelMenuLateral.Controls.Add(panelLogo);
             panelMenuLateral.Dock = DockStyle.Left;
             panelMenuLateral.Location = new Point(0, 0);
+            panelMenuLateral.Margin = new Padding(3, 2, 3, 2);
             panelMenuLateral.Name = "panelMenuLateral";
-            panelMenuLateral.Size = new Size(290, 601);
+            panelMenuLateral.Size = new Size(254, 451);
             panelMenuLateral.TabIndex = 2;
             // 
             // subPanelActividades
@@ -103,10 +104,11 @@
             subPanelActividades.Controls.Add(btnAdministrarProfesores);
             subPanelActividades.Controls.Add(btnAdministrarActividades);
             subPanelActividades.Dock = DockStyle.Top;
-            subPanelActividades.Location = new Point(0, 425);
+            subPanelActividades.Location = new Point(0, 319);
+            subPanelActividades.Margin = new Padding(3, 2, 3, 2);
             subPanelActividades.Name = "subPanelActividades";
-            subPanelActividades.Padding = new Padding(5);
-            subPanelActividades.Size = new Size(290, 71);
+            subPanelActividades.Padding = new Padding(4, 4, 4, 4);
+            subPanelActividades.Size = new Size(254, 53);
             subPanelActividades.TabIndex = 8;
             subPanelActividades.Visible = false;
             // 
@@ -116,9 +118,10 @@
             btnAdministrarProfesores.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnAdministrarProfesores.ForeColor = Color.FromArgb(64, 64, 64);
             btnAdministrarProfesores.ImageAlign = ContentAlignment.BottomLeft;
-            btnAdministrarProfesores.Location = new Point(5, 34);
+            btnAdministrarProfesores.Location = new Point(4, 26);
+            btnAdministrarProfesores.Margin = new Padding(3, 2, 3, 2);
             btnAdministrarProfesores.Name = "btnAdministrarProfesores";
-            btnAdministrarProfesores.Size = new Size(280, 29);
+            btnAdministrarProfesores.Size = new Size(246, 22);
             btnAdministrarProfesores.TabIndex = 1;
             btnAdministrarProfesores.Text = "Reporte Instalaciones\r\n";
             btnAdministrarProfesores.TextAlign = ContentAlignment.MiddleRight;
@@ -130,21 +133,24 @@
             btnAdministrarActividades.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnAdministrarActividades.ForeColor = Color.FromArgb(64, 64, 64);
             btnAdministrarActividades.ImageAlign = ContentAlignment.BottomLeft;
-            btnAdministrarActividades.Location = new Point(5, 5);
+            btnAdministrarActividades.Location = new Point(4, 4);
+            btnAdministrarActividades.Margin = new Padding(3, 2, 3, 2);
             btnAdministrarActividades.Name = "btnAdministrarActividades";
-            btnAdministrarActividades.Size = new Size(280, 29);
+            btnAdministrarActividades.Size = new Size(246, 22);
             btnAdministrarActividades.TabIndex = 0;
-            btnAdministrarActividades.Text = "AdministrarActividades";
+            btnAdministrarActividades.Text = "Administrar Actividades";
             btnAdministrarActividades.TextAlign = ContentAlignment.MiddleRight;
             btnAdministrarActividades.UseVisualStyleBackColor = true;
+            btnAdministrarActividades.Click += btnAdministrarActividades_Click;
             // 
             // btnActividades
             // 
             btnActividades.Dock = DockStyle.Top;
             btnActividades.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnActividades.Location = new Point(0, 380);
+            btnActividades.Location = new Point(0, 285);
+            btnActividades.Margin = new Padding(3, 2, 3, 2);
             btnActividades.Name = "btnActividades";
-            btnActividades.Size = new Size(290, 45);
+            btnActividades.Size = new Size(254, 34);
             btnActividades.TabIndex = 7;
             btnActividades.Text = "Actividades";
             btnActividades.TextAlign = ContentAlignment.MiddleRight;
@@ -157,10 +163,11 @@
             subPanelnstalaciones.Controls.Add(btnManejarProductos);
             subPanelnstalaciones.Controls.Add(btnManejarInstalaciones);
             subPanelnstalaciones.Dock = DockStyle.Top;
-            subPanelnstalaciones.Location = new Point(0, 308);
+            subPanelnstalaciones.Location = new Point(0, 231);
+            subPanelnstalaciones.Margin = new Padding(3, 2, 3, 2);
             subPanelnstalaciones.Name = "subPanelnstalaciones";
-            subPanelnstalaciones.Padding = new Padding(5);
-            subPanelnstalaciones.Size = new Size(290, 72);
+            subPanelnstalaciones.Padding = new Padding(4, 4, 4, 4);
+            subPanelnstalaciones.Size = new Size(254, 54);
             subPanelnstalaciones.TabIndex = 6;
             subPanelnstalaciones.Visible = false;
             // 
@@ -170,9 +177,10 @@
             btnManejarProductos.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnManejarProductos.ForeColor = Color.FromArgb(64, 64, 64);
             btnManejarProductos.ImageAlign = ContentAlignment.BottomLeft;
-            btnManejarProductos.Location = new Point(5, 34);
+            btnManejarProductos.Location = new Point(4, 26);
+            btnManejarProductos.Margin = new Padding(3, 2, 3, 2);
             btnManejarProductos.Name = "btnManejarProductos";
-            btnManejarProductos.Size = new Size(280, 29);
+            btnManejarProductos.Size = new Size(246, 22);
             btnManejarProductos.TabIndex = 1;
             btnManejarProductos.Text = "Reporte Instalaciones\r\n";
             btnManejarProductos.TextAlign = ContentAlignment.MiddleRight;
@@ -184,9 +192,10 @@
             btnManejarInstalaciones.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnManejarInstalaciones.ForeColor = Color.FromArgb(64, 64, 64);
             btnManejarInstalaciones.ImageAlign = ContentAlignment.BottomLeft;
-            btnManejarInstalaciones.Location = new Point(5, 5);
+            btnManejarInstalaciones.Location = new Point(4, 4);
+            btnManejarInstalaciones.Margin = new Padding(3, 2, 3, 2);
             btnManejarInstalaciones.Name = "btnManejarInstalaciones";
-            btnManejarInstalaciones.Size = new Size(280, 29);
+            btnManejarInstalaciones.Size = new Size(246, 22);
             btnManejarInstalaciones.TabIndex = 0;
             btnManejarInstalaciones.Text = "Manejar Instalaciones";
             btnManejarInstalaciones.TextAlign = ContentAlignment.MiddleRight;
@@ -196,9 +205,10 @@
             // 
             btnInstalaciones.Dock = DockStyle.Top;
             btnInstalaciones.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnInstalaciones.Location = new Point(0, 263);
+            btnInstalaciones.Location = new Point(0, 197);
+            btnInstalaciones.Margin = new Padding(3, 2, 3, 2);
             btnInstalaciones.Name = "btnInstalaciones";
-            btnInstalaciones.Size = new Size(290, 45);
+            btnInstalaciones.Size = new Size(254, 34);
             btnInstalaciones.TabIndex = 5;
             btnInstalaciones.Text = "Instalaciones";
             btnInstalaciones.TextAlign = ContentAlignment.MiddleRight;
@@ -211,10 +221,11 @@
             subPanelProductos.Controls.Add(btnCompraProducto);
             subPanelProductos.Controls.Add(btnAdministrarProductos);
             subPanelProductos.Dock = DockStyle.Top;
-            subPanelProductos.Location = new Point(0, 193);
+            subPanelProductos.Location = new Point(0, 145);
+            subPanelProductos.Margin = new Padding(3, 2, 3, 2);
             subPanelProductos.Name = "subPanelProductos";
-            subPanelProductos.Padding = new Padding(5);
-            subPanelProductos.Size = new Size(290, 70);
+            subPanelProductos.Padding = new Padding(4, 4, 4, 4);
+            subPanelProductos.Size = new Size(254, 52);
             subPanelProductos.TabIndex = 4;
             subPanelProductos.Visible = false;
             // 
@@ -224,9 +235,10 @@
             btnCompraProducto.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnCompraProducto.ForeColor = Color.FromArgb(64, 64, 64);
             btnCompraProducto.ImageAlign = ContentAlignment.BottomLeft;
-            btnCompraProducto.Location = new Point(5, 34);
+            btnCompraProducto.Location = new Point(4, 26);
+            btnCompraProducto.Margin = new Padding(3, 2, 3, 2);
             btnCompraProducto.Name = "btnCompraProducto";
-            btnCompraProducto.Size = new Size(280, 29);
+            btnCompraProducto.Size = new Size(246, 22);
             btnCompraProducto.TabIndex = 3;
             btnCompraProducto.Text = "Compra Productos";
             btnCompraProducto.TextAlign = ContentAlignment.MiddleRight;
@@ -238,9 +250,10 @@
             btnAdministrarProductos.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnAdministrarProductos.ForeColor = Color.FromArgb(64, 64, 64);
             btnAdministrarProductos.ImageAlign = ContentAlignment.BottomLeft;
-            btnAdministrarProductos.Location = new Point(5, 5);
+            btnAdministrarProductos.Location = new Point(4, 4);
+            btnAdministrarProductos.Margin = new Padding(3, 2, 3, 2);
             btnAdministrarProductos.Name = "btnAdministrarProductos";
-            btnAdministrarProductos.Size = new Size(280, 29);
+            btnAdministrarProductos.Size = new Size(246, 22);
             btnAdministrarProductos.TabIndex = 2;
             btnAdministrarProductos.Text = "Administrar Productos";
             btnAdministrarProductos.TextAlign = ContentAlignment.MiddleRight;
@@ -250,9 +263,10 @@
             // 
             btnProductos.Dock = DockStyle.Top;
             btnProductos.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnProductos.Location = new Point(0, 148);
+            btnProductos.Location = new Point(0, 111);
+            btnProductos.Margin = new Padding(3, 2, 3, 2);
             btnProductos.Name = "btnProductos";
-            btnProductos.Size = new Size(290, 45);
+            btnProductos.Size = new Size(254, 34);
             btnProductos.TabIndex = 2;
             btnProductos.Text = "Productos";
             btnProductos.TextAlign = ContentAlignment.MiddleRight;
@@ -263,9 +277,10 @@
             // 
             btnManejoSocios.Dock = DockStyle.Top;
             btnManejoSocios.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnManejoSocios.Location = new Point(0, 103);
+            btnManejoSocios.Location = new Point(0, 77);
+            btnManejoSocios.Margin = new Padding(3, 2, 3, 2);
             btnManejoSocios.Name = "btnManejoSocios";
-            btnManejoSocios.Size = new Size(290, 45);
+            btnManejoSocios.Size = new Size(254, 34);
             btnManejoSocios.TabIndex = 1;
             btnManejoSocios.Text = "Administrar Socios";
             btnManejoSocios.TextAlign = ContentAlignment.MiddleRight;
@@ -277,8 +292,9 @@
             panelLogo.Controls.Add(lblLogo);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
+            panelLogo.Margin = new Padding(3, 2, 3, 2);
             panelLogo.Name = "panelLogo";
-            panelLogo.Size = new Size(290, 103);
+            panelLogo.Size = new Size(254, 77);
             panelLogo.TabIndex = 0;
             // 
             // lblLogo
@@ -286,17 +302,18 @@
             lblLogo.AutoSize = true;
             lblLogo.BackColor = Color.White;
             lblLogo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            lblLogo.Location = new Point(33, 29);
+            lblLogo.Location = new Point(29, 22);
             lblLogo.Name = "lblLogo";
-            lblLogo.Size = new Size(235, 41);
+            lblLogo.Size = new Size(185, 32);
             lblLogo.TabIndex = 0;
             lblLogo.Text = "INSERTAR LOGO";
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(574, 103);
+            pictureBox1.Location = new Point(502, 77);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(281, 268);
+            pictureBox1.Size = new Size(246, 201);
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
@@ -304,22 +321,23 @@
             // 
             lblMenu.AutoSize = true;
             lblMenu.Font = new Font("Segoe UI", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMenu.Location = new Point(466, 12);
+            lblMenu.Location = new Point(408, 9);
             lblMenu.Name = "lblMenu";
-            lblMenu.Size = new Size(389, 62);
+            lblMenu.Size = new Size(312, 51);
             lblMenu.TabIndex = 4;
             lblMenu.Text = "Menu Empleados";
             // 
             // MenuEmpleado
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(942, 601);
+            ClientSize = new Size(824, 451);
             Controls.Add(lblMenu);
             Controls.Add(pictureBox1);
             Controls.Add(panelMenuLateral);
             Controls.Add(lblDni);
             Controls.Add(lblNombre);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "MenuEmpleado";
             Text = "MenuEmpleado";
             Load += MenuEmpleado_Load;

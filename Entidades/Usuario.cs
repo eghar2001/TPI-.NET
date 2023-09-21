@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 
@@ -44,28 +47,32 @@ namespace Entidades
         {
             return this.contrasenia == contra_a_validar;
         }
-        public int Id {
-            get
-            {
-                return this.id;
-            }
-        }
+
+
+
+        [Key]
+        public int Id { get; set;  }
+
+
+        [Required]
         public string Apellido
         {
             get; set;
         } = null!;
 
-
+        [Required]
         public string Nombre
         {
             get; set;
         }=null!;
 
+        [Required]
         public int Dni
         {
             get; set;
-        } 
+        }
 
+        [Required]
         public string Contrasenia
         {
             get {
@@ -75,13 +82,19 @@ namespace Entidades
             {
                 this.contrasenia = value;
             }
-        } 
+        }
 
+        [Required]
         public string NombreUsuario
         {
             get; set;
         } = null!;
+
+        [Required]
+        [ForeignKey("TipoUsuario")]
         public int TipoUsuarioId { get; set; }
+
+        public TipoUsuario TipoUsuario { get; set; } = null!;
 
         public bool EsTipoUsuario(TiposUsuarioEnum tipo) 
         {

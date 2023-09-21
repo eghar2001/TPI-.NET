@@ -12,8 +12,8 @@ namespace Entidades.Configuraciones
     {
         public void Configure(EntityTypeBuilder<ValorProducto> builder)
         {
-            builder.HasKey(vp => new { vp.ProductoId, vp.FechaDesde });
-            
+            builder.HasIndex(vp => new { vp.ProductoId, vp.FechaDesde }).IsUnique();
+            builder.Property(v => v.FechaDesde).HasDefaultValueSql("GETDATE()");
 
         }
     }

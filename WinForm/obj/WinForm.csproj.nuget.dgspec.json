@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "K:\\Proyectos\\.NET\\TPI-.NET\\WinForm\\WinForm.csproj": {}
+    "D:\\Proyectos\\TPI-.NET\\WinForm\\WinForm.csproj": {}
   },
   "projects": {
-    "K:\\Proyectos\\.NET\\TPI-.NET\\Datos\\Datos.csproj": {
+    "D:\\Proyectos\\TPI-.NET\\Datos\\Datos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "K:\\Proyectos\\.NET\\TPI-.NET\\Datos\\Datos.csproj",
+        "projectUniqueName": "D:\\Proyectos\\TPI-.NET\\Datos\\Datos.csproj",
         "projectName": "Datos",
-        "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Datos\\Datos.csproj",
+        "projectPath": "D:\\Proyectos\\TPI-.NET\\Datos\\Datos.csproj",
         "packagesPath": "C:\\Users\\eghar\\.nuget\\packages\\",
-        "outputPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Datos\\obj\\",
+        "outputPath": "D:\\Proyectos\\TPI-.NET\\Datos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\eghar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj": {
-                "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj"
+              "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj": {
+                "projectPath": "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj"
               }
             }
           }
@@ -75,18 +75,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj": {
+    "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj",
+        "projectPath": "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\eghar\\.nuget\\packages\\",
-        "outputPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\obj\\",
+        "outputPath": "D:\\Proyectos\\TPI-.NET\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\eghar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -142,18 +142,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "K:\\Proyectos\\.NET\\TPI-.NET\\Negocio\\Negocio.csproj": {
+    "D:\\Proyectos\\TPI-.NET\\Negocio\\Negocio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "K:\\Proyectos\\.NET\\TPI-.NET\\Negocio\\Negocio.csproj",
+        "projectUniqueName": "D:\\Proyectos\\TPI-.NET\\Negocio\\Negocio.csproj",
         "projectName": "Negocio",
-        "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Negocio\\Negocio.csproj",
+        "projectPath": "D:\\Proyectos\\TPI-.NET\\Negocio\\Negocio.csproj",
         "packagesPath": "C:\\Users\\eghar\\.nuget\\packages\\",
-        "outputPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Negocio\\obj\\",
+        "outputPath": "D:\\Proyectos\\TPI-.NET\\Negocio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\eghar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -170,11 +170,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "K:\\Proyectos\\.NET\\TPI-.NET\\Datos\\Datos.csproj": {
-                "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Datos\\Datos.csproj"
+              "D:\\Proyectos\\TPI-.NET\\Datos\\Datos.csproj": {
+                "projectPath": "D:\\Proyectos\\TPI-.NET\\Datos\\Datos.csproj"
               },
-              "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj": {
-                "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj"
+              "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj": {
+                "projectPath": "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj"
               }
             }
           }
@@ -220,18 +220,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "K:\\Proyectos\\.NET\\TPI-.NET\\WinForm\\WinForm.csproj": {
+    "D:\\Proyectos\\TPI-.NET\\WinForm\\WinForm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "K:\\Proyectos\\.NET\\TPI-.NET\\WinForm\\WinForm.csproj",
+        "projectUniqueName": "D:\\Proyectos\\TPI-.NET\\WinForm\\WinForm.csproj",
         "projectName": "WinForm",
-        "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\WinForm\\WinForm.csproj",
+        "projectPath": "D:\\Proyectos\\TPI-.NET\\WinForm\\WinForm.csproj",
         "packagesPath": "C:\\Users\\eghar\\.nuget\\packages\\",
-        "outputPath": "K:\\Proyectos\\.NET\\TPI-.NET\\WinForm\\obj\\",
+        "outputPath": "D:\\Proyectos\\TPI-.NET\\WinForm\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\eghar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -248,11 +248,11 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj": {
-                "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj"
+              "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj": {
+                "projectPath": "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj"
               },
-              "K:\\Proyectos\\.NET\\TPI-.NET\\Negocio\\Negocio.csproj": {
-                "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Negocio\\Negocio.csproj"
+              "D:\\Proyectos\\TPI-.NET\\Negocio\\Negocio.csproj": {
+                "projectPath": "D:\\Proyectos\\TPI-.NET\\Negocio\\Negocio.csproj"
               }
             }
           }
@@ -297,7 +297,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

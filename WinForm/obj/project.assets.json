@@ -3033,11 +3033,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "K:\\Proyectos\\.NET\\TPI-.NET\\WinForm\\WinForm.csproj",
+      "projectUniqueName": "D:\\Proyectos\\TPI-.NET\\WinForm\\WinForm.csproj",
       "projectName": "WinForm",
-      "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\WinForm\\WinForm.csproj",
+      "projectPath": "D:\\Proyectos\\TPI-.NET\\WinForm\\WinForm.csproj",
       "packagesPath": "C:\\Users\\eghar\\.nuget\\packages\\",
-      "outputPath": "K:\\Proyectos\\.NET\\TPI-.NET\\WinForm\\obj\\",
+      "outputPath": "D:\\Proyectos\\TPI-.NET\\WinForm\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\eghar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3054,11 +3054,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj": {
-              "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj"
+            "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj": {
+              "projectPath": "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj"
             },
-            "K:\\Proyectos\\.NET\\TPI-.NET\\Negocio\\Negocio.csproj": {
-              "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Negocio\\Negocio.csproj"
+            "D:\\Proyectos\\TPI-.NET\\Negocio\\Negocio.csproj": {
+              "projectPath": "D:\\Proyectos\\TPI-.NET\\Negocio\\Negocio.csproj"
             }
           }
         }
@@ -3103,7 +3103,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
