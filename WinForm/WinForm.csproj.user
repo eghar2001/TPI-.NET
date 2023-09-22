@@ -4,6 +4,9 @@
     <Compile Update="AdministrarActividadesForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ActividadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="AgregarSocioForm.cs">
       <SubType>Form</SubType>
     </Compile>

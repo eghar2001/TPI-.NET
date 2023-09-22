@@ -20,6 +20,9 @@ namespace Entidades
         public string Descripcion { get; set; }
 
 
-       
+        [Required]
+        public decimal UltimoPrecio { get; set;  }
+
+        
     }
 }

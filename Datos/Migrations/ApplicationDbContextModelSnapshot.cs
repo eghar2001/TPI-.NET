@@ -39,6 +39,9 @@ namespace Datos.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
+                    b.Property<decimal>("UltimoPrecio")
+                        .HasColumnType("decimal(10,2)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Actividades");
