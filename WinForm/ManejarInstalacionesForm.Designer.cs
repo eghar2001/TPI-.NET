@@ -32,8 +32,6 @@
             btnAgregar = new Button();
             btnEliminar = new Button();
             dgvInstalaciones = new DataGridView();
-            DGVColEditar = new DataGridViewButtonColumn();
-            DGVColBorrar = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dgvInstalaciones).BeginInit();
             SuspendLayout();
             // 
@@ -69,23 +67,12 @@
             // dgvInstalaciones
             // 
             dgvInstalaciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvInstalaciones.Columns.AddRange(new DataGridViewColumn[] { DGVColEditar, DGVColBorrar });
             dgvInstalaciones.Location = new Point(52, 22);
             dgvInstalaciones.Name = "dgvInstalaciones";
             dgvInstalaciones.RowTemplate.Height = 25;
             dgvInstalaciones.Size = new Size(668, 301);
             dgvInstalaciones.TabIndex = 3;
             dgvInstalaciones.CellContentClick += dgvInstalaciones_CellContentClick;
-            // 
-            // DGVColEditar
-            // 
-            DGVColEditar.HeaderText = "Editar";
-            DGVColEditar.Name = "DGVColEditar";
-            // 
-            // DGVColBorrar
-            // 
-            DGVColBorrar.HeaderText = "Borrar";
-            DGVColBorrar.Name = "DGVColBorrar";
             // 
             // ManejarInstalacionesForm
             // 
@@ -109,7 +96,5 @@
         private Button btnAgregar;
         private Button btnEliminar;
         private DataGridView dgvInstalaciones;
-        private DataGridViewButtonColumn DGVColEditar;
-        private DataGridViewButtonColumn DGVColBorrar;
     }
 }

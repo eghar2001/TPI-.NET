@@ -16,6 +16,17 @@ namespace Datos
         {
             context = new ApplicationDbContext();
         }
+
+        public Entidades.Instalacion? get_by_Titulo(string titulo)
+        {
+            return context.Instalaciones.FirstOrDefault(i => i.Titulo == titulo);
+        }
+
+        public Entidades.Instalacion? get_by_Id(int id)
+        {
+            return context.Instalaciones.FirstOrDefault(i => i.Id == id);
+        }
+
         public List<Entidades.Instalacion> find_all()
         {
             return context.Instalaciones.ToList();
@@ -27,14 +38,13 @@ namespace Datos
             context.SaveChanges();
         }
 
-        public Entidades.Instalacion? get_by_Titulo(string titulo)
-        {
-           return context.Instalaciones.FirstOrDefault(i => i.Titulo == titulo);
-        }
+       
 
-        public Entidades.Instalacion? get_by_Id(int id)
+        public void modificar_instalacion(Entidades.Instalacion instalacion_modificada)
         {
-            return context.Instalaciones.FirstOrDefault(i => i.Id == id);
+
+            context.Update(instalacion_modificada);
+            context.SaveChanges();
         }
 
 

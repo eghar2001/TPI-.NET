@@ -4,7 +4,7 @@
     <Compile Update="AdministrarActividadesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="AgregarInstalacion.cs">
+    <Compile Update="InstalacionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="AgregarSocioForm.cs">
@@ -16,7 +16,7 @@
     <Compile Update="ComprarProductoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="EliminarInstalacion.cs">
+    <Compile Update="EditarInstalacionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ListadoProductosForm.cs">

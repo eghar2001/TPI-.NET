@@ -389,6 +389,6 @@ C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\ref
 C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.pdb
 C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.genruntimeconfig.cache
 C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\ref\WinForm.dll
-C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.AgregarInstalacionForm.resources
-C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.EliminarInstalacion.resources
 C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.ManejarInstalacionesForm.resources
+C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.EditarInstalacionForm.resources
+C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.InstalacionForm.resources

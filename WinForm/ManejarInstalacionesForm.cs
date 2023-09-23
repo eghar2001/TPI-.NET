@@ -14,32 +14,42 @@ namespace WinForm
     public partial class ManejarInstalacionesForm : Form
     {
         private Negocio.Instalacion negocio_instalacion = new Negocio.Instalacion();
+        private Entidades.Instalacion instalacion_a_editar;
         public ManejarInstalacionesForm()
         {
             InitializeComponent();
         }
 
+
+
+        private void ManejarInstalacionesForm_Load(object sender, EventArgs e)
+        {
+            DataGridViewButtonColumn colEditar = new DataGridViewButtonColumn();
+            colEditar.Name = "Editar";
+            colEditar.Text = "Editar";
+            colEditar.UseColumnTextForButtonValue = true;
+            DataGridViewButtonColumn colBorrar = new DataGridViewButtonColumn();
+            colBorrar.Name= "Borrar";
+            colBorrar.Text = "Borrar";
+            colBorrar.UseColumnTextForButtonValue = true;
+            this.dgvInstalaciones.Columns.Add(colEditar);
+            this.dgvInstalaciones.Columns.Add(colBorrar);
+            this.Listar();
+        }
+
         public void Listar()
         {
-            dgvInstalaciones.DataSource = null;
+
             dgvInstalaciones.DataSource = negocio_instalacion.find_all();
             dgvInstalaciones.Refresh();
+
         }
 
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            dgvInstalaciones.Columns["DGVColBorrar"].Visible = true;
-            dgvInstalaciones.Columns["DGVColEditar"].Visible = true;
             Listar();
-            int columnIndex = dgvInstalaciones.Columns["DGVColEditar"].Index;
-            int lastIndex = dgvInstalaciones.Columns.Count - 1;
-
-            if (columnIndex != lastIndex)
-            {
-                dgvInstalaciones.Columns["DGVColBorrar"].DisplayIndex = lastIndex;
-                dgvInstalaciones.Columns["DGVColEditar"].DisplayIndex = lastIndex - 1;
-            }
+            
         }
 
 
@@ -49,18 +59,27 @@ namespace WinForm
         {
             dgvInstalaciones.AutoResizeColumns();
             dgvInstalaciones.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            if (e.RowIndex >= 0 && e.ColumnIndex == dgvInstalaciones.Columns["DGVColEditar"].Index)
+            if (e.RowIndex >= 0 && e.ColumnIndex == dgvInstalaciones.Columns["Editar"].Index)
             {
                 DataGridViewRow row = dgvInstalaciones.Rows[e.RowIndex];
                 int colId = int.Parse(row.Cells["Id"].Value.ToString());
-
-
+                instalacion_a_editar = negocio_instalacion.get_by_Id(colId);
+                if (instalacion_a_editar == null)
+                {
+                    MessageBox.Show("No se encontró la instalacion", "Error de busqueda", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    InstalacionForm editarInstalacionForm = new InstalacionForm(instalacion_a_editar);
+                    editarInstalacionForm.ShowDialog();
+                    
+                }
 
 
             }
 
 
-            if (e.RowIndex >= 0 && e.ColumnIndex == dgvInstalaciones.Columns["DGVColBorrar"].Index)
+            if (e.RowIndex >= 0 && e.ColumnIndex == dgvInstalaciones.Columns["Borrar"].Index)
             {
                 DataGridViewRow row = dgvInstalaciones.Rows[e.RowIndex];
                 int colId = int.Parse(row.Cells["Id"].Value.ToString());
@@ -77,29 +96,26 @@ namespace WinForm
                     }
                     MessageBox.Show("La acción se realizó con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            }
-            else
-            {
+                else
+                {
 
-                MessageBox.Show("La acción fue cancelada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("La acción fue cancelada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
+
 
         }
 
-    
+
 
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            AgregarInstalacionForm InstalacionForm = new AgregarInstalacionForm();
+            InstalacionForm InstalacionForm = new InstalacionForm();
             InstalacionForm.ShowDialog();
 
         }
 
-        private void ManejarInstalacionesForm_Load(object sender, EventArgs e)
-        {
-            dgvInstalaciones.Columns["DGVColEditar"].Visible = false;
-            dgvInstalaciones.Columns["DGVColBorrar"].Visible = false;
-        }
+
     }
 }

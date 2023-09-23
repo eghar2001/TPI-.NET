@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Negocio
 {
-    public class TituloRepetidoException : Exception
+    public class TituloInstalacionRepetidoException : Exception
     {
-        public TituloRepetidoException() : base("Ya se encuentra cargado ese titulo")
+        public TituloInstalacionRepetidoException() : base("Ya se encuentra cargado ese titulo")
         {
 
         }
@@ -25,10 +25,17 @@ namespace Negocio
     {
         Datos.Instalacion datos_instalacion = new Datos.Instalacion();
 
+        public Entidades.Instalacion? get_by_Id(int id)
+        {
+            return datos_instalacion.get_by_Id(id);
+        }
+
         public List<Entidades.Instalacion> find_all()
         {
             return datos_instalacion.find_all();
         }
+
+
 
         private bool EsNumero(string texto)
         {
@@ -50,7 +57,7 @@ namespace Negocio
 
             if (datos_instalacion.get_by_Titulo(instalacion.Titulo) != null)
             {
-                throw new TituloRepetidoException();
+                throw new TituloInstalacionRepetidoException();
             }
             else if (instalacion.Cupo <= 0)
             {
@@ -58,7 +65,19 @@ namespace Negocio
             }
 
             datos_instalacion.agregar_instalacion(instalacion);
-        } 
+        }
+
+        public void modificar_Instalacion(Entidades.Instalacion instalacion_a_editar)
+        {
+            Entidades.Instalacion? instalacion;
+            instalacion = datos_instalacion.get_by_Titulo(instalacion_a_editar.Titulo); 
+            if(instalacion != null && instalacion.Id != instalacion_a_editar.Id)
+            {
+                throw new TituloInstalacionRepetidoException();
+            }
+            datos_instalacion.modificar_instalacion(instalacion_a_editar);
+            
+        }
 
         public void remover_Instalacion(int id)
         {
