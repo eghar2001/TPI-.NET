@@ -86,6 +86,8 @@ namespace WinForm
                 };
                 negocio_instalacion.modificar_Instalacion(instalacion);
             }
+
+            this.DialogResult = DialogResult.OK;
         }
 
 

@@ -67,12 +67,12 @@
             // dgvInstalaciones
             // 
             dgvInstalaciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvInstalaciones.Location = new Point(52, 22);
+            dgvInstalaciones.Location = new Point(156, 51);
             dgvInstalaciones.Name = "dgvInstalaciones";
             dgvInstalaciones.RowTemplate.Height = 25;
-            dgvInstalaciones.Size = new Size(668, 301);
+            dgvInstalaciones.Size = new Size(458, 270);
             dgvInstalaciones.TabIndex = 3;
-            dgvInstalaciones.CellContentClick += dgvInstalaciones_CellContentClick;
+            dgvInstalaciones.CellClick += dgvInstalaciones_CellClick;
             // 
             // ManejarInstalacionesForm
             // 

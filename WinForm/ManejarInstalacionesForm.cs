@@ -24,22 +24,23 @@ namespace WinForm
 
         private void ManejarInstalacionesForm_Load(object sender, EventArgs e)
         {
+            this.Listar();
             DataGridViewButtonColumn colEditar = new DataGridViewButtonColumn();
-            colEditar.Name = "Editar";
+            colEditar.HeaderText = "Editar";
             colEditar.Text = "Editar";
             colEditar.UseColumnTextForButtonValue = true;
             DataGridViewButtonColumn colBorrar = new DataGridViewButtonColumn();
-            colBorrar.Name= "Borrar";
+            colBorrar.HeaderText = "Borrar";
             colBorrar.Text = "Borrar";
             colBorrar.UseColumnTextForButtonValue = true;
             this.dgvInstalaciones.Columns.Add(colEditar);
             this.dgvInstalaciones.Columns.Add(colBorrar);
-            this.Listar();
+            
         }
 
         public void Listar()
         {
-
+            dgvInstalaciones.DataSource= null;
             dgvInstalaciones.DataSource = negocio_instalacion.find_all();
             dgvInstalaciones.Refresh();
 
@@ -49,17 +50,34 @@ namespace WinForm
         private void btnListar_Click(object sender, EventArgs e)
         {
             Listar();
-            
+
         }
 
 
 
 
-        private void dgvInstalaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+
+
+
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            InstalacionForm InstalacionForm = new InstalacionForm();
+            InstalacionForm.ShowDialog();
+
+        }
+
+        private void dgvInstalaciones_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvInstalaciones.AutoResizeColumns();
             dgvInstalaciones.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            if (e.RowIndex >= 0 && e.ColumnIndex == dgvInstalaciones.Columns["Editar"].Index)
+
+            if (e.ColumnIndex < 0 || e.RowIndex < 0)
+            {
+                return;
+            }
+            if ("Editar" == dgvInstalaciones.Columns[e.ColumnIndex].HeaderText)
             {
                 DataGridViewRow row = dgvInstalaciones.Rows[e.RowIndex];
                 int colId = int.Parse(row.Cells["Id"].Value.ToString());
@@ -70,16 +88,20 @@ namespace WinForm
                 }
                 else
                 {
+
                     InstalacionForm editarInstalacionForm = new InstalacionForm(instalacion_a_editar);
                     editarInstalacionForm.ShowDialog();
-                    
+                    if(editarInstalacionForm.DialogResult == DialogResult.OK)
+                    {
+                        this.Listar();
+                    }
                 }
 
 
             }
 
 
-            if (e.RowIndex >= 0 && e.ColumnIndex == dgvInstalaciones.Columns["Borrar"].Index)
+            if ("Borrar" == dgvInstalaciones.Columns[e.ColumnIndex].HeaderText)
             {
                 DataGridViewRow row = dgvInstalaciones.Rows[e.RowIndex];
                 int colId = int.Parse(row.Cells["Id"].Value.ToString());
@@ -102,20 +124,6 @@ namespace WinForm
                     MessageBox.Show("La acción fue cancelada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-
-
         }
-
-
-
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            InstalacionForm InstalacionForm = new InstalacionForm();
-            InstalacionForm.ShowDialog();
-
-        }
-
-
     }
 }
