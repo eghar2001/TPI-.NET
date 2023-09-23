@@ -52,5 +52,11 @@ namespace WinForm
             AdministrarActividadesForm administrarActividades = new AdministrarActividadesForm();
             administrarActividades.Show();
         }
+
+        private void btnManejarInstalaciones_Click(object sender, EventArgs e)
+        {
+            ManejarInstalacionesForm manejarInstalaciones = new ManejarInstalacionesForm();
+            manejarInstalaciones.Show();
+        }
     }
 }

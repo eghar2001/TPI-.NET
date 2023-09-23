@@ -107,7 +107,7 @@
             subPanelActividades.Location = new Point(0, 319);
             subPanelActividades.Margin = new Padding(3, 2, 3, 2);
             subPanelActividades.Name = "subPanelActividades";
-            subPanelActividades.Padding = new Padding(4, 4, 4, 4);
+            subPanelActividades.Padding = new Padding(4);
             subPanelActividades.Size = new Size(254, 53);
             subPanelActividades.TabIndex = 8;
             subPanelActividades.Visible = false;
@@ -166,7 +166,7 @@
             subPanelnstalaciones.Location = new Point(0, 231);
             subPanelnstalaciones.Margin = new Padding(3, 2, 3, 2);
             subPanelnstalaciones.Name = "subPanelnstalaciones";
-            subPanelnstalaciones.Padding = new Padding(4, 4, 4, 4);
+            subPanelnstalaciones.Padding = new Padding(4);
             subPanelnstalaciones.Size = new Size(254, 54);
             subPanelnstalaciones.TabIndex = 6;
             subPanelnstalaciones.Visible = false;
@@ -200,6 +200,7 @@
             btnManejarInstalaciones.Text = "Manejar Instalaciones";
             btnManejarInstalaciones.TextAlign = ContentAlignment.MiddleRight;
             btnManejarInstalaciones.UseVisualStyleBackColor = true;
+            btnManejarInstalaciones.Click += btnManejarInstalaciones_Click;
             // 
             // btnInstalaciones
             // 
@@ -224,7 +225,7 @@
             subPanelProductos.Location = new Point(0, 145);
             subPanelProductos.Margin = new Padding(3, 2, 3, 2);
             subPanelProductos.Name = "subPanelProductos";
-            subPanelProductos.Padding = new Padding(4, 4, 4, 4);
+            subPanelProductos.Padding = new Padding(4);
             subPanelProductos.Size = new Size(254, 52);
             subPanelProductos.TabIndex = 4;
             subPanelProductos.Visible = false;
