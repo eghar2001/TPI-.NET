@@ -30,7 +30,6 @@
         {
             btnListar = new Button();
             btnAgregar = new Button();
-            btnEliminar = new Button();
             dgvInstalaciones = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dgvInstalaciones).BeginInit();
             SuspendLayout();
@@ -47,22 +46,13 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(324, 342);
+            btnAgregar.Location = new Point(446, 342);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(136, 25);
             btnAgregar.TabIndex = 1;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
             btnAgregar.Click += btnAgregar_Click;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.Location = new Point(466, 342);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(136, 25);
-            btnEliminar.TabIndex = 2;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
             // 
             // dgvInstalaciones
             // 
@@ -80,7 +70,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(dgvInstalaciones);
-            Controls.Add(btnEliminar);
             Controls.Add(btnAgregar);
             Controls.Add(btnListar);
             Name = "ManejarInstalacionesForm";
@@ -94,7 +83,6 @@
 
         private Button btnListar;
         private Button btnAgregar;
-        private Button btnEliminar;
         private DataGridView dgvInstalaciones;
     }
 }

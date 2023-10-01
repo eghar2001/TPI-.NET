@@ -46,13 +46,6 @@ namespace WinForm
 
             if (this.instalacion_a_editar == null)
             {
-
-               
-
-
-
-
-
                 Entidades.Instalacion instalacion = new Entidades.Instalacion()
                 {
                     Titulo = titulo,

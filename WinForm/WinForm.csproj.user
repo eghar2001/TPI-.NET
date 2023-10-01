@@ -31,6 +31,12 @@
     <Compile Update="MenuEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="AdministrarProfesores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AgregarProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Socios.cs">
       <SubType>Form</SubType>
     </Compile>

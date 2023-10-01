@@ -50,6 +50,7 @@
             lblLogo = new Label();
             pictureBox1 = new PictureBox();
             lblMenu = new Label();
+            btnAdministrarProfes = new Button();
             panelMenuLateral.SuspendLayout();
             subPanelActividades.SuspendLayout();
             subPanelnstalaciones.SuspendLayout();
@@ -83,6 +84,7 @@
             // panelMenuLateral
             // 
             panelMenuLateral.BackColor = Color.IndianRed;
+            panelMenuLateral.Controls.Add(btnAdministrarProfes);
             panelMenuLateral.Controls.Add(subPanelActividades);
             panelMenuLateral.Controls.Add(btnActividades);
             panelMenuLateral.Controls.Add(subPanelnstalaciones);
@@ -328,6 +330,20 @@
             lblMenu.TabIndex = 4;
             lblMenu.Text = "Menu Empleados";
             // 
+            // btnAdministrarProfes
+            // 
+            btnAdministrarProfes.Dock = DockStyle.Top;
+            btnAdministrarProfes.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAdministrarProfes.Location = new Point(0, 372);
+            btnAdministrarProfes.Margin = new Padding(3, 2, 3, 2);
+            btnAdministrarProfes.Name = "btnAdministrarProfes";
+            btnAdministrarProfes.Size = new Size(254, 34);
+            btnAdministrarProfes.TabIndex = 9;
+            btnAdministrarProfes.Text = "Administrar Profesores";
+            btnAdministrarProfes.TextAlign = ContentAlignment.MiddleRight;
+            btnAdministrarProfes.UseVisualStyleBackColor = true;
+            btnAdministrarProfes.Click += btnAdministrarProfes_Click;
+            // 
             // MenuEmpleado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -378,5 +394,6 @@
         private Button button3;
         private Button btnCompraProducto;
         private Button btnAdministrarProductos;
+        private Button btnAdministrarProfes;
     }
 }

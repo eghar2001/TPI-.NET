@@ -35,12 +35,12 @@ namespace WinForm
             colBorrar.UseColumnTextForButtonValue = true;
             this.dgvInstalaciones.Columns.Add(colEditar);
             this.dgvInstalaciones.Columns.Add(colBorrar);
-            
+
         }
 
         public void Listar()
         {
-            dgvInstalaciones.DataSource= null;
+            dgvInstalaciones.DataSource = null;
             dgvInstalaciones.DataSource = negocio_instalacion.find_all();
             dgvInstalaciones.Refresh();
 
@@ -65,6 +65,7 @@ namespace WinForm
         {
             InstalacionForm InstalacionForm = new InstalacionForm();
             InstalacionForm.ShowDialog();
+            this.Listar();
 
         }
 
@@ -91,7 +92,7 @@ namespace WinForm
 
                     InstalacionForm editarInstalacionForm = new InstalacionForm(instalacion_a_editar);
                     editarInstalacionForm.ShowDialog();
-                    if(editarInstalacionForm.DialogResult == DialogResult.OK)
+                    if (editarInstalacionForm.DialogResult == DialogResult.OK)
                     {
                         this.Listar();
                     }
@@ -112,11 +113,12 @@ namespace WinForm
                     {
                         negocio_instalacion.remover_Instalacion(colId);
                     }
-                    catch (InstalacionInexistenteException)
+                    catch (ProfesorInexistenteException)
                     {
                         MessageBox.Show("La instalacion no existe", "Instalacion inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     MessageBox.Show("La acción se realizó con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Listar();
                 }
                 else
                 {

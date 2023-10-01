@@ -58,5 +58,11 @@ namespace WinForm
             ManejarInstalacionesForm manejarInstalaciones = new ManejarInstalacionesForm();
             manejarInstalaciones.Show();
         }
+
+        private void btnAdministrarProfes_Click(object sender, EventArgs e)
+        {
+            AdministrarProfesores administrarProfesores = new AdministrarProfesores();
+            administrarProfesores.Show();
+        }
     }
 }

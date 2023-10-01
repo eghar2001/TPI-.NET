@@ -14,9 +14,11 @@ namespace Negocio
         }
     }
 
-    public class InstalacionInexistenteException : Exception
+    public class InstalacionInexistenteException : Exception { }
+
+    public class ProfesorInexistenteException : Exception
     {
-        public InstalacionInexistenteException() : base("Ya se encuentra cargado ese titulo")
+        public ProfesorInexistenteException() : base("Ya se encuentra cargado ese titulo")
         {
 
         }
