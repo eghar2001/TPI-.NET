@@ -19,6 +19,7 @@ namespace WinForm
         public InstalacionForm()
         {
             InitializeComponent();
+            this.lblTitulo.Text = "Agregar Instalacion";
         }
 
         public InstalacionForm(Entidades.Instalacion instalacion_a_editar)
@@ -29,6 +30,7 @@ namespace WinForm
             this.txtCupo.Text = instalacion_a_editar.Cupo.ToString();
             this.txtDesc.Text = instalacion_a_editar.Descripcion;
             this.txtTitulo.Text = instalacion_a_editar.Titulo;
+            this.lblTitulo.Text = "Modificar Instalacion";
         }
 
 
@@ -77,12 +79,22 @@ namespace WinForm
                     Cupo = cupo,
                     Descripcion = desc,
                 };
-                negocio_instalacion.modificar_Instalacion(instalacion);
+                try
+                {
+                    negocio_instalacion.modificar_Instalacion(instalacion);
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    MessageBox.Show("El Cupo debe ser mayor a 0", "Problema de Cupo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (TituloInstalacionRepetidoException)
+                {
+                    MessageBox.Show("El Titulo se encuentra repetido", "Problema de titulo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
 
             this.DialogResult = DialogResult.OK;
         }
-
-
     }
 }

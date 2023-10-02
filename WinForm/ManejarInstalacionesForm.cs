@@ -40,7 +40,7 @@ namespace WinForm
 
         public void Listar()
         {
-            dgvInstalaciones.DataSource = null;
+           
             dgvInstalaciones.DataSource = negocio_instalacion.find_all();
             dgvInstalaciones.Refresh();
 

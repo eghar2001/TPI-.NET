@@ -77,6 +77,10 @@ namespace Negocio
             {
                 throw new TituloInstalacionRepetidoException();
             }
+            else if (instalacion_a_editar.Cupo <= 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
             datos_instalacion.modificar_instalacion(instalacion_a_editar);
             
         }

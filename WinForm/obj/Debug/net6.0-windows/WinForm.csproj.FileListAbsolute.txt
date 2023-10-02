@@ -393,4 +393,4 @@ C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\Win
 C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.EditarInstalacionForm.resources
 C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.InstalacionForm.resources
 C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.AdministrarProfesores.resources
-C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.AgregarProfesor.resources
+C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.ProfesorForm.resources

@@ -23,7 +23,6 @@ namespace WinForm
 
         public void Listar()
         {
-            dgvProfesores.DataSource = null;
             dgvProfesores.DataSource = negocio_profesor.find_all();
             dgvProfesores.Refresh();
 
@@ -33,8 +32,9 @@ namespace WinForm
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            AgregarProfesor profesorform = new AgregarProfesor();
+            ProfesorForm profesorform = new ProfesorForm();
             profesorform.ShowDialog();
+            this.Listar();
         }
 
 
@@ -77,15 +77,15 @@ namespace WinForm
             {
                 DataGridViewRow row = dgvProfesores.Rows[e.RowIndex];
                 int colId = int.Parse(row.Cells["Id"].Value.ToString());
-                profesor_a_editar = negocio_profesor.get_one(colId);
+                profesor_a_editar = negocio_profesor.get_one(colId);         // VER
                 if (profesor_a_editar == null)
                 {
-                    MessageBox.Show("No se encontró la instalacion", "Error de busqueda", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se encontró el profesor", "Error de busqueda", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
 
-                    AgregarProfesor editarProfesor = new AgregarProfesor(profesor_a_editar);
+                    ProfesorForm editarProfesor = new ProfesorForm(profesor_a_editar);
                     editarProfesor.ShowDialog();
                     if (editarProfesor.DialogResult == DialogResult.OK)
                     {
@@ -101,24 +101,21 @@ namespace WinForm
             {
                 DataGridViewRow row = dgvProfesores.Rows[e.RowIndex];
                 int colId = int.Parse(row.Cells["Id"].Value.ToString());
-                DialogResult resultado = MessageBox.Show($"¿Estás seguro que desea borrar la inslatacion:{row.Cells["Nombre"].Value.ToString()}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult resultado = MessageBox.Show($"¿Estás seguro que desea borrar el profesor:{row.Cells["Nombre"].Value.ToString()}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (resultado == DialogResult.Yes)
                 {
                     try
                     {
                         negocio_profesor.borrar_profesor(colId);
+                        this.Listar();
                     }
                     catch (ProfesorInexistenteException)
                     {
-                        MessageBox.Show("La instalacion no existe", "Instalacion inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("La instalacion no existe", "Profesor inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     MessageBox.Show("La acción se realizó con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else
-                {
-
-                    MessageBox.Show("La acción fue cancelada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                
             }
         }
     }

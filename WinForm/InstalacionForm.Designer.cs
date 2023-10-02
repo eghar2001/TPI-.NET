@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblTitulo = new Label();
+            lblTituloInstalacion = new Label();
             lblDescripcion = new Label();
             lblCupo = new Label();
-            label1 = new Label();
+            lblTitulo = new Label();
             txtTitulo = new TextBox();
             txtDesc = new TextBox();
             txtCupo = new TextBox();
             btnGuardar = new Button();
             SuspendLayout();
             // 
-            // lblTitulo
+            // lblTituloInstalacion
             // 
-            lblTitulo.AutoSize = true;
-            lblTitulo.Location = new Point(56, 106);
-            lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(46, 15);
-            lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "Titulo : ";
+            lblTituloInstalacion.AutoSize = true;
+            lblTituloInstalacion.Location = new Point(56, 106);
+            lblTituloInstalacion.Name = "lblTituloInstalacion";
+            lblTituloInstalacion.Size = new Size(46, 15);
+            lblTituloInstalacion.TabIndex = 0;
+            lblTituloInstalacion.Text = "Titulo : ";
             // 
             // lblDescripcion
             // 
@@ -65,14 +65,15 @@
             lblCupo.TabIndex = 2;
             lblCupo.Text = "Cupo :";
             // 
-            // label1
+            // lblTitulo
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(180, 40);
-            label1.Name = "label1";
-            label1.Size = new Size(109, 15);
-            label1.TabIndex = 3;
-            label1.Text = "Agregar Instalacion";
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitulo.Location = new Point(141, 35);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(190, 22);
+            lblTitulo.TabIndex = 3;
+            lblTitulo.Text = "Agregar Instalacion";
             // 
             // txtTitulo
             // 
@@ -117,10 +118,10 @@
             Controls.Add(txtCupo);
             Controls.Add(txtDesc);
             Controls.Add(txtTitulo);
-            Controls.Add(label1);
+            Controls.Add(lblTitulo);
             Controls.Add(lblCupo);
             Controls.Add(lblDescripcion);
-            Controls.Add(lblTitulo);
+            Controls.Add(lblTituloInstalacion);
             Name = "InstalacionForm";
             Text = "AgregarInstalacion";
             ResumeLayout(false);
@@ -129,10 +130,10 @@
 
         #endregion
 
-        private Label lblTitulo;
+        private Label lblTituloInstalacion;
         private Label lblDescripcion;
         private Label lblCupo;
-        private Label label1;
+        private Label lblTitulo;
         private TextBox txtTitulo;
         private TextBox txtDesc;
         private TextBox txtCupo;

@@ -36,9 +36,11 @@ namespace Negocio
         public void modificar_profesor(Entidades.Profesor profesor_a_editar)
         {
             Entidades.Profesor? profesor;
-            profesor = datos_profesor.get_one(profesor_a_editar.Id);
+            if (profesor_a_editar.Salario < 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
             datos_profesor.modificar_profesor(profesor_a_editar);
-            //FALTAN VALIDACIONES
         }
 
         public void borrar_profesor(int  id)
