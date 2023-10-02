@@ -39,7 +39,7 @@
             // 
             lblAdministrarActividades.AutoSize = true;
             lblAdministrarActividades.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAdministrarActividades.Location = new Point(132, 43);
+            lblAdministrarActividades.Location = new Point(60, 62);
             lblAdministrarActividades.Name = "lblAdministrarActividades";
             lblAdministrarActividades.Size = new Size(515, 50);
             lblAdministrarActividades.TabIndex = 0;
@@ -47,17 +47,24 @@
             // 
             // dgvActividades
             // 
+            dgvActividades.AllowUserToAddRows = false;
+            dgvActividades.AllowUserToDeleteRows = false;
+            dgvActividades.AllowUserToResizeColumns = false;
+            dgvActividades.AllowUserToResizeRows = false;
+            dgvActividades.BackgroundColor = SystemColors.ScrollBar;
             dgvActividades.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvActividades.Location = new Point(142, 114);
+            dgvActividades.GridColor = SystemColors.ScrollBar;
+            dgvActividades.Location = new Point(60, 158);
             dgvActividades.Name = "dgvActividades";
             dgvActividades.RowTemplate.Height = 25;
-            dgvActividades.Size = new Size(492, 150);
+            dgvActividades.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            dgvActividades.Size = new Size(770, 253);
             dgvActividades.TabIndex = 1;
             dgvActividades.CellClick += dgvActividades_CellClick;
             // 
             // btnActualizar
             // 
-            btnActualizar.Location = new Point(234, 324);
+            btnActualizar.Location = new Point(60, 451);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(75, 23);
             btnActualizar.TabIndex = 2;
@@ -67,7 +74,7 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(427, 326);
+            btnAgregar.Location = new Point(755, 86);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(75, 23);
             btnAgregar.TabIndex = 3;
@@ -79,7 +86,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(912, 505);
             Controls.Add(btnAgregar);
             Controls.Add(btnActualizar);
             Controls.Add(dgvActividades);

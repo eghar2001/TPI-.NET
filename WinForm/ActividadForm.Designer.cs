@@ -159,6 +159,7 @@
             Controls.Add(lblNombre);
             Controls.Add(txtNombre);
             Controls.Add(lblTitulo);
+            MaximizeBox = false;
             Name = "ActividadForm";
             Text = "Agregar Actividad";
             ResumeLayout(false);

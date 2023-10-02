@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Datos
     {
         
 
-        public List<Entidades.Actividad> find_all()
+        public List<Entidades.Actividad> findAll()
         {
             using (var context = new ApplicationDbContext()) 
             {
@@ -26,7 +27,7 @@ namespace Datos
             }
         }
 
-        public void agregar_actividad(Entidades.Actividad actividad_nueva) 
+        public void agregarActividad(Entidades.Actividad actividad_nueva) 
         {
             using (var context = new ApplicationDbContext())
             {
@@ -41,14 +42,14 @@ namespace Datos
                 context.SaveChanges();        
             }
         }
-        public Entidades.Actividad? find_by_nombre(string nombre)
+        public Entidades.Actividad? findByNombre(string nombre)
         {
             using (var context = new ApplicationDbContext())
             {
                 return context.Actividades.FirstOrDefault(a => a.Nombre == nombre);
             }
         }
-        public void modificar_actividad(Entidades.Actividad actividad_modificada)
+        public void modificarActividad(Entidades.Actividad actividad_modificada)
         {
             Entidades.Actividad actividad_original = get(actividad_modificada.Id);
 
@@ -76,5 +77,6 @@ namespace Datos
                 context.SaveChanges();
             }
         }
+        
     }
 }

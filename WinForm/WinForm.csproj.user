@@ -13,7 +13,16 @@
     <Compile Update="BorrarSocioForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Componentes\ListadoInstalaciones.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Componentes\TimePicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="ComprarProductoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="HorarioForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ListadoProductosForm.cs">
@@ -26,6 +35,15 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Socios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AdministrarTurnosActividadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AdministrarTurnoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TurnoForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

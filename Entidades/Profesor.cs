@@ -21,5 +21,10 @@ namespace Entidades
 
         [Required]
         public decimal Salario { get; set; }
+
+        public string getNombApell()
+        {
+            return this.Nombre + " " + this.Apellido;
+        }
     }
 }

@@ -37,6 +37,14 @@ namespace Entidades
 
 
 
+        [NotMapped]
+        public DateTime FechaHoraFin
+        {
+            get 
+            {
+                return this.FechaHoraReserva.AddHours((double)DuracionEnHoras);
+            }
+        }
 
     }
 }

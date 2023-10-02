@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio.DTOS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace Negocio
 
         public List<Entidades.Actividad> find_all()
         {
-            return datos_actividad.find_all();
+            return datos_actividad.findAll();
         }
         public Entidades.Actividad? get(int actividad_id) 
         {
@@ -23,21 +24,21 @@ namespace Negocio
         }
         public void agregar_actividad(Entidades.Actividad actividad_nueva)
         {
-            bool nombre_existente =datos_actividad.find_by_nombre(actividad_nueva.Nombre) != null;
+            bool nombre_existente =datos_actividad.findByNombre(actividad_nueva.Nombre) != null;
             if (nombre_existente)
             {
                 throw new NombreActividadExistenteException(); 
             }
-            datos_actividad.agregar_actividad(actividad_nueva);
+            datos_actividad.agregarActividad(actividad_nueva);
         }
         public void modificar_actividad(Entidades.Actividad actividad_modificada)
         {
-            Entidades.Actividad actividad = datos_actividad.find_by_nombre(actividad_modificada.Nombre);
+            Entidades.Actividad actividad = datos_actividad.findByNombre(actividad_modificada.Nombre);
             if (actividad != null && actividad.Id != actividad_modificada.Id   )
             {
                 throw new NombreActividadExistenteException();
             }
-            datos_actividad.modificar_actividad(actividad_modificada);
+            datos_actividad.modificarActividad(actividad_modificada);
         }
         public void borrar_actividad(Entidades.Actividad actividad_a_borrar) 
         {
@@ -47,6 +48,7 @@ namespace Negocio
             }
            
         }
+        
     }
     
 

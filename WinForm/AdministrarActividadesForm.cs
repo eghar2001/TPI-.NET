@@ -27,19 +27,30 @@ namespace WinForm
 
         private void AdministrarActividadesForm_Load(object sender, EventArgs e)
         {
-
+            
             this.Listar();
+            DataGridViewButtonColumn colTurnos = new DataGridViewButtonColumn();
+            colTurnos.HeaderText = "Turnos";
+            colTurnos.Text = "Ir a Turnos";
+            colTurnos.UseColumnTextForButtonValue = true;
+
             DataGridViewButtonColumn colEditar = new DataGridViewButtonColumn();
             colEditar.HeaderText = "Editar";
             colEditar.Text = "Editar";
             colEditar.UseColumnTextForButtonValue = true;
+
             DataGridViewButtonColumn colBorrar = new DataGridViewButtonColumn();
             colBorrar.HeaderText = "Borrar";
             colBorrar.Text = "Borrar";
             colBorrar.UseColumnTextForButtonValue = true;
 
+            
+
+            this.dgvActividades.Columns.Add(colTurnos);
             this.dgvActividades.Columns.Add(colEditar);
+            
             this.dgvActividades.Columns.Add(colBorrar);
+            
 
 
 
@@ -62,20 +73,24 @@ namespace WinForm
 
         private void dgvActividades_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex <0 || e.RowIndex <0)
+            if (e.ColumnIndex < 0 || e.RowIndex < 0)
             {
                 return;
             }
             int id_actividad = Convert.ToInt32(dgvActividades.Rows[e.RowIndex].Cells["Id"].Value);
             Entidades.Actividad actividad = negocio_actividad.get(id_actividad);
-            if (dgvActividades.Columns[e.ColumnIndex].HeaderText == "Editar") 
+            if (dgvActividades.Columns[e.ColumnIndex].HeaderText == "Editar")
             {
-                
+
                 ActividadForm editarActividadForm = new ActividadForm(actividad);
                 editarActividadForm.ShowDialog();
-                this.Listar();
+                if (editarActividadForm.DialogResult == DialogResult.OK)
+                {
+                    this.Listar();
+                }
+
             }
-            if (dgvActividades.Columns[e.ColumnIndex].HeaderText == "Borrar")
+            else if (dgvActividades.Columns[e.ColumnIndex].HeaderText == "Borrar")
             {
                 DialogResult resultado = MessageBox.Show("Desea borrar la actividad '" + actividad.Nombre + "'?", "Borrar Actividad", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (resultado == DialogResult.OK)
@@ -83,6 +98,16 @@ namespace WinForm
                     negocio_actividad.borrar_actividad(actividad);
                     this.Listar();
                 }
+            }
+            else if (dgvActividades.Columns[e.ColumnIndex].HeaderText == "Turnos")
+            {
+                
+                AdministrarTurnosActividadForm turnosActividadForm = new AdministrarTurnosActividadForm(actividad); 
+                
+                turnosActividadForm.FormClosed += (s, args) => { this.Show(); };
+                turnosActividadForm.Show();
+                this.Hide();
+                
             }
         }
     }

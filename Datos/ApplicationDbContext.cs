@@ -71,6 +71,7 @@ public class ConnectionStringNotFoundException: Exception
         public DbSet<Producto> Productos => Set<Producto>();
         public DbSet<TipoUsuario> TiposUsuario => Set<TipoUsuario>();
         public DbSet<Actividad> Actividades => Set<Actividad>();
+        
 
 
 
@@ -88,6 +89,7 @@ public class ConnectionStringNotFoundException: Exception
         public DbSet<Venta> Ventas => Set<Venta>();
 
         public DbSet<Reserva> Reservas => Set<Reserva>();
-
+        
+        public DbSet<Horario> Horarios => Set<Horario>();
 
 }

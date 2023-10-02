@@ -20,6 +20,7 @@ namespace WinForm
         public ActividadForm()
         {
             InitializeComponent();
+            this.Text = "Agregar Actividad";
             this.lblTitulo.Text = "Agregar Actividad";
             this.lblErrorNombre.Text = null;
             this.lblErrorDescripcion.Text = null;
@@ -28,6 +29,7 @@ namespace WinForm
         public ActividadForm(Entidades.Actividad actividad_original)
         {
             InitializeComponent();
+            this.Text = "Editar Actividad";
             this.lblTitulo.Text = "Editar Actividad";
 
             this.lblErrorNombre.Text = null;
@@ -62,7 +64,8 @@ namespace WinForm
         }
         private bool NombreValido()
         {
-            if (txtNombre.Text.Length == 150)
+            
+            if (txtNombre.Text.Length == 0)
             {
                 this.lblErrorNombre.Text = "Debe ingresar un nombre";
                 return false;
