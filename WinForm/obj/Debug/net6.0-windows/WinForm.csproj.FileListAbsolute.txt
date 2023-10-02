@@ -229,3 +229,7 @@ C:\Users\Pedro\Source\Repos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.ge
 C:\Users\Pedro\Source\Repos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\ref\WinForm.dll
 K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.MenuEmpleado.resources
 K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.MenuSocio.resources
+C:\Users\Pedro\Source\Repos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.AdministrarProductosForm.resources
+C:\Users\Pedro\Source\Repos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.MenuEmpleado.resources
+C:\Users\Pedro\Source\Repos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.MenuSocio.resources
+C:\Users\Pedro\source\repos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.AgregarProductoForm.resources

@@ -46,5 +46,11 @@ namespace WinForm
             Socios administrarSocios = new Socios();
             administrarSocios.ShowDialog();
         }
+
+        private void btnAdministrarProductos_Click(object sender, EventArgs e)
+        {
+            AdministrarProductosForm administrarProductosForm = new AdministrarProductosForm();
+            administrarProductosForm.ShowDialog();
+        }
     }
 }
