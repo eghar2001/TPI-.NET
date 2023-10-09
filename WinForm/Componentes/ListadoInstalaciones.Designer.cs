@@ -28,69 +28,82 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblFiltrar = new Label();
-            txtTitulo = new TextBox();
             listboxInstalaciones = new ListBox();
+            pnlBusqueda = new Panel();
             btnLimpiar = new Button();
+            txtTitulo = new TextBox();
+            lblFiltrar = new Label();
+            pnlBusqueda.SuspendLayout();
             SuspendLayout();
-            // 
-            // lblFiltrar
-            // 
-            lblFiltrar.AutoSize = true;
-            lblFiltrar.Location = new Point(16, 32);
-            lblFiltrar.Name = "lblFiltrar";
-            lblFiltrar.Size = new Size(120, 20);
-            lblFiltrar.TabIndex = 1;
-            lblFiltrar.Text = "Filtrar por titulo: ";
-            // 
-            // txtTitulo
-            // 
-            txtTitulo.Location = new Point(182, 32);
-            txtTitulo.Name = "txtTitulo";
-            txtTitulo.Size = new Size(445, 27);
-            txtTitulo.TabIndex = 2;
-            txtTitulo.TextChanged += textBox1_TextChanged;
             // 
             // listboxInstalaciones
             // 
             listboxInstalaciones.Dock = DockStyle.Bottom;
             listboxInstalaciones.FormattingEnabled = true;
             listboxInstalaciones.ItemHeight = 20;
-            listboxInstalaciones.Location = new Point(0, 141);
+            listboxInstalaciones.Location = new Point(0, 89);
             listboxInstalaciones.Name = "listboxInstalaciones";
-            listboxInstalaciones.Size = new Size(643, 304);
+            listboxInstalaciones.Size = new Size(660, 304);
             listboxInstalaciones.TabIndex = 3;
             listboxInstalaciones.SelectedIndexChanged += listboxInstalaciones_SelectedIndexChanged;
             // 
+            // pnlBusqueda
+            // 
+            pnlBusqueda.BackColor = SystemColors.ControlDark;
+            pnlBusqueda.Controls.Add(btnLimpiar);
+            pnlBusqueda.Controls.Add(txtTitulo);
+            pnlBusqueda.Controls.Add(lblFiltrar);
+            pnlBusqueda.Dock = DockStyle.Bottom;
+            pnlBusqueda.Location = new Point(0, 0);
+            pnlBusqueda.Name = "pnlBusqueda";
+            pnlBusqueda.Size = new Size(660, 89);
+            pnlBusqueda.TabIndex = 5;
+            // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(533, 92);
+            btnLimpiar.Location = new Point(533, 45);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(94, 29);
-            btnLimpiar.TabIndex = 4;
-            btnLimpiar.Text = "Reset";
+            btnLimpiar.TabIndex = 7;
+            btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
-            btnLimpiar.Click += btnLimpiar_Click;
+            btnLimpiar.Click += btnLimpiar_Click_1;
+            // 
+            // txtTitulo
+            // 
+            txtTitulo.Location = new Point(182, 12);
+            txtTitulo.Name = "txtTitulo";
+            txtTitulo.Size = new Size(445, 27);
+            txtTitulo.TabIndex = 6;
+            txtTitulo.TextChanged += txtTitulo_TextChanged;
+            // 
+            // lblFiltrar
+            // 
+            lblFiltrar.AutoSize = true;
+            lblFiltrar.Location = new Point(16, 12);
+            lblFiltrar.Name = "lblFiltrar";
+            lblFiltrar.Size = new Size(120, 20);
+            lblFiltrar.TabIndex = 5;
+            lblFiltrar.Text = "Filtrar por titulo: ";
             // 
             // ListadoInstalaciones
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.Inherit;
             AutoSize = true;
-            Controls.Add(btnLimpiar);
+            Controls.Add(pnlBusqueda);
             Controls.Add(listboxInstalaciones);
-            Controls.Add(txtTitulo);
-            Controls.Add(lblFiltrar);
             Name = "ListadoInstalaciones";
-            Size = new Size(643, 445);
+            Size = new Size(660, 393);
+            pnlBusqueda.ResumeLayout(false);
+            pnlBusqueda.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-        private Label lblFiltrar;
-        private TextBox txtTitulo;
         private ListBox listboxInstalaciones;
+        private Panel pnlBusqueda;
+        private TextBox txtTitulo;
+        private Label lblFiltrar;
         private Button btnLimpiar;
     }
 }

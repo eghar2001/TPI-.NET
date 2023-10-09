@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "03YTgmmf2nlXXyEbAnTsaQSb+ZdzeUWGW3DXZlJnNQKh4OSXN6rJuKkEqUQzryhiUlfRdRq1CuICmMPfMvRKdQ==",
+  "dgSpecHash": "jRpKqSpzhXAbysFysKwc/1PyE9cs1hpZ3OhC65mVXtFfwWWrgWip3FA+hldxu4U+dTSkS9AR6hTO544qrcEOlA==",
   "success": true,
-  "projectFilePath": "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj",
+  "projectFilePath": "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eghar\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\eghar\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

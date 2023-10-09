@@ -26,5 +26,10 @@ namespace Entidades
         {
             return this.Nombre + " " + this.Apellido;
         }
+
+        public override string ToString()
+        {
+            return this.getNombApell();
+        }
     }
 }

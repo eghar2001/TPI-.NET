@@ -53,6 +53,14 @@ namespace Datos
                 return horarios;
             }
         }
+        public void agregarTurno(Turno turno_nuevo)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                context.Add(turno_nuevo);
+                context.SaveChanges();
+            }
+        }
         public void agregarHorarioTurno(Horario horario_nuevo)
         {
             using(var context = new ApplicationDbContext())

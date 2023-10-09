@@ -3033,11 +3033,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Proyectos\\TPI-.NET\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectUniqueName": "K:\\Proyectos\\.NET\\TPI-.NET\\ConsoleApp1\\ConsoleApp1.csproj",
       "projectName": "ConsoleApp1",
-      "projectPath": "D:\\Proyectos\\TPI-.NET\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\ConsoleApp1\\ConsoleApp1.csproj",
       "packagesPath": "C:\\Users\\eghar\\.nuget\\packages\\",
-      "outputPath": "D:\\Proyectos\\TPI-.NET\\ConsoleApp1\\obj\\",
+      "outputPath": "K:\\Proyectos\\.NET\\TPI-.NET\\ConsoleApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\eghar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3054,11 +3054,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj": {
-              "projectPath": "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj"
+            "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj": {
+              "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Entidades\\Entidades.csproj"
             },
-            "D:\\Proyectos\\TPI-.NET\\Negocio\\Negocio.csproj": {
-              "projectPath": "D:\\Proyectos\\TPI-.NET\\Negocio\\Negocio.csproj"
+            "K:\\Proyectos\\.NET\\TPI-.NET\\Negocio\\Negocio.csproj": {
+              "projectPath": "K:\\Proyectos\\.NET\\TPI-.NET\\Negocio\\Negocio.csproj"
             }
           }
         }
@@ -3100,7 +3100,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

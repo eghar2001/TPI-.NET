@@ -316,3 +316,12 @@ D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\ref\WinForm.dll
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.AdministrarTurnoForm.resources
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.Componentes.ListadoInstalaciones.resources
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.TurnoForm.resources
+K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.ActividadForm.resources
+K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.AdministrarActividadesForm.resources
+K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.AdministrarTurnoForm.resources
+K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.AdministrarTurnosActividadForm.resources
+K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.Componentes.ListadoInstalaciones.resources
+K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.Componentes.TimePicker.resources
+K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.HorarioForm.resources
+K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.TurnoForm.resources
+K:\Proyectos\.NET\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.Componentes.ListadoProfesores.resources

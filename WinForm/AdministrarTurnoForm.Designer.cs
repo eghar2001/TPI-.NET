@@ -121,7 +121,7 @@
             // 
             lblPrecio.AutoSize = true;
             lblPrecio.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPrecio.Location = new Point(746, 91);
+            lblPrecio.Location = new Point(746, 133);
             lblPrecio.Name = "lblPrecio";
             lblPrecio.Size = new Size(66, 28);
             lblPrecio.TabIndex = 11;

@@ -64,7 +64,7 @@ namespace WinForm
 
         private void btnAgregarTurno_Click(object sender, EventArgs e)
         {
-            TurnoForm turnoForm = new TurnoForm();
+            TurnoForm turnoForm = new TurnoForm(this.actividad);
             turnoForm.ShowDialog();
         }
     }

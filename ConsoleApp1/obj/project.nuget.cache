@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UBE9UGVf24e9ps3QLWMupE305EcxJuBEkeRPILpngWEOw4hQm7Xa+xHX466wLO7J4NpJdkNjf9smlKgddP1aJg==",
+  "dgSpecHash": "/gCiDLaY5lnbI7ahXrU0RDbe/i/8iOG7PnRtnlhqU08/iICgCnDtz28Kd5kfL0CMe0qgef2DlN0+QzftwyE+0Q==",
   "success": true,
-  "projectFilePath": "D:\\Proyectos\\TPI-.NET\\ConsoleApp1\\ConsoleApp1.csproj",
+  "projectFilePath": "K:\\Proyectos\\.NET\\TPI-.NET\\ConsoleApp1\\ConsoleApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eghar\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\eghar\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

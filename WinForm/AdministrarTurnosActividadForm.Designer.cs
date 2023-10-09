@@ -52,7 +52,7 @@
             // 
             lblPrecioActividad.AutoSize = true;
             lblPrecioActividad.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPrecioActividad.Location = new Point(721, 63);
+            lblPrecioActividad.Location = new Point(675, 128);
             lblPrecioActividad.Name = "lblPrecioActividad";
             lblPrecioActividad.Size = new Size(204, 32);
             lblPrecioActividad.TabIndex = 1;
@@ -62,7 +62,7 @@
             // 
             lblDescripcion.AutoSize = true;
             lblDescripcion.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDescripcion.Location = new Point(63, 123);
+            lblDescripcion.Location = new Point(63, 134);
             lblDescripcion.Name = "lblDescripcion";
             lblDescripcion.Size = new Size(194, 25);
             lblDescripcion.TabIndex = 2;
