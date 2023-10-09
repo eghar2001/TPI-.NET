@@ -31,6 +31,7 @@ namespace WinForm
             this.txtDesc.Text = instalacion_a_editar.Descripcion;
             this.txtTitulo.Text = instalacion_a_editar.Titulo;
             this.lblTitulo.Text = "Modificar Instalacion";
+            this.txtPrecio.Text = (instalacion_a_editar.UltimoPrecio).ToString();
         }
 
 
@@ -40,11 +41,13 @@ namespace WinForm
             string titulo = txtTitulo.Text;
             string desc = txtDesc.Text;
             int cupo = 0;
+            decimal precio = Convert.ToDecimal(txtPrecio.Text);
             try
             {
                 cupo = int.Parse(txtCupo.Text);
+                precio = Convert.ToDecimal(txtPrecio.Text);
             }
-            catch (FormatException) { MessageBox.Show("El Cupo debe ser un entero", "Problema de Cupo", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch (FormatException) { MessageBox.Show("El Cupo o precio debe ser un entero", "Problema de Cupo", MessageBoxButtons.OK, MessageBoxIcon.Error); }
 
             if (this.instalacion_a_editar == null)
             {
@@ -53,6 +56,7 @@ namespace WinForm
                     Titulo = titulo,
                     Cupo = cupo,
                     Descripcion = desc,
+                    UltimoPrecio = precio
                 };
 
                 try
@@ -78,6 +82,7 @@ namespace WinForm
                     Titulo = titulo,
                     Cupo = cupo,
                     Descripcion = desc,
+                    UltimoPrecio = precio
                 };
                 try
                 {

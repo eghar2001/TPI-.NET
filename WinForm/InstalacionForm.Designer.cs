@@ -36,6 +36,8 @@
             txtDesc = new TextBox();
             txtCupo = new TextBox();
             btnGuardar = new Button();
+            lblPrecio = new Label();
+            txtPrecio = new TextBox();
             SuspendLayout();
             // 
             // lblTituloInstalacion
@@ -109,11 +111,29 @@
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
             // 
+            // lblPrecio
+            // 
+            lblPrecio.AutoSize = true;
+            lblPrecio.Location = new Point(358, 189);
+            lblPrecio.Name = "lblPrecio";
+            lblPrecio.Size = new Size(43, 15);
+            lblPrecio.TabIndex = 8;
+            lblPrecio.Text = "Precio:";
+            // 
+            // txtPrecio
+            // 
+            txtPrecio.Location = new Point(406, 186);
+            txtPrecio.Name = "txtPrecio";
+            txtPrecio.Size = new Size(68, 23);
+            txtPrecio.TabIndex = 9;
+            // 
             // InstalacionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(490, 356);
+            Controls.Add(txtPrecio);
+            Controls.Add(lblPrecio);
             Controls.Add(btnGuardar);
             Controls.Add(txtCupo);
             Controls.Add(txtDesc);
@@ -138,5 +158,7 @@
         private TextBox txtDesc;
         private TextBox txtCupo;
         private Button btnGuardar;
+        private Label lblPrecio;
+        private TextBox txtPrecio;
     }
 }

@@ -19,7 +19,10 @@ namespace Entidades
         public string Descripcion { get; set; }
 
         [Required]
-        public int Cupo { get; set; } 
+        public int Cupo { get; set; }
+
+        [Required]
+        public decimal UltimoPrecio { get; set; }
 
 
     }
