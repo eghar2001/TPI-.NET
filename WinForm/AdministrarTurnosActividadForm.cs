@@ -66,6 +66,10 @@ namespace WinForm
         {
             TurnoForm turnoForm = new TurnoForm(this.actividad);
             turnoForm.ShowDialog();
+            if (turnoForm.DialogResult == DialogResult.OK)
+            {
+                this.ListarTurnos();
+            }
         }
     }
 }

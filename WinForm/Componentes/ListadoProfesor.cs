@@ -84,24 +84,24 @@ namespace WinForm.Componentes
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this._profesoresBusqueda = Profesores;
-            this.txtFiltrar.Text = "";
-            this.listboxProfesores.SelectedIndex = 0;
+            this.listboxProfesores.DataSource = this._profesoresBusqueda;
+            this.ProfesorSeleccionado = null;
+            if (!_profesoresBusqueda.IsNullOrEmpty())
+            {
+                Refrescar();
+                this.listboxProfesores.SelectedIndex = 0;
+            }
         }
 
         private void txtTitulo_TextChanged(object sender, EventArgs e)
         {
             _profesoresBusqueda = Profesores.Where(i => i.getNombApell().ToUpper().Contains(txtFiltrar.Text.ToUpper())).ToList();
             Refrescar();
-        }
-
-        private void btnLimpiar_Click_1(object sender, EventArgs e)
-        {
-            this._profesoresBusqueda = Profesores;
-            this.listboxProfesores.DataSource = this._profesoresBusqueda;
-            if (!_profesoresBusqueda.IsNullOrEmpty())
-            {
-                this.listboxProfesores.SelectedIndex = 0;
+            if (_profesoresBusqueda.IsNullOrEmpty()) {
+                this.ProfesorSeleccionado = null;
             }
         }
+
+    
     }
 }

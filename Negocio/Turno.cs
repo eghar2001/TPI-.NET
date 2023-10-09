@@ -90,6 +90,11 @@ namespace Negocio
         {
             datos_turno.borrarHorarioTurno(horario);
         }
+
+        public void agregarTurno(Entidades.Turno turno_nuevo)
+        {
+            datos_turno.agregarTurno(turno_nuevo);
+        }
     }
     public class HorarioNoValidoException : Exception
     {

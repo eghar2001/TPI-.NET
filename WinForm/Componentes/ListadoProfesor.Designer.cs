@@ -67,7 +67,7 @@
             btnLimpiar.TabIndex = 7;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
-            btnLimpiar.Click += btnLimpiar_Click_1;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // txtFiltrar
             // 

@@ -53,7 +53,7 @@ namespace Datos
                 return horarios;
             }
         }
-        public void agregarTurno(Turno turno_nuevo)
+        public void agregarTurno(Entidades.Turno turno_nuevo)
         {
             using (var context = new ApplicationDbContext())
             {

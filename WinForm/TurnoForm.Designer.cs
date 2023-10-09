@@ -36,6 +36,7 @@
             LblInstalacion = new Label();
             lblProfesor = new Label();
             btnGuardar = new Button();
+            lblErrorDescripcion = new Label();
             SuspendLayout();
             // 
             // lblTitulo
@@ -113,12 +114,24 @@
             btnGuardar.TabIndex = 7;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
+            // 
+            // lblErrorDescripcion
+            // 
+            lblErrorDescripcion.AutoSize = true;
+            lblErrorDescripcion.ForeColor = Color.Red;
+            lblErrorDescripcion.Location = new Point(108, 151);
+            lblErrorDescripcion.Name = "lblErrorDescripcion";
+            lblErrorDescripcion.Size = new Size(123, 20);
+            lblErrorDescripcion.TabIndex = 8;
+            lblErrorDescripcion.Text = "Error Descripcion";
             // 
             // TurnoForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(919, 841);
+            Controls.Add(lblErrorDescripcion);
             Controls.Add(btnGuardar);
             Controls.Add(lblProfesor);
             Controls.Add(LblInstalacion);
@@ -143,5 +156,6 @@
         private Label LblInstalacion;
         private Label lblProfesor;
         private Button btnGuardar;
+        private Label lblErrorDescripcion;
     }
 }

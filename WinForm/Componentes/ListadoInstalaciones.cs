@@ -85,23 +85,24 @@ namespace WinForm.Componentes
         {
             this._instalacionesBusqueda = Instalaciones;
             this.txtTitulo.Text = "";
-            this.listboxInstalaciones.SelectedIndex = 0;
+            if (!_instalacionesBusqueda.IsNullOrEmpty())
+            {
+                this.listboxInstalaciones.SelectedIndex = 0;
+                Refrescar();
+            }
+           
         }
 
         private void txtTitulo_TextChanged(object sender, EventArgs e)
         {
             _instalacionesBusqueda = Instalaciones.Where(i => i.Titulo.ToUpper().Contains(txtTitulo.Text.ToUpper())).ToList();
             Refrescar();
-        }
-
-        private void btnLimpiar_Click_1(object sender, EventArgs e)
-        {
-            this._instalacionesBusqueda = Instalaciones;
-            this.listboxInstalaciones.DataSource = this._instalacionesBusqueda;
-            if (!_instalacionesBusqueda.IsNullOrEmpty())
+            if (_instalacionesBusqueda.IsNullOrEmpty())
             {
-                this.listboxInstalaciones.SelectedIndex = 0;
+                this.InstalacionSeleccionada = null;
             }
         }
+
+       
     }
 }

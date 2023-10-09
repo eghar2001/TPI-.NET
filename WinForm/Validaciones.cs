@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,10 @@ namespace WinForm
         public static bool TieneLargoMaximo(string campo, int largo)
         {
             return campo.Length <= largo;
+        }
+        public static bool EsNulo(string campo)
+        {
+            return campo.Trim().IsNullOrEmpty();
         }
         public static bool EsHoraMin(string horaMin)
         {
