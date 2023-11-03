@@ -37,6 +37,15 @@
     <Compile Update="ProfesorForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ReportesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ReservasForms\ReservarInstalacionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ReservasForms\ReservasUsuarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Socios.cs">
       <SubType>Form</SubType>
     </Compile>

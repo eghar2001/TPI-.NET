@@ -38,12 +38,14 @@ namespace WinForm
         {
             string nombre = txtNombre.Text;
             string apellido = txtApellido.Text;
-            decimal salario = 0;
+            decimal salario;
             try
             {
                 salario = decimal.Parse(txtSalario.Text);
             }
-            catch (FormatException) { MessageBox.Show("El salario no ttiene el formato pedido", "Problema de salario", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch (FormatException) { MessageBox.Show("El salario no tiene el formato pedido", "Problema de salario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             if (this.profesor_a_editar == null)
             {
@@ -63,6 +65,7 @@ namespace WinForm
                 catch (ArgumentOutOfRangeException)
                 {
                     MessageBox.Show("El Salario debe ser mayor a 0", "Problema de salario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
 
             }
@@ -82,6 +85,8 @@ namespace WinForm
                 catch (ArgumentOutOfRangeException)
                 {
                     MessageBox.Show("El Salario debe ser mayor a 0", "Problema de salario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.DialogResult = DialogResult.OK;
+                     return;
                 }
             }
 

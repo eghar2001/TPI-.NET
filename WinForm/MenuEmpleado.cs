@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace WinForm
 {
     public partial class MenuEmpleado : Form
@@ -64,5 +65,9 @@ namespace WinForm
             AdministrarProfesores administrarProfesores = new AdministrarProfesores();
             administrarProfesores.Show();
         }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+                    }
     }
 }

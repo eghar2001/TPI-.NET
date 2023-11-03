@@ -1,9 +1,6 @@
 ﻿using Entidades;
-using System;
-using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Datos
 {
@@ -79,6 +76,24 @@ namespace Datos
                 context.SaveChanges();  
             }
                 
+        }
+
+        public List<Entidades.Instalacion> BuscarInstalacionesDisponibles(DateTime fechaHoraReserva, int duracionEnHoras, int cant)
+        {
+            using (var context = new ApplicationDbContext()) 
+            {
+                List<Entidades.Instalacion> instalaciones = context.Instalaciones.ToList();
+                List<Entidades.Instalacion> instalacionesReservadas = context.Reservas
+                    .Where(r => r.Instalacion.Cupo < cant &&
+                        !(r.FechaHoraReserva > fechaHoraReserva.AddHours(duracionEnHoras) ||
+                        r.FechaHoraReserva.AddHours(r.DuracionEnHoras) < fechaHoraReserva)) .Select(r => r.Instalacion).Distinct()
+                    .ToList();
+
+                //return context.Instalaciones.Where(i => !instalacionesReservadas.Contains(i.Id) && i.Cupo >=cant).ToList();
+                instalaciones.RemoveAll( i => instalacionesReservadas.Contains(i));
+                return instalaciones;
+                
+            }
         }
     }
 }

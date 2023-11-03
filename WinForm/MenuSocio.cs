@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinForm.ReservasForms;
 
 namespace WinForm
 {
@@ -42,6 +43,18 @@ namespace WinForm
         {
             Socios administrarSocios = new Socios();
             administrarSocios.ShowDialog();
+        }
+
+        private void btnReservarInstalacion_Click(object sender, EventArgs e)
+        {
+            ReservarInstalacionForm reservarInstalacion = new ReservarInstalacionForm();
+            reservarInstalacion.ShowDialog();
+        }
+
+        private void btnVerReservas_Click(object sender, EventArgs e)
+        {
+            ReservasUsuarioForm reservasUsuario = new ReservasUsuarioForm();
+            reservasUsuario.ShowDialog();
         }
     }
 }

@@ -111,5 +111,10 @@ namespace Entidades
                 return false;
             }
         }
+
+        public override string ToString()
+        {
+            return this.NombreUsuario;
+        }
     }
 }
