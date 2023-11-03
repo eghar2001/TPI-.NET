@@ -10,6 +10,12 @@ namespace Entidades
 {
     public class Horario
     {
+        [NotMapped]
+        public static readonly DayOfWeek[] diasSemana = new DayOfWeek[7] {DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday, DayOfWeek.Thursday, DayOfWeek.Friday,
+                                                    DayOfWeek.Saturday, DayOfWeek.Sunday};
+        [NotMapped]
+        public static readonly string[] diasSemanaEsp = new string[7] { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo" };
+
         [Required]
         [ForeignKey("Turno")]
         public int TurnoId { get; set; }
@@ -79,9 +85,12 @@ namespace Entidades
                 }
             }
         }
+
+       
+
         public override string ToString()
         {
-            return this.DiaSemana.ToString() + " " + this.HoraInicio+"-"+ this.HoraFin;
+            return this.DiaSemanaEsp+ " " + this.HoraInicio+"-"+ this.HoraFin;
         }
 
         public bool seSuperponeCon(Entidades.Horario otro_horario)

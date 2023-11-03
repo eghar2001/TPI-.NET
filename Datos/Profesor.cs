@@ -1,4 +1,6 @@
 ﻿using Entidades;
+using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,7 +65,52 @@ namespace Datos
                 return horarios;
             }
         }
+        public bool horarioProfesorValido(Entidades.Profesor profesor, Entidades.Horario horario)
+        {
+            List<Entidades.Horario> horarios_profesor = getHorariosProfesor(profesor);
+            if (horarios_profesor.IsNullOrEmpty())
+            {
+                return false;
+            }
+            Entidades.Horario? horario_prof_superpuesto = horarios_profesor.Find(h => h.seSuperponeCon(horario));
+            return horario_prof_superpuesto != null;
+        }
+        public bool horariosProfesorValidos(Entidades.Profesor profesor, List<Entidades.Horario> horarios)
+        {
+            if (profesor == null)
+            {
+                throw new ArgumentNullException("Se ingresó un profesor nula");
+            }
+            if (horarios.IsNullOrEmpty())
+            {
+                throw new ArgumentNullException("No se ingresaro horarios");
+            }
+            using (SqlConnection conn = new SqlConnection(ApplicationDbContext.ConnectionString))
+            {
+                conn.Open();
+                foreach (Entidades.Horario h in horarios)
+                {
+                    SqlCommand cmd = conn.CreateCommand();
+                    cmd.CommandText = "SELECT COUNT(h.TurnoId) FROM Horarios h " +
+                        "INNER JOIN Turnos t ON h.TurnoId = t.Id " +
+                        "WHERE t.ProfesorId = @ProfesorId" +
+                        " AND not (h.HoraFin < @HoraInicio OR h.HoraInicio > @HoraFin ) ";
+                    cmd.Parameters.Add("@ProfesorId", System.Data.SqlDbType.Int).Value = profesor.Id;
+                    cmd.Parameters.Add("@HoraInicio", System.Data.SqlDbType.NVarChar).Value = h.HoraInicio;
+                    cmd.Parameters.Add("@HoraFin", System.Data.SqlDbType.NVarChar).Value = h.HoraFin;
+                    int cantidad_superpuestos = (int)cmd.ExecuteScalar();
+                    if (cantidad_superpuestos > 0)
+                    {
+                        conn.Close();
+                        return true;
+                    }
+                }
+                conn.Close();
+            }
 
+            return false;
 
+        }
     }
 }
+

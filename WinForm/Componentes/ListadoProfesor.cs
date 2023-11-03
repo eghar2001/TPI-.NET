@@ -40,7 +40,28 @@ namespace WinForm.Componentes
             }
             set
             {
-                this._profesorSeleccionado = value;
+                if (value == null)
+                {
+                    this._profesorSeleccionado = null;
+                    return;
+                }
+                else if (value  is not Entidades.Profesor)
+                {
+                    MessageBox.Show("No se ingresó un profesor");
+                    return;
+                }
+               
+                int index = this._profesoresBusqueda.IndexOf(value);
+                if (index == -1)
+                {
+                    MessageBox.Show("El profesor ingresado no se encuentra");
+                }
+                else
+                {
+                    this.listboxProfesores.SelectedIndex = index;
+                    this._profesorSeleccionado = this._profesoresBusqueda[index];
+                }
+                    
             }
         }
 

@@ -23,6 +23,10 @@ namespace Entidades
         [Required]
         public decimal UltimoPrecio { get; set;  }
 
-        
+        public override string ToString()
+        {
+            return this.Nombre;
+        }
+
     }
 }

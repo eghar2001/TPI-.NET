@@ -35,6 +35,7 @@ public class ConnectionStringNotFoundException: Exception
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(ConnectionString);
+            optionsBuilder.EnableSensitiveDataLogging();
 
 
         }

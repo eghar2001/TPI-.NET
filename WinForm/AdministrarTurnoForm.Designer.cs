@@ -42,9 +42,9 @@
             // lblActividad
             // 
             lblActividad.AutoSize = true;
-            lblActividad.Location = new Point(96, 56);
+            lblActividad.Location = new Point(84, 42);
             lblActividad.Name = "lblActividad";
-            lblActividad.Size = new Size(0, 20);
+            lblActividad.Size = new Size(0, 15);
             lblActividad.TabIndex = 0;
             // 
             // lblNombreActividad
@@ -52,18 +52,18 @@
             lblNombreActividad.AutoSize = true;
             lblNombreActividad.Font = new Font("Arial Rounded MT Bold", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblNombreActividad.ForeColor = SystemColors.HotTrack;
-            lblNombreActividad.Location = new Point(86, 76);
+            lblNombreActividad.Location = new Point(75, 57);
             lblNombreActividad.Name = "lblNombreActividad";
-            lblNombreActividad.Size = new Size(342, 43);
+            lblNombreActividad.Size = new Size(269, 33);
             lblNombreActividad.TabIndex = 1;
             lblNombreActividad.Text = "Nombre Actividad";
             // 
             // lblProfesor
             // 
             lblProfesor.AutoSize = true;
-            lblProfesor.Location = new Point(96, 194);
+            lblProfesor.Location = new Point(84, 146);
             lblProfesor.Name = "lblProfesor";
-            lblProfesor.Size = new Size(64, 20);
+            lblProfesor.Size = new Size(51, 15);
             lblProfesor.TabIndex = 4;
             lblProfesor.Text = "Profesor";
             // 
@@ -71,19 +71,20 @@
             // 
             lblHorarios.AutoSize = true;
             lblHorarios.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblHorarios.Location = new Point(96, 250);
+            lblHorarios.Location = new Point(84, 188);
             lblHorarios.Name = "lblHorarios";
-            lblHorarios.Size = new Size(93, 28);
+            lblHorarios.Size = new Size(149, 21);
             lblHorarios.TabIndex = 5;
-            lblHorarios.Text = "Horarios";
+            lblHorarios.Text = "Horarios del turno";
             // 
             // listboxHorarios
             // 
             listboxHorarios.FormattingEnabled = true;
-            listboxHorarios.ItemHeight = 20;
-            listboxHorarios.Location = new Point(96, 291);
+            listboxHorarios.ItemHeight = 15;
+            listboxHorarios.Location = new Point(84, 218);
+            listboxHorarios.Margin = new Padding(3, 2, 3, 2);
             listboxHorarios.Name = "listboxHorarios";
-            listboxHorarios.Size = new Size(716, 184);
+            listboxHorarios.Size = new Size(627, 169);
             listboxHorarios.TabIndex = 7;
             listboxHorarios.SelectedIndexChanged += listboxHorarios_SelectedIndexChanged;
             // 
@@ -91,17 +92,18 @@
             // 
             lblAlertaBorrado.AutoSize = true;
             lblAlertaBorrado.ForeColor = SystemColors.GrayText;
-            lblAlertaBorrado.Location = new Point(96, 478);
+            lblAlertaBorrado.Location = new Point(84, 389);
             lblAlertaBorrado.Name = "lblAlertaBorrado";
-            lblAlertaBorrado.Size = new Size(245, 20);
+            lblAlertaBorrado.Size = new Size(194, 15);
             lblAlertaBorrado.TabIndex = 8;
             lblAlertaBorrado.Text = "Click en algun horario para borrarlo";
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(96, 522);
+            btnAgregar.Location = new Point(84, 438);
+            btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(94, 29);
+            btnAgregar.Size = new Size(82, 22);
             btnAgregar.TabIndex = 9;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -111,9 +113,9 @@
             // 
             lblUbicacion.AutoSize = true;
             lblUbicacion.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            lblUbicacion.Location = new Point(96, 136);
+            lblUbicacion.Location = new Point(84, 102);
             lblUbicacion.Name = "lblUbicacion";
-            lblUbicacion.Size = new Size(89, 25);
+            lblUbicacion.Size = new Size(75, 20);
             lblUbicacion.TabIndex = 10;
             lblUbicacion.Text = "Ubicacion";
             // 
@@ -121,17 +123,17 @@
             // 
             lblPrecio.AutoSize = true;
             lblPrecio.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPrecio.Location = new Point(746, 133);
+            lblPrecio.Location = new Point(653, 100);
             lblPrecio.Name = "lblPrecio";
-            lblPrecio.Size = new Size(66, 28);
+            lblPrecio.Size = new Size(53, 21);
             lblPrecio.TabIndex = 11;
             lblPrecio.Text = "Precio";
             // 
             // AdministrarTurnoForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1061, 708);
+            ClientSize = new Size(928, 531);
             Controls.Add(lblPrecio);
             Controls.Add(lblUbicacion);
             Controls.Add(btnAgregar);
@@ -141,7 +143,6 @@
             Controls.Add(lblProfesor);
             Controls.Add(lblNombreActividad);
             Controls.Add(lblActividad);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "AdministrarTurnoForm";
             Text = "TurnoForm";
             Load += TurnoForm_Load;

@@ -43,17 +43,18 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Arial Rounded MT Bold", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitulo.Location = new Point(108, 40);
+            lblTitulo.Location = new Point(94, 30);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(92, 32);
+            lblTitulo.Size = new Size(72, 26);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Titulo";
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(258, 113);
+            txtDescripcion.Location = new Point(226, 85);
+            txtDescripcion.Margin = new Padding(3, 2, 3, 2);
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(548, 27);
+            txtDescripcion.Size = new Size(480, 23);
             txtDescripcion.TabIndex = 1;
             // 
             // listadoInstalaciones
@@ -61,28 +62,30 @@
             listadoInstalaciones.AutoSize = true;
             listadoInstalaciones.Instalaciones = null;
             listadoInstalaciones.InstalacionSeleccionada = null;
-            listadoInstalaciones.Location = new Point(108, 202);
+            listadoInstalaciones.Location = new Point(94, 159);
+            listadoInstalaciones.Margin = new Padding(3, 2, 3, 2);
             listadoInstalaciones.Name = "listadoInstalaciones";
-            listadoInstalaciones.Size = new Size(698, 93);
+            listadoInstalaciones.Size = new Size(671, 108);
             listadoInstalaciones.TabIndex = 2;
             // 
             // listadoProfesores
             // 
             listadoProfesores.AutoSize = true;
-            listadoProfesores.Location = new Point(108, 545);
+            listadoProfesores.Location = new Point(95, 394);
+            listadoProfesores.Margin = new Padding(3, 2, 3, 2);
             listadoProfesores.Name = "listadoProfesores";
             listadoProfesores.Profesores = null;
             listadoProfesores.ProfesorSeleccionado = null;
-            listadoProfesores.Size = new Size(698, 98);
+            listadoProfesores.Size = new Size(670, 89);
             listadoProfesores.TabIndex = 3;
             // 
             // lblDescripcion
             // 
             lblDescripcion.AutoSize = true;
             lblDescripcion.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDescripcion.Location = new Point(108, 112);
+            lblDescripcion.Location = new Point(94, 84);
             lblDescripcion.Name = "lblDescripcion";
-            lblDescripcion.Size = new Size(118, 28);
+            lblDescripcion.Size = new Size(94, 21);
             lblDescripcion.TabIndex = 4;
             lblDescripcion.Text = "Descripcion:";
             // 
@@ -90,9 +93,9 @@
             // 
             LblInstalacion.AutoSize = true;
             LblInstalacion.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            LblInstalacion.Location = new Point(108, 171);
+            LblInstalacion.Location = new Point(94, 135);
             LblInstalacion.Name = "LblInstalacion";
-            LblInstalacion.Size = new Size(105, 28);
+            LblInstalacion.Size = new Size(84, 21);
             LblInstalacion.TabIndex = 5;
             LblInstalacion.Text = "Instalacion";
             // 
@@ -100,17 +103,18 @@
             // 
             lblProfesor.AutoSize = true;
             lblProfesor.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblProfesor.Location = new Point(108, 514);
+            lblProfesor.Location = new Point(95, 371);
             lblProfesor.Name = "lblProfesor";
-            lblProfesor.Size = new Size(85, 28);
+            lblProfesor.Size = new Size(69, 21);
             lblProfesor.TabIndex = 6;
             lblProfesor.Text = "Profesor";
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(712, 771);
+            btnGuardar.Location = new Point(623, 578);
+            btnGuardar.Margin = new Padding(3, 2, 3, 2);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(94, 29);
+            btnGuardar.Size = new Size(82, 22);
             btnGuardar.TabIndex = 7;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
@@ -120,17 +124,17 @@
             // 
             lblErrorDescripcion.AutoSize = true;
             lblErrorDescripcion.ForeColor = Color.Red;
-            lblErrorDescripcion.Location = new Point(108, 151);
+            lblErrorDescripcion.Location = new Point(94, 113);
             lblErrorDescripcion.Name = "lblErrorDescripcion";
-            lblErrorDescripcion.Size = new Size(123, 20);
+            lblErrorDescripcion.Size = new Size(97, 15);
             lblErrorDescripcion.TabIndex = 8;
             lblErrorDescripcion.Text = "Error Descripcion";
             // 
             // TurnoForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(919, 841);
+            ClientSize = new Size(862, 631);
             Controls.Add(lblErrorDescripcion);
             Controls.Add(btnGuardar);
             Controls.Add(lblProfesor);
@@ -140,6 +144,7 @@
             Controls.Add(listadoInstalaciones);
             Controls.Add(txtDescripcion);
             Controls.Add(lblTitulo);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "TurnoForm";
             Text = "TurnoForm";
             ResumeLayout(false);

@@ -41,16 +41,24 @@ namespace Datos
                 return turno;
             }
         }
-        public List<Entidades.Horario> getHorariosTurno(int turno_id)
+        public List<Entidades.Horario> getHorariosTurno(Entidades.Turno turno)
         {
             using (var context = new ApplicationDbContext())
             {
                 List<Entidades.Horario> horarios = context.Horarios
-                    .Where(h => h.TurnoId == turno_id)                    
+                    .Where(h => h.TurnoId == turno.Id)                    
                     .ToList();
 
 
                 return horarios;
+            }
+        }
+        public bool turnoOcupaDiaSemana(Entidades.Turno turno, DayOfWeek diaSemana)
+        {
+            using (ApplicationDbContext context = new ApplicationDbContext()) 
+            {
+                int cantidadOcupados = context.Horarios.Where(h => (h.TurnoId == turno.Id && h.DiaSemana == diaSemana)).Count();
+                return cantidadOcupados > 0;
             }
         }
         public void agregarTurno(Entidades.Turno turno_nuevo)
@@ -58,6 +66,22 @@ namespace Datos
             using (var context = new ApplicationDbContext())
             {
                 context.Add(turno_nuevo);
+                context.SaveChanges();
+            }
+        }
+        public void modificarTurno(Entidades.Turno turno)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                context.Update(turno);
+                context.SaveChanges();
+            }
+        }
+        public void borrarTurno(Entidades.Turno turno)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                context.Remove(turno);
                 context.SaveChanges();
             }
         }

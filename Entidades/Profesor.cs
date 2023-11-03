@@ -31,5 +31,14 @@ namespace Entidades
         {
             return this.getNombApell();
         }
+        public override bool Equals(object? obj)
+        {
+            if (obj == null) 
+                return false;
+            if (!(obj is Profesor)) 
+                return false;
+            Entidades.Profesor otro_profe = (Entidades.Profesor)obj;
+            return otro_profe.Id == this.Id;
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿using Negocio.DTOS;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +13,10 @@ namespace WinForm
 {
     public partial class AdministrarTurnoForm : Form
     {
-        private readonly Negocio.DTOS.TurnoDTO turno;
+        private readonly Entidades.Turno turno;
         private readonly Negocio.Turno negocio_turno;
-        private List<HorarioDTO> horarios = null;
-        public AdministrarTurnoForm(Negocio.DTOS.TurnoDTO turno)
+        private List<Entidades.Horario> horarios = null;
+        public AdministrarTurnoForm(Entidades.Turno turno)
         {
             InitializeComponent();
             this.turno = turno;
@@ -24,18 +24,18 @@ namespace WinForm
         }
         private void ListarHorarios()
         {
-            List<Negocio.DTOS.HorarioDTO> horarios = negocio_turno.getHorariosTurno(turno.Id);
+            List<Entidades.Horario> horarios = negocio_turno.getHorariosTurno(turno);
             this.horarios = horarios;
             this.listboxHorarios.Items.Clear();
-            foreach (Negocio.DTOS.HorarioDTO hor in horarios)
+            foreach (Entidades.Horario hor in horarios)
             {
-                listboxHorarios.Items.Add(hor.DiaSemana + " " + hor.HoraInicio + "-" + hor.HoraFin);
+                listboxHorarios.Items.Add(hor.DiaSemanaEsp + " " + hor.HoraInicio + "-" + hor.HoraFin);
             }
         }
         private void TurnoForm_Load(object sender, EventArgs e)
         {
             this.lblNombreActividad.Text = turno.Actividad + "(" + turno.Descripcion + ")";
-            this.lblPrecio.Text = "Precio: $" + turno.Precio.ToString();
+            this.lblPrecio.Text = "Precio: $" + turno.Actividad.UltimoPrecio;
             this.lblUbicacion.Text = "Ubicacion: " + turno.Instalacion;
             this.lblProfesor.Text = "Profesor: " + turno.Profesor;
 
@@ -51,11 +51,11 @@ namespace WinForm
             DialogResult resultado = MessageBox.Show("Esta seguro que desea borrar " + listboxHorarios.SelectedItem, "Borrar horario", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (resultado == DialogResult.OK)
             {
-                string diaSemanaEsp = this.horarios[listboxHorarios.SelectedIndex].DiaSemana;
+                DayOfWeek diaSemana = this.horarios[listboxHorarios.SelectedIndex].DiaSemana;
                 Entidades.Horario horario = new Entidades.Horario()
                 {
                     TurnoId = this.turno.Id,
-                    DiaSemana = Negocio.Turno.diasSemana[diaSemanaEsp]
+                    DiaSemana = diaSemana
                 };
                 negocio_turno.borrarHorarioTurno(horario);
                 MessageBox.Show("El horario " + listboxHorarios.SelectedItem.ToString() + " se ha borrado correctamente", "Horario Borrado");
@@ -65,7 +65,7 @@ namespace WinForm
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            HorarioForm horarioForm = new HorarioForm(turno.Id);
+            HorarioForm horarioForm = new HorarioForm(turno);
             horarioForm.ShowDialog();
             if (horarioForm.DialogResult == DialogResult.OK)
             {

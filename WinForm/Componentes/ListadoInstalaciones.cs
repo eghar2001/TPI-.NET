@@ -40,14 +40,34 @@ namespace WinForm.Componentes
             }
             set
             {
-                this._instalacionSeleccionada = value;
+                if (value == null)
+                {
+                    this._instalacionSeleccionada = null;
+                    return;
+                }
+                else if (value is not Entidades.Instalacion)
+                {
+                    MessageBox.Show("No se ingresó un profesor");
+                    return;
+                }
+
+                int index = this._instalacionesBusqueda.IndexOf(value);
+                if (index == -1)
+                {
+                    MessageBox.Show("La instalacion ingresada no se encuentra");
+                }
+                else
+                {
+                    this.listboxInstalaciones.SelectedIndex = index;
+                    this._instalacionSeleccionada = this._instalacionesBusqueda[index];
+                }
             }
         }
 
         public ListadoInstalaciones()
         {
             InitializeComponent();
-
+            AjustarAlturaListBox();
         }
         private void Refrescar()
         {
