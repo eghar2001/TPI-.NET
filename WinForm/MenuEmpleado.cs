@@ -50,7 +50,9 @@ namespace WinForm
         private void btnAdministrarActividades_Click(object sender, EventArgs e)
         {
             AdministrarActividadesForm administrarActividades = new AdministrarActividadesForm();
+            administrarActividades.FormClosing += (s, args) => { this.Show(); };
             administrarActividades.Show();
+            this.Hide();
         }
     }
 }

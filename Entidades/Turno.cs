@@ -34,7 +34,8 @@ namespace Entidades
         [Required]
         [ForeignKey("Instalacion")]
         public int InstalacionId { get;set; }
-
         public Instalacion Instalacion { get; set; } = null!;
+
+        public List<Horario> Horarios { get; set; }
     }
 }

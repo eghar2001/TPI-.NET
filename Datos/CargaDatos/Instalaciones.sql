@@ -35,6 +35,15 @@ INSERT INTO [dbo].[Instalaciones]
            ('Cancha de Tenis - 1'
            ,'Como vas a jugar al tenis man'
            ,4);
+
+           INSERT INTO [dbo].[Instalaciones]
+           ([Titulo]
+           ,[Descripcion]
+           ,[Cupo])
+     VALUES
+           ('Cancha de tenis - 2'
+           ,'Cancha de tenis para los pechos que llevan 17 clasicos abajo'
+           ,4)
 COMMIT;
 GO
 

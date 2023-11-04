@@ -19,8 +19,21 @@ namespace Entidades
         public string Descripcion { get; set; }
 
         [Required]
-        public int Cupo { get; set; } 
+        public int Cupo { get; set; }
 
+        public override string ToString()
+        {
+            return this.Titulo;
+        }
 
+        public override bool Equals(object? obj)
+        {
+            if (obj == null)
+                return false;
+            if (!(obj is Entidades.Instalacion))
+                return false;
+            Entidades.Instalacion otra_inst = (Entidades.Instalacion)obj;
+            return otra_inst.Id == this.Id;
+        }
     }
 }

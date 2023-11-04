@@ -28,21 +28,33 @@ namespace WinForm
                 Entidades.Usuario usuario = negocio_usuario.login(txtNombreUsuario.Text, txtContrasenia.Text);
                 if (usuario != null)
                 {
+                    
+                    Form menu;
+                    
+
+                    if (usuario.EsTipoUsuario(Entidades.TiposUsuarioEnum.EMPLEADO)){
+                        menu = (MenuEmpleado)new MenuEmpleado();
+                    }
+                    else if (usuario.EsTipoUsuario(Entidades.TiposUsuarioEnum.SOCIO)){
+                        menu = (MenuSocio)new MenuSocio();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El tipo de usuario no es valido", "Tipo usuario error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        menu = new Form();
+                        this.Dispose();
+                    }
+                    menu.FormClosing += (s, args) =>
+                    {
+                        this.Dispose();
+                    };
+
+
                     MessageBox.Show("Se ha logueado correctamente", "Login correcto",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     DatosLogin.UsuarioLogueado = usuario;
-
-                    
-
-                    if (usuario.EsTipoUsuario(Entidades.TiposUsuarioEnum.EMPLEADO)){
-                        MenuEmpleado menuEmpleado = new MenuEmpleado();
-                        menuEmpleado.Show();
-                    }
-                    else if (usuario.EsTipoUsuario(Entidades.TiposUsuarioEnum.SOCIO)){
-                        MenuSocio menuSocio = new MenuSocio();
-                        menuSocio.Show();
-                    }
+                    menu.Show();
                     this.Hide();
                 }
 
