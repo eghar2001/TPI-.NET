@@ -44,19 +44,33 @@ namespace Datos
             using (ApplicationDbContext context = new ApplicationDbContext())
             {
                 context.Add(instalacion);
+                context.Add(new ValorReserva()
+                {
+                    Precio = instalacion.UltimoPrecio,
+                    Instalacion = instalacion
+                });
                 context.SaveChanges();
             }          
         }
 
-       
+
 
         public void modificar_instalacion(Entidades.Instalacion instalacion_modificada)
         {
+            Entidades.Instalacion instalacion_original = get_by_Id(instalacion_modificada.Id);
             using (ApplicationDbContext context = new ApplicationDbContext())
             {
                 context.Update(instalacion_modificada);
-                context.SaveChanges();
-            } 
+                if (instalacion_original.UltimoPrecio != instalacion_modificada.UltimoPrecio)
+                {
+                    context.Add(new ValorReserva()
+                    {
+                        InstalacionId = instalacion_modificada.Id,
+                        Precio = instalacion_modificada.UltimoPrecio
+                    });
+                    context.SaveChanges();
+                }
+            }
         }
 
 

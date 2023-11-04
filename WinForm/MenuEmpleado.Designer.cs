@@ -33,6 +33,7 @@
             lblDni = new Label();
             toolTip1 = new ToolTip(components);
             panelMenuLateral = new Panel();
+            btnAdministrarProfes = new Button();
             subPanelActividades = new Panel();
             btnAdministrarProfesores = new Button();
             btnAdministrarActividades = new Button();
@@ -50,6 +51,7 @@
             lblLogo = new Label();
             pictureBox1 = new PictureBox();
             lblMenu = new Label();
+            btnReportes = new Button();
             panelMenuLateral.SuspendLayout();
             subPanelActividades.SuspendLayout();
             subPanelnstalaciones.SuspendLayout();
@@ -83,6 +85,8 @@
             // panelMenuLateral
             // 
             panelMenuLateral.BackColor = Color.IndianRed;
+            panelMenuLateral.Controls.Add(btnReportes);
+            panelMenuLateral.Controls.Add(btnAdministrarProfes);
             panelMenuLateral.Controls.Add(subPanelActividades);
             panelMenuLateral.Controls.Add(btnActividades);
             panelMenuLateral.Controls.Add(subPanelnstalaciones);
@@ -95,8 +99,21 @@
             panelMenuLateral.Location = new Point(0, 0);
             panelMenuLateral.Margin = new Padding(3, 2, 3, 2);
             panelMenuLateral.Name = "panelMenuLateral";
-            panelMenuLateral.Size = new Size(254, 451);
+            panelMenuLateral.Size = new Size(254, 553);
             panelMenuLateral.TabIndex = 2;
+            // 
+            // btnAdministrarProfes
+            // 
+            btnAdministrarProfes.Dock = DockStyle.Top;
+            btnAdministrarProfes.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAdministrarProfes.Location = new Point(0, 372);
+            btnAdministrarProfes.Margin = new Padding(3, 2, 3, 2);
+            btnAdministrarProfes.Name = "btnAdministrarProfes";
+            btnAdministrarProfes.Size = new Size(254, 34);
+            btnAdministrarProfes.TabIndex = 9;
+            btnAdministrarProfes.Text = "Administrar Profesores";
+            btnAdministrarProfes.UseVisualStyleBackColor = true;
+            btnAdministrarProfes.Click += btnAdministrarProfes_Click;
             // 
             // subPanelActividades
             // 
@@ -107,7 +124,7 @@
             subPanelActividades.Location = new Point(0, 319);
             subPanelActividades.Margin = new Padding(3, 2, 3, 2);
             subPanelActividades.Name = "subPanelActividades";
-            subPanelActividades.Padding = new Padding(4, 4, 4, 4);
+            subPanelActividades.Padding = new Padding(4);
             subPanelActividades.Size = new Size(254, 53);
             subPanelActividades.TabIndex = 8;
             subPanelActividades.Visible = false;
@@ -124,7 +141,7 @@
             btnAdministrarProfesores.Size = new Size(246, 22);
             btnAdministrarProfesores.TabIndex = 1;
             btnAdministrarProfesores.Text = "Reporte Instalaciones\r\n";
-            btnAdministrarProfesores.TextAlign = ContentAlignment.MiddleRight;
+            btnAdministrarProfesores.TextAlign = ContentAlignment.BottomLeft;
             btnAdministrarProfesores.UseVisualStyleBackColor = true;
             // 
             // btnAdministrarActividades
@@ -139,7 +156,7 @@
             btnAdministrarActividades.Size = new Size(246, 22);
             btnAdministrarActividades.TabIndex = 0;
             btnAdministrarActividades.Text = "Administrar Actividades";
-            btnAdministrarActividades.TextAlign = ContentAlignment.MiddleRight;
+            btnAdministrarActividades.TextAlign = ContentAlignment.MiddleLeft;
             btnAdministrarActividades.UseVisualStyleBackColor = true;
             btnAdministrarActividades.Click += btnAdministrarActividades_Click;
             // 
@@ -153,7 +170,6 @@
             btnActividades.Size = new Size(254, 34);
             btnActividades.TabIndex = 7;
             btnActividades.Text = "Actividades";
-            btnActividades.TextAlign = ContentAlignment.MiddleRight;
             btnActividades.UseVisualStyleBackColor = true;
             btnActividades.Click += btnActividades_Click;
             // 
@@ -166,7 +182,7 @@
             subPanelnstalaciones.Location = new Point(0, 231);
             subPanelnstalaciones.Margin = new Padding(3, 2, 3, 2);
             subPanelnstalaciones.Name = "subPanelnstalaciones";
-            subPanelnstalaciones.Padding = new Padding(4, 4, 4, 4);
+            subPanelnstalaciones.Padding = new Padding(4);
             subPanelnstalaciones.Size = new Size(254, 54);
             subPanelnstalaciones.TabIndex = 6;
             subPanelnstalaciones.Visible = false;
@@ -183,7 +199,7 @@
             btnManejarProductos.Size = new Size(246, 22);
             btnManejarProductos.TabIndex = 1;
             btnManejarProductos.Text = "Reporte Instalaciones\r\n";
-            btnManejarProductos.TextAlign = ContentAlignment.MiddleRight;
+            btnManejarProductos.TextAlign = ContentAlignment.MiddleLeft;
             btnManejarProductos.UseVisualStyleBackColor = true;
             // 
             // btnManejarInstalaciones
@@ -198,8 +214,9 @@
             btnManejarInstalaciones.Size = new Size(246, 22);
             btnManejarInstalaciones.TabIndex = 0;
             btnManejarInstalaciones.Text = "Manejar Instalaciones";
-            btnManejarInstalaciones.TextAlign = ContentAlignment.MiddleRight;
+            btnManejarInstalaciones.TextAlign = ContentAlignment.MiddleLeft;
             btnManejarInstalaciones.UseVisualStyleBackColor = true;
+            btnManejarInstalaciones.Click += btnManejarInstalaciones_Click;
             // 
             // btnInstalaciones
             // 
@@ -211,7 +228,6 @@
             btnInstalaciones.Size = new Size(254, 34);
             btnInstalaciones.TabIndex = 5;
             btnInstalaciones.Text = "Instalaciones";
-            btnInstalaciones.TextAlign = ContentAlignment.MiddleRight;
             btnInstalaciones.UseVisualStyleBackColor = true;
             btnInstalaciones.Click += btnInstalaciones_Click;
             // 
@@ -224,7 +240,7 @@
             subPanelProductos.Location = new Point(0, 145);
             subPanelProductos.Margin = new Padding(3, 2, 3, 2);
             subPanelProductos.Name = "subPanelProductos";
-            subPanelProductos.Padding = new Padding(4, 4, 4, 4);
+            subPanelProductos.Padding = new Padding(4);
             subPanelProductos.Size = new Size(254, 52);
             subPanelProductos.TabIndex = 4;
             subPanelProductos.Visible = false;
@@ -241,7 +257,7 @@
             btnCompraProducto.Size = new Size(246, 22);
             btnCompraProducto.TabIndex = 3;
             btnCompraProducto.Text = "Compra Productos";
-            btnCompraProducto.TextAlign = ContentAlignment.MiddleRight;
+            btnCompraProducto.TextAlign = ContentAlignment.MiddleLeft;
             btnCompraProducto.UseVisualStyleBackColor = true;
             // 
             // btnAdministrarProductos
@@ -256,7 +272,7 @@
             btnAdministrarProductos.Size = new Size(246, 22);
             btnAdministrarProductos.TabIndex = 2;
             btnAdministrarProductos.Text = "Administrar Productos";
-            btnAdministrarProductos.TextAlign = ContentAlignment.MiddleRight;
+            btnAdministrarProductos.TextAlign = ContentAlignment.MiddleLeft;
             btnAdministrarProductos.UseVisualStyleBackColor = true;
             // 
             // btnProductos
@@ -269,7 +285,6 @@
             btnProductos.Size = new Size(254, 34);
             btnProductos.TabIndex = 2;
             btnProductos.Text = "Productos";
-            btnProductos.TextAlign = ContentAlignment.MiddleRight;
             btnProductos.UseVisualStyleBackColor = true;
             btnProductos.Click += btnProductos_Click;
             // 
@@ -283,7 +298,6 @@
             btnManejoSocios.Size = new Size(254, 34);
             btnManejoSocios.TabIndex = 1;
             btnManejoSocios.Text = "Administrar Socios";
-            btnManejoSocios.TextAlign = ContentAlignment.MiddleRight;
             btnManejoSocios.UseVisualStyleBackColor = true;
             btnManejoSocios.Click += btnManejoSocios_Click;
             // 
@@ -327,11 +341,24 @@
             lblMenu.TabIndex = 4;
             lblMenu.Text = "Menu Empleados";
             // 
+            // btnReportes
+            // 
+            btnReportes.Dock = DockStyle.Top;
+            btnReportes.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnReportes.Location = new Point(0, 406);
+            btnReportes.Margin = new Padding(3, 2, 3, 2);
+            btnReportes.Name = "btnReportes";
+            btnReportes.Size = new Size(254, 34);
+            btnReportes.TabIndex = 10;
+            btnReportes.Text = "Reportes";
+            btnReportes.UseVisualStyleBackColor = true;
+            btnReportes.Click += btnReportes_Click;
+            // 
             // MenuEmpleado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(824, 451);
+            ClientSize = new Size(898, 553);
             Controls.Add(lblMenu);
             Controls.Add(pictureBox1);
             Controls.Add(panelMenuLateral);
@@ -377,5 +404,7 @@
         private Button button3;
         private Button btnCompraProducto;
         private Button btnAdministrarProductos;
+        private Button btnAdministrarProfes;
+        private Button btnReportes;
     }
 }

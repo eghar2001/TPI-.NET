@@ -21,6 +21,9 @@ namespace Entidades
         [Required]
         public int Cupo { get; set; }
 
+        [Required]
+        public decimal UltimoPrecio { get; set; }
+
         public override string ToString()
         {
             return this.Titulo;

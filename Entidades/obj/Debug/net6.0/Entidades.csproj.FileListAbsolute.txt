@@ -66,3 +66,17 @@ D:\Proyectos\TPI-.NET\Entidades\obj\Debug\net6.0\refint\Entidades.dll
 D:\Proyectos\TPI-.NET\Entidades\obj\Debug\net6.0\Entidades.pdb
 D:\Proyectos\TPI-.NET\Entidades\obj\Debug\net6.0\Entidades.genruntimeconfig.cache
 D:\Proyectos\TPI-.NET\Entidades\obj\Debug\net6.0\ref\Entidades.dll
+C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\Entidades\bin\Debug\net6.0\Entidades.deps.json
+C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\Entidades\bin\Debug\net6.0\Entidades.runtimeconfig.json
+C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\Entidades\bin\Debug\net6.0\Entidades.dll
+C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\Entidades\bin\Debug\net6.0\Entidades.pdb
+C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\Entidades\obj\Debug\net6.0\Entidades.csproj.AssemblyReference.cache
+C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\Entidades\obj\Debug\net6.0\Entidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\Entidades\obj\Debug\net6.0\Entidades.AssemblyInfoInputs.cache
+C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\Entidades\obj\Debug\net6.0\Entidades.AssemblyInfo.cs
+C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\Entidades\obj\Debug\net6.0\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\Entidades\obj\Debug\net6.0\Entidades.dll
+C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\Entidades\obj\Debug\net6.0\refint\Entidades.dll
+C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\Entidades\obj\Debug\net6.0\Entidades.pdb
+C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\Entidades\obj\Debug\net6.0\Entidades.genruntimeconfig.cache
+C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\Entidades\obj\Debug\net6.0\ref\Entidades.dll
