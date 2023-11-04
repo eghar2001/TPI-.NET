@@ -31,6 +31,7 @@
             lblAdministrarActividades = new Label();
             dgvActividades = new DataGridView();
             btnActualizar = new Button();
+            btnAgregar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvActividades).BeginInit();
             SuspendLayout();
             // 
@@ -38,7 +39,7 @@
             // 
             lblAdministrarActividades.AutoSize = true;
             lblAdministrarActividades.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAdministrarActividades.Location = new Point(228, 39);
+            lblAdministrarActividades.Location = new Point(60, 62);
             lblAdministrarActividades.Name = "lblAdministrarActividades";
             lblAdministrarActividades.Size = new Size(515, 50);
             lblAdministrarActividades.TabIndex = 0;
@@ -46,16 +47,24 @@
             // 
             // dgvActividades
             // 
+            dgvActividades.AllowUserToAddRows = false;
+            dgvActividades.AllowUserToDeleteRows = false;
+            dgvActividades.AllowUserToResizeColumns = false;
+            dgvActividades.AllowUserToResizeRows = false;
+            dgvActividades.BackgroundColor = SystemColors.ScrollBar;
             dgvActividades.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvActividades.Location = new Point(238, 110);
+            dgvActividades.GridColor = SystemColors.ScrollBar;
+            dgvActividades.Location = new Point(60, 158);
             dgvActividades.Name = "dgvActividades";
             dgvActividades.RowTemplate.Height = 25;
-            dgvActividades.Size = new Size(492, 150);
+            dgvActividades.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            dgvActividades.Size = new Size(770, 253);
             dgvActividades.TabIndex = 1;
+            dgvActividades.CellClick += dgvActividades_CellClick;
             // 
             // btnActualizar
             // 
-            btnActualizar.Location = new Point(394, 380);
+            btnActualizar.Location = new Point(60, 451);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(75, 23);
             btnActualizar.TabIndex = 2;
@@ -63,11 +72,22 @@
             btnActualizar.UseVisualStyleBackColor = true;
             btnActualizar.Click += btnActualizar_Click;
             // 
+            // btnAgregar
+            // 
+            btnAgregar.Location = new Point(755, 86);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(75, 23);
+            btnAgregar.TabIndex = 3;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
             // AdministrarActividadesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(912, 505);
+            Controls.Add(btnAgregar);
             Controls.Add(btnActualizar);
             Controls.Add(dgvActividades);
             Controls.Add(lblAdministrarActividades);
@@ -84,5 +104,6 @@
         private Label lblAdministrarActividades;
         private DataGridView dgvActividades;
         private Button btnActualizar;
+        private Button btnAgregar;
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System;
+﻿using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,11 +27,11 @@ namespace Negocio
     }
     public class Instalacion
     {
-        Datos.Instalacion datos_instalacion = new Datos.Instalacion();
+        private readonly Datos.Instalacion datos_instalacion = new Datos.Instalacion();
 
-        public Entidades.Instalacion? get_by_Id(int id)
+        public Entidades.Instalacion? get_one(int id)
         {
-            return datos_instalacion.get_by_Id(id);
+            return datos_instalacion.get_one(id);
         }
 
         public List<Entidades.Instalacion> find_all()
@@ -88,9 +90,9 @@ namespace Negocio
         public void remover_Instalacion(int id)
         {
     
-            if (datos_instalacion.get_by_Id(id) != null)
+            if (datos_instalacion.get_one(id) != null)
             {
-                Entidades.Instalacion instalacion = datos_instalacion.get_by_Id(id);
+                Entidades.Instalacion instalacion = datos_instalacion.get_one(id);
                 datos_instalacion.remover_instalacion(instalacion);
             }
             else 
@@ -103,5 +105,10 @@ namespace Negocio
         {
             return datos_instalacion.BuscarInstalacionesDisponibles(fechaHoraReserva, duracionEnHoras, cant);
         }
+        public List<Entidades.Horario> GetHorariosInstalacion(Entidades.Instalacion instalacion)
+        {
+            return datos_instalacion.getHorariosInstalacion(instalacion);
+        }
+        
     }
 }

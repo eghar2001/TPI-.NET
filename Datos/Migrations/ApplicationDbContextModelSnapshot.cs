@@ -39,9 +39,35 @@ namespace Datos.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
+                    b.Property<decimal>("UltimoPrecio")
+                        .HasColumnType("decimal(10,2)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Actividades");
+                });
+
+            modelBuilder.Entity("Entidades.Horario", b =>
+                {
+                    b.Property<int>("TurnoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DiaSemana")
+                        .HasColumnType("int");
+
+                    b.Property<string>("HoraFin")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<string>("HoraInicio")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.HasKey("TurnoId", "DiaSemana");
+
+                    b.ToTable("Horarios");
                 });
 
             modelBuilder.Entity("Entidades.InscripcionTurno", b =>
@@ -408,6 +434,17 @@ namespace Datos.Migrations
                         .IsUnique();
 
                     b.ToTable("Ventas");
+                });
+
+            modelBuilder.Entity("Entidades.Horario", b =>
+                {
+                    b.HasOne("Entidades.Turno", "Turno")
+                        .WithMany()
+                        .HasForeignKey("TurnoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Turno");
                 });
 
             modelBuilder.Entity("Entidades.InscripcionTurno", b =>

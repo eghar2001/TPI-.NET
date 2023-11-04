@@ -1,4 +1,6 @@
 ﻿using System;
+﻿using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +12,7 @@ namespace Negocio
 
     public class Profesor
     {
-        Datos.Profesor datos_profesor = new Datos.Profesor();
+       private readonly Datos.Profesor datos_profesor = new Datos.Profesor();
 
 
         public Entidades.Profesor get_one(int id)
@@ -49,5 +51,12 @@ namespace Negocio
             datos_profesor.borrar_profesor(profesor);
            
         }
+        public List<Entidades.Horario> getHorariosProfesor(Entidades.Profesor profesor)
+        {
+            return datos_profesor.getHorariosProfesor(profesor);
+        }
+
+        
+
     }
 }

@@ -21,5 +21,24 @@ namespace Entidades
 
         [Required]
         public decimal Salario { get; set; }
+
+        public string getNombApell()
+        {
+            return this.Nombre + " " + this.Apellido;
+        }
+
+        public override string ToString()
+        {
+            return this.getNombApell();
+        }
+        public override bool Equals(object? obj)
+        {
+            if (obj == null) 
+                return false;
+            if (!(obj is Profesor)) 
+                return false;
+            Entidades.Profesor otro_profe = (Entidades.Profesor)obj;
+            return otro_profe.Id == this.Id;
+        }
     }
 }
