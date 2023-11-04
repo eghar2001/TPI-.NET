@@ -19,23 +19,72 @@ namespace WinForm
         public Login()
         {
             InitializeComponent();
+            this.lblErrorNombreUsuario.Text = "";
+            this.lblErrorContrasenia.Text = "";
         }
 
+        private bool FormValido()
+        {
+            bool resultado = true;
+            resultado = NombreUsuariovValido() && resultado;
+            resultado = ContraseniaValida() && resultado;
+            return resultado;
+        }
+        private bool NombreUsuariovValido()
+        {
+            string nombreUsuario = this.txtNombreUsuario.Text;
+
+            if (nombreUsuario.Length == 0)
+            {
+                this.lblErrorNombreUsuario.Text = "Debe ingresar un nombre de usuario";
+                return false;
+            }
+            if (nombreUsuario.Length > 150)
+            {
+                this.lblErrorNombreUsuario.Text = "Supero el maximo de 150 caracteres";
+                return false;
+            }
+            this.lblErrorNombreUsuario.Text = "";
+            return true;
+        }
+        private bool ContraseniaValida()
+        {
+            string contrasenia = this.txtContrasenia.Text;
+
+            if (contrasenia.Length == 0)
+            {
+                this.lblErrorContrasenia.Text = "Debe ingresar una Contraseña";
+                return false;
+            }
+            if (contrasenia.Length > 150)
+            {
+                this.lblErrorContrasenia.Text = "Supero el maximo de 150 caracteres";
+                return false;
+            }
+            this.lblErrorContrasenia.Text = "";
+            return true;
+        }
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            if (!FormValido())
+            {
+                return;
+            }
             try
             {
                 Entidades.Usuario usuario = negocio_usuario.login(txtNombreUsuario.Text, txtContrasenia.Text);
                 if (usuario != null)
                 {
-                    
-                    Form menu;
-                    
 
-                    if (usuario.EsTipoUsuario(Entidades.TiposUsuarioEnum.EMPLEADO)){
+                    Form menu;
+
+
+                    if (usuario.EsTipoUsuario(Entidades.TiposUsuarioEnum.EMPLEADO))
+                    {
                         menu = (MenuEmpleado)new MenuEmpleado();
                     }
-                    else if (usuario.EsTipoUsuario(Entidades.TiposUsuarioEnum.SOCIO)){
+                    else if (usuario.EsTipoUsuario(Entidades.TiposUsuarioEnum.SOCIO))
+                    {
                         menu = (MenuSocio)new MenuSocio();
                     }
                     else
@@ -78,6 +127,7 @@ namespace WinForm
             }
 
         }
+
 
     }
 }

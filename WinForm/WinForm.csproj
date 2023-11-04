@@ -27,9 +27,6 @@
     <Compile Update="Componentes\ListadoProfesor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="EditarSocioForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="MenuSocio.cs">
       <SubType>Form</SubType>
     </Compile>

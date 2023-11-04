@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+
 namespace Datos
 {
     public class Usuario
@@ -38,6 +40,10 @@ namespace Datos
         public List<Entidades.Usuario> find_all()
         {
             return context.Usuarios.ToList();
+        }
+        public List<Entidades.Usuario> find_socios()
+        {
+            return context.Usuarios.Where(u => u.TipoUsuario.Descripcion == "Socio").ToList();
         }
 
         public void agregar_usuario(Entidades.Usuario usuario)

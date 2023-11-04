@@ -15,6 +15,11 @@ namespace WinForm
             Regex precioRegex = new Regex(@"^\d+([\.\,]\d{1,2})?$");
             return precioRegex.IsMatch(campo_precio);
         }
+        public static bool EsEntero(string campo_precio)
+        {
+            Regex precioRegex = new Regex(@"^\d+$");
+            return precioRegex.IsMatch(campo_precio);
+        }
         public static bool TieneLargoMaximo(string campo, int largo)
         {
             return campo.Length <= largo;

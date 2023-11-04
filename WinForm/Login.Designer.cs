@@ -28,22 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblLogin = new Label();
+            lblTitulo = new Label();
             txtNombreUsuario = new TextBox();
             txtContrasenia = new TextBox();
             lblNombreUsuario = new Label();
             lblContrasenia = new Label();
             btnLogin = new Button();
+            lblErrorNombreUsuario = new Label();
+            lblErrorContrasenia = new Label();
             SuspendLayout();
             // 
-            // lblLogin
+            // lblTitulo
             // 
-            lblLogin.AutoSize = true;
-            lblLogin.Location = new Point(360, 102);
-            lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(46, 20);
-            lblLogin.TabIndex = 0;
-            lblLogin.Text = "Login";
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitulo.Location = new Point(323, 53);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(122, 54);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "Login";
             // 
             // txtNombreUsuario
             // 
@@ -54,8 +57,9 @@
             // 
             // txtContrasenia
             // 
-            txtContrasenia.Location = new Point(323, 215);
+            txtContrasenia.Location = new Point(323, 229);
             txtContrasenia.Name = "txtContrasenia";
+            txtContrasenia.PasswordChar = '*';
             txtContrasenia.Size = new Size(157, 27);
             txtContrasenia.TabIndex = 2;
             // 
@@ -71,15 +75,15 @@
             // lblContrasenia
             // 
             lblContrasenia.AutoSize = true;
-            lblContrasenia.Location = new Point(204, 215);
+            lblContrasenia.Location = new Point(203, 229);
             lblContrasenia.Name = "lblContrasenia";
-            lblContrasenia.Size = new Size(87, 20);
+            lblContrasenia.Size = new Size(83, 20);
             lblContrasenia.TabIndex = 4;
-            lblContrasenia.Text = "Contrasenia";
+            lblContrasenia.Text = "Contraseña";
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(386, 262);
+            btnLogin.Location = new Point(386, 297);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(94, 29);
             btnLogin.TabIndex = 5;
@@ -87,17 +91,39 @@
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click;
             // 
+            // lblErrorNombreUsuario
+            // 
+            lblErrorNombreUsuario.AutoSize = true;
+            lblErrorNombreUsuario.ForeColor = Color.Red;
+            lblErrorNombreUsuario.Location = new Point(323, 182);
+            lblErrorNombreUsuario.Name = "lblErrorNombreUsuario";
+            lblErrorNombreUsuario.Size = new Size(154, 20);
+            lblErrorNombreUsuario.TabIndex = 6;
+            lblErrorNombreUsuario.Text = "Error Nombre Usuario";
+            // 
+            // lblErrorContrasenia
+            // 
+            lblErrorContrasenia.AutoSize = true;
+            lblErrorContrasenia.ForeColor = Color.Red;
+            lblErrorContrasenia.Location = new Point(323, 259);
+            lblErrorContrasenia.Name = "lblErrorContrasenia";
+            lblErrorContrasenia.Size = new Size(119, 20);
+            lblErrorContrasenia.TabIndex = 7;
+            lblErrorContrasenia.Text = "Error Contraseña";
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 451);
+            Controls.Add(lblErrorContrasenia);
+            Controls.Add(lblErrorNombreUsuario);
             Controls.Add(btnLogin);
             Controls.Add(lblContrasenia);
             Controls.Add(lblNombreUsuario);
             Controls.Add(txtContrasenia);
             Controls.Add(txtNombreUsuario);
-            Controls.Add(lblLogin);
+            Controls.Add(lblTitulo);
             Name = "Login";
             Text = "Login";
             ResumeLayout(false);
@@ -106,11 +132,13 @@
 
         #endregion
 
-        private Label lblLogin;
+        private Label lblTitulo;
         private TextBox txtNombreUsuario;
         private TextBox txtContrasenia;
         private Label lblNombreUsuario;
         private Label lblContrasenia;
         private Button btnLogin;
+        private Label lblErrorNombreUsuario;
+        private Label lblErrorContrasenia;
     }
 }

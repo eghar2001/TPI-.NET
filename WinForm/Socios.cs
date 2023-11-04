@@ -15,7 +15,7 @@ namespace WinForm
         public void Listar()
         {
             dgvSocios.DataSource = null;
-            dgvSocios.DataSource = negocio_usuario.find_all();
+            dgvSocios.DataSource = negocio_usuario.find_socios();
             dgvSocios.Refresh();
         }
         private void Socios_Load(object sender, EventArgs e)
@@ -23,11 +23,18 @@ namespace WinForm
             Listar();
             dgvSocios.Columns.Remove("Contrasenia");
             dgvSocios.Columns.Remove("TipoUsuarioId");
-            dgvSocios.Columns.Remove("Id");
-            dgvSocios.Columns.Remove("NombreUsuario");
+            dgvSocios.Columns.Remove("TipoUsuario");
+
+            DataGridViewButtonColumn colEditar = new DataGridViewButtonColumn();
+            colEditar.HeaderText = "Editar";
+            colEditar.Text = "Editar";
+            colEditar.UseColumnTextForButtonValue = true; 
+            this.dgvSocios.Columns.Add(colEditar);
 
             DataGridViewButtonColumn colBorrar = new DataGridViewButtonColumn();
+            colBorrar.HeaderText = "Borrar";
             colBorrar.Text = "Borrar";
+            colBorrar.UseColumnTextForButtonValue = true;
             this.dgvSocios.Columns.Add(colBorrar);
 
 
@@ -45,7 +52,7 @@ namespace WinForm
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            AgregarSocioForm socioForm = new AgregarSocioForm();
+            SocioForm socioForm = new SocioForm();
             socioForm.ShowDialog();
             if (socioForm.DialogResult == DialogResult.OK)
             {
@@ -53,23 +60,21 @@ namespace WinForm
             }
         }
 
-        private void tsbEditar_Click(object sender, EventArgs e)
+        private void dgvSocios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            EditarSocioForm socioForm = new EditarSocioForm();
-            socioForm.ShowDialog();
-            if (socioForm.DialogResult == DialogResult.OK)
+            if (e.RowIndex<0 || e.ColumnIndex < 0)
             {
-                Listar();
+                return;
             }
-        }
-
-        private void tsbBorrar_Click(object sender, EventArgs e)
-        {
-            BorrarSocioForm socioForm = new BorrarSocioForm();
-            socioForm.ShowDialog();
-            if (socioForm.DialogResult == DialogResult.OK)
+            string columna = dgvSocios.Columns[e.ColumnIndex].HeaderText;
+            if (columna == "Editar")
             {
-                Listar();
+                MessageBox.Show("Hola");
+            }
+            else if (columna == "Borrar")
+            {
+
+                DialogResult resultado = MessageBox.Show("Esta seguro que desea borrar al socio");
             }
         }
     }

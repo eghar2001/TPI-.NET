@@ -31,8 +31,8 @@ namespace Datos.Migrations
 
                     b.Property<string>("Descripcion")
                         .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -115,8 +115,8 @@ namespace Datos.Migrations
 
                     b.Property<string>("Descripcion")
                         .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("Titulo")
                         .IsRequired()
@@ -141,8 +141,8 @@ namespace Datos.Migrations
 
                     b.Property<string>("Descripcion")
                         .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -439,7 +439,7 @@ namespace Datos.Migrations
             modelBuilder.Entity("Entidades.Horario", b =>
                 {
                     b.HasOne("Entidades.Turno", "Turno")
-                        .WithMany()
+                        .WithMany("Horarios")
                         .HasForeignKey("TurnoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -576,6 +576,11 @@ namespace Datos.Migrations
             modelBuilder.Entity("Entidades.Producto", b =>
                 {
                     b.Navigation("Valores");
+                });
+
+            modelBuilder.Entity("Entidades.Turno", b =>
+                {
+                    b.Navigation("Horarios");
                 });
 #pragma warning restore 612, 618
         }

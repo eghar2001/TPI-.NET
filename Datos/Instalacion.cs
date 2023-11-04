@@ -57,7 +57,7 @@ namespace Datos
 
         public void modificar_instalacion(Entidades.Instalacion instalacion_modificada)
         {
-            Entidades.Instalacion instalacion_original = get_by_Id(instalacion_modificada.Id);
+            Entidades.Instalacion instalacion_original = get_one(instalacion_modificada.Id);
             using (ApplicationDbContext context = new ApplicationDbContext())
             {
                 context.Update(instalacion_modificada);
@@ -149,6 +149,23 @@ namespace Datos
             
             return false;
                 
+        }
+        public List<Entidades.Instalacion> BuscarInstalacionesDisponibles(DateTime fechaHoraReserva, int duracionEnHoras, int cant)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                List<Entidades.Instalacion> instalaciones = context.Instalaciones.ToList();
+                List<Entidades.Instalacion> instalacionesReservadas = context.Reservas
+                    .Where(r => r.Instalacion.Cupo < cant &&
+                        !(r.FechaHoraReserva > fechaHoraReserva.AddHours(duracionEnHoras) ||
+                        r.FechaHoraReserva.AddHours(r.DuracionEnHoras) < fechaHoraReserva)).Select(r => r.Instalacion).Distinct()
+                    .ToList();
+
+                //return context.Instalaciones.Where(i => !instalacionesReservadas.Contains(i.Id) && i.Cupo >=cant).ToList();
+                instalaciones.RemoveAll(i => instalacionesReservadas.Contains(i));
+                return instalaciones;
+
+            }
         }
     }
 }
