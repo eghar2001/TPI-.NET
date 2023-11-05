@@ -15,6 +15,12 @@ namespace WinForm
             Regex precioRegex = new Regex(@"^\d+([\.\,]\d{1,2})?$");
             return precioRegex.IsMatch(campo_precio);
         }
+        public static bool ContraseniaValida(string contrasenia)
+        {
+            //Metodo a implementar
+            //Tiene que con una Expresion Regular poder validar que una contraseña sea valida
+            return true;
+        }
         public static bool EsEntero(string campo_precio)
         {
             Regex precioRegex = new Regex(@"^\d+$");

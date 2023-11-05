@@ -150,19 +150,28 @@ namespace Datos
             return false;
                 
         }
-        public List<Entidades.Instalacion> BuscarInstalacionesDisponibles(DateTime fechaHoraReserva, int duracionEnHoras, int cant)
+        
+        public List<Entidades.Instalacion> BuscarInstalacionesDisponibles(DateTime fechaHoraInicioBuscada, int duracionEnHoras, int cant)
         {
+
             using (var context = new ApplicationDbContext())
             {
-                List<Entidades.Instalacion> instalaciones = context.Instalaciones.ToList();
-                List<Entidades.Instalacion> instalacionesReservadas = context.Reservas
-                    .Where(r => r.Instalacion.Cupo < cant &&
-                        !(r.FechaHoraReserva > fechaHoraReserva.AddHours(duracionEnHoras) ||
-                        r.FechaHoraReserva.AddHours(r.DuracionEnHoras) < fechaHoraReserva)).Select(r => r.Instalacion).Distinct()
-                    .ToList();
+                DateTime fechaHoraFinBuscada = fechaHoraInicioBuscada.AddHours(duracionEnHoras);
+                
+                
 
-                //return context.Instalaciones.Where(i => !instalacionesReservadas.Contains(i.Id) && i.Cupo >=cant).ToList();
-                instalaciones.RemoveAll(i => instalacionesReservadas.Contains(i));
+                List<Entidades.Instalacion> instalaciones = context.Instalaciones.Where(i => i.Cupo >= cant).ToList();
+                List<Entidades.Instalacion> instalacionesReservadas = context.Reservas.Include(r => r.Instalacion)
+                    .Where(r => 
+                        !(r.FechaHoraReserva > fechaHoraFinBuscada ||
+                        r.FechaHoraReserva.AddHours(r.DuracionEnHoras) < fechaHoraInicioBuscada)).
+                        Select(r => r.Instalacion).Distinct()
+                    .ToList();
+                List<Entidades.Horario> horarios = context.Horarios.Where(h => h.DiaSemana == fechaHoraInicioBuscada.DayOfWeek ).Include(h => h.Turno).Include(h => h.Turno.Instalacion).ToList();   
+                List<Entidades.Instalacion> instalacionesOcupadasPorActividad = horarios
+                  .Where(h => h.seSuperponeCon(fechaHoraInicioBuscada, fechaHoraFinBuscada) ).Select(r => r.Turno.Instalacion).Distinct().ToList();
+
+                instalaciones.RemoveAll(i => instalacionesReservadas.Contains(i) || instalacionesOcupadasPorActividad.Contains(i));
                 return instalaciones;
 
             }

@@ -34,7 +34,7 @@ namespace WinForm
             this.txtApellido.Text = socio.Apellido;
             this.txtDni.Text = socio.Dni.ToString();
             this.txtNombreUsuario.Text = socio.NombreUsuario;
-            
+
         }
 
         public void btnGuardar_Click(object sender, EventArgs e)
@@ -67,6 +67,12 @@ namespace WinForm
 
         }
 
-
+        private void SocioForm_Load(object sender, EventArgs e)
+        {
+            lblErrorNombre.Text = "";
+            lblErrorApellido.Text = "";
+            lblErrorNombreUsuario.Text = "";
+            LblErrorDni.Text = "";
+        }
     }
 }

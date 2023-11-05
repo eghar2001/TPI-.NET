@@ -103,6 +103,11 @@ namespace Negocio
 
         public List<Entidades.Instalacion> BuscarInstalacionesDisponibles(DateTime fechaHoraReserva, int duracionEnHoras, int cant)
         {
+            DateTime fechaHoraFin  = fechaHoraReserva.AddHours(duracionEnHoras);
+            if (fechaHoraFin.DayOfWeek != fechaHoraReserva.DayOfWeek)
+            {
+                throw new ArgumentException("Las reservas se hacen en un solo dia");
+            }
             return datos_instalacion.BuscarInstalacionesDisponibles(fechaHoraReserva, duracionEnHoras, cant);
         }
         public List<Entidades.Horario> GetHorariosInstalacion(Entidades.Instalacion instalacion)

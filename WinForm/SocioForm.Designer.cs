@@ -33,18 +33,20 @@
             lblApellido = new Label();
             lblDni = new Label();
             lblNombreUsuario = new Label();
-            lblContrasenia = new Label();
             txtNombre = new TextBox();
             txtApellido = new TextBox();
             txtDni = new TextBox();
             txtNombreUsuario = new TextBox();
-            txtContrasenia = new TextBox();
             btnGuardar = new Button();
             lblErrorNombre = new Label();
             lblErrorApellido = new Label();
             LblErrorDni = new Label();
-            lblErrroNombreUsuario = new Label();
+            lblErrorNombreUsuario = new Label();
             lblErrorContrasenia = new Label();
+            txtContrasenia = new TextBox();
+            lblContrasenia = new Label();
+            txtConfirmarContraseña = new TextBox();
+            lblConfirmarContrasenia = new Label();
             SuspendLayout();
             // 
             // lblTitulo
@@ -60,7 +62,7 @@
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(139, 121);
+            lblNombre.Location = new Point(109, 114);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(64, 20);
             lblNombre.TabIndex = 1;
@@ -69,7 +71,7 @@
             // lblApellido
             // 
             lblApellido.AutoSize = true;
-            lblApellido.Location = new Point(139, 183);
+            lblApellido.Location = new Point(109, 179);
             lblApellido.Name = "lblApellido";
             lblApellido.Size = new Size(66, 20);
             lblApellido.TabIndex = 2;
@@ -78,7 +80,7 @@
             // lblDni
             // 
             lblDni.AutoSize = true;
-            lblDni.Location = new Point(155, 243);
+            lblDni.Location = new Point(109, 239);
             lblDni.Name = "lblDni";
             lblDni.Size = new Size(32, 20);
             lblDni.TabIndex = 3;
@@ -87,59 +89,43 @@
             // lblNombreUsuario
             // 
             lblNombreUsuario.AutoSize = true;
-            lblNombreUsuario.Location = new Point(118, 302);
+            lblNombreUsuario.Location = new Point(109, 302);
             lblNombreUsuario.Name = "lblNombreUsuario";
             lblNombreUsuario.Size = new Size(118, 20);
             lblNombreUsuario.TabIndex = 4;
             lblNombreUsuario.Text = "Nombre Usuario";
             // 
-            // lblContrasenia
-            // 
-            lblContrasenia.AutoSize = true;
-            lblContrasenia.Location = new Point(141, 372);
-            lblContrasenia.Name = "lblContrasenia";
-            lblContrasenia.Size = new Size(83, 20);
-            lblContrasenia.TabIndex = 5;
-            lblContrasenia.Text = "Contraseña";
-            // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(242, 114);
+            txtNombre.Location = new Point(296, 107);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(269, 27);
             txtNombre.TabIndex = 6;
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(242, 179);
+            txtApellido.Location = new Point(296, 172);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(269, 27);
             txtApellido.TabIndex = 7;
             // 
             // txtDni
             // 
-            txtDni.Location = new Point(242, 239);
+            txtDni.Location = new Point(296, 232);
             txtDni.Name = "txtDni";
             txtDni.Size = new Size(269, 27);
             txtDni.TabIndex = 8;
             // 
             // txtNombreUsuario
             // 
-            txtNombreUsuario.Location = new Point(242, 302);
+            txtNombreUsuario.Location = new Point(296, 295);
             txtNombreUsuario.Name = "txtNombreUsuario";
             txtNombreUsuario.Size = new Size(269, 27);
             txtNombreUsuario.TabIndex = 9;
             // 
-            // txtContrasenia
-            // 
-            txtContrasenia.Location = new Point(244, 372);
-            txtContrasenia.Name = "txtContrasenia";
-            txtContrasenia.Size = new Size(269, 27);
-            txtContrasenia.TabIndex = 10;
-            // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(419, 434);
+            btnGuardar.Location = new Point(471, 484);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(94, 29);
             btnGuardar.TabIndex = 11;
@@ -151,7 +137,7 @@
             // 
             lblErrorNombre.AutoSize = true;
             lblErrorNombre.ForeColor = Color.Red;
-            lblErrorNombre.Location = new Point(242, 144);
+            lblErrorNombre.Location = new Point(296, 137);
             lblErrorNombre.Name = "lblErrorNombre";
             lblErrorNombre.Size = new Size(100, 20);
             lblErrorNombre.TabIndex = 12;
@@ -161,7 +147,7 @@
             // 
             lblErrorApellido.AutoSize = true;
             lblErrorApellido.ForeColor = Color.Red;
-            lblErrorApellido.Location = new Point(242, 209);
+            lblErrorApellido.Location = new Point(296, 202);
             lblErrorApellido.Name = "lblErrorApellido";
             lblErrorApellido.Size = new Size(102, 20);
             lblErrorApellido.TabIndex = 13;
@@ -171,49 +157,85 @@
             // 
             LblErrorDni.AutoSize = true;
             LblErrorDni.ForeColor = Color.Red;
-            LblErrorDni.Location = new Point(242, 269);
+            LblErrorDni.Location = new Point(296, 262);
             LblErrorDni.Name = "LblErrorDni";
             LblErrorDni.Size = new Size(71, 20);
             LblErrorDni.TabIndex = 14;
             LblErrorDni.Text = "Error DNI";
             // 
-            // lblErrroNombreUsuario
+            // lblErrorNombreUsuario
             // 
-            lblErrroNombreUsuario.AutoSize = true;
-            lblErrroNombreUsuario.ForeColor = Color.Red;
-            lblErrroNombreUsuario.Location = new Point(242, 332);
-            lblErrroNombreUsuario.Name = "lblErrroNombreUsuario";
-            lblErrroNombreUsuario.Size = new Size(154, 20);
-            lblErrroNombreUsuario.TabIndex = 15;
-            lblErrroNombreUsuario.Text = "Error Nombre Usuario";
+            lblErrorNombreUsuario.AutoSize = true;
+            lblErrorNombreUsuario.ForeColor = Color.Red;
+            lblErrorNombreUsuario.Location = new Point(296, 325);
+            lblErrorNombreUsuario.Name = "lblErrorNombreUsuario";
+            lblErrorNombreUsuario.Size = new Size(154, 20);
+            lblErrorNombreUsuario.TabIndex = 15;
+            lblErrorNombreUsuario.Text = "Error Nombre Usuario";
             // 
             // lblErrorContrasenia
             // 
             lblErrorContrasenia.AutoSize = true;
             lblErrorContrasenia.ForeColor = Color.Red;
-            lblErrorContrasenia.Location = new Point(242, 402);
+            lblErrorContrasenia.Location = new Point(296, 447);
             lblErrorContrasenia.Name = "lblErrorContrasenia";
             lblErrorContrasenia.Size = new Size(119, 20);
-            lblErrorContrasenia.TabIndex = 16;
+            lblErrorContrasenia.TabIndex = 18;
             lblErrorContrasenia.Text = "Error Contraseña";
+            // 
+            // txtContrasenia
+            // 
+            txtContrasenia.Location = new Point(296, 384);
+            txtContrasenia.Name = "txtContrasenia";
+            txtContrasenia.PasswordChar = '*';
+            txtContrasenia.Size = new Size(269, 27);
+            txtContrasenia.TabIndex = 17;
+            // 
+            // lblContrasenia
+            // 
+            lblContrasenia.AutoSize = true;
+            lblContrasenia.Location = new Point(109, 391);
+            lblContrasenia.Name = "lblContrasenia";
+            lblContrasenia.Size = new Size(83, 20);
+            lblContrasenia.TabIndex = 16;
+            lblContrasenia.Text = "Contraseña";
+            // 
+            // txtConfirmarContraseña
+            // 
+            txtConfirmarContraseña.Location = new Point(296, 417);
+            txtConfirmarContraseña.Name = "txtConfirmarContraseña";
+            txtConfirmarContraseña.PasswordChar = '*';
+            txtConfirmarContraseña.Size = new Size(269, 27);
+            txtConfirmarContraseña.TabIndex = 20;
+            // 
+            // lblConfirmarContrasenia
+            // 
+            lblConfirmarContrasenia.AutoSize = true;
+            lblConfirmarContrasenia.Location = new Point(109, 424);
+            lblConfirmarContrasenia.Name = "lblConfirmarContrasenia";
+            lblConfirmarContrasenia.Size = new Size(153, 20);
+            lblConfirmarContrasenia.TabIndex = 19;
+            lblConfirmarContrasenia.Text = "Confirmar Contraseña";
             // 
             // SocioForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 493);
+            ClientSize = new Size(800, 551);
+            Controls.Add(txtConfirmarContraseña);
+            Controls.Add(lblConfirmarContrasenia);
             Controls.Add(lblErrorContrasenia);
-            Controls.Add(lblErrroNombreUsuario);
+            Controls.Add(txtContrasenia);
+            Controls.Add(lblContrasenia);
+            Controls.Add(lblErrorNombreUsuario);
             Controls.Add(LblErrorDni);
             Controls.Add(lblErrorApellido);
             Controls.Add(lblErrorNombre);
             Controls.Add(btnGuardar);
-            Controls.Add(txtContrasenia);
             Controls.Add(txtNombreUsuario);
             Controls.Add(txtDni);
             Controls.Add(txtApellido);
             Controls.Add(txtNombre);
-            Controls.Add(lblContrasenia);
             Controls.Add(lblNombreUsuario);
             Controls.Add(lblDni);
             Controls.Add(lblApellido);
@@ -221,6 +243,7 @@
             Controls.Add(lblTitulo);
             Name = "SocioForm";
             Text = "Socio Form";
+            Load += SocioForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -232,17 +255,19 @@
         private Label lblApellido;
         private Label lblDni;
         private Label lblNombreUsuario;
-        private Label lblContrasenia;
         private TextBox txtNombre;
         private TextBox txtApellido;
         private TextBox txtDni;
         private TextBox txtNombreUsuario;
-        private TextBox txtContrasenia;
         private Button btnGuardar;
         private Label lblErrorNombre;
         private Label lblErrorApellido;
         private Label LblErrorDni;
-        private Label lblErrroNombreUsuario;
+        private Label lblErrorNombreUsuario;
         private Label lblErrorContrasenia;
+        private TextBox txtContrasenia;
+        private Label lblContrasenia;
+        private TextBox txtConfirmarContraseña;
+        private Label lblConfirmarContrasenia;
     }
 }

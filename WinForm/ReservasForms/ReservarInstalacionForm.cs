@@ -45,9 +45,8 @@ namespace WinForm
 
         private void btnBuscar__Click_1(object sender, EventArgs e)
         {
-            DateTime fecha_inicio;
-            DateTime fecha_fin;
-            fecha_inicio = this.dateTimePickerInicio.Value;
+            DateTime fecha_inicio = this.dateTimePickerInicio.Value;
+
 
             int cant = 0;
             int duracion;
@@ -58,18 +57,18 @@ namespace WinForm
             }
             catch (ArgumentOutOfRangeException) { MessageBox.Show("La cantidad ser un entero", "Problema de Cantidad", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
             catch (FormatException) { MessageBox.Show("Formato invalido", "Problema de Cantidad", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
-            try
-            {
-                if (duracion <= 0)
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-            }
-            catch (ArgumentOutOfRangeException ex)
+            if (duracion <= 0)
             {
                 MessageBox.Show("Duración inválida. La duración debe ser mayor que cero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            DateTime fecha_fin = fecha_inicio.AddHours(duracion);
+            if (fecha_fin.DayOfWeek != fecha_inicio.DayOfWeek)
+            {
+                MessageBox.Show("La reserva debe ser en un mismo dia. Valide su fecha y hora de reserva y la duracion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
 
 
 
