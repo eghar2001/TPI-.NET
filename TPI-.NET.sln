@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinForm", "WinForm\WinForm.csproj", "{CE4546D7-305C-456E-AA23-80D7D7B3EB07}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WEBAPISocios", "WEBAPISocios\WEBAPISocios.csproj", "{855C3E34-373B-43BE-8D12-7F7E67C788B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{CE4546D7-305C-456E-AA23-80D7D7B3EB07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE4546D7-305C-456E-AA23-80D7D7B3EB07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE4546D7-305C-456E-AA23-80D7D7B3EB07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{855C3E34-373B-43BE-8D12-7F7E67C788B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{855C3E34-373B-43BE-8D12-7F7E67C788B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{855C3E34-373B-43BE-8D12-7F7E67C788B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{855C3E34-373B-43BE-8D12-7F7E67C788B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

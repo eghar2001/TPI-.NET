@@ -3514,11 +3514,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pedro\\Source\\Repos\\TPI-.NET\\Entidades\\Entidades.csproj",
+      "projectUniqueName": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Entidades\\Entidades.csproj",
       "projectName": "Entidades",
-      "projectPath": "C:\\Users\\Pedro\\Source\\Repos\\TPI-.NET\\Entidades\\Entidades.csproj",
+      "projectPath": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Entidades\\Entidades.csproj",
       "packagesPath": "C:\\Users\\Pedro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pedro\\Source\\Repos\\TPI-.NET\\Entidades\\obj\\",
+      "outputPath": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Entidades\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3574,7 +3574,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

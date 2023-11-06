@@ -3017,7 +3017,7 @@
       "projectName": "Negocio",
       "projectPath": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Negocio\\Negocio.csproj",
       "packagesPath": "C:\\Users\\Pedro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pedro\\Source\\Repos\\TPI-.NET\\Negocio\\obj\\",
+      "outputPath": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Negocio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3084,7 +3084,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

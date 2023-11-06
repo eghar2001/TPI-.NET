@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Entidades;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,20 +12,22 @@ namespace Datos
     
     public class Producto
     {
-        private readonly ApplicationDbContext context;
-        public Producto()
-        {
-            this.context = new ApplicationDbContext();
-        }
 
         public List<Entidades.Producto> find_all()
         {
-            return this.context.Productos.ToList();
+            using (ApplicationDbContext context = new ApplicationDbContext())
+            {
+                return context.Productos.ToList();
+            }
         }
         public Entidades.Producto? get_one(int id)
         {
+            using (ApplicationDbContext context = new ApplicationDbContext())
+            {
+                return context.Productos.FirstOrDefault(p => p.Id == id);
+            }
 
-            return  this.context.Productos.FirstOrDefault(p => p.Id == id);
+            
            
         }
       
@@ -85,20 +88,32 @@ namespace Datos
 
         public void agregar_producto(Entidades.Producto producto)
         {
-            context.Add(producto);
-            context.SaveChanges();
+            using (ApplicationDbContext context = new ApplicationDbContext())
+            {
+                context.Add(producto);
+                context.SaveChanges();
+            }
+         
         }
 
         public void remover_producto(Entidades.Producto producto)
         {
-            context.Remove(producto);
-            context.SaveChanges();
+            using (ApplicationDbContext context = new ApplicationDbContext())
+            {
+                context.Remove(producto);
+                context.SaveChanges();
+            }
+         
         }
 
         public void agregar_valorProducto(Entidades.ValorProducto valor_producto)
         {
-            context.Add(valor_producto);
-            context.SaveChanges();
+            using (ApplicationDbContext context = new ApplicationDbContext())
+            {
+                context.Add(valor_producto);
+                context.SaveChanges();
+            }
+          
         }
     }
 }

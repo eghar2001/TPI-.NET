@@ -21,12 +21,13 @@ namespace WinForm
         }
         public void Listar()
         {
+
             dgvProductos.DataSource = negocio_producto.find_all();
 
             this.AgregarColumnaPrecio();
 
-
             dgvProductos.Refresh();
+            
         }
 
         private void AdministrarProductosForm_Load(object sender, EventArgs e)
@@ -73,18 +74,23 @@ namespace WinForm
 
                 if ("Editar" == dgvProductos.Columns[e.ColumnIndex].HeaderText)
                 {
-                    MessageBox.Show("Botón 'Editar' clickeado en la fila " + e.RowIndex + " id del producto: " + dgvProductos.Rows[e.RowIndex].Cells[0].Value);
                     DataGridViewRow row = dgvProductos.Rows[e.RowIndex];
                     int idProducto = Int32.Parse(row.Cells["Id"].Value.ToString());
 
                     ModificarProducto(idProducto);
-                    
+                    Listar();
+
                 }
                 else if (columnName == "Borrar")
                 {
-                    MessageBox.Show("Botón 'Borrar' clickeado en la fila " + e.RowIndex);
-                    int idProducto = Convert.ToInt32(dgvProductos.Rows[e.RowIndex].Cells["Id"].Value);
-                    BorrarProducto(idProducto);
+                    DialogResult dialogResult = MessageBox.Show("¿Está seguro que quiere eliminar este producto?", "Advertencia", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        int idProducto = Convert.ToInt32(dgvProductos.Rows[e.RowIndex].Cells["Id"].Value);
+                        BorrarProducto(idProducto);
+                        Listar();
+                    }
+                   
                 }
             }
 
