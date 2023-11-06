@@ -17,6 +17,15 @@
     <Compile Update="AdministrarTurnosActividadForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="InscripcionTurnoSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ReservarActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ReservarTurnoActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="SocioForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +75,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="TurnoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="VerInscripciones.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

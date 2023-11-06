@@ -10,6 +10,13 @@ namespace Datos
 {
     public class Turno
     {
+        public List<Entidades.Turno> find_all()
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                return context.Turnos.ToList();
+            }
+        }
         public List<Entidades.Turno> getTurnosActividad(Entidades.Actividad actividad)
         {
             using (var context = new ApplicationDbContext())

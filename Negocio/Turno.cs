@@ -17,6 +17,11 @@ namespace Negocio
         private readonly Datos.Instalacion datos_instalacion = new Datos.Instalacion();
         private readonly Datos.Profesor datos_profesor = new Datos.Profesor();
 
+        public List<Entidades.Turno> find_all()
+        {
+            return datos_turno.find_all();
+        }
+
         public List<Entidades.Turno> getTurnosDTOActividad(Entidades.Actividad actividad)
         {
             List<Entidades.Turno> turnos = datos_turno.getTurnosActividad(actividad);
