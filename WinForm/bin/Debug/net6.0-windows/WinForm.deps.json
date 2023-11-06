@@ -800,7 +800,8 @@
       "Datos/1.0.0": {
         "dependencies": {
           "Entidades": "1.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.10"
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.10",
+          "Microsoft.ReportingServices.ReportViewerControl.Winforms": "150.1586.0"
         },
         "runtime": {
           "Datos.dll": {}
@@ -808,7 +809,8 @@
       },
       "Entidades/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.10"
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.10",
+          "Microsoft.ReportingServices.ReportViewerControl.Winforms": "150.1586.0"
         },
         "runtime": {
           "Entidades.dll": {}
@@ -819,6 +821,7 @@
           "Datos": "1.0.0",
           "Entidades": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.10",
+          "Microsoft.ReportingServices.ReportViewerControl.Winforms": "150.1586.0",
           "NETCore.Encrypt": "2.1.1"
         },
         "runtime": {

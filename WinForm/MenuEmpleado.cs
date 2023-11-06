@@ -58,7 +58,7 @@ namespace WinForm
 
         private void btnManejarInstalaciones_Click(object sender, EventArgs e)
         {
-            AdministrarInstalacionesForm manejarInstalaciones = new AdministrarInstalacionesForm();
+            ManejarInstalacionesForm manejarInstalaciones = new ManejarInstalacionesForm();
             manejarInstalaciones.Show();
         }
 

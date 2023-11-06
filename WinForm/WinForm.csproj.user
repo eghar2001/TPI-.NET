@@ -17,7 +17,7 @@
     <Compile Update="AdministrarTurnosActividadForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="SocioForm.cs">
+    <Compile Update="AgregarSocioForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="BorrarSocioForm.cs">
@@ -35,6 +35,9 @@
     <Compile Update="ComprarProductoForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="EditarInstalacionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="HorarioForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -47,13 +50,16 @@
     <Compile Update="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="AdministrarInstalacionesForm.cs">
+    <Compile Update="ManejarInstalacionesForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="MenuEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ProfesorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ReportesForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ReservasForms\ReservarInstalacionForm.cs">

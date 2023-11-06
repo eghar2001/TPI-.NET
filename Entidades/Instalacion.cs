@@ -15,7 +15,7 @@ namespace Entidades
         [Required]
         public string Titulo { get; set; }
 
-        [StringLength(maximumLength:400)]
+        [MaxLength(400)]
         public string Descripcion { get; set; }
 
         [Required]
@@ -37,10 +37,6 @@ namespace Entidades
                 return false;
             Entidades.Instalacion otra_inst = (Entidades.Instalacion)obj;
             return otra_inst.Id == this.Id;
-        }
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
         }
     }
 }

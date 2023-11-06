@@ -20,7 +20,7 @@ namespace WinForm.ReservasForms
         public ReservasUsuarioForm()
         {
             InitializeComponent();
-            
+
         }
         public void Listar()
         {
@@ -40,15 +40,28 @@ namespace WinForm.ReservasForms
             dgvReservas.Columns.Add(colEliminar);
 
             this.lblUsuario.Text = lblUsuario.Text + DatosLogin.UsuarioLogueado.NombreUsuario.ToString();
-           
+            dgvReservas.Columns[0].Visible = false; dgvReservas.Columns[1].Visible = false; dgvReservas.Columns[4].Visible = false; dgvReservas.Columns[5].Visible = false;
+            dgvReservas.Columns[2].HeaderText = "Instalacion"; dgvReservas.Columns[3].HeaderText = "Fecha Reservado"; dgvReservas.Columns[6].HeaderText = "Duracion"; dgvReservas.Columns[7].HeaderText = "Cantidad de Personas";
+            dgvReservas.Columns[8].HeaderText = "Fecha y hora inicio"; dgvReservas.Columns[9].HeaderText = "Fecha y hora fin";
+
+            dgvReservas.RowsDefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
+            dgvReservas.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.LightSkyBlue;
+
+
+            dgvReservas.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.LightCyan;
+            dgvReservas.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
 
         }
 
         private void dgvReservas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
+            if (e.ColumnIndex < 0 || e.RowIndex < 0)
+            {
+                return;
+            }
             DataGridViewCell cell = dgvReservas.Rows[e.RowIndex].Cells[e.ColumnIndex];
-        
-            if ("Eliminar" == cell.OwningColumn.HeaderText && !cell.ReadOnly )
+            if ("Eliminar" == dgvReservas.Columns[e.ColumnIndex].HeaderText)
             {
                 DataGridViewRow row = dgvReservas.Rows[e.RowIndex];
                 int colId = int.Parse(row.Cells["Id"].Value.ToString());
@@ -67,15 +80,18 @@ namespace WinForm.ReservasForms
                     MessageBox.Show("La acción se realizó con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Listar();
                 }
-                
+
             }
         }
 
-      
+
 
         private void dgvReservas_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            
+
+            e.CellStyle.BackColor = Color.LightBlue;
+            e.CellStyle.ForeColor = Color.Black;
+
 
             if (e.RowIndex >= 0 && e.ColumnIndex == dgvReservas.Columns["FechaHoraUso"].Index)
             {

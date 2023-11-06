@@ -42,17 +42,9 @@ namespace Entidades
         {
             get 
             {
-                return this.FechaHoraReserva.AddHours(DuracionEnHoras);
+                return this.FechaHoraReserva.AddHours((double)DuracionEnHoras);
             }
         }
-        public bool SeSuperponeCon(DateTime fechaHoraInicioBuscada, DateTime fechaHoraFinBuscada)
-        {
-            if (fechaHoraFinBuscada <= fechaHoraInicioBuscada)
-            {
-                return false;
-            }
-            return !(this.FechaHoraReserva > fechaHoraFinBuscada ||
-                        this.FechaHoraReserva.AddHours(DuracionEnHoras) < fechaHoraInicioBuscada);
-        }
+
     }
 }

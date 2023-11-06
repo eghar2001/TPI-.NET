@@ -43,14 +43,7 @@ namespace WinForm
             this.actividad_a_modificar = actividad_original;
         }
 
-        private bool FormValido()
-        {
-            bool resultado = true;
-            resultado = NombreValido() && resultado;
-            resultado = DescripcionValida() && resultado;
-            resultado = PrecioValido() && resultado;
-            return resultado;
-        }
+
         private bool PrecioValido()
         {
             if (txtPrecio.Text.Length == 0)
@@ -71,7 +64,7 @@ namespace WinForm
         }
         private bool NombreValido()
         {
-
+            
             if (txtNombre.Text.Length == 0)
             {
                 this.lblErrorNombre.Text = "Debe ingresar un nombre";
@@ -91,7 +84,8 @@ namespace WinForm
         }
         private bool DescripcionValida()
         {
-            if (txtDescripcion.Text.Length > 400)
+            if (txtDescripcion.Text.Length > 0 &&
+                !Validaciones.TieneLargoMaximo(txtDescripcion.Text, 400))
             {
                 this.lblErrorDescripcion.Text = "Maximo 400 caracteres";
                 return false;
@@ -114,7 +108,7 @@ namespace WinForm
 
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar) || e.KeyChar == '.' || e.KeyChar == ',' || Char.IsControl(e.KeyChar))
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == '.' || e.KeyChar == ',')
             {
                 e.Handled = false;
             }
@@ -127,7 +121,7 @@ namespace WinForm
         private void btnGuardar_Click(object sender, EventArgs e)
         {
 
-            if (FormValido())
+            if (PrecioValido() && NombreValido() && DescripcionValida())
             {
                 bool agregar = this.actividad_a_modificar == null;
                 if (agregar)
@@ -180,10 +174,6 @@ namespace WinForm
             }
         }
 
-        private void txtPrecio_TextChanged(object sender, EventArgs e)
-        {
-            PrecioValido();
-        }
 
     }
 }

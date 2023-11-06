@@ -45,9 +45,9 @@
             // 
             lblErrorDescripcion.AutoSize = true;
             lblErrorDescripcion.ForeColor = Color.Firebrick;
-            lblErrorDescripcion.Location = new Point(321, 480);
+            lblErrorDescripcion.Location = new Point(281, 370);
             lblErrorDescripcion.Name = "lblErrorDescripcion";
-            lblErrorDescripcion.Size = new Size(179, 20);
+            lblErrorDescripcion.Size = new Size(140, 15);
             lblErrorDescripcion.TabIndex = 19;
             lblErrorDescripcion.Text = " Texto Error   Descripcion ";
             // 
@@ -55,9 +55,9 @@
             // 
             lblErrorNombre.AutoSize = true;
             lblErrorNombre.ForeColor = Color.Firebrick;
-            lblErrorNombre.Location = new Point(318, 138);
+            lblErrorNombre.Location = new Point(281, 106);
             lblErrorNombre.Name = "lblErrorNombre";
-            lblErrorNombre.Size = new Size(224, 20);
+            lblErrorNombre.Size = new Size(173, 15);
             lblErrorNombre.TabIndex = 18;
             lblErrorNombre.Text = " Texto error  Nombre                   ";
             // 
@@ -65,65 +65,61 @@
             // 
             lblErrorPrecio.AutoSize = true;
             lblErrorPrecio.ForeColor = Color.Firebrick;
-            lblErrorPrecio.Location = new Point(318, 222);
+            lblErrorPrecio.Location = new Point(281, 169);
             lblErrorPrecio.Name = "lblErrorPrecio";
-            lblErrorPrecio.Size = new Size(182, 20);
+            lblErrorPrecio.Size = new Size(141, 15);
             lblErrorPrecio.TabIndex = 17;
             lblErrorPrecio.Text = " Texto Error   Precio           ";
             // 
             // txtPrecio
             // 
-            txtPrecio.Location = new Point(321, 191);
-            txtPrecio.Margin = new Padding(3, 4, 3, 4);
+            txtPrecio.Location = new Point(281, 143);
             txtPrecio.Name = "txtPrecio";
-            txtPrecio.Size = new Size(161, 27);
+            txtPrecio.Size = new Size(141, 23);
             txtPrecio.TabIndex = 16;
-            txtPrecio.TextChanged += txtPrecio_TextChanged;
             txtPrecio.KeyPress += txtPrecio_KeyPress;
             // 
             // lblPrecio
             // 
             lblPrecio.AutoSize = true;
-            lblPrecio.Location = new Point(184, 195);
+            lblPrecio.Location = new Point(161, 146);
             lblPrecio.Name = "lblPrecio";
-            lblPrecio.Size = new Size(66, 20);
+            lblPrecio.Size = new Size(40, 15);
             lblPrecio.TabIndex = 15;
-            lblPrecio.Text = "Precio(*)";
+            lblPrecio.Text = "Precio";
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(321, 273);
-            txtDescripcion.Margin = new Padding(3, 4, 3, 4);
+            txtDescripcion.Location = new Point(281, 205);
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(413, 203);
+            txtDescripcion.Size = new Size(362, 153);
             txtDescripcion.TabIndex = 14;
             txtDescripcion.TextChanged += txtDescripcion_TextChanged;
             // 
             // lblDescripcion
             // 
             lblDescripcion.AutoSize = true;
-            lblDescripcion.Location = new Point(184, 277);
+            lblDescripcion.Location = new Point(161, 208);
             lblDescripcion.Name = "lblDescripcion";
-            lblDescripcion.Size = new Size(87, 20);
+            lblDescripcion.Size = new Size(69, 15);
             lblDescripcion.TabIndex = 13;
             lblDescripcion.Text = "Descripcion";
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(184, 111);
+            lblNombre.Location = new Point(161, 83);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(80, 20);
+            lblNombre.Size = new Size(51, 15);
             lblNombre.TabIndex = 12;
-            lblNombre.Text = "Nombre(*)";
+            lblNombre.Text = "Nombre";
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(321, 107);
-            txtNombre.Margin = new Padding(3, 4, 3, 4);
+            txtNombre.Location = new Point(281, 80);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(413, 27);
+            txtNombre.Size = new Size(362, 23);
             txtNombre.TabIndex = 11;
             txtNombre.TextChanged += txtNombre_TextChanged;
             // 
@@ -131,18 +127,17 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitulo.Location = new Point(321, 44);
+            lblTitulo.Location = new Point(281, 33);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(170, 41);
+            lblTitulo.Size = new Size(137, 32);
             lblTitulo.TabIndex = 10;
             lblTitulo.Text = "Titulo Form";
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(649, 531);
-            btnGuardar.Margin = new Padding(3, 4, 3, 4);
+            btnGuardar.Location = new Point(568, 398);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(86, 31);
+            btnGuardar.Size = new Size(75, 23);
             btnGuardar.TabIndex = 20;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
@@ -150,9 +145,9 @@
             // 
             // ActividadForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(800, 450);
             Controls.Add(btnGuardar);
             Controls.Add(lblErrorDescripcion);
             Controls.Add(lblErrorNombre);
@@ -164,7 +159,6 @@
             Controls.Add(lblNombre);
             Controls.Add(txtNombre);
             Controls.Add(lblTitulo);
-            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "ActividadForm";
             Text = "Agregar Actividad";

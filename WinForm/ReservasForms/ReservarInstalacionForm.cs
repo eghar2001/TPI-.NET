@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinForm
 {
@@ -23,60 +24,74 @@ namespace WinForm
         }
 
 
-
-
-
         private void ReservarInstalacionForm_Load(object sender, EventArgs e)
         {
-            DataGridViewButtonColumn colReservar = new DataGridViewButtonColumn();
-            colReservar.Name = "Reservar";
-
-            colReservar.Text = "Reservar";
-            colReservar.UseColumnTextForButtonValue = true;
-
-
-            this.dgvInstalaciones.Columns.Add(colReservar);
-            this.dgvInstalaciones.Columns["Reservar"].Visible = false;
-
-
         }
-
 
 
         private void btnBuscar__Click_1(object sender, EventArgs e)
         {
-            DateTime fecha_inicio = this.dateTimePickerInicio.Value;
-
+            DateTime fecha_inicio;
+            DateTime fecha_fin;
+            fecha_inicio = this.dateTimePickerInicio.Value;
 
             int cant = 0;
             int duracion;
             try
             {
                 cant = int.Parse(txtCant.Text);
-                duracion = int.Parse(txtCant.Text);
+                if (string.IsNullOrWhiteSpace((txtCant.Text)))
+                {
+                    throw new FormatException();
+                };
+
             }
             catch (ArgumentOutOfRangeException) { MessageBox.Show("La cantidad ser un entero", "Problema de Cantidad", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
             catch (FormatException) { MessageBox.Show("Formato invalido", "Problema de Cantidad", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
-            if (duracion <= 0)
+            try
+            {
+                duracion = int.Parse(txtDuracion.Text);
+                if (string.IsNullOrWhiteSpace((txtDuracion.Text)))
+                {
+                    throw new FormatException();
+                };
+
+            }
+            catch (ArgumentOutOfRangeException) { MessageBox.Show("La duración debe ser un entero", "Problema de Cantidad", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+            catch (FormatException) { MessageBox.Show("Formato invalido", "Problema en Duracion", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+
+
+
+            try
+            {
+                if (duracion <= 0)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+            catch (ArgumentOutOfRangeException ex)
             {
                 MessageBox.Show("Duración inválida. La duración debe ser mayor que cero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            DateTime fecha_fin = fecha_inicio.AddHours(duracion);
-            if (fecha_fin.DayOfWeek != fecha_inicio.DayOfWeek)
-            {
-                MessageBox.Show("La reserva debe ser en un mismo dia. Valide su fecha y hora de reserva y la duracion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-
-
-
-
-
-
             this.dgvInstalaciones.DataSource = negocio_instalacion.BuscarInstalacionesDisponibles(fecha_inicio, duracion, cant);
+
+            DataGridViewButtonColumn colReservar = new DataGridViewButtonColumn();
+            colReservar.Name = "Reservar";
+
+            colReservar.Text = "Reservar";
+            colReservar.UseColumnTextForButtonValue = true;
+
+            dgvInstalaciones.Columns[4].HeaderText = "Precio";
+            this.dgvInstalaciones.Columns.Add(colReservar);
             this.dgvInstalaciones.Columns["Reservar"].Visible = true;
+            dgvInstalaciones.Columns[1].Visible = false; dgvInstalaciones.Columns[0].Visible = false;
+            dgvInstalaciones.RowsDefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
+
+
+
+            dgvInstalaciones.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.LightCyan;
+            dgvInstalaciones.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
         }
 
 

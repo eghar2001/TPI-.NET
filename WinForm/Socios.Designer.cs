@@ -40,6 +40,8 @@
             dgvSocios = new DataGridView();
             tsSocios = new ToolStrip();
             tsbNuevo = new ToolStripButton();
+            tsbEditar = new ToolStripButton();
+            tsbBorrar = new ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)socioBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)socioBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)socioBindingSource2).BeginInit();
@@ -129,16 +131,15 @@
             dgvSocios.RowTemplate.Height = 29;
             dgvSocios.Size = new Size(794, 382);
             dgvSocios.TabIndex = 3;
-            dgvSocios.CellClick += dgvSocios_CellClick;
             // 
             // tsSocios
             // 
             tsSocios.Dock = DockStyle.None;
             tsSocios.ImageScalingSize = new Size(20, 20);
-            tsSocios.Items.AddRange(new ToolStripItem[] { tsbNuevo });
+            tsSocios.Items.AddRange(new ToolStripItem[] { tsbNuevo, tsbEditar, tsbBorrar });
             tsSocios.Location = new Point(4, 0);
             tsSocios.Name = "tsSocios";
-            tsSocios.Size = new Size(42, 27);
+            tsSocios.Size = new Size(100, 27);
             tsSocios.TabIndex = 0;
             // 
             // tsbNuevo
@@ -150,6 +151,26 @@
             tsbNuevo.Size = new Size(29, 24);
             tsbNuevo.Text = "Nuevo";
             tsbNuevo.Click += tsbNuevo_Click;
+            // 
+            // tsbEditar
+            // 
+            tsbEditar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsbEditar.Image = (Image)resources.GetObject("tsbEditar.Image");
+            tsbEditar.ImageTransparentColor = Color.Magenta;
+            tsbEditar.Name = "tsbEditar";
+            tsbEditar.Size = new Size(29, 24);
+            tsbEditar.Text = "Editar";
+            tsbEditar.Click += tsbEditar_Click;
+            // 
+            // tsbBorrar
+            // 
+            tsbBorrar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsbBorrar.Image = (Image)resources.GetObject("tsbBorrar.Image");
+            tsbBorrar.ImageTransparentColor = Color.Magenta;
+            tsbBorrar.Name = "tsbBorrar";
+            tsbBorrar.Size = new Size(29, 24);
+            tsbBorrar.Text = "Borrar";
+            tsbBorrar.Click += tsbBorrar_Click;
             // 
             // Socios
             // 
@@ -187,5 +208,7 @@
         private ToolStrip tsSocios;
         private ToolStripButton tsbNuevo;
         private DataGridView dgvSocios;
+        private ToolStripButton tsbEditar;
+        private ToolStripButton tsbBorrar;
     }
 }
