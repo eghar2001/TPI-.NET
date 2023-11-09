@@ -33,6 +33,9 @@
             lblDni = new Label();
             toolTip1 = new ToolTip(components);
             panelMenuLateral = new Panel();
+            subPanelActividades = new Panel();
+            btnVerReservasActividad = new Button();
+            btnReservarActividad = new Button();
             btnMisActividades = new Button();
             subPanelnstalaciones = new Panel();
             btnVerReservas = new Button();
@@ -44,6 +47,7 @@
             pictureBox1 = new PictureBox();
             lblMenu = new Label();
             panelMenuLateral.SuspendLayout();
+            subPanelActividades.SuspendLayout();
             subPanelnstalaciones.SuspendLayout();
             panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -74,6 +78,7 @@
             // panelMenuLateral
             // 
             panelMenuLateral.BackColor = Color.IndianRed;
+            panelMenuLateral.Controls.Add(subPanelActividades);
             panelMenuLateral.Controls.Add(btnMisActividades);
             panelMenuLateral.Controls.Add(subPanelnstalaciones);
             panelMenuLateral.Controls.Add(btnInstalaciones);
@@ -86,11 +91,57 @@
             panelMenuLateral.Size = new Size(254, 451);
             panelMenuLateral.TabIndex = 2;
             // 
+            // subPanelActividades
+            // 
+            subPanelActividades.BackColor = Color.Brown;
+            subPanelActividades.Controls.Add(btnVerReservasActividad);
+            subPanelActividades.Controls.Add(btnReservarActividad);
+            subPanelActividades.Dock = DockStyle.Top;
+            subPanelActividades.Location = new Point(0, 230);
+            subPanelActividades.Margin = new Padding(3, 2, 3, 2);
+            subPanelActividades.Name = "subPanelActividades";
+            subPanelActividades.Padding = new Padding(4);
+            subPanelActividades.Size = new Size(254, 51);
+            subPanelActividades.TabIndex = 8;
+            subPanelActividades.Visible = false;
+            // 
+            // btnVerReservasActividad
+            // 
+            btnVerReservasActividad.Dock = DockStyle.Top;
+            btnVerReservasActividad.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnVerReservasActividad.ForeColor = Color.FromArgb(64, 64, 64);
+            btnVerReservasActividad.ImageAlign = ContentAlignment.BottomLeft;
+            btnVerReservasActividad.Location = new Point(4, 26);
+            btnVerReservasActividad.Margin = new Padding(3, 2, 3, 2);
+            btnVerReservasActividad.Name = "btnVerReservasActividad";
+            btnVerReservasActividad.Size = new Size(246, 25);
+            btnVerReservasActividad.TabIndex = 1;
+            btnVerReservasActividad.Text = "Ver Inscripciones";
+            btnVerReservasActividad.TextAlign = ContentAlignment.MiddleRight;
+            btnVerReservasActividad.UseVisualStyleBackColor = true;
+            btnVerReservasActividad.Click += btnVerReservasActividad_Click;
+            // 
+            // btnReservarActividad
+            // 
+            btnReservarActividad.Dock = DockStyle.Top;
+            btnReservarActividad.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnReservarActividad.ForeColor = Color.FromArgb(64, 64, 64);
+            btnReservarActividad.ImageAlign = ContentAlignment.BottomLeft;
+            btnReservarActividad.Location = new Point(4, 4);
+            btnReservarActividad.Margin = new Padding(3, 2, 3, 2);
+            btnReservarActividad.Name = "btnReservarActividad";
+            btnReservarActividad.Size = new Size(246, 22);
+            btnReservarActividad.TabIndex = 0;
+            btnReservarActividad.Text = "Reservar Actividad";
+            btnReservarActividad.TextAlign = ContentAlignment.MiddleRight;
+            btnReservarActividad.UseVisualStyleBackColor = true;
+            btnReservarActividad.Click += btnReservarActividad_Click;
+            // 
             // btnMisActividades
             // 
             btnMisActividades.Dock = DockStyle.Top;
             btnMisActividades.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnMisActividades.Location = new Point(0, 199);
+            btnMisActividades.Location = new Point(0, 196);
             btnMisActividades.Margin = new Padding(3, 2, 3, 2);
             btnMisActividades.Name = "btnMisActividades";
             btnMisActividades.Size = new Size(254, 34);
@@ -98,7 +149,7 @@
             btnMisActividades.Text = "Mis Actividades";
             btnMisActividades.TextAlign = ContentAlignment.MiddleRight;
             btnMisActividades.UseVisualStyleBackColor = true;
-            btnMisActividades.Click += btnActividades_Click;
+            btnMisActividades.Click += btnMisActividades_Click;
             // 
             // subPanelnstalaciones
             // 
@@ -110,7 +161,7 @@
             subPanelnstalaciones.Margin = new Padding(3, 2, 3, 2);
             subPanelnstalaciones.Name = "subPanelnstalaciones";
             subPanelnstalaciones.Padding = new Padding(4);
-            subPanelnstalaciones.Size = new Size(254, 54);
+            subPanelnstalaciones.Size = new Size(254, 51);
             subPanelnstalaciones.TabIndex = 6;
             subPanelnstalaciones.Visible = false;
             // 
@@ -228,6 +279,7 @@
             Text = "Menu Socio";
             Load += MenuSocio_Load;
             panelMenuLateral.ResumeLayout(false);
+            subPanelActividades.ResumeLayout(false);
             subPanelnstalaciones.ResumeLayout(false);
             panelLogo.ResumeLayout(false);
             panelLogo.PerformLayout();
@@ -257,5 +309,8 @@
         private Panel subPanelnstalaciones;
         private Button btnVerReservas;
         private Button btnReservarInstalacion;
+        private Panel subPanel;
+        private Button btnVerReservasActividad;
+        private Button btnReservarActividad;
     }
 }

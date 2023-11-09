@@ -80,6 +80,7 @@ C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\Entidades\obj\Debug\net6.0\refint\En
 C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\Entidades\obj\Debug\net6.0\Entidades.pdb
 C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\Entidades\obj\Debug\net6.0\Entidades.genruntimeconfig.cache
 C:\Users\rinor\Desktop\FACU\TP NET\TPI-.NET\Entidades\obj\Debug\net6.0\ref\Entidades.dll
+<<<<<<< HEAD
 C:\Users\rinor\Desktop\TPI NET\TPI-.NET\Entidades\bin\Debug\net6.0\Entidades.deps.json
 C:\Users\rinor\Desktop\TPI NET\TPI-.NET\Entidades\bin\Debug\net6.0\Entidades.runtimeconfig.json
 C:\Users\rinor\Desktop\TPI NET\TPI-.NET\Entidades\bin\Debug\net6.0\Entidades.dll
@@ -94,3 +95,19 @@ C:\Users\rinor\Desktop\TPI NET\TPI-.NET\Entidades\obj\Debug\net6.0\refint\Entida
 C:\Users\rinor\Desktop\TPI NET\TPI-.NET\Entidades\obj\Debug\net6.0\Entidades.pdb
 C:\Users\rinor\Desktop\TPI NET\TPI-.NET\Entidades\obj\Debug\net6.0\Entidades.genruntimeconfig.cache
 C:\Users\rinor\Desktop\TPI NET\TPI-.NET\Entidades\obj\Debug\net6.0\ref\Entidades.dll
+=======
+C:\Users\Pedro\source\repos\master\Entidades\bin\Debug\net6.0\Entidades.deps.json
+C:\Users\Pedro\source\repos\master\Entidades\bin\Debug\net6.0\Entidades.runtimeconfig.json
+C:\Users\Pedro\source\repos\master\Entidades\bin\Debug\net6.0\Entidades.dll
+C:\Users\Pedro\source\repos\master\Entidades\bin\Debug\net6.0\Entidades.pdb
+C:\Users\Pedro\source\repos\master\Entidades\obj\Debug\net6.0\Entidades.csproj.AssemblyReference.cache
+C:\Users\Pedro\source\repos\master\Entidades\obj\Debug\net6.0\Entidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pedro\source\repos\master\Entidades\obj\Debug\net6.0\Entidades.AssemblyInfoInputs.cache
+C:\Users\Pedro\source\repos\master\Entidades\obj\Debug\net6.0\Entidades.AssemblyInfo.cs
+C:\Users\Pedro\source\repos\master\Entidades\obj\Debug\net6.0\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Pedro\source\repos\master\Entidades\obj\Debug\net6.0\Entidades.dll
+C:\Users\Pedro\source\repos\master\Entidades\obj\Debug\net6.0\refint\Entidades.dll
+C:\Users\Pedro\source\repos\master\Entidades\obj\Debug\net6.0\Entidades.pdb
+C:\Users\Pedro\source\repos\master\Entidades\obj\Debug\net6.0\Entidades.genruntimeconfig.cache
+C:\Users\Pedro\source\repos\master\Entidades\obj\Debug\net6.0\ref\Entidades.dll
+>>>>>>> inscripcion-actividad

@@ -37,5 +37,19 @@ namespace Entidades
         public Instalacion Instalacion { get; set; } = null!;
 
         public List<Horario> Horarios { get; set; }
+
+        [NotMapped]
+        public int Cupo
+        {
+            get
+            {
+                return Instalacion.Cupo;
+            }
+        }
+
+        public override string ToString()
+        {
+            return this.Actividad.Nombre+" ("+this.Descripcion+")";
+        }
     }
 }

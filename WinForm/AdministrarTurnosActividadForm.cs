@@ -58,7 +58,7 @@ namespace WinForm
 
         private void ListarTurnos()
         {
-            this.dgvTurnos.DataSource = negocio_turno.getTurnosDTOActividad(actividad);
+            this.dgvTurnos.DataSource = negocio_turno.getTurnosActividad(actividad.Id);
             this.dgvTurnos.Columns.Remove("InstalacionId");
             this.dgvTurnos.Columns.Remove("ActividadId");
             this.dgvTurnos.Columns.Remove("ProfesorId");

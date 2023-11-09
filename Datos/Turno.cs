@@ -10,12 +10,19 @@ namespace Datos
 {
     public class Turno
     {
-        public List<Entidades.Turno> getTurnosActividad(Entidades.Actividad actividad)
+        public List<Entidades.Turno> find_all()
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                return context.Turnos.ToList();
+            }
+        }
+        public List<Entidades.Turno> getTurnosActividad(int id_actividad)
         {
             using (var context = new ApplicationDbContext())
             {
                 List<Entidades.Turno> turnos = context.Turnos
-                    .Where(t => t.ActividadId == actividad.Id)
+                    .Where(t => t.ActividadId == id_actividad)
                     .Include(t => t.Actividad)
                     .Include(t => t.Instalacion)
                     .Include(t => t.Profesor)
@@ -25,7 +32,7 @@ namespace Datos
                 return turnos;
             }
         }
-        public Entidades.Turno? getTurno(int id)
+        public Entidades.Turno? get_one(int id)
         {
             using (var context = new ApplicationDbContext())
             {
@@ -99,6 +106,14 @@ namespace Datos
             {
                 context.Remove(horario);
                 context.SaveChanges();
+            }
+        }
+        public int cantidadInscripcionesVigentes(int id_turno)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                int cantidad_inscripciones =  context.InscripcionesTurno.Where(i => id_turno == i.TurnoId && i.FechaHoraBaja == DateTime.MinValue).Count();
+                return cantidad_inscripciones;
             }
         }
     }

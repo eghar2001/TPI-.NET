@@ -34,7 +34,7 @@ namespace WinForm
             this.subPanelnstalaciones.Visible = !this.subPanelnstalaciones.Visible;
         }
 
-        private void btnActividades_Click(object sender, EventArgs e)
+        private void btnMisActividades_Click(object sender, EventArgs e)
         {
             this.subPanelActividades.Visible = !this.subPanelActividades.Visible;
         }
@@ -55,6 +55,18 @@ namespace WinForm
         {
             ReservasUsuarioForm reservasUsuario = new ReservasUsuarioForm();
             reservasUsuario.ShowDialog();
+        }
+
+        private void btnReservarActividad_Click(object sender, EventArgs e)
+        {
+            InscripcionActividadSeleccionActividad reservarActividad = new InscripcionActividadSeleccionActividad();
+            reservarActividad.ShowDialog();
+        }
+
+        private void btnVerReservasActividad_Click(object sender, EventArgs e)
+        {
+            VerInscripciones inscripcionesUsuario = new VerInscripciones();
+            inscripcionesUsuario.ShowDialog();
         }
     }
 }

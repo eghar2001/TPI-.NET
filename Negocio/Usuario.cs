@@ -105,6 +105,10 @@ namespace Negocio
         {
             return datos_usuario.get(id);
         }
+        public List<Entidades.Actividad> actividadesNoInscriptas(int usuario_id)
+        {
+            return datos_usuario.actividadesNoInscriptas(usuario_id);
+        }
     }
 
 }

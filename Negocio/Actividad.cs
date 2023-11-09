@@ -1,4 +1,5 @@
-﻿    
+﻿
+using Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,6 +49,7 @@ namespace Negocio
             }
            
         }
+       
         
     }
     
