@@ -4,14 +4,16 @@
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 .vs
 .idea
-ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.AssemblyInfo.cs
-WinForm/obj/Debug/net6.0-windows/apphost.exe
+
 # User-specific files
 *.rsuser
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
+*.exe
+*.txt
+*.dll
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
