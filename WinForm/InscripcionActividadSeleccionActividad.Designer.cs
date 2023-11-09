@@ -1,6 +1,6 @@
 ﻿namespace WinForm
 {
-    partial class ReservarActividad
+    partial class InscripcionActividadSeleccionActividad
     {
         /// <summary>
         /// Required designer variable.
@@ -32,21 +32,23 @@
             txtNombreActividad = new TextBox();
             dgvActividades = new DataGridView();
             btnCancelar = new Button();
+            label1 = new Label();
+            lblTitulo = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvActividades).BeginInit();
             SuspendLayout();
             // 
             // lblNombreActividad
             // 
             lblNombreActividad.AutoSize = true;
-            lblNombreActividad.Location = new Point(15, 29);
+            lblNombreActividad.Location = new Point(40, 112);
             lblNombreActividad.Name = "lblNombreActividad";
-            lblNombreActividad.Size = new Size(135, 15);
+            lblNombreActividad.Size = new Size(112, 15);
             lblNombreActividad.TabIndex = 9;
-            lblNombreActividad.Text = "Nombre de la Actividad:";
+            lblNombreActividad.Text = "Filtrar por actividad:";
             // 
             // txtNombreActividad
             // 
-            txtNombreActividad.Location = new Point(156, 26);
+            txtNombreActividad.Location = new Point(181, 112);
             txtNombreActividad.Name = "txtNombreActividad";
             txtNombreActividad.Size = new Size(146, 23);
             txtNombreActividad.TabIndex = 6;
@@ -56,22 +58,21 @@
             // 
             dgvActividades.AllowUserToAddRows = false;
             dgvActividades.AllowUserToDeleteRows = false;
-            dgvActividades.AllowUserToResizeColumns = false;
-            dgvActividades.AllowUserToResizeRows = false;
+            dgvActividades.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgvActividades.BackgroundColor = SystemColors.ScrollBar;
             dgvActividades.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvActividades.GridColor = SystemColors.ScrollBar;
-            dgvActividades.Location = new Point(308, 12);
+            dgvActividades.Location = new Point(333, 112);
             dgvActividades.Name = "dgvActividades";
             dgvActividades.RowTemplate.Height = 25;
             dgvActividades.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            dgvActividades.Size = new Size(865, 388);
+            dgvActividades.Size = new Size(774, 316);
             dgvActividades.TabIndex = 10;
             dgvActividades.CellContentClick += dgvActividades_CellContentClick;
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(96, 377);
+            btnCancelar.Location = new Point(120, 405);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 23);
             btnCancelar.TabIndex = 13;
@@ -79,17 +80,38 @@
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
-            // ReservarActividad
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(-29, 432);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 14;
+            label1.Text = "label1";
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitulo.Location = new Point(40, 51);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(240, 32);
+            lblTitulo.TabIndex = 15;
+            lblTitulo.Text = "Seleccionar Actividad";
+            // 
+            // InscripcionActividadSeleccionActividad
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1185, 408);
+            ClientSize = new Size(1185, 490);
+            Controls.Add(lblTitulo);
+            Controls.Add(label1);
             Controls.Add(btnCancelar);
             Controls.Add(dgvActividades);
             Controls.Add(lblNombreActividad);
             Controls.Add(txtNombreActividad);
-            Name = "ReservarActividad";
-            Text = "ReservarActividad";
+            Name = "InscripcionActividadSeleccionActividad";
+            Text = "Inscripcion a Actividad";
             Load += ReservarActividad_Load;
             ((System.ComponentModel.ISupportInitialize)dgvActividades).EndInit();
             ResumeLayout(false);
@@ -102,5 +124,7 @@
         private TextBox txtNombreActividad;
         private DataGridView dgvActividades;
         private Button btnCancelar;
+        private Label label1;
+        private Label lblTitulo;
     }
 }

@@ -280,3 +280,7 @@ C:\Users\Pedro\source\repos\master\WinForm\obj\Debug\net6.0-windows\WinForm.Rese
 C:\Users\Pedro\source\repos\master\WinForm\obj\Debug\net6.0-windows\WinForm.ReservarTurnoActividad.resources
 C:\Users\Pedro\source\repos\master\WinForm\obj\Debug\net6.0-windows\WinForm.InscripcionTurnoSocio.resources
 C:\Users\Pedro\source\repos\master\WinForm\obj\Debug\net6.0-windows\WinForm.VerInscripciones.resources
+D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.InscripcionTurnoSocio.resources
+D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.VerInscripciones.resources
+D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.InscripcionActividadSeleccionActividad.resources
+D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.InscripcionActividadSeleccionTurno.resources

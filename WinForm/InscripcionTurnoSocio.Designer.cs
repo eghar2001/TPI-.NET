@@ -42,7 +42,7 @@
             // 
             lblPrecio.AutoSize = true;
             lblPrecio.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPrecio.Location = new Point(715, 67);
+            lblPrecio.Location = new Point(640, 70);
             lblPrecio.Name = "lblPrecio";
             lblPrecio.Size = new Size(53, 21);
             lblPrecio.TabIndex = 19;
@@ -52,7 +52,7 @@
             // 
             lblUbicacion.AutoSize = true;
             lblUbicacion.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            lblUbicacion.Location = new Point(146, 69);
+            lblUbicacion.Location = new Point(71, 72);
             lblUbicacion.Name = "lblUbicacion";
             lblUbicacion.Size = new Size(75, 20);
             lblUbicacion.TabIndex = 18;
@@ -60,7 +60,7 @@
             // 
             // btnInscribirse
             // 
-            btnInscribirse.Location = new Point(146, 405);
+            btnInscribirse.Location = new Point(71, 408);
             btnInscribirse.Margin = new Padding(3, 2, 3, 2);
             btnInscribirse.Name = "btnInscribirse";
             btnInscribirse.Size = new Size(82, 22);
@@ -73,7 +73,7 @@
             // 
             listboxHorarios.FormattingEnabled = true;
             listboxHorarios.ItemHeight = 15;
-            listboxHorarios.Location = new Point(146, 185);
+            listboxHorarios.Location = new Point(71, 188);
             listboxHorarios.Margin = new Padding(3, 2, 3, 2);
             listboxHorarios.Name = "listboxHorarios";
             listboxHorarios.Size = new Size(627, 169);
@@ -83,7 +83,7 @@
             // 
             lblHorarios.AutoSize = true;
             lblHorarios.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblHorarios.Location = new Point(146, 155);
+            lblHorarios.Location = new Point(71, 158);
             lblHorarios.Name = "lblHorarios";
             lblHorarios.Size = new Size(149, 21);
             lblHorarios.TabIndex = 14;
@@ -92,7 +92,7 @@
             // lblProfesor
             // 
             lblProfesor.AutoSize = true;
-            lblProfesor.Location = new Point(146, 113);
+            lblProfesor.Location = new Point(71, 116);
             lblProfesor.Name = "lblProfesor";
             lblProfesor.Size = new Size(51, 15);
             lblProfesor.TabIndex = 13;
@@ -103,7 +103,7 @@
             lblNombreActividad.AutoSize = true;
             lblNombreActividad.Font = new Font("Arial Rounded MT Bold", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblNombreActividad.ForeColor = SystemColors.HotTrack;
-            lblNombreActividad.Location = new Point(137, 24);
+            lblNombreActividad.Location = new Point(62, 27);
             lblNombreActividad.Name = "lblNombreActividad";
             lblNombreActividad.Size = new Size(269, 33);
             lblNombreActividad.TabIndex = 12;
@@ -111,7 +111,7 @@
             // 
             // btnCerrrar
             // 
-            btnCerrrar.Location = new Point(962, 405);
+            btnCerrrar.Location = new Point(616, 394);
             btnCerrrar.Margin = new Padding(3, 2, 3, 2);
             btnCerrrar.Name = "btnCerrrar";
             btnCerrrar.Size = new Size(82, 22);
@@ -124,7 +124,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1159, 468);
+            ClientSize = new Size(781, 468);
             Controls.Add(btnCerrrar);
             Controls.Add(lblPrecio);
             Controls.Add(lblUbicacion);
@@ -134,7 +134,7 @@
             Controls.Add(lblProfesor);
             Controls.Add(lblNombreActividad);
             Name = "InscripcionTurnoSocio";
-            Text = "InscripcionTurnoSocio";
+            Text = "Inscripcion a Actividad";
             Load += InscripcionTurnoSocio_Load;
             ResumeLayout(false);
             PerformLayout();

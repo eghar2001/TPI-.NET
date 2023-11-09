@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,18 +9,19 @@ namespace Datos
 {
     public class InscripcionTurno
     {
+        
         public List<Entidades.InscripcionTurno> find_all(int idUsuario)
         {
             using (var context = new ApplicationDbContext())
             {
-                var todas_las_inscripciones = context.InscripcionesTurno.ToList();
+                List<Entidades.InscripcionTurno> inscripciones_usuario = context.InscripcionesTurno.Where(i => i.UsuarioId == idUsuario && i.FechaHoraBaja == DateTime.MinValue)
+                                                                        .Include(i => i.Turno).Include(i => i.Usuario).Include(i => i.Turno.Actividad)
+                                                                        .ToList();
 
-                var inscripciones_usuario = from iu in todas_las_inscripciones where iu.UsuarioId == idUsuario select iu;
-
-                return inscripciones_usuario.ToList();
+                return inscripciones_usuario;
             }
         }
-
+        
         public void agregarInscripcionTurno(Entidades.InscripcionTurno inscripcionTurno_nuevo)
         {
             using (var context = new ApplicationDbContext())
@@ -28,14 +30,35 @@ namespace Datos
                 context.SaveChanges();
             }
         }
-
-        public void borrarInscripcionTurno(Entidades.InscripcionTurno inscripcionTurno)
+        public void actualizarInscripcionTurno(Entidades.InscripcionTurno inscripcionTurno_nuevo)
         {
             using (var context = new ApplicationDbContext())
             {
-                context.Remove(inscripcionTurno);
+                context.Update(inscripcionTurno_nuevo);
                 context.SaveChanges();
             }
         }
+        public Entidades.InscripcionTurno? get_one(int id_inscripcion)
+        {
+            using (ApplicationDbContext context = new ApplicationDbContext())
+            {
+                Entidades.InscripcionTurno inscripcion = context.InscripcionesTurno.FirstOrDefault(i => i.Id == id_inscripcion);
+                return inscripcion;
+
+            }
+        }
+        public List<Entidades.Usuario> sociosInscriptosAActividad (int id_actividad)
+        {
+            using (ApplicationDbContext context = new ApplicationDbContext())
+            {
+                List<Entidades.Usuario> socios_inscriptos = context.InscripcionesTurno.Include(i => i.Turno).Where(i => i.Turno.ActividadId == id_actividad && i.FechaHoraBaja == DateTime.MinValue).Select(i => i.Usuario).Distinct().ToList();
+                return socios_inscriptos;
+            }
+            
+        }
+        
+
+
+
     }
 }

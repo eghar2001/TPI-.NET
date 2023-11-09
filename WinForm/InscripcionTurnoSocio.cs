@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,22 +13,14 @@ namespace WinForm
 {
     public partial class InscripcionTurnoSocio : Form
     {
-        private Negocio.Actividad negocio_actividad = new Negocio.Actividad();
         private Negocio.Turno negocio_turno = new Negocio.Turno();
-        private Negocio.Instalacion negocio_instalacion = new Negocio.Instalacion();
-        private Negocio.Profesor negocio_profesor = new Negocio.Profesor();
-        private Negocio.InscripcionTurno negocio_inscripcionTurno = new Negocio.InscripcionTurno();
+        private readonly Negocio.InscripcionTurno negocio_inscripcionesTurno = new Negocio.InscripcionTurno();
 
-        private Entidades.Profesor profesor_elegido;
-        private Entidades.Actividad actividad_elegida;
-        private Entidades.Instalacion instalacion_elegida;
         private Entidades.Turno turno_elegido;
         private List<Entidades.Horario> horarios_elegidos;
-        public InscripcionTurnoSocio(int idActividad, int idInstalacion, int idProfesor, int idTurno)
+        public InscripcionTurnoSocio(int idTurno)
         {
-            profesor_elegido = this.negocio_profesor.get_one(idProfesor);
-            actividad_elegida = this.negocio_actividad.get(idActividad);
-            instalacion_elegida = this.negocio_instalacion.get_one(idInstalacion);
+
             turno_elegido = this.negocio_turno.getTurno(idTurno);
 
 
@@ -37,10 +30,10 @@ namespace WinForm
 
         private void InscripcionTurnoSocio_Load(object sender, EventArgs e)
         {
-            this.lblNombreActividad.Text = this.actividad_elegida.Nombre + "(" + this.turno_elegido.Descripcion + ")"; ;
-            this.lblProfesor.Text = "Profesor: " + this.profesor_elegido.Nombre + ' ' + this.profesor_elegido.Apellido;
-            this.lblPrecio.Text = "Precio: $" + this.actividad_elegida.UltimoPrecio.ToString();
-            this.lblUbicacion.Text = "Ubicacion: " + this.instalacion_elegida.Titulo;
+            this.lblNombreActividad.Text = this.turno_elegido.Actividad.Nombre + "(" + this.turno_elegido.Descripcion + ")"; ;
+            this.lblProfesor.Text = "Profesor: " + this.turno_elegido.Profesor.Nombre + ' ' + this.turno_elegido.Profesor.Apellido;
+            this.lblPrecio.Text = "Precio: $" + this.turno_elegido.Actividad.UltimoPrecio.ToString();
+            this.lblUbicacion.Text = "Ubicacion: " + this.turno_elegido.Instalacion.Titulo;
 
 
             this.ListarHorarios();
@@ -59,21 +52,40 @@ namespace WinForm
 
         private void btnInscribirse_Click(object sender, EventArgs e)
         {
-            if(horarios_elegidos == null)
+            if (horarios_elegidos == null)
             {
                 MessageBox.Show("No hay horarios en los que se pueda ir");
             }
             else
             {
-                Entidades.InscripcionTurno nueva_inscripcion = new Entidades.InscripcionTurno();
-                nueva_inscripcion.TurnoId = turno_elegido.Id;
-                nueva_inscripcion.UsuarioId = DatosLogin.UsuarioLogueado.Id;
-                nueva_inscripcion.FechaHoraInscripcion = DateTime.Now;
-                negocio_inscripcionTurno.agregarInscripcionTurno(nueva_inscripcion);
-                turno_elegido.Instalacion.Cupo -= 1;
-                negocio_turno.modificarTurno(turno_elegido);
 
-                DialogResult = DialogResult.OK;
+                Entidades.InscripcionTurno nueva_inscripcion = new Entidades.InscripcionTurno()
+                {
+                    TurnoId = turno_elegido.Id,
+                    UsuarioId = DatosLogin.UsuarioLogueado.Id,
+                    FechaHoraInscripcion = DateTime.Now
+                };
+                try
+                {
+                    negocio_inscripcionesTurno.agregarInscripcionTurno(nueva_inscripcion);
+                    MessageBox.Show("Se ha inscripto con exito", "Inscripcion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult = DialogResult.OK;
+                }
+                catch (ArgumentException)
+                {
+                    MessageBox.Show("No se encontro el turno ingresado", "Error Turno", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (CupoMaximoException)
+                {
+                    //Aca dice cupo maximo del turno, pero en realidad el cupo esta guardado en actividad
+                    MessageBox.Show("Se alcanzo el cupo maximo del turno", "Error Cupo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (UsuarioYaInscriptoException)
+                {
+                    MessageBox.Show("Ya se encuentra inscripto esta actividad", "Error Cupo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
             }
         }
 

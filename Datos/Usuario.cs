@@ -69,7 +69,30 @@ namespace Datos
         {
             return context.Usuarios.Count();          
         }
-      
+
+        public List<Entidades.Actividad> actividadesNoInscriptas(int usuario_id)
+        //Dado un id de usuario, retorna todas las actividades a la cual ese usuario no esta inscripto
+        {
+            Datos.Actividad datos_actividad = new Datos.Actividad();
+            List<Entidades.Actividad> actividades = datos_actividad.findAll();
+            List<Entidades.Actividad> actividadesInscriptas = actividadesInscriptasDelSocio(usuario_id);
+            foreach (Entidades.Actividad actividad in actividadesInscriptas)
+            {
+                actividades.Remove(actividad);
+            }
+            return actividades;
+
+
+        }
+        public List<Entidades.Actividad> actividadesInscriptasDelSocio(int id_socio)
+        {
+            using (ApplicationDbContext context = new ApplicationDbContext())
+            {
+                List<Entidades.Actividad> actividades_inscriptas = context.InscripcionesTurno.Include(i => i.Turno.Actividad).Where(i => i.UsuarioId == id_socio && i.FechaHoraBaja == DateTime.MinValue).Select(i => i.Turno.Actividad).Distinct().ToList();
+                return actividades_inscriptas;
+            }
+
+        }
 
     }
 }

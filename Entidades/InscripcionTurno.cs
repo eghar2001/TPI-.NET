@@ -43,5 +43,18 @@ namespace Entidades
             }
         }
 
+        public void DarDeBaja()
+        {
+            this.fechaHoraBaja = DateTime.Now;
+        }
+        [NotMapped]
+        public bool DadoDeBaja
+        {
+            get
+            {
+                return this.FechaHoraBaja != DateTime.MinValue;
+            }
+        }
+
     }
 }

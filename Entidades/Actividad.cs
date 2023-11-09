@@ -27,6 +27,15 @@ namespace Entidades
         {
             return this.Nombre;
         }
+        public override bool Equals(object obj)
+        {
+            if(obj is not Actividad)
+            {
+                return false;
+            }
+            Entidades.Actividad otra_actividad = (Entidades.Actividad)obj;
+            return otra_actividad.Id == this.Id;
+        }
 
     }
 }

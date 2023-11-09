@@ -22,16 +22,16 @@ namespace Negocio
             return datos_turno.find_all();
         }
 
-        public List<Entidades.Turno> getTurnosDTOActividad(Entidades.Actividad actividad)
+        public List<Entidades.Turno> getTurnosActividad(int id_actividad)
         {
-            List<Entidades.Turno> turnos = datos_turno.getTurnosActividad(actividad);
+            List<Entidades.Turno> turnos = datos_turno.getTurnosActividad(id_actividad);
             
             
             return turnos;
         }
         public Entidades.Turno getTurno(int id)
         {
-            Entidades.Turno? turno = datos_turno.getTurno(id);
+            Entidades.Turno? turno = datos_turno.get_one(id);
            
             return turno;  
             
@@ -52,7 +52,7 @@ namespace Negocio
             {
                 throw new HorarioNoValidoException("No se ha ingresado una hora de inicio y de fin valida");
             }
-            Entidades.Turno turno = datos_turno.getTurno(horario.TurnoId);
+            Entidades.Turno turno = datos_turno.get_one(horario.TurnoId);
 
             //Validaciones de instalacion
             bool horario_ocupado = datos_turno.turnoOcupaDiaSemana(turno, horario.DiaSemana);
@@ -96,7 +96,7 @@ namespace Negocio
         public void modificarTurno(Entidades.Turno turno)
         {
             //Tenemos que validar que los horarios de las instalaciones no se superponga con alguno de los horarios de la instalacion
-            Entidades.Turno turno_orig = datos_turno.getTurno(turno.Id);
+            Entidades.Turno turno_orig = datos_turno.get_one(turno.Id);
             bool horario_superpuesto_inst = false;
             bool horario_superpuesto_prof = false;
             List<Entidades.Horario> horarios = datos_turno.getHorariosTurno(turno);

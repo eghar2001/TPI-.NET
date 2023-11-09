@@ -59,7 +59,7 @@ namespace WinForm
 
         private void btnReservarActividad_Click(object sender, EventArgs e)
         {
-            ReservarActividad reservarActividad = new ReservarActividad();
+            InscripcionActividadSeleccionActividad reservarActividad = new InscripcionActividadSeleccionActividad();
             reservarActividad.ShowDialog();
         }
 
