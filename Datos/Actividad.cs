@@ -10,16 +10,16 @@ namespace Datos
 {
     public class Actividad
     {
-        
+
 
         public List<Entidades.Actividad> findAll()
         {
-            using (var context = new ApplicationDbContext()) 
+            using (var context = new ApplicationDbContext())
             {
                 return context.Actividades.ToList();
             }
         }
-        public Entidades.Actividad? get(int actividad_id) 
+        public Entidades.Actividad? get(int actividad_id)
         {
             using (var context = new ApplicationDbContext())
             {
@@ -27,19 +27,19 @@ namespace Datos
             }
         }
 
-        public void agregarActividad(Entidades.Actividad actividad_nueva) 
+        public void agregarActividad(Entidades.Actividad actividad_nueva)
         {
             using (var context = new ApplicationDbContext())
             {
-                
-               
+
+
                 context.Add(actividad_nueva);
                 context.Add(new ValorActividad()
                 {
                     Precio = actividad_nueva.UltimoPrecio,
                     Actividad = actividad_nueva
                 });
-                context.SaveChanges();        
+                context.SaveChanges();
             }
         }
         public Entidades.Actividad? findByNombre(string nombre)
@@ -65,17 +65,27 @@ namespace Datos
                     });
                 }
                 context.SaveChanges();
-                
+
             }
-            
+
         }
         public void borrar_actividad(Entidades.Actividad actividad_a_borrar)
         {
-            using(var context = new ApplicationDbContext())
+            using (var context = new ApplicationDbContext())
             {
                 context.Remove(actividad_a_borrar);
                 context.SaveChanges();
             }
+        } 
+
+        public List<Entidades.ValorActividad> find_valores_actividad(int id_actividad)
+        {
+            using(var context = new ApplicationDbContext())
+            {
+                List<Entidades.ValorActividad> valores_actividad = context.ValoresActividad.Where(v => v.ActividadId == id_actividad).OrderBy(v => v.FechaDesde).ToList();
+                return valores_actividad;
+            }
+                
         }
 
     }

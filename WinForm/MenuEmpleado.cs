@@ -1,4 +1,7 @@
-﻿using System;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -68,8 +71,11 @@ namespace WinForm
             administrarProfesores.Show();
         }
 
-        private void btnReportes_Click(object sender, EventArgs e)
+        private void btnReporteActividades_Click(object sender, EventArgs e)
         {
-                    }
+            ReporteHistoricoPreciosActividad reporteForm = new ReporteHistoricoPreciosActividad();
+            reporteForm.Show();
+            
+        }
     }
 }

@@ -429,3 +429,13 @@ D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.VerInscripciones.
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.InscripcionActividadSeleccionActividad.resources
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.InscripcionActividadSeleccionTurno.resources
 >>>>>>> inscripcion-actividad
+D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.AgregarSocioForm.resources
+D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.EditarInstalacionForm.resources
+D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.EditarSocioForm.resources
+D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.ManejarInstalacionesForm.resources
+D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.ReportesForm.resources
+D:\Proyectos\TPI-.NET\WinForm\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
+D:\Proyectos\TPI-.NET\WinForm\bin\Debug\net6.0-windows\itextsharp.dll
+D:\Proyectos\TPI-.NET\WinForm\bin\Debug\net6.0-windows\itextsharp.xmlworker.dll
+D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.InscripcionActividad_SeleccionActividad.resources
+D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.ReporteHistoricoPreciosActividad.resources

@@ -14,6 +14,7 @@ namespace WinForm
     {
         private Negocio.Actividad negocio_actividad = new Negocio.Actividad();
         private Negocio.Usuario negocio_usuario = new Negocio.Usuario();
+        private List<Entidades.Actividad> actividades;
         public InscripcionActividadSeleccionActividad()
         {
             InitializeComponent();
@@ -35,9 +36,9 @@ namespace WinForm
 
         private void Listar()
         {
-            
+            actividades = negocio_usuario.actividadesNoInscriptas(DatosLogin.UsuarioLogueado.Id);
 
-            dgvActividades.DataSource = negocio_usuario.actividadesNoInscriptas(DatosLogin.UsuarioLogueado.Id);
+            dgvActividades.DataSource = actividades ;
 
 
             dgvActividades.Refresh();
@@ -45,15 +46,11 @@ namespace WinForm
 
         private void txtNombreActividad_TextChanged(object sender, EventArgs e)
         {
-            List<Entidades.Actividad> misActividades = negocio_actividad.find_all();
-            var actividades_filtradas = from a in misActividades where a.Nombre.ToLower().Contains(txtNombreActividad.Text.ToLower()) select a;
+            List<Entidades.Actividad> actividades_filtradas = actividades.Where(a => a.Nombre.ToUpper().Contains(txtNombreActividad.Text.ToUpper())).ToList();
 
 
+            dgvActividades.DataSource = actividades_filtradas;
 
-
-
-
-            dgvActividades.DataSource = actividades_filtradas.ToList();
         }
 
         private void dgvActividades_CellContentClick(object sender, DataGridViewCellEventArgs e)

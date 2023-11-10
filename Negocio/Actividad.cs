@@ -49,6 +49,11 @@ namespace Negocio
             }
            
         }
+
+        public List<Entidades.ValorActividad> find_valores_actividad(int id_actividad)
+        {
+            return datos_actividad.find_valores_actividad(id_actividad);
+        }
        
         
     }

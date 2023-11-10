@@ -33,9 +33,10 @@
             lblDni = new Label();
             toolTip1 = new ToolTip(components);
             panelMenuLateral = new Panel();
+            btnReportes = new Button();
             btnAdministrarProfes = new Button();
             subPanelActividades = new Panel();
-            btnAdministrarProfesores = new Button();
+            btnReporteActividades = new Button();
             btnAdministrarActividades = new Button();
             btnActividades = new Button();
             subPanelnstalaciones = new Panel();
@@ -51,7 +52,6 @@
             lblLogo = new Label();
             pictureBox1 = new PictureBox();
             lblMenu = new Label();
-            btnReportes = new Button();
             panelMenuLateral.SuspendLayout();
             subPanelActividades.SuspendLayout();
             subPanelnstalaciones.SuspendLayout();
@@ -102,6 +102,18 @@
             panelMenuLateral.Size = new Size(254, 553);
             panelMenuLateral.TabIndex = 2;
             // 
+            // btnReportes
+            // 
+            btnReportes.Dock = DockStyle.Top;
+            btnReportes.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnReportes.Location = new Point(0, 406);
+            btnReportes.Margin = new Padding(3, 2, 3, 2);
+            btnReportes.Name = "btnReportes";
+            btnReportes.Size = new Size(254, 34);
+            btnReportes.TabIndex = 10;
+            btnReportes.Text = "Reportes";
+            btnReportes.UseVisualStyleBackColor = true;
+            // 
             // btnAdministrarProfes
             // 
             btnAdministrarProfes.Dock = DockStyle.Top;
@@ -118,7 +130,7 @@
             // subPanelActividades
             // 
             subPanelActividades.BackColor = Color.Brown;
-            subPanelActividades.Controls.Add(btnAdministrarProfesores);
+            subPanelActividades.Controls.Add(btnReporteActividades);
             subPanelActividades.Controls.Add(btnAdministrarActividades);
             subPanelActividades.Dock = DockStyle.Top;
             subPanelActividades.Location = new Point(0, 319);
@@ -129,20 +141,21 @@
             subPanelActividades.TabIndex = 8;
             subPanelActividades.Visible = false;
             // 
-            // btnAdministrarProfesores
+            // btnReporteActividades
             // 
-            btnAdministrarProfesores.Dock = DockStyle.Top;
-            btnAdministrarProfesores.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAdministrarProfesores.ForeColor = Color.FromArgb(64, 64, 64);
-            btnAdministrarProfesores.ImageAlign = ContentAlignment.BottomLeft;
-            btnAdministrarProfesores.Location = new Point(4, 26);
-            btnAdministrarProfesores.Margin = new Padding(3, 2, 3, 2);
-            btnAdministrarProfesores.Name = "btnAdministrarProfesores";
-            btnAdministrarProfesores.Size = new Size(246, 22);
-            btnAdministrarProfesores.TabIndex = 1;
-            btnAdministrarProfesores.Text = "Reporte Instalaciones\r\n";
-            btnAdministrarProfesores.TextAlign = ContentAlignment.BottomLeft;
-            btnAdministrarProfesores.UseVisualStyleBackColor = true;
+            btnReporteActividades.Dock = DockStyle.Top;
+            btnReporteActividades.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnReporteActividades.ForeColor = Color.FromArgb(64, 64, 64);
+            btnReporteActividades.ImageAlign = ContentAlignment.BottomLeft;
+            btnReporteActividades.Location = new Point(4, 26);
+            btnReporteActividades.Margin = new Padding(3, 2, 3, 2);
+            btnReporteActividades.Name = "btnReporteActividades";
+            btnReporteActividades.Size = new Size(246, 22);
+            btnReporteActividades.TabIndex = 1;
+            btnReporteActividades.Text = "Reporte Precios Actividad";
+            btnReporteActividades.TextAlign = ContentAlignment.BottomLeft;
+            btnReporteActividades.UseVisualStyleBackColor = true;
+            btnReporteActividades.Click += btnReporteActividades_Click;
             // 
             // btnAdministrarActividades
             // 
@@ -341,19 +354,6 @@
             lblMenu.TabIndex = 4;
             lblMenu.Text = "Menu Empleados";
             // 
-            // btnReportes
-            // 
-            btnReportes.Dock = DockStyle.Top;
-            btnReportes.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnReportes.Location = new Point(0, 406);
-            btnReportes.Margin = new Padding(3, 2, 3, 2);
-            btnReportes.Name = "btnReportes";
-            btnReportes.Size = new Size(254, 34);
-            btnReportes.TabIndex = 10;
-            btnReportes.Text = "Reportes";
-            btnReportes.UseVisualStyleBackColor = true;
-            btnReportes.Click += btnReportes_Click;
-            // 
             // MenuEmpleado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -394,7 +394,6 @@
         private Button btnManejarProductos;
         private Button btnManejarInstalaciones;
         private Panel subPanelActividades;
-        private Button btnAdministrarProfesores;
         private Button btnAdministrarActividades;
         private Button btnActividades;
         private Label lblLogo;
@@ -406,5 +405,6 @@
         private Button btnAdministrarProductos;
         private Button btnAdministrarProfes;
         private Button btnReportes;
+        private Button btnReporteActividades;
     }
 }

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 namespace Datos
 {
     public class Usuario
