@@ -28,14 +28,16 @@ namespace WinForm
                 Entidades.Usuario usuario = negocio_usuario.login(txtNombreUsuario.Text, txtContrasenia.Text);
                 if (usuario != null)
                 {
-                    
-                    Form menu;
-                    
 
-                    if (usuario.EsTipoUsuario(Entidades.TiposUsuarioEnum.EMPLEADO)){
+                    Form menu;
+
+
+                    if (usuario.EsTipoUsuario(Entidades.TiposUsuarioEnum.EMPLEADO))
+                    {
                         menu = (MenuEmpleado)new MenuEmpleado();
                     }
-                    else if (usuario.EsTipoUsuario(Entidades.TiposUsuarioEnum.SOCIO)){
+                    else if (usuario.EsTipoUsuario(Entidades.TiposUsuarioEnum.SOCIO))
+                    {
                         menu = (MenuSocio)new MenuSocio();
                     }
                     else

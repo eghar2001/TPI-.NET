@@ -39,49 +39,54 @@
             // lblLogin
             // 
             lblLogin.AutoSize = true;
-            lblLogin.Location = new Point(360, 102);
+            lblLogin.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lblLogin.Location = new Point(312, 58);
             lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(46, 20);
+            lblLogin.Size = new Size(73, 32);
             lblLogin.TabIndex = 0;
             lblLogin.Text = "Login";
             // 
             // txtNombreUsuario
             // 
-            txtNombreUsuario.Location = new Point(323, 152);
+            txtNombreUsuario.Location = new Point(283, 114);
+            txtNombreUsuario.Margin = new Padding(3, 2, 3, 2);
             txtNombreUsuario.Name = "txtNombreUsuario";
-            txtNombreUsuario.Size = new Size(157, 27);
+            txtNombreUsuario.Size = new Size(138, 23);
             txtNombreUsuario.TabIndex = 1;
             // 
             // txtContrasenia
             // 
-            txtContrasenia.Location = new Point(323, 215);
+            txtContrasenia.Location = new Point(283, 161);
+            txtContrasenia.Margin = new Padding(3, 2, 3, 2);
             txtContrasenia.Name = "txtContrasenia";
-            txtContrasenia.Size = new Size(157, 27);
+            txtContrasenia.PasswordChar = '*';
+            txtContrasenia.Size = new Size(138, 23);
             txtContrasenia.TabIndex = 2;
             // 
             // lblNombreUsuario
             // 
             lblNombreUsuario.AutoSize = true;
-            lblNombreUsuario.Location = new Point(184, 155);
+            lblNombreUsuario.Location = new Point(161, 116);
             lblNombreUsuario.Name = "lblNombreUsuario";
-            lblNombreUsuario.Size = new Size(118, 20);
+            lblNombreUsuario.Size = new Size(94, 15);
             lblNombreUsuario.TabIndex = 3;
             lblNombreUsuario.Text = "Nombre Usuario";
             // 
             // lblContrasenia
             // 
             lblContrasenia.AutoSize = true;
-            lblContrasenia.Location = new Point(204, 215);
+            lblContrasenia.Location = new Point(178, 161);
             lblContrasenia.Name = "lblContrasenia";
-            lblContrasenia.Size = new Size(87, 20);
+            lblContrasenia.Size = new Size(70, 15);
             lblContrasenia.TabIndex = 4;
             lblContrasenia.Text = "Contrasenia";
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(386, 262);
+            btnLogin.Location = new Point(338, 196);
+            btnLogin.Margin = new Padding(3, 2, 3, 2);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(94, 29);
+            btnLogin.Size = new Size(82, 22);
             btnLogin.TabIndex = 5;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
@@ -89,15 +94,16 @@
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(btnLogin);
             Controls.Add(lblContrasenia);
             Controls.Add(lblNombreUsuario);
             Controls.Add(txtContrasenia);
             Controls.Add(txtNombreUsuario);
             Controls.Add(lblLogin);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Login";
             Text = "Login";
             ResumeLayout(false);
