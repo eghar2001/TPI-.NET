@@ -29,171 +29,107 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Socios));
             socioBindingSource = new BindingSource(components);
             socioBindingSource1 = new BindingSource(components);
             socioBindingSource2 = new BindingSource(components);
-            tcSocios = new ToolStripContainer();
-            tlSocios = new TableLayoutPanel();
-            btnActualizar = new Button();
-            btnSalir = new Button();
             dgvSocios = new DataGridView();
-            tsSocios = new ToolStrip();
-            tsbNuevo = new ToolStripButton();
-            tsbEditar = new ToolStripButton();
-            tsbBorrar = new ToolStripButton();
+            lblTItulo = new Label();
+            lblFiltrado = new Label();
+            txtNombreApellido = new TextBox();
+            btnAgregar = new Button();
+            btnCancelar = new Button();
+            btnActualizar = new Button();
             ((System.ComponentModel.ISupportInitialize)socioBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)socioBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)socioBindingSource2).BeginInit();
-            tcSocios.ContentPanel.SuspendLayout();
-            tcSocios.TopToolStripPanel.SuspendLayout();
-            tcSocios.SuspendLayout();
-            tlSocios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSocios).BeginInit();
-            tsSocios.SuspendLayout();
             SuspendLayout();
-            // 
-            // socioBindingSource
-            // 
-            socioBindingSource.DataSource = typeof(Negocio.Usuario);
-            // 
-            // socioBindingSource1
-            // 
-            socioBindingSource1.DataSource = typeof(Negocio.Usuario);
-            // 
-            // socioBindingSource2
-            // 
-            socioBindingSource2.DataSource = typeof(Entidades.Usuario);
-            // 
-            // tcSocios
-            // 
-            // 
-            // tcSocios.ContentPanel
-            // 
-            tcSocios.ContentPanel.Controls.Add(tlSocios);
-            tcSocios.ContentPanel.Size = new Size(800, 423);
-            tcSocios.Dock = DockStyle.Fill;
-            tcSocios.Location = new Point(0, 0);
-            tcSocios.Name = "tcSocios";
-            tcSocios.Size = new Size(800, 450);
-            tcSocios.TabIndex = 0;
-            tcSocios.Text = "toolStripContainer1";
-            // 
-            // tcSocios.TopToolStripPanel
-            // 
-            tcSocios.TopToolStripPanel.Controls.Add(tsSocios);
-            // 
-            // tlSocios
-            // 
-            tlSocios.ColumnCount = 2;
-            tlSocios.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlSocios.ColumnStyles.Add(new ColumnStyle());
-            tlSocios.Controls.Add(btnActualizar, 0, 1);
-            tlSocios.Controls.Add(btnSalir, 1, 1);
-            tlSocios.Controls.Add(dgvSocios, 0, 0);
-            tlSocios.Dock = DockStyle.Fill;
-            tlSocios.Location = new Point(0, 0);
-            tlSocios.Name = "tlSocios";
-            tlSocios.RowCount = 2;
-            tlSocios.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlSocios.RowStyles.Add(new RowStyle());
-            tlSocios.Size = new Size(800, 423);
-            tlSocios.TabIndex = 0;
-            // 
-            // btnActualizar
-            // 
-            btnActualizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnActualizar.Location = new Point(603, 391);
-            btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(94, 29);
-            btnActualizar.TabIndex = 1;
-            btnActualizar.Text = "Actualizar";
-            btnActualizar.UseVisualStyleBackColor = true;
-            btnActualizar.Click += btnActualizar_Click;
-            // 
-            // btnSalir
-            // 
-            btnSalir.Location = new Point(703, 391);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(94, 29);
-            btnSalir.TabIndex = 2;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
             // 
             // dgvSocios
             // 
             dgvSocios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tlSocios.SetColumnSpan(dgvSocios, 2);
-            dgvSocios.Dock = DockStyle.Fill;
-            dgvSocios.Location = new Point(3, 3);
+            dgvSocios.Location = new Point(32, 109);
             dgvSocios.Name = "dgvSocios";
-            dgvSocios.RowHeadersWidth = 51;
-            dgvSocios.RowTemplate.Height = 29;
-            dgvSocios.Size = new Size(794, 382);
-            dgvSocios.TabIndex = 3;
+            dgvSocios.RowTemplate.Height = 25;
+            dgvSocios.Size = new Size(613, 171);
+            dgvSocios.TabIndex = 0;
             // 
-            // tsSocios
+            // lblTItulo
             // 
-            tsSocios.Dock = DockStyle.None;
-            tsSocios.ImageScalingSize = new Size(20, 20);
-            tsSocios.Items.AddRange(new ToolStripItem[] { tsbNuevo, tsbEditar, tsbBorrar });
-            tsSocios.Location = new Point(4, 0);
-            tsSocios.Name = "tsSocios";
-            tsSocios.Size = new Size(100, 27);
-            tsSocios.TabIndex = 0;
+            lblTItulo.AutoSize = true;
+            lblTItulo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTItulo.Location = new Point(32, 28);
+            lblTItulo.Name = "lblTItulo";
+            lblTItulo.Size = new Size(278, 32);
+            lblTItulo.TabIndex = 2;
+            lblTItulo.Text = "Menu administrar Socios";
             // 
-            // tsbNuevo
+            // lblFiltrado
             // 
-            tsbNuevo.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tsbNuevo.Image = (Image)resources.GetObject("tsbNuevo.Image");
-            tsbNuevo.ImageTransparentColor = Color.Magenta;
-            tsbNuevo.Name = "tsbNuevo";
-            tsbNuevo.Size = new Size(29, 24);
-            tsbNuevo.Text = "Nuevo";
-            tsbNuevo.Click += tsbNuevo_Click;
+            lblFiltrado.AutoSize = true;
+            lblFiltrado.Location = new Point(32, 76);
+            lblFiltrado.Name = "lblFiltrado";
+            lblFiltrado.Size = new Size(157, 15);
+            lblFiltrado.TabIndex = 3;
+            lblFiltrado.Text = "Filtrar por nombre y apellido";
             // 
-            // tsbEditar
+            // txtNombreApellido
             // 
-            tsbEditar.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tsbEditar.Image = (Image)resources.GetObject("tsbEditar.Image");
-            tsbEditar.ImageTransparentColor = Color.Magenta;
-            tsbEditar.Name = "tsbEditar";
-            tsbEditar.Size = new Size(29, 24);
-            tsbEditar.Text = "Editar";
-            tsbEditar.Click += tsbEditar_Click;
+            txtNombreApellido.Location = new Point(210, 73);
+            txtNombreApellido.Name = "txtNombreApellido";
+            txtNombreApellido.Size = new Size(221, 23);
+            txtNombreApellido.TabIndex = 4;
+            txtNombreApellido.TextChanged += txtNombreApellido_TextChanged;
             // 
-            // tsbBorrar
+            // btnAgregar
             // 
-            tsbBorrar.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tsbBorrar.Image = (Image)resources.GetObject("tsbBorrar.Image");
-            tsbBorrar.ImageTransparentColor = Color.Magenta;
-            tsbBorrar.Name = "tsbBorrar";
-            tsbBorrar.Size = new Size(29, 24);
-            tsbBorrar.Text = "Borrar";
-            tsbBorrar.Click += tsbBorrar_Click;
+            btnAgregar.Location = new Point(570, 68);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(75, 23);
+            btnAgregar.TabIndex = 5;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(570, 286);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.TabIndex = 6;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnActualizar
+            // 
+            btnActualizar.Location = new Point(480, 286);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(75, 23);
+            btnActualizar.TabIndex = 7;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = true;
             // 
             // Socios
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(tcSocios);
+            ClientSize = new Size(700, 338);
+            Controls.Add(btnActualizar);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnAgregar);
+            Controls.Add(txtNombreApellido);
+            Controls.Add(lblFiltrado);
+            Controls.Add(lblTItulo);
+            Controls.Add(dgvSocios);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Socios";
             Text = "Administrar socios";
             Load += Socios_Load;
             ((System.ComponentModel.ISupportInitialize)socioBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)socioBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)socioBindingSource2).EndInit();
-            tcSocios.ContentPanel.ResumeLayout(false);
-            tcSocios.TopToolStripPanel.ResumeLayout(false);
-            tcSocios.TopToolStripPanel.PerformLayout();
-            tcSocios.ResumeLayout(false);
-            tcSocios.PerformLayout();
-            tlSocios.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvSocios).EndInit();
-            tsSocios.ResumeLayout(false);
-            tsSocios.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -201,14 +137,12 @@
         private BindingSource socioBindingSource;
         private BindingSource socioBindingSource1;
         private BindingSource socioBindingSource2;
-        private ToolStripContainer tcSocios;
-        private TableLayoutPanel tlSocios;
-        private Button btnActualizar;
-        private Button btnSalir;
-        private ToolStrip tsSocios;
-        private ToolStripButton tsbNuevo;
         private DataGridView dgvSocios;
-        private ToolStripButton tsbEditar;
-        private ToolStripButton tsbBorrar;
+        private Label lblTItulo;
+        private Label lblFiltrado;
+        private TextBox txtNombreApellido;
+        private Button btnAgregar;
+        private Button btnCancelar;
+        private Button btnActualizar;
     }
 }

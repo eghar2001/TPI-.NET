@@ -75,7 +75,7 @@ namespace WinForm
         {
             ReporteHistoricoPreciosActividad reporteForm = new ReporteHistoricoPreciosActividad();
             reporteForm.Show();
-            
+
         }
     }
 }

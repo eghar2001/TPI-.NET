@@ -73,6 +73,7 @@ namespace WinForm
             lblErrorApellido.Text = "";
             lblErrorNombreUsuario.Text = "";
             LblErrorDni.Text = "";
+            lblErrorContrasenia.Text = "";
         }
     }
 }

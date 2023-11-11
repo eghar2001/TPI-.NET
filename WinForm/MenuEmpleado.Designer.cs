@@ -33,14 +33,12 @@
             lblDni = new Label();
             toolTip1 = new ToolTip(components);
             panelMenuLateral = new Panel();
-            btnReportes = new Button();
             btnAdministrarProfes = new Button();
             subPanelActividades = new Panel();
             btnReporteActividades = new Button();
             btnAdministrarActividades = new Button();
             btnActividades = new Button();
             subPanelnstalaciones = new Panel();
-            btnManejarProductos = new Button();
             btnManejarInstalaciones = new Button();
             btnInstalaciones = new Button();
             subPanelProductos = new Panel();
@@ -49,15 +47,17 @@
             btnProductos = new Button();
             btnManejoSocios = new Button();
             panelLogo = new Panel();
-            lblLogo = new Label();
-            pictureBox1 = new PictureBox();
+            picboxEmpleado = new PictureBox();
             lblMenu = new Label();
+            picboxLogo = new PictureBox();
+            lblTituloClub = new Label();
             panelMenuLateral.SuspendLayout();
             subPanelActividades.SuspendLayout();
             subPanelnstalaciones.SuspendLayout();
             subPanelProductos.SuspendLayout();
             panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picboxEmpleado).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picboxLogo).BeginInit();
             SuspendLayout();
             // 
             // lblNombre
@@ -65,7 +65,7 @@
             lblNombre.AutoSize = true;
             lblNombre.Font = new Font("Segoe UI Semilight", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             lblNombre.ForeColor = Color.Maroon;
-            lblNombre.Location = new Point(536, 290);
+            lblNombre.Location = new Point(491, 344);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(193, 30);
             lblNombre.TabIndex = 0;
@@ -76,7 +76,7 @@
             lblDni.AutoSize = true;
             lblDni.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             lblDni.ForeColor = Color.Black;
-            lblDni.Location = new Point(704, 322);
+            lblDni.Location = new Point(561, 378);
             lblDni.Name = "lblDni";
             lblDni.Size = new Size(43, 25);
             lblDni.TabIndex = 1;
@@ -84,8 +84,7 @@
             // 
             // panelMenuLateral
             // 
-            panelMenuLateral.BackColor = Color.IndianRed;
-            panelMenuLateral.Controls.Add(btnReportes);
+            panelMenuLateral.BackColor = Color.MediumPurple;
             panelMenuLateral.Controls.Add(btnAdministrarProfes);
             panelMenuLateral.Controls.Add(subPanelActividades);
             panelMenuLateral.Controls.Add(btnActividades);
@@ -102,23 +101,11 @@
             panelMenuLateral.Size = new Size(254, 553);
             panelMenuLateral.TabIndex = 2;
             // 
-            // btnReportes
-            // 
-            btnReportes.Dock = DockStyle.Top;
-            btnReportes.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnReportes.Location = new Point(0, 406);
-            btnReportes.Margin = new Padding(3, 2, 3, 2);
-            btnReportes.Name = "btnReportes";
-            btnReportes.Size = new Size(254, 34);
-            btnReportes.TabIndex = 10;
-            btnReportes.Text = "Reportes";
-            btnReportes.UseVisualStyleBackColor = true;
-            // 
             // btnAdministrarProfes
             // 
             btnAdministrarProfes.Dock = DockStyle.Top;
             btnAdministrarProfes.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAdministrarProfes.Location = new Point(0, 372);
+            btnAdministrarProfes.Location = new Point(0, 364);
             btnAdministrarProfes.Margin = new Padding(3, 2, 3, 2);
             btnAdministrarProfes.Name = "btnAdministrarProfes";
             btnAdministrarProfes.Size = new Size(254, 34);
@@ -129,11 +116,11 @@
             // 
             // subPanelActividades
             // 
-            subPanelActividades.BackColor = Color.Brown;
+            subPanelActividades.BackColor = Color.MediumPurple;
             subPanelActividades.Controls.Add(btnReporteActividades);
             subPanelActividades.Controls.Add(btnAdministrarActividades);
             subPanelActividades.Dock = DockStyle.Top;
-            subPanelActividades.Location = new Point(0, 319);
+            subPanelActividades.Location = new Point(0, 311);
             subPanelActividades.Margin = new Padding(3, 2, 3, 2);
             subPanelActividades.Name = "subPanelActividades";
             subPanelActividades.Padding = new Padding(4);
@@ -177,7 +164,7 @@
             // 
             btnActividades.Dock = DockStyle.Top;
             btnActividades.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnActividades.Location = new Point(0, 285);
+            btnActividades.Location = new Point(0, 277);
             btnActividades.Margin = new Padding(3, 2, 3, 2);
             btnActividades.Name = "btnActividades";
             btnActividades.Size = new Size(254, 34);
@@ -188,32 +175,16 @@
             // 
             // subPanelnstalaciones
             // 
-            subPanelnstalaciones.BackColor = Color.Brown;
-            subPanelnstalaciones.Controls.Add(btnManejarProductos);
+            subPanelnstalaciones.BackColor = Color.MediumPurple;
             subPanelnstalaciones.Controls.Add(btnManejarInstalaciones);
             subPanelnstalaciones.Dock = DockStyle.Top;
-            subPanelnstalaciones.Location = new Point(0, 231);
+            subPanelnstalaciones.Location = new Point(0, 248);
             subPanelnstalaciones.Margin = new Padding(3, 2, 3, 2);
             subPanelnstalaciones.Name = "subPanelnstalaciones";
             subPanelnstalaciones.Padding = new Padding(4);
-            subPanelnstalaciones.Size = new Size(254, 54);
+            subPanelnstalaciones.Size = new Size(254, 29);
             subPanelnstalaciones.TabIndex = 6;
             subPanelnstalaciones.Visible = false;
-            // 
-            // btnManejarProductos
-            // 
-            btnManejarProductos.Dock = DockStyle.Top;
-            btnManejarProductos.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnManejarProductos.ForeColor = Color.FromArgb(64, 64, 64);
-            btnManejarProductos.ImageAlign = ContentAlignment.BottomLeft;
-            btnManejarProductos.Location = new Point(4, 26);
-            btnManejarProductos.Margin = new Padding(3, 2, 3, 2);
-            btnManejarProductos.Name = "btnManejarProductos";
-            btnManejarProductos.Size = new Size(246, 22);
-            btnManejarProductos.TabIndex = 1;
-            btnManejarProductos.Text = "Reporte Instalaciones\r\n";
-            btnManejarProductos.TextAlign = ContentAlignment.MiddleLeft;
-            btnManejarProductos.UseVisualStyleBackColor = true;
             // 
             // btnManejarInstalaciones
             // 
@@ -235,7 +206,7 @@
             // 
             btnInstalaciones.Dock = DockStyle.Top;
             btnInstalaciones.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnInstalaciones.Location = new Point(0, 197);
+            btnInstalaciones.Location = new Point(0, 214);
             btnInstalaciones.Margin = new Padding(3, 2, 3, 2);
             btnInstalaciones.Name = "btnInstalaciones";
             btnInstalaciones.Size = new Size(254, 34);
@@ -246,11 +217,11 @@
             // 
             // subPanelProductos
             // 
-            subPanelProductos.BackColor = Color.Brown;
+            subPanelProductos.BackColor = Color.MediumPurple;
             subPanelProductos.Controls.Add(btnCompraProducto);
             subPanelProductos.Controls.Add(btnAdministrarProductos);
             subPanelProductos.Dock = DockStyle.Top;
-            subPanelProductos.Location = new Point(0, 145);
+            subPanelProductos.Location = new Point(0, 162);
             subPanelProductos.Margin = new Padding(3, 2, 3, 2);
             subPanelProductos.Name = "subPanelProductos";
             subPanelProductos.Padding = new Padding(4);
@@ -292,7 +263,7 @@
             // 
             btnProductos.Dock = DockStyle.Top;
             btnProductos.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnProductos.Location = new Point(0, 111);
+            btnProductos.Location = new Point(0, 128);
             btnProductos.Margin = new Padding(3, 2, 3, 2);
             btnProductos.Name = "btnProductos";
             btnProductos.Size = new Size(254, 34);
@@ -305,7 +276,7 @@
             // 
             btnManejoSocios.Dock = DockStyle.Top;
             btnManejoSocios.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnManejoSocios.Location = new Point(0, 77);
+            btnManejoSocios.Location = new Point(0, 94);
             btnManejoSocios.Margin = new Padding(3, 2, 3, 2);
             btnManejoSocios.Name = "btnManejoSocios";
             btnManejoSocios.Size = new Size(254, 34);
@@ -316,43 +287,55 @@
             // 
             // panelLogo
             // 
-            panelLogo.Controls.Add(lblLogo);
+            panelLogo.BackColor = Color.MediumSlateBlue;
+            panelLogo.Controls.Add(lblTituloClub);
+            panelLogo.Controls.Add(picboxLogo);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
             panelLogo.Margin = new Padding(3, 2, 3, 2);
             panelLogo.Name = "panelLogo";
-            panelLogo.Size = new Size(254, 77);
+            panelLogo.Size = new Size(254, 94);
             panelLogo.TabIndex = 0;
             // 
-            // lblLogo
+            // picboxEmpleado
             // 
-            lblLogo.AutoSize = true;
-            lblLogo.BackColor = Color.White;
-            lblLogo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            lblLogo.Location = new Point(29, 22);
-            lblLogo.Name = "lblLogo";
-            lblLogo.Size = new Size(185, 32);
-            lblLogo.TabIndex = 0;
-            lblLogo.Text = "INSERTAR LOGO";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(502, 77);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(246, 201);
-            pictureBox1.TabIndex = 3;
-            pictureBox1.TabStop = false;
+            picboxEmpleado.Location = new Point(463, 136);
+            picboxEmpleado.Margin = new Padding(3, 2, 3, 2);
+            picboxEmpleado.Name = "picboxEmpleado";
+            picboxEmpleado.Size = new Size(246, 201);
+            picboxEmpleado.TabIndex = 3;
+            picboxEmpleado.TabStop = false;
             // 
             // lblMenu
             // 
             lblMenu.AutoSize = true;
             lblMenu.Font = new Font("Segoe UI", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMenu.Location = new Point(408, 9);
+            lblMenu.Location = new Point(435, 72);
             lblMenu.Name = "lblMenu";
-            lblMenu.Size = new Size(312, 51);
+            lblMenu.Size = new Size(296, 51);
             lblMenu.TabIndex = 4;
-            lblMenu.Text = "Menu Empleados";
+            lblMenu.Text = "Menu Empleado";
+            // 
+            // picboxLogo
+            // 
+            picboxLogo.Image = Properties.Resources.sacachispas;
+            picboxLogo.Location = new Point(0, 3);
+            picboxLogo.Name = "picboxLogo";
+            picboxLogo.Size = new Size(69, 82);
+            picboxLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picboxLogo.TabIndex = 0;
+            picboxLogo.TabStop = false;
+            // 
+            // lblTituloClub
+            // 
+            lblTituloClub.AutoSize = true;
+            lblTituloClub.Font = new Font("Unispace", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTituloClub.ForeColor = SystemColors.ButtonHighlight;
+            lblTituloClub.Location = new Point(79, 37);
+            lblTituloClub.Name = "lblTituloClub";
+            lblTituloClub.Size = new Size(166, 23);
+            lblTituloClub.TabIndex = 1;
+            lblTituloClub.Text = "Club Facha Fc";
             // 
             // MenuEmpleado
             // 
@@ -360,7 +343,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(898, 553);
             Controls.Add(lblMenu);
-            Controls.Add(pictureBox1);
+            Controls.Add(picboxEmpleado);
             Controls.Add(panelMenuLateral);
             Controls.Add(lblDni);
             Controls.Add(lblNombre);
@@ -374,7 +357,8 @@
             subPanelProductos.ResumeLayout(false);
             panelLogo.ResumeLayout(false);
             panelLogo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picboxEmpleado).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picboxLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -388,15 +372,13 @@
         private Button btnProductos;
         private Button btnManejoSocios;
         private Panel panelLogo;
-        private PictureBox pictureBox1;
+        private PictureBox picboxEmpleado;
         private Button btnInstalaciones;
         private Panel subPanelnstalaciones;
-        private Button btnManejarProductos;
         private Button btnManejarInstalaciones;
         private Panel subPanelActividades;
         private Button btnAdministrarActividades;
         private Button btnActividades;
-        private Label lblLogo;
         private Label lblMenu;
         private Panel subPanelProductos;
         private Button button2;
@@ -404,7 +386,8 @@
         private Button btnCompraProducto;
         private Button btnAdministrarProductos;
         private Button btnAdministrarProfes;
-        private Button btnReportes;
         private Button btnReporteActividades;
+        private Label lblTituloClub;
+        private PictureBox picboxLogo;
     }
 }

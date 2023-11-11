@@ -92,6 +92,10 @@ namespace Negocio
         {
             return datos_usuario.find_all();
         }
+        public List<Entidades.Usuario> find_socios()
+        {
+            return datos_usuario.find_socios();
+        }
         public void borrar_usuario(Entidades.Usuario usuario)
         {
             

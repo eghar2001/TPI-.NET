@@ -96,6 +96,14 @@ namespace Entidades
 
         public TipoUsuario TipoUsuario { get; set; } = null!;
 
+        [NotMapped]
+        public string NombreApellido
+        {
+            get
+            {
+                return this.Nombre + " " + this.Apellido;
+            }
+        }
         public bool EsTipoUsuario(TiposUsuarioEnum tipo) 
         {
             if (tipo == TiposUsuarioEnum.EMPLEADO)

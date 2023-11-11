@@ -6,6 +6,7 @@ namespace WinForm
     {
 
         private Negocio.Usuario negocio_usuario = new Negocio.Usuario();
+        List<Entidades.Usuario> usuarios;
         public Socios()
         {
             InitializeComponent();
@@ -15,16 +16,20 @@ namespace WinForm
         public void Listar()
         {
             dgvSocios.DataSource = null;
-            dgvSocios.DataSource = negocio_usuario.find_all();
-            dgvSocios.Refresh();
+            usuarios = negocio_usuario.find_socios();
+            var usuarios_display = usuarios.Select(u => new
+            {
+                Id = u.Id,
+                NombreApellido = u.Nombre + u.Apellido,
+                DNI = u.Dni,
+                Username = u.NombreUsuario
+            }).ToList();
+            dgvSocios.DataSource = usuarios_display;
         }
         private void Socios_Load(object sender, EventArgs e)
         {
             Listar();
-            dgvSocios.Columns.Remove("Contrasenia");
-            dgvSocios.Columns.Remove("TipoUsuarioId");
-            dgvSocios.Columns.Remove("Id");
-            dgvSocios.Columns.Remove("NombreUsuario");
+
 
             DataGridViewButtonColumn colBorrar = new DataGridViewButtonColumn();
             colBorrar.Text = "Borrar";
@@ -38,12 +43,12 @@ namespace WinForm
             Listar();
 
         }
-        public void btnSalir_Click(object sender, EventArgs e)
+        public void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void tsbNuevo_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
             AgregarSocioForm socioForm = new AgregarSocioForm();
             socioForm.ShowDialog();
@@ -53,24 +58,16 @@ namespace WinForm
             }
         }
 
-        private void tsbEditar_Click(object sender, EventArgs e)
+        private void txtNombreApellido_TextChanged(object sender, EventArgs e)
         {
-            EditarSocioForm socioForm = new EditarSocioForm();
-            socioForm.ShowDialog();
-            if (socioForm.DialogResult == DialogResult.OK)
+            var usuarios_display = usuarios.Where(u=> (u.Nombre + u.Apellido).ToUpper().Contains(txtNombreApellido.Text.ToUpper())).Select(u => new
             {
-                Listar();
-            }
-        }
-
-        private void tsbBorrar_Click(object sender, EventArgs e)
-        {
-            BorrarSocioForm socioForm = new BorrarSocioForm();
-            socioForm.ShowDialog();
-            if (socioForm.DialogResult == DialogResult.OK)
-            {
-                Listar();
-            }
+                Id = u.Id,
+                NombreApellido = u.Nombre + u.Apellido,
+                DNI = u.Dni,
+                Username = u.NombreUsuario
+            }).ToList();
+            dgvSocios.DataSource = usuarios_display;
         }
     }
 }

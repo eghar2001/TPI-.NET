@@ -11,58 +11,92 @@ namespace Datos
 {
     public class Usuario
     {
-        private readonly ApplicationDbContext context;
+        
 
-        public Usuario() 
-        {
-            context = new ApplicationDbContext();
-        }
+        
 
 
         public Entidades.Usuario get(int id)
         {
-            return context.Usuarios.FirstOrDefault(u => u.Id == id);
+            using (var context = new ApplicationDbContext()) 
+            {
+                return context.Usuarios.FirstOrDefault(u => u.Id == id);
+            }
+            
         }
             
             
         
         public Entidades.Usuario? get_by_dni(int dni)
         {
-            return context.Usuarios.FirstOrDefault(u => u.Dni == dni);
+            using (var context = new ApplicationDbContext()) 
+            {
+
+                return context.Usuarios.FirstOrDefault(u => u.Dni == dni);
+            }
         }
 
         public Entidades.Usuario? get_by_nombre_usuario(string nombreUsuario)
         {
-            return context.Usuarios.FirstOrDefault(u => u.NombreUsuario == nombreUsuario);
+            using (var context = new ApplicationDbContext()) 
+            {
+
+                return context.Usuarios.FirstOrDefault(u => u.NombreUsuario == nombreUsuario);
+            }
         }
 
         public List<Entidades.Usuario> find_all()
         {
-            return context.Usuarios.ToList();
+            using (var context = new ApplicationDbContext()) 
+            {
+                return context.Usuarios.ToList();
+            }
+        }
+        public List<Entidades.Usuario> find_socios()
+        {
+            using (var context = new ApplicationDbContext()) 
+            {
+                return context.Usuarios.Where(u => u.TipoUsuario.Descripcion == "Socio").ToList();
+            }
         }
 
         public void agregar_usuario(Entidades.Usuario usuario)
         {
-            context.Add(usuario);
-            context.SaveChanges();
+            using (var context = new ApplicationDbContext())
+            {
+                context.Add(usuario);
+                context.SaveChanges();
+            }
+            
         }
 
         public void remover_usuario(Entidades.Usuario usuario_param)
         {
-            context.Remove(usuario_param);
-            context.SaveChanges();
+            using (var context = new ApplicationDbContext()) 
+            {
+
+                context.Remove(usuario_param);
+                context.SaveChanges();
+            }
         }
 
         public void modificar_usuario(Entidades.Usuario usuario_modificado)
         {
-            
-            context.Update(usuario_modificado);
-            context.SaveChanges();          
+            using (var context = new ApplicationDbContext()) 
+            {
+
+                context.Update(usuario_modificado);
+                context.SaveChanges();
+            } 
         }
 
         public int cantidad_usuarios()
         {
-            return context.Usuarios.Count();          
+            using (var context = new ApplicationDbContext()) 
+            {
+
+                return context.Usuarios.Count();
+            }    
         }
 
         public List<Entidades.Actividad> actividadesNoInscriptas(int usuario_id)
