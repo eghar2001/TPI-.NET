@@ -170,6 +170,8 @@ namespace WinForm
                 try
                 {
                     negocio_usuario.agregar_socio(socio);
+                    string filename = socio.NombreUsuario + DateTime.Now.ToString("ddMMyyyyhhmmss")+picboxImagen.;
+                    picboxImagen.Image.Save(Rutas.RutaImagenesPerfil + "\\")
                     this.DialogResult = DialogResult.OK;
                 }
                 catch (DniRepetidoException)
@@ -256,11 +258,17 @@ namespace WinForm
             fileDialog.Filter = "Image Files(*.BMP; *.JPG; *.GIF)| *.BMP; *.JPG; *.GIF | All files(*.*) | *.*";
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                nombre_imagen = fileDialog.SafeFileName;
-                Image imagen = Image.FromStream(fileDialog.OpenFile());
-                imagen = Utils.FixImageOrientation(imagen);
-                picboxImagen.Image = imagen;
-
+                if(fileDialog.SafeFileName.EndsWith(".jpg") || fileDialog.SafeFileName.EndsWith(".png"))
+                {
+                    nombre_imagen = fileDialog.SafeFileName;
+                    Image imagen = Image.FromStream(fileDialog.OpenFile());
+                    imagen = Utils.FixImageOrientation(imagen);
+                    picboxImagen.Image = imagen;
+                }
+                else
+                {
+                    MessageBox.Show("No se ingreso un formato de archivo correcto", "Formato de archivo incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
             else
