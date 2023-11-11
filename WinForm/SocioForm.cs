@@ -1,10 +1,12 @@
-﻿using Negocio;
+﻿using Microsoft.IdentityModel.Tokens;
+using Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +16,7 @@ namespace WinForm
     public partial class SocioForm : Form
     {
         Negocio.Usuario negocio_usuario = new Negocio.Usuario();
-        Entidades.Usuario socio_a_editar;
+        Entidades.Usuario? socio_a_editar = null;
         public SocioForm()
         {
 
@@ -22,48 +24,183 @@ namespace WinForm
             this.Text = "Agregar Socio";
             this.lblTitulo.Text = "Agregar Socio";
         }
-        public SocioForm(Entidades.Usuario socio)
+        public SocioForm(int id_socio)
         {
-
+            socio_a_editar = negocio_usuario.get(id_socio);
             InitializeComponent();
-            this.socio_a_editar = socio;
             this.Text = "Editar Socio";
-            this.lblTitulo.Text = "Editar Socio";
+            this.lblTitulo.Text = "Editar Socio '" + socio_a_editar.NombreApellido + "'";
 
-            this.txtNombre.Text = socio.Nombre;
-            this.txtApellido.Text = socio.Apellido;
-            this.txtDni.Text = socio.Dni.ToString();
-            this.txtNombreUsuario.Text = socio.NombreUsuario;
+            this.txtNombre.Text = socio_a_editar.Nombre;
+            this.txtApellido.Text = socio_a_editar.Apellido;
+            this.txtDni.Text = socio_a_editar.Dni.ToString();
+            this.txtNombreUsuario.Text = socio_a_editar.NombreUsuario;
 
         }
+        private bool NombreValido()
+        {
+            string nombre = txtNombre.Text;
+            if (nombre.IsNullOrEmpty())
+            {
+                lblErrorNombre.Text = "El campo nombre es obligatorio";
+                return false;
+            }
+            if (nombre.Length > 150)
+            {
+                lblErrorNombre.Text = "El campo tiene un maximo de 150 caracteres";
+                return false;
+            }
+            lblErrorNombre.Text = "";
+            return true;
+        }
+        private bool ApellidoValido()
+        {
+            string apellido = txtApellido.Text;
+            if (apellido.IsNullOrEmpty())
+            {
+                lblErrorApellido.Text = "El campo apellido es obligatorio";
+                return false;
+            }
+            if (apellido.Length > 150)
+            {
+                lblErrorApellido.Text = "El campo tiene un maximo de 150 caracteres";
+                return false;
+            }
+            lblErrorApellido.Text = "";
+            return true;
+        }
+        private bool NombreUsuarioValido()
+        {
+            string nombreUsuario = txtNombreUsuario.Text;
+            if (nombreUsuario.IsNullOrEmpty())
+            {
+                lblErrorNombreUsuario.Text = "El campo nombreUsuario es obligatorio";
+                return false;
+            }
+            if (nombreUsuario.Length > 150)
+            {
+                lblErrorNombreUsuario.Text = "El campo tiene un maximo de 150 caracteres";
+                return false;
+            }
+            lblErrorNombreUsuario.Text = "";
+            return true;
+        }
+        private bool DNIValido()
+        {
+            string dni = txtDni.Text;
+            if (dni.IsNullOrEmpty())
+            {
+                LblErrorDni.Text = "El campo DNI es obligatorio";
+                return false;
+            }
+            if (dni.Length > 8)
+            {
+                LblErrorDni.Text = "El campo tiene un maximo de 8 caracteres";
+                return false;
+            }
+            if (!Validaciones.EsEntero(dni))
+            {
+                LblErrorDni.Text = "No tiene el formato valido";
+                return false;
+            }
+            LblErrorDni.Text = "";
+            return true;
+        }
 
+        private bool ContraseniaValida()
+        {
+            string contrasenia = txtContrasenia.Text;
+            if (contrasenia.IsNullOrEmpty())
+            {
+                lblErrorContrasenia.Text = "El campo DNI es obligatorio";
+                return false;
+            }
+            if (contrasenia.Length > 50)
+            {
+                lblErrorContrasenia.Text = "El campo tiene un maximo de 50 caracteres";
+                return false;
+            }
+            if (contrasenia != txtConfirmarContraseña.Text)
+            {
+                lblErrorContrasenia.Text = "Contraseña y Confirmar Contraseña deben coincidir";
+                return false;
+            }
+            if (!Validaciones.EsContrasenia(contrasenia))
+            {
+                lblErrorContrasenia.Text = "La contrasenia debe tener 4 letras, 2 numeros y un caracter especial";
+                return false;
+            }
+            lblErrorContrasenia.Text = "";
+            return true;
+        }
+
+        private bool FormValido()
+        {
+            bool resultado = true;
+            resultado = NombreValido() && resultado;
+            resultado = ApellidoValido() && resultado;
+            resultado = NombreUsuarioValido() && resultado;
+            resultado = DNIValido() && resultado;
+            resultado = ContraseniaValida() && resultado;
+            return resultado;
+        }
         public void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (!FormValido())
+            {
+                return;
+            }
             int dni = Int32.Parse(txtDni.Text);
             string nombre = txtNombre.Text;
             string apellido = txtApellido.Text;
             string nombre_usuario = txtNombreUsuario.Text;
             string contrasenia = txtContrasenia.Text;
 
-            Entidades.Usuario socio = new Entidades.Usuario(dni, nombre, apellido, nombre_usuario, contrasenia);
+            
+            if (socio_a_editar == null)
+            {
+                Entidades.Usuario socio = new Entidades.Usuario(dni, nombre, apellido, nombre_usuario, contrasenia);
+                try
+                {
+                    negocio_usuario.agregar_socio(socio);
+                    this.DialogResult = DialogResult.OK;
+                }
+                catch (DniRepetidoException)
+                {
+                    MessageBox.Show("El DNI se encuentra repetido", "Problema de socio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (NombreUsuarioRepetidoException)
+                {
+                    MessageBox.Show("El nombre de usuario se encuentra repetido", "Problema de socio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Hubo un error inesperado. Por favor, intente mas tarde", "Hubo un problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                Entidades.Usuario socio = new Entidades.Usuario(socio_a_editar.Id,dni, nombre, apellido, nombre_usuario, contrasenia);
+                try
+                {
+                    negocio_usuario.modificar_socio(socio);
+                    this.DialogResult = DialogResult.OK;
+                }
+                catch (DniRepetidoException)
+                {
+                    MessageBox.Show("El DNI se encuentra repetido", "Problema de socio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (NombreUsuarioRepetidoException)
+                {
+                    MessageBox.Show("El nombre de usuario se encuentra repetido", "Problema de socio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (ArgumentException)
+                {
+                    MessageBox.Show("No se encontro el socio a editar", "Problema de socio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+            }
 
-            try
-            {
-                negocio_usuario.agregar_usuario(socio);
-                this.DialogResult = DialogResult.OK;
-            }
-            catch (DniRepetidoException)
-            {
-                MessageBox.Show("El DNI se encuentra repetido", "Problema de socio", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (NombreUsuarioRepetidoException)
-            {
-                MessageBox.Show("El nombre de usuario se encuentra repetido", "Problema de socio", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Hubo un error inesperado. Por favor, intente mas tarde", "Hubo un problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
         }
 
@@ -74,6 +211,36 @@ namespace WinForm
             lblErrorNombreUsuario.Text = "";
             LblErrorDni.Text = "";
             lblErrorContrasenia.Text = "";
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            NombreValido();
+        }
+
+        private void txtApellido_TextChanged(object sender, EventArgs e)
+        {
+            ApellidoValido();
+        }
+
+        private void txtDni_TextChanged(object sender, EventArgs e)
+        {
+            DNIValido();
+        }
+
+        private void txtNombreUsuario_TextChanged(object sender, EventArgs e)
+        {
+            NombreUsuarioValido();
+        }
+
+        private void txtContrasenia_TextChanged(object sender, EventArgs e)
+        {
+            ContraseniaValida();
+        }
+
+        private void txtConfirmarContraseña_TextChanged(object sender, EventArgs e)
+        {
+            ContraseniaValida();
         }
     }
 }

@@ -48,7 +48,7 @@ namespace Negocio
 
         public Entidades.Usuario login(string username, string password)
         {
-            Entidades.Usuario usuario = datos_usuario.get_by_nombre_usuario(username);
+            Entidades.Usuario? usuario = datos_usuario.get_by_nombre_usuario(username);
             if (usuario == null)
             {
                 throw new UsuarioInexistenteException();
@@ -62,7 +62,7 @@ namespace Negocio
 
 
         }
-        public void agregar_usuario(Entidades.Usuario usuario)
+        public void agregar_socio(Entidades.Usuario usuario)
         {
             if(datos_usuario.get_by_dni(usuario.Dni) != null)
             {
@@ -72,12 +72,17 @@ namespace Negocio
             {
                 throw new NombreUsuarioRepetidoException();
             }
+            usuario.TipoUsuarioId = 1;
             datos_usuario.agregar_usuario(usuario);
             
         }
-        public void modificar_usuario(Entidades.Usuario usuario_modificado)
+        public void modificar_socio(Entidades.Usuario usuario_modificado)
         {
-            Entidades.Usuario user_original = datos_usuario.get(usuario_modificado.Id);
+            Entidades.Usuario? user_original = datos_usuario.get(usuario_modificado.Id);
+            if (user_original == null)
+            {
+                throw new ArgumentException("El usuario ingresado no se encuentra");
+            }
             if (usuario_modificado.Dni != user_original.Dni && datos_usuario.get_by_dni(usuario_modificado.Dni) != null )
             {
                 throw new DniRepetidoException();
@@ -86,6 +91,7 @@ namespace Negocio
             {
                 throw new NombreUsuarioRepetidoException();
             }
+            usuario_modificado.TipoUsuarioId = 1;
             datos_usuario.modificar_usuario(usuario_modificado);
         }
         public List<Entidades.Usuario> find_all()
@@ -96,10 +102,10 @@ namespace Negocio
         {
             return datos_usuario.find_socios();
         }
-        public void borrar_usuario(Entidades.Usuario usuario)
+        public void borrar_usuario(int id_usuario)
         {
             
-            datos_usuario.remover_usuario( usuario );
+            datos_usuario.remover_usuario(id_usuario);
         }
         public Entidades.Usuario get_by_dni(int dni)
         {

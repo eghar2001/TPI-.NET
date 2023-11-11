@@ -47,12 +47,14 @@
             // 
             // dgvSocios
             // 
+            dgvSocios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgvSocios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvSocios.Location = new Point(32, 109);
             dgvSocios.Name = "dgvSocios";
             dgvSocios.RowTemplate.Height = 25;
-            dgvSocios.Size = new Size(613, 171);
+            dgvSocios.Size = new Size(632, 379);
             dgvSocios.TabIndex = 0;
+            dgvSocios.CellClick += dgvSocios_CellClick;
             // 
             // lblTItulo
             // 
@@ -89,10 +91,11 @@
             btnAgregar.TabIndex = 5;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(570, 286);
+            btnCancelar.Location = new Point(570, 519);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 23);
             btnCancelar.TabIndex = 6;
@@ -101,7 +104,7 @@
             // 
             // btnActualizar
             // 
-            btnActualizar.Location = new Point(480, 286);
+            btnActualizar.Location = new Point(480, 519);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(75, 23);
             btnActualizar.TabIndex = 7;
@@ -112,7 +115,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(743, 554);
             Controls.Add(btnActualizar);
             Controls.Add(btnCancelar);
             Controls.Add(btnAgregar);

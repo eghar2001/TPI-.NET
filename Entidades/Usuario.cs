@@ -13,11 +13,7 @@ namespace Entidades
     {
 
         
-        private int id;
-        private int dni;
-        private string nombre;
-        private string apellido;
-        private string nombreUsuario;
+        
         private string contrasenia;
 
 
@@ -25,7 +21,7 @@ namespace Entidades
         public Usuario( int id,int dni, string nombre, string apellido, string nombreUsuario, string contrasenia)
         {
 
-            this.id = id;
+            Id = id;
             Dni = dni;
             Nombre = nombre;
             Apellido = apellido;

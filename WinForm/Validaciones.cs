@@ -15,6 +15,17 @@ namespace WinForm
             Regex precioRegex = new Regex(@"^\d+([\.\,]\d{1,2})?$");
             return precioRegex.IsMatch(campo_precio);
         }
+        public static bool EsEntero(string campo_precio)
+        {
+            Regex enteroRegex = new Regex(@"^\d+$");
+            return enteroRegex.IsMatch(campo_precio);
+        }
+        public static bool EsContrasenia(string campo_contrasenia)
+        {
+            //Valida que la contrasenia tenga al menos 5 letras, 2 numeros y 1 caracter especial
+            Regex contraseniaRegex = new Regex(@"^(?=.*[a-zA-Z].*[a-zA-Z].*[a-zA-Z].*[a-zA-Z])(?=.*\d.*\d)(?=.*[^a-zA-Z\d]).{8,}$");
+            return contraseniaRegex.IsMatch(campo_contrasenia);
+        }
         public static bool TieneLargoMaximo(string campo, int largo)
         {
             return campo.Length <= largo;

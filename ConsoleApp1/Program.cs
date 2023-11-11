@@ -44,7 +44,7 @@ namespace ConsoleApp1
 
                     Entidades.Usuario socio_nuevo = new Entidades.Usuario(dni, nombre, apellido, nombre_usuario, contrasenia);
                     try { 
-                        negocio_usuario.agregar_usuario(socio_nuevo);
+                        negocio_usuario.agregar_socio(socio_nuevo);
                     }
                     catch (DniRepetidoException){
                         Console.WriteLine("El Dni se encuentra repetido");
@@ -108,7 +108,7 @@ namespace ConsoleApp1
                         socio_a_modificar.NombreUsuario = nombre_usuario;
                         socio_a_modificar.Contrasenia = contrasenia;
 
-                        negocio_usuario.modificar_usuario(socio_a_modificar);
+                        negocio_usuario.modificar_socio(socio_a_modificar);
                         Console.WriteLine("El socio fue modificado con exito!!");
                        
                     }

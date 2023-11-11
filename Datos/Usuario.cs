@@ -16,7 +16,7 @@ namespace Datos
         
 
 
-        public Entidades.Usuario get(int id)
+        public Entidades.Usuario? get(int id)
         {
             using (var context = new ApplicationDbContext()) 
             {
@@ -56,7 +56,7 @@ namespace Datos
         {
             using (var context = new ApplicationDbContext()) 
             {
-                return context.Usuarios.Where(u => u.TipoUsuario.Descripcion == "Socio").ToList();
+                return context.Usuarios.Where(u => u.TipoUsuario.Descripcion == "Socio").OrderBy(u => u.NombreUsuario).ToList();
             }
         }
 
@@ -70,12 +70,12 @@ namespace Datos
             
         }
 
-        public void remover_usuario(Entidades.Usuario usuario_param)
+        public void remover_usuario(int id_usuario)
         {
             using (var context = new ApplicationDbContext()) 
             {
 
-                context.Remove(usuario_param);
+                context.Remove(id_usuario);
                 context.SaveChanges();
             }
         }
