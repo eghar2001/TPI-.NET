@@ -47,13 +47,17 @@
             lblContrasenia = new Label();
             txtConfirmarContraseña = new TextBox();
             lblConfirmarContrasenia = new Label();
+            picboxImagen = new PictureBox();
+            lblImagen = new Label();
+            btnExaminar = new Button();
+            ((System.ComponentModel.ISupportInitialize)picboxImagen).BeginInit();
             SuspendLayout();
             // 
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitulo.Location = new Point(95, 21);
+            lblTitulo.Location = new Point(95, 44);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(75, 32);
             lblTitulo.TabIndex = 0;
@@ -62,7 +66,7 @@
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(95, 86);
+            lblNombre.Location = new Point(95, 255);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(51, 15);
             lblNombre.TabIndex = 1;
@@ -71,7 +75,7 @@
             // lblApellido
             // 
             lblApellido.AutoSize = true;
-            lblApellido.Location = new Point(95, 134);
+            lblApellido.Location = new Point(95, 303);
             lblApellido.Name = "lblApellido";
             lblApellido.Size = new Size(51, 15);
             lblApellido.TabIndex = 2;
@@ -80,7 +84,7 @@
             // lblDni
             // 
             lblDni.AutoSize = true;
-            lblDni.Location = new Point(95, 179);
+            lblDni.Location = new Point(95, 348);
             lblDni.Name = "lblDni";
             lblDni.Size = new Size(25, 15);
             lblDni.TabIndex = 3;
@@ -89,7 +93,7 @@
             // lblNombreUsuario
             // 
             lblNombreUsuario.AutoSize = true;
-            lblNombreUsuario.Location = new Point(95, 226);
+            lblNombreUsuario.Location = new Point(526, 256);
             lblNombreUsuario.Name = "lblNombreUsuario";
             lblNombreUsuario.Size = new Size(94, 15);
             lblNombreUsuario.TabIndex = 4;
@@ -97,7 +101,7 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(259, 80);
+            txtNombre.Location = new Point(259, 249);
             txtNombre.Margin = new Padding(3, 2, 3, 2);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(236, 23);
@@ -106,7 +110,7 @@
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(259, 129);
+            txtApellido.Location = new Point(259, 298);
             txtApellido.Margin = new Padding(3, 2, 3, 2);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(236, 23);
@@ -115,7 +119,7 @@
             // 
             // txtDni
             // 
-            txtDni.Location = new Point(259, 174);
+            txtDni.Location = new Point(259, 343);
             txtDni.Margin = new Padding(3, 2, 3, 2);
             txtDni.Name = "txtDni";
             txtDni.Size = new Size(236, 23);
@@ -124,7 +128,7 @@
             // 
             // txtNombreUsuario
             // 
-            txtNombreUsuario.Location = new Point(259, 221);
+            txtNombreUsuario.Location = new Point(690, 251);
             txtNombreUsuario.Margin = new Padding(3, 2, 3, 2);
             txtNombreUsuario.Name = "txtNombreUsuario";
             txtNombreUsuario.Size = new Size(236, 23);
@@ -133,7 +137,7 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(412, 363);
+            btnGuardar.Location = new Point(844, 434);
             btnGuardar.Margin = new Padding(3, 2, 3, 2);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(82, 22);
@@ -146,7 +150,7 @@
             // 
             lblErrorNombre.AutoSize = true;
             lblErrorNombre.ForeColor = Color.Red;
-            lblErrorNombre.Location = new Point(259, 103);
+            lblErrorNombre.Location = new Point(259, 272);
             lblErrorNombre.Name = "lblErrorNombre";
             lblErrorNombre.Size = new Size(79, 15);
             lblErrorNombre.TabIndex = 12;
@@ -156,7 +160,7 @@
             // 
             lblErrorApellido.AutoSize = true;
             lblErrorApellido.ForeColor = Color.Red;
-            lblErrorApellido.Location = new Point(259, 152);
+            lblErrorApellido.Location = new Point(259, 321);
             lblErrorApellido.Name = "lblErrorApellido";
             lblErrorApellido.Size = new Size(79, 15);
             lblErrorApellido.TabIndex = 13;
@@ -166,7 +170,7 @@
             // 
             LblErrorDni.AutoSize = true;
             LblErrorDni.ForeColor = Color.Red;
-            LblErrorDni.Location = new Point(259, 199);
+            LblErrorDni.Location = new Point(259, 368);
             LblErrorDni.Name = "LblErrorDni";
             LblErrorDni.Size = new Size(55, 15);
             LblErrorDni.TabIndex = 14;
@@ -176,7 +180,7 @@
             // 
             lblErrorNombreUsuario.AutoSize = true;
             lblErrorNombreUsuario.ForeColor = Color.Red;
-            lblErrorNombreUsuario.Location = new Point(259, 244);
+            lblErrorNombreUsuario.Location = new Point(690, 274);
             lblErrorNombreUsuario.Name = "lblErrorNombreUsuario";
             lblErrorNombreUsuario.Size = new Size(122, 15);
             lblErrorNombreUsuario.TabIndex = 15;
@@ -186,7 +190,7 @@
             // 
             lblErrorContrasenia.AutoSize = true;
             lblErrorContrasenia.ForeColor = Color.Red;
-            lblErrorContrasenia.Location = new Point(259, 335);
+            lblErrorContrasenia.Location = new Point(690, 365);
             lblErrorContrasenia.Name = "lblErrorContrasenia";
             lblErrorContrasenia.Size = new Size(95, 15);
             lblErrorContrasenia.TabIndex = 18;
@@ -194,7 +198,7 @@
             // 
             // txtContrasenia
             // 
-            txtContrasenia.Location = new Point(259, 288);
+            txtContrasenia.Location = new Point(690, 318);
             txtContrasenia.Margin = new Padding(3, 2, 3, 2);
             txtContrasenia.Name = "txtContrasenia";
             txtContrasenia.PasswordChar = '*';
@@ -205,7 +209,7 @@
             // lblContrasenia
             // 
             lblContrasenia.AutoSize = true;
-            lblContrasenia.Location = new Point(95, 293);
+            lblContrasenia.Location = new Point(526, 323);
             lblContrasenia.Name = "lblContrasenia";
             lblContrasenia.Size = new Size(67, 15);
             lblContrasenia.TabIndex = 16;
@@ -213,7 +217,7 @@
             // 
             // txtConfirmarContraseña
             // 
-            txtConfirmarContraseña.Location = new Point(259, 313);
+            txtConfirmarContraseña.Location = new Point(690, 343);
             txtConfirmarContraseña.Margin = new Padding(3, 2, 3, 2);
             txtConfirmarContraseña.Name = "txtConfirmarContraseña";
             txtConfirmarContraseña.PasswordChar = '*';
@@ -224,17 +228,48 @@
             // lblConfirmarContrasenia
             // 
             lblConfirmarContrasenia.AutoSize = true;
-            lblConfirmarContrasenia.Location = new Point(95, 318);
+            lblConfirmarContrasenia.Location = new Point(526, 348);
             lblConfirmarContrasenia.Name = "lblConfirmarContrasenia";
             lblConfirmarContrasenia.Size = new Size(124, 15);
             lblConfirmarContrasenia.TabIndex = 19;
             lblConfirmarContrasenia.Text = "Confirmar Contraseña";
             // 
+            // picboxImagen
+            // 
+            picboxImagen.Location = new Point(690, 44);
+            picboxImagen.Name = "picboxImagen";
+            picboxImagen.Size = new Size(150, 158);
+            picboxImagen.SizeMode = PictureBoxSizeMode.Zoom;
+            picboxImagen.TabIndex = 21;
+            picboxImagen.TabStop = false;
+            // 
+            // lblImagen
+            // 
+            lblImagen.AutoSize = true;
+            lblImagen.Location = new Point(690, 26);
+            lblImagen.Name = "lblImagen";
+            lblImagen.Size = new Size(47, 15);
+            lblImagen.TabIndex = 22;
+            lblImagen.Text = "Imagen";
+            // 
+            // btnExaminar
+            // 
+            btnExaminar.Location = new Point(690, 208);
+            btnExaminar.Name = "btnExaminar";
+            btnExaminar.Size = new Size(150, 23);
+            btnExaminar.TabIndex = 23;
+            btnExaminar.Text = "Examinar";
+            btnExaminar.UseVisualStyleBackColor = true;
+            btnExaminar.Click += btnExaminar_Click;
+            // 
             // SocioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 413);
+            ClientSize = new Size(1000, 552);
+            Controls.Add(btnExaminar);
+            Controls.Add(lblImagen);
+            Controls.Add(picboxImagen);
             Controls.Add(txtConfirmarContraseña);
             Controls.Add(lblConfirmarContrasenia);
             Controls.Add(lblErrorContrasenia);
@@ -258,6 +293,7 @@
             Name = "SocioForm";
             Text = "Socio Form";
             Load += SocioForm_Load;
+            ((System.ComponentModel.ISupportInitialize)picboxImagen).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -283,5 +319,8 @@
         private Label lblContrasenia;
         private TextBox txtConfirmarContraseña;
         private Label lblConfirmarContrasenia;
+        private PictureBox picboxImagen;
+        private Label lblImagen;
+        private Button btnExaminar;
     }
 }

@@ -47,17 +47,19 @@
             btnProductos = new Button();
             btnManejoSocios = new Button();
             panelLogo = new Panel();
+            lblTituloClub = new Label();
+            picboxLogo = new PictureBox();
             picboxEmpleado = new PictureBox();
             lblMenu = new Label();
-            picboxLogo = new PictureBox();
-            lblTituloClub = new Label();
+            panel1 = new Panel();
             panelMenuLateral.SuspendLayout();
             subPanelActividades.SuspendLayout();
             subPanelnstalaciones.SuspendLayout();
             subPanelProductos.SuspendLayout();
             panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picboxEmpleado).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picboxLogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picboxEmpleado).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // lblNombre
@@ -65,7 +67,7 @@
             lblNombre.AutoSize = true;
             lblNombre.Font = new Font("Segoe UI Semilight", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             lblNombre.ForeColor = Color.Maroon;
-            lblNombre.Location = new Point(491, 344);
+            lblNombre.Location = new Point(75, 12);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(193, 30);
             lblNombre.TabIndex = 0;
@@ -76,7 +78,7 @@
             lblDni.AutoSize = true;
             lblDni.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             lblDni.ForeColor = Color.Black;
-            lblDni.Location = new Point(561, 378);
+            lblDni.Location = new Point(75, 253);
             lblDni.Name = "lblDni";
             lblDni.Size = new Size(43, 25);
             lblDni.TabIndex = 1;
@@ -297,35 +299,6 @@
             panelLogo.Size = new Size(254, 94);
             panelLogo.TabIndex = 0;
             // 
-            // picboxEmpleado
-            // 
-            picboxEmpleado.Location = new Point(463, 136);
-            picboxEmpleado.Margin = new Padding(3, 2, 3, 2);
-            picboxEmpleado.Name = "picboxEmpleado";
-            picboxEmpleado.Size = new Size(246, 201);
-            picboxEmpleado.TabIndex = 3;
-            picboxEmpleado.TabStop = false;
-            // 
-            // lblMenu
-            // 
-            lblMenu.AutoSize = true;
-            lblMenu.Font = new Font("Segoe UI", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMenu.Location = new Point(435, 72);
-            lblMenu.Name = "lblMenu";
-            lblMenu.Size = new Size(296, 51);
-            lblMenu.TabIndex = 4;
-            lblMenu.Text = "Menu Empleado";
-            // 
-            // picboxLogo
-            // 
-            picboxLogo.Image = Properties.Resources.sacachispas;
-            picboxLogo.Location = new Point(0, 3);
-            picboxLogo.Name = "picboxLogo";
-            picboxLogo.Size = new Size(69, 82);
-            picboxLogo.SizeMode = PictureBoxSizeMode.Zoom;
-            picboxLogo.TabIndex = 0;
-            picboxLogo.TabStop = false;
-            // 
             // lblTituloClub
             // 
             lblTituloClub.AutoSize = true;
@@ -337,19 +310,58 @@
             lblTituloClub.TabIndex = 1;
             lblTituloClub.Text = "Club Facha Fc";
             // 
+            // picboxLogo
+            // 
+            picboxLogo.Image = Properties.Resources.sacachispas;
+            picboxLogo.Location = new Point(0, 3);
+            picboxLogo.Name = "picboxLogo";
+            picboxLogo.Size = new Size(69, 82);
+            picboxLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picboxLogo.TabIndex = 0;
+            picboxLogo.TabStop = false;
+            // 
+            // picboxEmpleado
+            // 
+            picboxEmpleado.Location = new Point(50, 50);
+            picboxEmpleado.Margin = new Padding(3, 2, 3, 2);
+            picboxEmpleado.Name = "picboxEmpleado";
+            picboxEmpleado.Size = new Size(246, 201);
+            picboxEmpleado.SizeMode = PictureBoxSizeMode.Zoom;
+            picboxEmpleado.TabIndex = 3;
+            picboxEmpleado.TabStop = false;
+            // 
+            // lblMenu
+            // 
+            lblMenu.AutoSize = true;
+            lblMenu.Font = new Font("Segoe UI", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lblMenu.Location = new Point(338, 34);
+            lblMenu.Name = "lblMenu";
+            lblMenu.Size = new Size(296, 51);
+            lblMenu.TabIndex = 4;
+            lblMenu.Text = "Menu Empleado";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(224, 224, 224);
+            panel1.Controls.Add(picboxEmpleado);
+            panel1.Controls.Add(lblDni);
+            panel1.Controls.Add(lblNombre);
+            panel1.Location = new Point(395, 139);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(338, 298);
+            panel1.TabIndex = 5;
+            // 
             // MenuEmpleado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(898, 553);
+            Controls.Add(panel1);
             Controls.Add(lblMenu);
-            Controls.Add(picboxEmpleado);
             Controls.Add(panelMenuLateral);
-            Controls.Add(lblDni);
-            Controls.Add(lblNombre);
             Margin = new Padding(3, 2, 3, 2);
             Name = "MenuEmpleado";
-            Text = "MenuEmpleado";
+            Text = "Menu Empleado";
             Load += MenuEmpleado_Load;
             panelMenuLateral.ResumeLayout(false);
             subPanelActividades.ResumeLayout(false);
@@ -357,8 +369,10 @@
             subPanelProductos.ResumeLayout(false);
             panelLogo.ResumeLayout(false);
             panelLogo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picboxEmpleado).EndInit();
             ((System.ComponentModel.ISupportInitialize)picboxLogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picboxEmpleado).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -389,5 +403,6 @@
         private Button btnReporteActividades;
         private Label lblTituloClub;
         private PictureBox picboxLogo;
+        private Panel panel1;
     }
 }

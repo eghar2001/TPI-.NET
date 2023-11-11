@@ -68,7 +68,7 @@ namespace ConsoleApp1
                     }
                     else
                     {
-                        negocio_usuario.borrar_usuario(socio_a_eliminar);
+                        negocio_usuario.borrar_usuario(socio_a_eliminar.Id);
                         Console.WriteLine("El socio se ha eliminado correctamente");
                     }
 

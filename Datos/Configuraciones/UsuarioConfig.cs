@@ -14,6 +14,7 @@ namespace Entidades.Configuraciones
         {
             builder.HasIndex(u => u.NombreUsuario).IsUnique();
             builder.HasIndex(u => u.Dni).IsUnique();
+            builder.Property(u => u.FotoNombre).HasDefaultValue("default.png");
 
 
         }

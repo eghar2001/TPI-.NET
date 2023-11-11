@@ -20,8 +20,9 @@ namespace WinForm
 
         private void MenuSocio_Load(object sender, EventArgs e)
         {
+            this.picboxSocio.ImageLocation = DatosLogin.UsuarioLogueado.FotoAbsolutePath;
             this.lblNombre.Text = DatosLogin.UsuarioLogueado.Nombre + " " + DatosLogin.UsuarioLogueado.Apellido;
-            this.lblDni.Text = "" + DatosLogin.UsuarioLogueado.Dni;
+            this.lblDni.Text = "DNI: " + DatosLogin.UsuarioLogueado.Dni;
         }
 
 

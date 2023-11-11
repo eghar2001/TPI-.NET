@@ -87,6 +87,12 @@ namespace Entidades
         } = null!;
 
         [Required]
+        public string FotoNombre
+        {
+            get; set;
+        } = null!;
+
+        [Required]
         [ForeignKey("TipoUsuario")]
         public int TipoUsuarioId { get; set; }
 
@@ -115,7 +121,14 @@ namespace Entidades
                 return false;
             }
         }
-
+        [NotMapped]
+        public string FotoAbsolutePath
+        {
+            get
+            {
+                return Rutas.RutaImagenesPerfil+"\\" + this.FotoNombre;
+            }
+        }
         public override string ToString()
         {
             return this.NombreUsuario;

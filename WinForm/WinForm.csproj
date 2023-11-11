@@ -18,6 +18,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="150.1586.0" />
     <PackageReference Include="Microsoft.ReportViewer.Common" Version="10.0.40219.1" />
+    <PackageReference Include="Syncfusion.Pdf.WinForms" Version="23.1.44" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,6 +1,7 @@
 ﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,8 +24,20 @@ namespace WinForm
 
         private void MenuEmpleado_Load(object sender, EventArgs e)
         {
+            if (!DatosLogin.UsuarioLogueado.FotoNombre.IsNullOrEmpty())
+            {
+                try
+                {
+                    this.picboxEmpleado.Image = System.Drawing.Image.FromFile(DatosLogin.UsuarioLogueado.FotoAbsolutePath);
+                }
+                catch (IOException)
+                {
+                    MessageBox.Show("No se encontro la imagen del usuario", "Imagen no encontrada",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.picboxEmpleado.Image = System.Drawing.Image.FromFile(Entidades.Rutas.RutaImagenesPerfil + "\\default.png");
+                }
+            }
             this.lblNombre.Text = DatosLogin.UsuarioLogueado.Nombre + " " + DatosLogin.UsuarioLogueado.Apellido;
-            this.lblDni.Text = "" + DatosLogin.UsuarioLogueado.Dni;
+            this.lblDni.Text = "DNI: " + DatosLogin.UsuarioLogueado.Dni;
         }
 
 

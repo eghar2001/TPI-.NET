@@ -10,6 +10,10 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Syncfusion.Pdf;
+using Syncfusion.Pdf.Graphics;
+using System.Drawing;
+using Entidades;
 
 namespace WinForm
 {
@@ -17,6 +21,7 @@ namespace WinForm
     {
         Negocio.Usuario negocio_usuario = new Negocio.Usuario();
         Entidades.Usuario? socio_a_editar = null;
+        private string nombre_imagen = "default.png";
         public SocioForm()
         {
 
@@ -28,6 +33,7 @@ namespace WinForm
         {
             socio_a_editar = negocio_usuario.get(id_socio);
             InitializeComponent();
+            this.picboxImagen.ImageLocation = socio_a_editar.FotoAbsolutePath;
             this.Text = "Editar Socio";
             this.lblTitulo.Text = "Editar Socio '" + socio_a_editar.NombreApellido + "'";
 
@@ -156,10 +162,11 @@ namespace WinForm
             string nombre_usuario = txtNombreUsuario.Text;
             string contrasenia = txtContrasenia.Text;
 
+            Entidades.Usuario socio = new Entidades.Usuario(dni, nombre, apellido, nombre_usuario, contrasenia);
             
             if (socio_a_editar == null)
             {
-                Entidades.Usuario socio = new Entidades.Usuario(dni, nombre, apellido, nombre_usuario, contrasenia);
+                
                 try
                 {
                     negocio_usuario.agregar_socio(socio);
@@ -180,7 +187,7 @@ namespace WinForm
             }
             else
             {
-                Entidades.Usuario socio = new Entidades.Usuario(socio_a_editar.Id,dni, nombre, apellido, nombre_usuario, contrasenia);
+                socio.Id = socio_a_editar.Id;
                 try
                 {
                     negocio_usuario.modificar_socio(socio);
@@ -198,7 +205,7 @@ namespace WinForm
                 {
                     MessageBox.Show("No se encontro el socio a editar", "Problema de socio", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
+
             }
 
 
@@ -241,6 +248,25 @@ namespace WinForm
         private void txtConfirmarContraseña_TextChanged(object sender, EventArgs e)
         {
             ContraseniaValida();
+        }
+
+        private void btnExaminar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "Image Files(*.BMP; *.JPG; *.GIF)| *.BMP; *.JPG; *.GIF | All files(*.*) | *.*";
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                nombre_imagen = fileDialog.SafeFileName;
+                Image imagen = Image.FromStream(fileDialog.OpenFile());
+                imagen = Utils.FixImageOrientation(imagen);
+                picboxImagen.Image = imagen;
+
+
+            }
+            else
+            {
+                nombre_imagen = "default.png";
+            }
         }
     }
 }

@@ -147,3 +147,6 @@ D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\refint\WinForm.dll
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.pdb
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.genruntimeconfig.cache
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\ref\WinForm.dll
+D:\Proyectos\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Syncfusion.Compression.Base.dll
+D:\Proyectos\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Syncfusion.Licensing.dll
+D:\Proyectos\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Syncfusion.Pdf.Base.dll
