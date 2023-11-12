@@ -43,5 +43,12 @@ namespace WinForm
             Socios administrarSocios = new Socios();
             administrarSocios.ShowDialog();
         }
+
+        private void btnMisCompras_Click(object sender, EventArgs e)
+        {
+            VerComprasSocio verComprasSocio = new VerComprasSocio();
+
+            verComprasSocio.ShowDialog();
+        }
     }
 }

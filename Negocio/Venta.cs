@@ -11,6 +11,11 @@ namespace Negocio
         private readonly Datos.Venta datos_venta = new Datos.Venta();
         private readonly Datos.Producto datos_producto = new Datos.Producto();
 
+        public List<Entidades.Venta> find_all(Entidades.Usuario usuario)
+        {
+            return datos_venta.find_all(usuario);
+        }
+
         public void agregar_venta(Entidades.Venta venta)
         {
 

@@ -8,18 +8,25 @@ namespace Datos
 {
     public class Venta
     {
-        private readonly ApplicationDbContext context;
-
-        public Venta()
+        public List<Entidades.Venta> find_all(Entidades.Usuario usuario)
         {
-            context = new ApplicationDbContext();
+            using (ApplicationDbContext context = new ApplicationDbContext())
+            {
+               
+
+                return context.Ventas.Where(v => v.UsuarioId == usuario.Id).ToList();
+            }
         }
+
 
         public void agregar_venta(Entidades.Venta venta)
         {
-            context.Update(venta.Producto);
-            context.Add(venta);
-            context.SaveChanges();
+            using (ApplicationDbContext context = new ApplicationDbContext())
+            {
+                context.Update(venta.Producto);
+                context.Add(venta);
+                context.SaveChanges();
+            }
         }
     }
 }

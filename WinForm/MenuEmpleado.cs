@@ -52,5 +52,12 @@ namespace WinForm
             AdministrarProductosForm administrarProductosForm = new AdministrarProductosForm();
             administrarProductosForm.ShowDialog();
         }
+
+        private void btnCompraProducto_Click(object sender, EventArgs e)
+        {
+            EleccionClienteCompraProducto eleccionClienteCompraProducto = new EleccionClienteCompraProducto();
+
+            eleccionClienteCompraProducto.ShowDialog();
+        }
     }
 }

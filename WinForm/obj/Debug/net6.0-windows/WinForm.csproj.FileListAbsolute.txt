@@ -233,3 +233,6 @@ C:\Users\Pedro\Source\Repos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.Ad
 C:\Users\Pedro\Source\Repos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.MenuEmpleado.resources
 C:\Users\Pedro\Source\Repos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.MenuSocio.resources
 C:\Users\Pedro\source\repos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.AgregarProductoForm.resources
+C:\Users\Pedro\source\repos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.VerComprasSocio.resources
+C:\Users\Pedro\source\repos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.ComprarProducto.resources
+C:\Users\Pedro\source\repos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.EleccionClienteCompraProducto.resources
