@@ -51,7 +51,7 @@ namespace WinForm
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            SocioForm agregarSocioForm = new SocioForm();
+            UsuarioForm agregarSocioForm = new UsuarioForm();
             agregarSocioForm.ShowDialog();
             if (agregarSocioForm.DialogResult == DialogResult.OK)
             {
@@ -82,7 +82,7 @@ namespace WinForm
             int id =int.Parse( dgvSocios.Rows[e.RowIndex].Cells["Id"].Value.ToString());
             if (columna == "Editar")
             {
-                SocioForm editarSocioForm = new SocioForm(id);
+                UsuarioForm editarSocioForm = new UsuarioForm(id);
                 editarSocioForm.ShowDialog();
                 if (editarSocioForm.DialogResult == DialogResult.OK)
                 {

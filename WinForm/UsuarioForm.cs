@@ -17,30 +17,35 @@ using Entidades;
 
 namespace WinForm
 {
-    public partial class SocioForm : Form
+    public partial class UsuarioForm : Form
     {
         Negocio.Usuario negocio_usuario = new Negocio.Usuario();
         Entidades.Usuario? socio_a_editar = null;
         private string nombre_imagen = "default.png";
-        public SocioForm()
+       
+
+        public UsuarioForm()
         {
 
             InitializeComponent();
-            this.Text = "Agregar Socio";
-            this.lblTitulo.Text = "Agregar Socio";
+            this.picboxImagen.ImageLocation = Rutas.RutaImagenesPerfil + "\\default.png";
+            this.Text = "Crear Usuario";
+            this.lblTitulo.Text = "Crear Usuario";
+           
         }
-        public SocioForm(int id_socio)
+        public UsuarioForm(int id_socio)
         {
             socio_a_editar = negocio_usuario.get(id_socio);
             InitializeComponent();
             this.picboxImagen.ImageLocation = socio_a_editar.FotoAbsolutePath;
-            this.Text = "Editar Socio";
-            this.lblTitulo.Text = "Editar Socio '" + socio_a_editar.NombreApellido + "'";
+            this.Text = "Editar Usuario";
+            this.lblTitulo.Text = "Editar Usuario '" + socio_a_editar.NombreApellido + "'";
 
             this.txtNombre.Text = socio_a_editar.Nombre;
             this.txtApellido.Text = socio_a_editar.Apellido;
             this.txtDni.Text = socio_a_editar.Dni.ToString();
             this.txtNombreUsuario.Text = socio_a_editar.NombreUsuario;
+
 
         }
         private bool NombreValido()
@@ -115,10 +120,14 @@ namespace WinForm
 
         private bool ContraseniaValida()
         {
+            if (!checkContrasenia.Checked)
+            {
+                return true;
+            }
             string contrasenia = txtContrasenia.Text;
             if (contrasenia.IsNullOrEmpty())
             {
-                lblErrorContrasenia.Text = "El campo DNI es obligatorio";
+                lblErrorContrasenia.Text = "El campo contraseña es obligatorio";
                 return false;
             }
             if (contrasenia.Length > 50)
@@ -160,18 +169,27 @@ namespace WinForm
             string nombre = txtNombre.Text;
             string apellido = txtApellido.Text;
             string nombre_usuario = txtNombreUsuario.Text;
-            string contrasenia = txtContrasenia.Text;
+            string contrasenia;
+            if (checkContrasenia.Checked)
+            {
+                contrasenia = txtContrasenia.Text;
+            }
+            else
+            {
+                contrasenia = socio_a_editar.Contrasenia;
+            }
 
             Entidades.Usuario socio = new Entidades.Usuario(dni, nombre, apellido, nombre_usuario, contrasenia);
-            
+
+            string foto_filename = socio.NombreUsuario + DateTime.Now.ToString("ddMMyyyyhhmmss") + Path.GetExtension(nombre_imagen);
+            socio.FotoNombre = foto_filename;
             if (socio_a_editar == null)
             {
-                
+
                 try
                 {
                     negocio_usuario.agregar_socio(socio);
-                    string filename = socio.NombreUsuario + DateTime.Now.ToString("ddMMyyyyhhmmss")+picboxImagen.;
-                    picboxImagen.Image.Save(Rutas.RutaImagenesPerfil + "\\")
+                    picboxImagen.Image.Save(Rutas.RutaImagenesPerfil + "\\" + foto_filename);
                     this.DialogResult = DialogResult.OK;
                 }
                 catch (DniRepetidoException)
@@ -193,6 +211,7 @@ namespace WinForm
                 try
                 {
                     negocio_usuario.modificar_socio(socio);
+                    picboxImagen.Image.Save(Rutas.RutaImagenesPerfil + "\\" + foto_filename);
                     this.DialogResult = DialogResult.OK;
                 }
                 catch (DniRepetidoException)
@@ -205,7 +224,7 @@ namespace WinForm
                 }
                 catch (ArgumentException)
                 {
-                    MessageBox.Show("No se encontro el socio a editar", "Problema de socio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se encontro el usuario a editar", "Problema de socio", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
@@ -255,10 +274,10 @@ namespace WinForm
         private void btnExaminar_Click(object sender, EventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "Image Files(*.BMP; *.JPG; *.GIF)| *.BMP; *.JPG; *.GIF | All files(*.*) | *.*";
+            fileDialog.Filter = "Image Files(*.PNG; *.JPG;| *.PNG; *.JPG| All files(*.*) | *.*";
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                if(fileDialog.SafeFileName.EndsWith(".jpg") || fileDialog.SafeFileName.EndsWith(".png"))
+                if (fileDialog.SafeFileName.EndsWith(".jpg") || fileDialog.SafeFileName.EndsWith(".png"))
                 {
                     nombre_imagen = fileDialog.SafeFileName;
                     Image imagen = Image.FromStream(fileDialog.OpenFile());
@@ -274,6 +293,31 @@ namespace WinForm
             else
             {
                 nombre_imagen = "default.png";
+            }
+        }
+
+        private void checkContrasenia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkContrasenia.Checked)
+            {
+                lblContrasenia.Visible = true;
+                lblConfirmarContrasenia.Visible = true;
+
+                txtContrasenia.Visible = true;
+                txtConfirmarContraseña.Visible = true;
+
+                lblErrorContrasenia.Visible = true;
+
+            }
+            else
+            {
+                lblContrasenia.Visible = false;
+                lblConfirmarContrasenia.Visible = false;
+
+                txtContrasenia.Visible = false;
+                txtConfirmarContraseña.Visible = false;
+
+                lblErrorContrasenia.Visible = false;
             }
         }
     }

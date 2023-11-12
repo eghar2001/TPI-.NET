@@ -44,6 +44,9 @@ D:\Proyectos\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Microsoft.SqlServer.Types
 D:\Proyectos\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Mono.TextTemplating.dll
 D:\Proyectos\TPI-.NET\WinForm\bin\Debug\net6.0-windows\NETCore.Encrypt.dll
 D:\Proyectos\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+D:\Proyectos\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Syncfusion.Compression.Base.dll
+D:\Proyectos\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Syncfusion.Licensing.dll
+D:\Proyectos\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Syncfusion.Pdf.Base.dll
 D:\Proyectos\TPI-.NET\WinForm\bin\Debug\net6.0-windows\System.IdentityModel.Tokens.Jwt.dll
 D:\Proyectos\TPI-.NET\WinForm\bin\Debug\net6.0-windows\System.Memory.Data.dll
 D:\Proyectos\TPI-.NET\WinForm\bin\Debug\net6.0-windows\System.Runtime.Caching.dll
@@ -132,9 +135,9 @@ D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.ReporteHistoricoP
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.ReportesForm.resources
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.ReservarInstalacionForm.resources
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.ReservasForms.ReservasUsuarioForm.resources
-D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.SocioForm.resources
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.Socios.resources
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.TurnoForm.resources
+D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.UsuarioForm.resources
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.VerInscripciones.resources
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.csproj.GenerateResource.cache
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.GeneratedMSBuildEditorConfig.editorconfig
@@ -147,6 +150,3 @@ D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\refint\WinForm.dll
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.pdb
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.genruntimeconfig.cache
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\ref\WinForm.dll
-D:\Proyectos\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Syncfusion.Compression.Base.dll
-D:\Proyectos\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Syncfusion.Licensing.dll
-D:\Proyectos\TPI-.NET\WinForm\bin\Debug\net6.0-windows\Syncfusion.Pdf.Base.dll

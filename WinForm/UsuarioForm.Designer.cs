@@ -1,6 +1,6 @@
 ﻿namespace WinForm
 {
-    partial class SocioForm
+    partial class UsuarioForm
     {
         /// <summary>
         /// Required designer variable.
@@ -50,6 +50,7 @@
             picboxImagen = new PictureBox();
             lblImagen = new Label();
             btnExaminar = new Button();
+            checkContrasenia = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)picboxImagen).BeginInit();
             SuspendLayout();
             // 
@@ -195,6 +196,7 @@
             lblErrorContrasenia.Size = new Size(95, 15);
             lblErrorContrasenia.TabIndex = 18;
             lblErrorContrasenia.Text = "Error Contraseña";
+            lblErrorContrasenia.Visible = false;
             // 
             // txtContrasenia
             // 
@@ -204,6 +206,7 @@
             txtContrasenia.PasswordChar = '*';
             txtContrasenia.Size = new Size(236, 23);
             txtContrasenia.TabIndex = 17;
+            txtContrasenia.Visible = false;
             txtContrasenia.TextChanged += txtContrasenia_TextChanged;
             // 
             // lblContrasenia
@@ -214,6 +217,7 @@
             lblContrasenia.Size = new Size(67, 15);
             lblContrasenia.TabIndex = 16;
             lblContrasenia.Text = "Contraseña";
+            lblContrasenia.Visible = false;
             // 
             // txtConfirmarContraseña
             // 
@@ -223,6 +227,7 @@
             txtConfirmarContraseña.PasswordChar = '*';
             txtConfirmarContraseña.Size = new Size(236, 23);
             txtConfirmarContraseña.TabIndex = 20;
+            txtConfirmarContraseña.Visible = false;
             txtConfirmarContraseña.TextChanged += txtConfirmarContraseña_TextChanged;
             // 
             // lblConfirmarContrasenia
@@ -233,6 +238,7 @@
             lblConfirmarContrasenia.Size = new Size(124, 15);
             lblConfirmarContrasenia.TabIndex = 19;
             lblConfirmarContrasenia.Text = "Confirmar Contraseña";
+            lblConfirmarContrasenia.Visible = false;
             // 
             // picboxImagen
             // 
@@ -262,11 +268,23 @@
             btnExaminar.UseVisualStyleBackColor = true;
             btnExaminar.Click += btnExaminar_Click;
             // 
+            // checkContrasenia
+            // 
+            checkContrasenia.AutoSize = true;
+            checkContrasenia.Location = new Point(690, 383);
+            checkContrasenia.Name = "checkContrasenia";
+            checkContrasenia.Size = new Size(177, 19);
+            checkContrasenia.TabIndex = 24;
+            checkContrasenia.Text = "Deseo cambiar la contraseña";
+            checkContrasenia.UseVisualStyleBackColor = true;
+            checkContrasenia.CheckedChanged += checkContrasenia_CheckedChanged;
+            // 
             // SocioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1000, 552);
+            Controls.Add(checkContrasenia);
             Controls.Add(btnExaminar);
             Controls.Add(lblImagen);
             Controls.Add(picboxImagen);
@@ -290,7 +308,7 @@
             Controls.Add(lblNombre);
             Controls.Add(lblTitulo);
             Margin = new Padding(3, 2, 3, 2);
-            Name = "SocioForm";
+            Name = "UsuarioForm";
             Text = "Socio Form";
             Load += SocioForm_Load;
             ((System.ComponentModel.ISupportInitialize)picboxImagen).EndInit();
@@ -322,5 +340,6 @@
         private PictureBox picboxImagen;
         private Label lblImagen;
         private Button btnExaminar;
+        private CheckBox checkContrasenia;
     }
 }
