@@ -110,7 +110,7 @@ namespace WinForm.Componentes
                 this.listboxInstalaciones.SelectedIndex = 0;
                 Refrescar();
             }
-           
+
         }
 
         private void txtTitulo_TextChanged(object sender, EventArgs e)
@@ -123,6 +123,6 @@ namespace WinForm.Componentes
             }
         }
 
-       
+
     }
 }

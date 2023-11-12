@@ -118,7 +118,6 @@ D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.Componentes.Lista
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.Componentes.TimePicker.resources
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.Componentes.WeeklySchedule.resources
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.ComprarProductoForm.resources
-D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.EditarInstalacionForm.resources
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.HorarioForm.resources
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.InscripcionActividadSeleccionActividad.resources
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.InscripcionActividadSeleccionTurno.resources
@@ -132,7 +131,6 @@ D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.MenuSocio.resourc
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.ProfesorForm.resources
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.Properties.Resources.resources
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.ReporteHistoricoPreciosActividad.resources
-D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.ReportesForm.resources
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.ReservarInstalacionForm.resources
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.ReservasForms.ReservasUsuarioForm.resources
 D:\Proyectos\TPI-.NET\WinForm\obj\Debug\net6.0-windows\WinForm.Socios.resources

@@ -40,30 +40,33 @@
             // 
             listboxProfesores.Dock = DockStyle.Bottom;
             listboxProfesores.FormattingEnabled = true;
-            listboxProfesores.ItemHeight = 20;
-            listboxProfesores.Location = new Point(0, 94);
+            listboxProfesores.ItemHeight = 15;
+            listboxProfesores.Location = new Point(0, 70);
+            listboxProfesores.Margin = new Padding(3, 2, 3, 2);
             listboxProfesores.Name = "listboxProfesores";
-            listboxProfesores.Size = new Size(683, 304);
+            listboxProfesores.Size = new Size(598, 229);
             listboxProfesores.TabIndex = 3;
             listboxProfesores.SelectedIndexChanged += listboxProfesores_SelectedIndexChanged;
             // 
             // pnlBusqueda
             // 
-            pnlBusqueda.BackColor = SystemColors.ControlDark;
+            pnlBusqueda.BackColor = Color.Thistle;
             pnlBusqueda.Controls.Add(btnLimpiar);
             pnlBusqueda.Controls.Add(txtFiltrar);
             pnlBusqueda.Controls.Add(lblFiltrar);
             pnlBusqueda.Dock = DockStyle.Bottom;
             pnlBusqueda.Location = new Point(0, 0);
+            pnlBusqueda.Margin = new Padding(3, 2, 3, 2);
             pnlBusqueda.Name = "pnlBusqueda";
-            pnlBusqueda.Size = new Size(683, 94);
+            pnlBusqueda.Size = new Size(598, 70);
             pnlBusqueda.TabIndex = 5;
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(574, 55);
+            btnLimpiar.Location = new Point(502, 41);
+            btnLimpiar.Margin = new Padding(3, 2, 3, 2);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(94, 29);
+            btnLimpiar.Size = new Size(82, 22);
             btnLimpiar.TabIndex = 7;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
@@ -71,30 +74,33 @@
             // 
             // txtFiltrar
             // 
-            txtFiltrar.Location = new Point(223, 12);
+            txtFiltrar.Location = new Point(195, 9);
+            txtFiltrar.Margin = new Padding(3, 2, 3, 2);
             txtFiltrar.Name = "txtFiltrar";
-            txtFiltrar.Size = new Size(445, 27);
+            txtFiltrar.Size = new Size(390, 23);
             txtFiltrar.TabIndex = 6;
             txtFiltrar.TextChanged += txtTitulo_TextChanged;
             // 
             // lblFiltrar
             // 
             lblFiltrar.AutoSize = true;
-            lblFiltrar.Location = new Point(12, 15);
+            lblFiltrar.ForeColor = SystemColors.ControlText;
+            lblFiltrar.Location = new Point(10, 11);
             lblFiltrar.Name = "lblFiltrar";
-            lblFiltrar.Size = new Size(205, 20);
+            lblFiltrar.Size = new Size(161, 15);
             lblFiltrar.TabIndex = 5;
             lblFiltrar.Text = "Filtrar por Nombre y Apellido";
             // 
             // ListadoProfesores
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             Controls.Add(pnlBusqueda);
             Controls.Add(listboxProfesores);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ListadoProfesores";
-            Size = new Size(683, 398);
+            Size = new Size(598, 299);
             pnlBusqueda.ResumeLayout(false);
             pnlBusqueda.PerformLayout();
             ResumeLayout(false);

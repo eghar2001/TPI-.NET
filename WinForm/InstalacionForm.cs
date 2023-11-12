@@ -18,12 +18,14 @@ namespace WinForm
 
         public InstalacionForm()
         {
+
             InitializeComponent();
             this.lblTitulo.Text = "Agregar Instalacion";
         }
 
         public InstalacionForm(Entidades.Instalacion instalacion_a_editar)
         {
+
             InitializeComponent();
             this.instalacion_a_editar = instalacion_a_editar;
             this.Text = "Editar Actividad";
@@ -100,6 +102,11 @@ namespace WinForm
             }
 
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void bntMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

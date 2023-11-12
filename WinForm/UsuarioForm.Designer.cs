@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblTitulo = new Label();
             lblNombre = new Label();
             lblApellido = new Label();
             lblDni = new Label();
@@ -51,58 +50,58 @@
             lblImagen = new Label();
             btnExaminar = new Button();
             checkContrasenia = new CheckBox();
+            pnlMenu = new Panel();
+            bntMenuPrincipal = new Button();
+            picboxLogo = new PictureBox();
+            lblTitulo = new Label();
             ((System.ComponentModel.ISupportInitialize)picboxImagen).BeginInit();
+            pnlMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picboxLogo).BeginInit();
             SuspendLayout();
-            // 
-            // lblTitulo
-            // 
-            lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitulo.Location = new Point(95, 44);
-            lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(75, 32);
-            lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "Titulo";
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(95, 255);
+            lblNombre.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNombre.Location = new Point(62, 125);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(51, 15);
+            lblNombre.Size = new Size(71, 18);
             lblNombre.TabIndex = 1;
             lblNombre.Text = "Nombre";
             // 
             // lblApellido
             // 
             lblApellido.AutoSize = true;
-            lblApellido.Location = new Point(95, 303);
+            lblApellido.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblApellido.Location = new Point(62, 173);
             lblApellido.Name = "lblApellido";
-            lblApellido.Size = new Size(51, 15);
+            lblApellido.Size = new Size(72, 18);
             lblApellido.TabIndex = 2;
             lblApellido.Text = "Apellido";
             // 
             // lblDni
             // 
             lblDni.AutoSize = true;
-            lblDni.Location = new Point(95, 348);
+            lblDni.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDni.Location = new Point(62, 218);
             lblDni.Name = "lblDni";
-            lblDni.Size = new Size(25, 15);
+            lblDni.Size = new Size(34, 18);
             lblDni.TabIndex = 3;
             lblDni.Text = "Dni";
             // 
             // lblNombreUsuario
             // 
             lblNombreUsuario.AutoSize = true;
-            lblNombreUsuario.Location = new Point(526, 256);
+            lblNombreUsuario.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNombreUsuario.Location = new Point(493, 126);
             lblNombreUsuario.Name = "lblNombreUsuario";
-            lblNombreUsuario.Size = new Size(94, 15);
+            lblNombreUsuario.Size = new Size(137, 18);
             lblNombreUsuario.TabIndex = 4;
             lblNombreUsuario.Text = "Nombre Usuario";
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(259, 249);
+            txtNombre.Location = new Point(226, 119);
             txtNombre.Margin = new Padding(3, 2, 3, 2);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(236, 23);
@@ -111,7 +110,7 @@
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(259, 298);
+            txtApellido.Location = new Point(226, 168);
             txtApellido.Margin = new Padding(3, 2, 3, 2);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(236, 23);
@@ -120,7 +119,7 @@
             // 
             // txtDni
             // 
-            txtDni.Location = new Point(259, 343);
+            txtDni.Location = new Point(226, 213);
             txtDni.Margin = new Padding(3, 2, 3, 2);
             txtDni.Name = "txtDni";
             txtDni.Size = new Size(236, 23);
@@ -129,7 +128,7 @@
             // 
             // txtNombreUsuario
             // 
-            txtNombreUsuario.Location = new Point(690, 251);
+            txtNombreUsuario.Location = new Point(699, 126);
             txtNombreUsuario.Margin = new Padding(3, 2, 3, 2);
             txtNombreUsuario.Name = "txtNombreUsuario";
             txtNombreUsuario.Size = new Size(236, 23);
@@ -138,7 +137,7 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(844, 434);
+            btnGuardar.Location = new Point(811, 493);
             btnGuardar.Margin = new Padding(3, 2, 3, 2);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(82, 22);
@@ -151,7 +150,7 @@
             // 
             lblErrorNombre.AutoSize = true;
             lblErrorNombre.ForeColor = Color.Red;
-            lblErrorNombre.Location = new Point(259, 272);
+            lblErrorNombre.Location = new Point(226, 142);
             lblErrorNombre.Name = "lblErrorNombre";
             lblErrorNombre.Size = new Size(79, 15);
             lblErrorNombre.TabIndex = 12;
@@ -161,7 +160,7 @@
             // 
             lblErrorApellido.AutoSize = true;
             lblErrorApellido.ForeColor = Color.Red;
-            lblErrorApellido.Location = new Point(259, 321);
+            lblErrorApellido.Location = new Point(226, 191);
             lblErrorApellido.Name = "lblErrorApellido";
             lblErrorApellido.Size = new Size(79, 15);
             lblErrorApellido.TabIndex = 13;
@@ -171,7 +170,7 @@
             // 
             LblErrorDni.AutoSize = true;
             LblErrorDni.ForeColor = Color.Red;
-            LblErrorDni.Location = new Point(259, 368);
+            LblErrorDni.Location = new Point(226, 238);
             LblErrorDni.Name = "LblErrorDni";
             LblErrorDni.Size = new Size(55, 15);
             LblErrorDni.TabIndex = 14;
@@ -181,7 +180,7 @@
             // 
             lblErrorNombreUsuario.AutoSize = true;
             lblErrorNombreUsuario.ForeColor = Color.Red;
-            lblErrorNombreUsuario.Location = new Point(690, 274);
+            lblErrorNombreUsuario.Location = new Point(699, 149);
             lblErrorNombreUsuario.Name = "lblErrorNombreUsuario";
             lblErrorNombreUsuario.Size = new Size(122, 15);
             lblErrorNombreUsuario.TabIndex = 15;
@@ -191,7 +190,7 @@
             // 
             lblErrorContrasenia.AutoSize = true;
             lblErrorContrasenia.ForeColor = Color.Red;
-            lblErrorContrasenia.Location = new Point(690, 365);
+            lblErrorContrasenia.Location = new Point(699, 235);
             lblErrorContrasenia.Name = "lblErrorContrasenia";
             lblErrorContrasenia.Size = new Size(95, 15);
             lblErrorContrasenia.TabIndex = 18;
@@ -200,7 +199,7 @@
             // 
             // txtContrasenia
             // 
-            txtContrasenia.Location = new Point(690, 318);
+            txtContrasenia.Location = new Point(699, 188);
             txtContrasenia.Margin = new Padding(3, 2, 3, 2);
             txtContrasenia.Name = "txtContrasenia";
             txtContrasenia.PasswordChar = '*';
@@ -212,16 +211,17 @@
             // lblContrasenia
             // 
             lblContrasenia.AutoSize = true;
-            lblContrasenia.Location = new Point(526, 323);
+            lblContrasenia.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblContrasenia.Location = new Point(493, 193);
             lblContrasenia.Name = "lblContrasenia";
-            lblContrasenia.Size = new Size(67, 15);
+            lblContrasenia.Size = new Size(102, 18);
             lblContrasenia.TabIndex = 16;
             lblContrasenia.Text = "Contraseña";
             lblContrasenia.Visible = false;
             // 
             // txtConfirmarContraseña
             // 
-            txtConfirmarContraseña.Location = new Point(690, 343);
+            txtConfirmarContraseña.Location = new Point(699, 213);
             txtConfirmarContraseña.Margin = new Padding(3, 2, 3, 2);
             txtConfirmarContraseña.Name = "txtConfirmarContraseña";
             txtConfirmarContraseña.PasswordChar = '*';
@@ -233,16 +233,17 @@
             // lblConfirmarContrasenia
             // 
             lblConfirmarContrasenia.AutoSize = true;
-            lblConfirmarContrasenia.Location = new Point(526, 348);
+            lblConfirmarContrasenia.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblConfirmarContrasenia.Location = new Point(493, 218);
             lblConfirmarContrasenia.Name = "lblConfirmarContrasenia";
-            lblConfirmarContrasenia.Size = new Size(124, 15);
+            lblConfirmarContrasenia.Size = new Size(185, 18);
             lblConfirmarContrasenia.TabIndex = 19;
             lblConfirmarContrasenia.Text = "Confirmar Contraseña";
             lblConfirmarContrasenia.Visible = false;
             // 
             // picboxImagen
             // 
-            picboxImagen.Location = new Point(690, 44);
+            picboxImagen.Location = new Point(312, 318);
             picboxImagen.Name = "picboxImagen";
             picboxImagen.Size = new Size(150, 158);
             picboxImagen.SizeMode = PictureBoxSizeMode.Zoom;
@@ -252,15 +253,16 @@
             // lblImagen
             // 
             lblImagen.AutoSize = true;
-            lblImagen.Location = new Point(690, 26);
+            lblImagen.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblImagen.Location = new Point(312, 290);
             lblImagen.Name = "lblImagen";
-            lblImagen.Size = new Size(47, 15);
+            lblImagen.Size = new Size(67, 18);
             lblImagen.TabIndex = 22;
             lblImagen.Text = "Imagen";
             // 
             // btnExaminar
             // 
-            btnExaminar.Location = new Point(690, 208);
+            btnExaminar.Location = new Point(312, 494);
             btnExaminar.Name = "btnExaminar";
             btnExaminar.Size = new Size(150, 23);
             btnExaminar.TabIndex = 23;
@@ -271,7 +273,7 @@
             // checkContrasenia
             // 
             checkContrasenia.AutoSize = true;
-            checkContrasenia.Location = new Point(690, 383);
+            checkContrasenia.Location = new Point(699, 253);
             checkContrasenia.Name = "checkContrasenia";
             checkContrasenia.Size = new Size(177, 19);
             checkContrasenia.TabIndex = 24;
@@ -279,11 +281,55 @@
             checkContrasenia.UseVisualStyleBackColor = true;
             checkContrasenia.CheckedChanged += checkContrasenia_CheckedChanged;
             // 
-            // SocioForm
+            // pnlMenu
+            // 
+            pnlMenu.BackColor = Color.MediumPurple;
+            pnlMenu.Controls.Add(bntMenuPrincipal);
+            pnlMenu.Controls.Add(picboxLogo);
+            pnlMenu.Controls.Add(lblTitulo);
+            pnlMenu.Dock = DockStyle.Top;
+            pnlMenu.Location = new Point(0, 0);
+            pnlMenu.Name = "pnlMenu";
+            pnlMenu.Size = new Size(1000, 89);
+            pnlMenu.TabIndex = 25;
+            // 
+            // bntMenuPrincipal
+            // 
+            bntMenuPrincipal.Location = new Point(851, 34);
+            bntMenuPrincipal.Name = "bntMenuPrincipal";
+            bntMenuPrincipal.Size = new Size(75, 23);
+            bntMenuPrincipal.TabIndex = 8;
+            bntMenuPrincipal.Text = "Volver";
+            bntMenuPrincipal.UseVisualStyleBackColor = true;
+            bntMenuPrincipal.Click += bntMenuPrincipal_Click;
+            // 
+            // picboxLogo
+            // 
+            picboxLogo.Image = Properties.Resources.sacachispas;
+            picboxLogo.Location = new Point(3, 3);
+            picboxLogo.Name = "picboxLogo";
+            picboxLogo.Size = new Size(69, 79);
+            picboxLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picboxLogo.TabIndex = 7;
+            picboxLogo.TabStop = false;
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitulo.ForeColor = SystemColors.ControlLightLight;
+            lblTitulo.Location = new Point(106, 24);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(75, 32);
+            lblTitulo.TabIndex = 2;
+            lblTitulo.Text = "Titulo";
+            // 
+            // UsuarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1000, 552);
+            ClientSize = new Size(1000, 637);
+            Controls.Add(pnlMenu);
             Controls.Add(checkContrasenia);
             Controls.Add(btnExaminar);
             Controls.Add(lblImagen);
@@ -306,19 +352,19 @@
             Controls.Add(lblDni);
             Controls.Add(lblApellido);
             Controls.Add(lblNombre);
-            Controls.Add(lblTitulo);
             Margin = new Padding(3, 2, 3, 2);
             Name = "UsuarioForm";
             Text = "Socio Form";
             Load += SocioForm_Load;
             ((System.ComponentModel.ISupportInitialize)picboxImagen).EndInit();
+            pnlMenu.ResumeLayout(false);
+            pnlMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picboxLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label lblTitulo;
         private Label lblNombre;
         private Label lblApellido;
         private Label lblDni;
@@ -341,5 +387,9 @@
         private Label lblImagen;
         private Button btnExaminar;
         private CheckBox checkContrasenia;
+        private Panel pnlMenu;
+        private Button bntMenuPrincipal;
+        private PictureBox picboxLogo;
+        private Label lblTitulo;
     }
 }

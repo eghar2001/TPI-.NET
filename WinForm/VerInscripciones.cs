@@ -27,7 +27,7 @@ namespace WinForm
             lblSocio.Text = "Socio: " + DatosLogin.UsuarioLogueado.Nombre + " " + DatosLogin.UsuarioLogueado.Apellido + "(" + DatosLogin.UsuarioLogueado.Dni + ")";
             this.Listar();
 
-            
+
 
 
         }
@@ -38,14 +38,14 @@ namespace WinForm
 
             if (inscripciones.IsNullOrEmpty())
             {
-                dgvInscripciones.Columns.Clear() ;
+                dgvInscripciones.Columns.Clear();
                 MessageBox.Show("No tiene inscripciones hechas", "Sin inscripciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             var inscripciones_display = inscripciones.Select(i => new
             {
                 Id = i.Id,
-                
+
                 Actividad = i.Turno,
                 FechaInscripcion = i.FechaHoraInscripcion,
 
@@ -53,7 +53,7 @@ namespace WinForm
 
 
             dgvInscripciones.DataSource = inscripciones_display;
-            
+
             DataGridViewButtonColumn colHorarios = new DataGridViewButtonColumn();
             colHorarios.Name = "Horarios";
             colHorarios.HeaderText = "Horarios";
@@ -71,15 +71,15 @@ namespace WinForm
 
             ids_turno = inscripciones.Select(i => i.TurnoId).ToList();
             ids_inscripcion = inscripciones.Select(i => i.Id).ToList();
-            
+
 
         }
 
         private void dgvInscripciones_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0 || e.ColumnIndex < 0) 
-            { 
-                return; 
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+            {
+                return;
             }
             string actividad = dgvInscripciones.Rows[e.RowIndex].Cells["Actividad"].Value.ToString();
             string columna = dgvInscripciones.Columns[e.ColumnIndex].Name;
@@ -109,6 +109,11 @@ namespace WinForm
                     }
                 }
             }
+        }
+
+        private void bntMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

@@ -37,22 +37,26 @@
             lblFiltrado = new Label();
             txtNombreApellido = new TextBox();
             btnAgregar = new Button();
-            btnCancelar = new Button();
             btnActualizar = new Button();
+            panel1 = new Panel();
+            picboxLogo = new PictureBox();
+            bntMenuPrincipal = new Button();
             ((System.ComponentModel.ISupportInitialize)socioBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)socioBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)socioBindingSource2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvSocios).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picboxLogo).BeginInit();
             SuspendLayout();
             // 
             // dgvSocios
             // 
             dgvSocios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgvSocios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvSocios.Location = new Point(32, 109);
+            dgvSocios.Location = new Point(40, 130);
             dgvSocios.Name = "dgvSocios";
             dgvSocios.RowTemplate.Height = 25;
-            dgvSocios.Size = new Size(632, 379);
+            dgvSocios.Size = new Size(632, 357);
             dgvSocios.TabIndex = 0;
             dgvSocios.CellClick += dgvSocios_CellClick;
             // 
@@ -60,7 +64,8 @@
             // 
             lblTItulo.AutoSize = true;
             lblTItulo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTItulo.Location = new Point(32, 28);
+            lblTItulo.ForeColor = SystemColors.ControlLightLight;
+            lblTItulo.Location = new Point(106, 24);
             lblTItulo.Name = "lblTItulo";
             lblTItulo.Size = new Size(278, 32);
             lblTItulo.TabIndex = 2;
@@ -69,7 +74,7 @@
             // lblFiltrado
             // 
             lblFiltrado.AutoSize = true;
-            lblFiltrado.Location = new Point(32, 76);
+            lblFiltrado.Location = new Point(40, 104);
             lblFiltrado.Name = "lblFiltrado";
             lblFiltrado.Size = new Size(157, 15);
             lblFiltrado.TabIndex = 3;
@@ -77,7 +82,7 @@
             // 
             // txtNombreApellido
             // 
-            txtNombreApellido.Location = new Point(210, 73);
+            txtNombreApellido.Location = new Point(218, 101);
             txtNombreApellido.Name = "txtNombreApellido";
             txtNombreApellido.Size = new Size(221, 23);
             txtNombreApellido.TabIndex = 4;
@@ -85,7 +90,7 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(570, 68);
+            btnAgregar.Location = new Point(597, 95);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(75, 23);
             btnAgregar.TabIndex = 5;
@@ -93,35 +98,57 @@
             btnAgregar.UseVisualStyleBackColor = true;
             btnAgregar.Click += btnAgregar_Click;
             // 
-            // btnCancelar
-            // 
-            btnCancelar.Location = new Point(570, 519);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
-            btnCancelar.TabIndex = 6;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            // 
             // btnActualizar
             // 
-            btnActualizar.Location = new Point(480, 519);
+            btnActualizar.Location = new Point(597, 514);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(75, 23);
             btnActualizar.TabIndex = 7;
             btnActualizar.Text = "Actualizar";
             btnActualizar.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.MediumPurple;
+            panel1.Controls.Add(bntMenuPrincipal);
+            panel1.Controls.Add(picboxLogo);
+            panel1.Controls.Add(lblTItulo);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(743, 89);
+            panel1.TabIndex = 8;
+            // 
+            // picboxLogo
+            // 
+            picboxLogo.Image = Properties.Resources.sacachispas;
+            picboxLogo.Location = new Point(3, 3);
+            picboxLogo.Name = "picboxLogo";
+            picboxLogo.Size = new Size(69, 79);
+            picboxLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picboxLogo.TabIndex = 7;
+            picboxLogo.TabStop = false;
+            // 
+            // bntMenuPrincipal
+            // 
+            bntMenuPrincipal.Location = new Point(597, 34);
+            bntMenuPrincipal.Name = "bntMenuPrincipal";
+            bntMenuPrincipal.Size = new Size(75, 23);
+            bntMenuPrincipal.TabIndex = 8;
+            bntMenuPrincipal.Text = "Volver";
+            bntMenuPrincipal.UseVisualStyleBackColor = true;
+            bntMenuPrincipal.Click += bntMenuPrincipal_Click;
+            // 
             // Socios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(743, 554);
+            ClientSize = new Size(743, 565);
+            Controls.Add(panel1);
             Controls.Add(btnActualizar);
-            Controls.Add(btnCancelar);
             Controls.Add(btnAgregar);
             Controls.Add(txtNombreApellido);
             Controls.Add(lblFiltrado);
-            Controls.Add(lblTItulo);
             Controls.Add(dgvSocios);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Socios";
@@ -131,6 +158,9 @@
             ((System.ComponentModel.ISupportInitialize)socioBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)socioBindingSource2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvSocios).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picboxLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -145,7 +175,9 @@
         private Label lblFiltrado;
         private TextBox txtNombreApellido;
         private Button btnAgregar;
-        private Button btnCancelar;
         private Button btnActualizar;
+        private Panel panel1;
+        private Button bntMenuPrincipal;
+        private PictureBox picboxLogo;
     }
 }

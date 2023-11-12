@@ -45,12 +45,12 @@ namespace WinForm.Componentes
                     this._profesorSeleccionado = null;
                     return;
                 }
-                else if (value  is not Entidades.Profesor)
+                else if (value is not Entidades.Profesor)
                 {
                     MessageBox.Show("No se ingresó un profesor");
                     return;
                 }
-               
+
                 int index = this._profesoresBusqueda.IndexOf(value);
                 if (index == -1)
                 {
@@ -61,7 +61,7 @@ namespace WinForm.Componentes
                     this.listboxProfesores.SelectedIndex = index;
                     this._profesorSeleccionado = this._profesoresBusqueda[index];
                 }
-                    
+
             }
         }
 
@@ -118,11 +118,12 @@ namespace WinForm.Componentes
         {
             _profesoresBusqueda = Profesores.Where(i => i.getNombApell().ToUpper().Contains(txtFiltrar.Text.ToUpper())).ToList();
             Refrescar();
-            if (_profesoresBusqueda.IsNullOrEmpty()) {
+            if (_profesoresBusqueda.IsNullOrEmpty())
+            {
                 this.ProfesorSeleccionado = null;
             }
         }
 
-    
+
     }
 }

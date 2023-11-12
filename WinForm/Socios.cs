@@ -74,12 +74,12 @@ namespace WinForm
 
         private void dgvSocios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex<0 || e.ColumnIndex < 0)
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
             {
                 return;
             }
             string columna = dgvSocios.Columns[e.ColumnIndex].Name;
-            int id =int.Parse( dgvSocios.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+            int id = int.Parse(dgvSocios.Rows[e.RowIndex].Cells["Id"].Value.ToString());
             if (columna == "Editar")
             {
                 UsuarioForm editarSocioForm = new UsuarioForm(id);
@@ -99,6 +99,11 @@ namespace WinForm
                     negocio_usuario.borrar_usuario(id);
                 }
             }
+        }
+
+        private void bntMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

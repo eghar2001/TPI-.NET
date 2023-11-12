@@ -77,7 +77,7 @@ namespace WinForm
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             string nombre_actividad = actividad.Nombre.Replace(" ", "_");
-            saveFileDialog.FileName = "reporte_precios_actividad-"+ nombre_actividad + "-" + DateTime.Now.ToString("ddMMyyyyHHmmss") + ".pdf";
+            saveFileDialog.FileName = "reporte_precios_actividad-" + nombre_actividad + "-" + DateTime.Now.ToString("ddMMyyyyHHmmss") + ".pdf";
 
             string paginahtml_texto = Properties.Resources.reporte_historico_precios_actividad.ToString();
 
@@ -90,11 +90,11 @@ namespace WinForm
 
                 paginahtml_texto = paginahtml_texto.Replace("@Actividad", actividad.Nombre);
                 paginahtml_texto = paginahtml_texto.Replace("@FechaInicio", valorInicial.FechaDesde.ToString("dd/MM/yyyy"));
-                paginahtml_texto = paginahtml_texto.Replace("@PrecioInicial","$" +  valorInicial.Precio.ToString());
+                paginahtml_texto = paginahtml_texto.Replace("@PrecioInicial", "$" + valorInicial.Precio.ToString());
 
 
                 paginahtml_texto = paginahtml_texto.Replace("@FechaActual", DateTime.Now.ToString("dd/MM/yyyy"));
-                paginahtml_texto = paginahtml_texto.Replace("@PrecioActual","$"+ valorFinal.Precio.ToString());
+                paginahtml_texto = paginahtml_texto.Replace("@PrecioActual", "$" + valorFinal.Precio.ToString());
 
 
                 string valores = "";
@@ -145,6 +145,11 @@ namespace WinForm
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void bntMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

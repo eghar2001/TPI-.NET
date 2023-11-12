@@ -35,14 +35,21 @@
             lblHorarios = new Label();
             lblProfesor = new Label();
             lblNombreActividad = new Label();
-            btnCerrrar = new Button();
+            pnlMenu = new Panel();
+            panel1 = new Panel();
+            bntMenuPrincipal = new Button();
+            picboxLogo = new PictureBox();
+            lblTitulo = new Label();
+            pnlMenu.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picboxLogo).BeginInit();
             SuspendLayout();
             // 
             // lblPrecio
             // 
             lblPrecio.AutoSize = true;
             lblPrecio.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPrecio.Location = new Point(640, 70);
+            lblPrecio.Location = new Point(632, 164);
             lblPrecio.Name = "lblPrecio";
             lblPrecio.Size = new Size(53, 21);
             lblPrecio.TabIndex = 19;
@@ -52,7 +59,7 @@
             // 
             lblUbicacion.AutoSize = true;
             lblUbicacion.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            lblUbicacion.Location = new Point(71, 72);
+            lblUbicacion.Location = new Point(63, 166);
             lblUbicacion.Name = "lblUbicacion";
             lblUbicacion.Size = new Size(75, 20);
             lblUbicacion.TabIndex = 18;
@@ -60,7 +67,7 @@
             // 
             // btnInscribirse
             // 
-            btnInscribirse.Location = new Point(71, 408);
+            btnInscribirse.Location = new Point(608, 480);
             btnInscribirse.Margin = new Padding(3, 2, 3, 2);
             btnInscribirse.Name = "btnInscribirse";
             btnInscribirse.Size = new Size(82, 22);
@@ -73,7 +80,7 @@
             // 
             listboxHorarios.FormattingEnabled = true;
             listboxHorarios.ItemHeight = 15;
-            listboxHorarios.Location = new Point(71, 188);
+            listboxHorarios.Location = new Point(63, 282);
             listboxHorarios.Margin = new Padding(3, 2, 3, 2);
             listboxHorarios.Name = "listboxHorarios";
             listboxHorarios.Size = new Size(627, 169);
@@ -83,7 +90,7 @@
             // 
             lblHorarios.AutoSize = true;
             lblHorarios.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblHorarios.Location = new Point(71, 158);
+            lblHorarios.Location = new Point(63, 252);
             lblHorarios.Name = "lblHorarios";
             lblHorarios.Size = new Size(149, 21);
             lblHorarios.TabIndex = 14;
@@ -92,7 +99,7 @@
             // lblProfesor
             // 
             lblProfesor.AutoSize = true;
-            lblProfesor.Location = new Point(71, 116);
+            lblProfesor.Location = new Point(63, 210);
             lblProfesor.Name = "lblProfesor";
             lblProfesor.Size = new Size(51, 15);
             lblProfesor.TabIndex = 13;
@@ -103,29 +110,70 @@
             lblNombreActividad.AutoSize = true;
             lblNombreActividad.Font = new Font("Arial Rounded MT Bold", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblNombreActividad.ForeColor = SystemColors.HotTrack;
-            lblNombreActividad.Location = new Point(62, 27);
+            lblNombreActividad.Location = new Point(54, 121);
             lblNombreActividad.Name = "lblNombreActividad";
             lblNombreActividad.Size = new Size(269, 33);
             lblNombreActividad.TabIndex = 12;
             lblNombreActividad.Text = "Nombre Actividad";
             // 
-            // btnCerrrar
+            // pnlMenu
             // 
-            btnCerrrar.Location = new Point(616, 394);
-            btnCerrrar.Margin = new Padding(3, 2, 3, 2);
-            btnCerrrar.Name = "btnCerrrar";
-            btnCerrrar.Size = new Size(82, 22);
-            btnCerrrar.TabIndex = 20;
-            btnCerrrar.Text = "Cerrar";
-            btnCerrrar.UseVisualStyleBackColor = true;
-            btnCerrrar.Click += btnCerrrar_Click;
+            pnlMenu.BackColor = Color.MediumPurple;
+            pnlMenu.Controls.Add(panel1);
+            pnlMenu.Controls.Add(picboxLogo);
+            pnlMenu.Controls.Add(lblTitulo);
+            pnlMenu.Dock = DockStyle.Top;
+            pnlMenu.Location = new Point(0, 0);
+            pnlMenu.Name = "pnlMenu";
+            pnlMenu.Size = new Size(781, 89);
+            pnlMenu.TabIndex = 28;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(bntMenuPrincipal);
+            panel1.Dock = DockStyle.Right;
+            panel1.Location = new Point(639, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(142, 89);
+            panel1.TabIndex = 9;
+            // 
+            // bntMenuPrincipal
+            // 
+            bntMenuPrincipal.Location = new Point(0, 34);
+            bntMenuPrincipal.Name = "bntMenuPrincipal";
+            bntMenuPrincipal.Size = new Size(75, 23);
+            bntMenuPrincipal.TabIndex = 8;
+            bntMenuPrincipal.Text = "Volver";
+            bntMenuPrincipal.UseVisualStyleBackColor = true;
+            bntMenuPrincipal.Click += bntMenuPrincipal_Click;
+            // 
+            // picboxLogo
+            // 
+            picboxLogo.Image = Properties.Resources.sacachispas;
+            picboxLogo.Location = new Point(3, 3);
+            picboxLogo.Name = "picboxLogo";
+            picboxLogo.Size = new Size(69, 79);
+            picboxLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picboxLogo.TabIndex = 7;
+            picboxLogo.TabStop = false;
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitulo.ForeColor = SystemColors.ControlLightLight;
+            lblTitulo.Location = new Point(106, 24);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(255, 32);
+            lblTitulo.TabIndex = 2;
+            lblTitulo.Text = "Inscripcion A Actividad";
             // 
             // InscripcionTurnoSocio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(781, 468);
-            Controls.Add(btnCerrrar);
+            ClientSize = new Size(781, 536);
+            Controls.Add(pnlMenu);
             Controls.Add(lblPrecio);
             Controls.Add(lblUbicacion);
             Controls.Add(btnInscribirse);
@@ -136,6 +184,10 @@
             Name = "InscripcionTurnoSocio";
             Text = "Inscripcion a Actividad";
             Load += InscripcionTurnoSocio_Load;
+            pnlMenu.ResumeLayout(false);
+            pnlMenu.PerformLayout();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picboxLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -149,6 +201,10 @@
         private Label lblHorarios;
         private Label lblProfesor;
         private Label lblNombreActividad;
-        private Button btnCerrrar;
+        private Panel pnlMenu;
+        private Panel panel1;
+        private Button bntMenuPrincipal;
+        private PictureBox picboxLogo;
+        private Label lblTitulo;
     }
 }

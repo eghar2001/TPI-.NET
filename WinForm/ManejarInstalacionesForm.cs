@@ -40,7 +40,7 @@ namespace WinForm
 
         public void Listar()
         {
-           
+
             dgvInstalaciones.DataSource = negocio_instalacion.find_all();
             dgvInstalaciones.Refresh();
 
@@ -126,6 +126,11 @@ namespace WinForm
                     MessageBox.Show("La acción fue cancelada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void bntMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

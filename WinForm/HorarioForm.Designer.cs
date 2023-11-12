@@ -34,10 +34,17 @@
             lblHoraFin = new Label();
             listboxDias = new ListBox();
             lblDiaSemana = new Label();
-            lblTitulo = new Label();
             btnAgregar = new Button();
             weekScheduleInstalaciones = new Componentes.WeeklySchedule();
             weekScheduleProfesores = new Componentes.WeeklySchedule();
+            pnlMenu = new Panel();
+            panel1 = new Panel();
+            bntMenuPrincipal = new Button();
+            picboxLogo = new PictureBox();
+            lblTitulo = new Label();
+            pnlMenu.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picboxLogo).BeginInit();
             SuspendLayout();
             // 
             // timeInicio
@@ -99,16 +106,6 @@
             lblDiaSemana.TabIndex = 5;
             lblDiaSemana.Text = "Dia de la Semana:";
             // 
-            // lblTitulo
-            // 
-            lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Arial Rounded MT Bold", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitulo.Location = new Point(49, 15);
-            lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(272, 37);
-            lblTitulo.TabIndex = 6;
-            lblTitulo.Text = "Agregar Horario";
-            // 
             // btnAgregar
             // 
             btnAgregar.Location = new Point(224, 656);
@@ -138,15 +135,67 @@
             weekScheduleProfesores.TabIndex = 9;
             weekScheduleProfesores.Titulo = "Titulo";
             // 
+            // pnlMenu
+            // 
+            pnlMenu.BackColor = Color.MediumPurple;
+            pnlMenu.Controls.Add(panel1);
+            pnlMenu.Controls.Add(picboxLogo);
+            pnlMenu.Controls.Add(lblTitulo);
+            pnlMenu.Dock = DockStyle.Top;
+            pnlMenu.Location = new Point(0, 0);
+            pnlMenu.Name = "pnlMenu";
+            pnlMenu.Size = new Size(1368, 89);
+            pnlMenu.TabIndex = 28;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(bntMenuPrincipal);
+            panel1.Dock = DockStyle.Right;
+            panel1.Location = new Point(1226, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(142, 89);
+            panel1.TabIndex = 9;
+            // 
+            // bntMenuPrincipal
+            // 
+            bntMenuPrincipal.Location = new Point(0, 34);
+            bntMenuPrincipal.Name = "bntMenuPrincipal";
+            bntMenuPrincipal.Size = new Size(75, 23);
+            bntMenuPrincipal.TabIndex = 8;
+            bntMenuPrincipal.Text = "Volver";
+            bntMenuPrincipal.UseVisualStyleBackColor = true;
+            bntMenuPrincipal.Click += bntMenuPrincipal_Click;
+            // 
+            // picboxLogo
+            // 
+            picboxLogo.Image = Properties.Resources.sacachispas;
+            picboxLogo.Location = new Point(3, 3);
+            picboxLogo.Name = "picboxLogo";
+            picboxLogo.Size = new Size(69, 79);
+            picboxLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picboxLogo.TabIndex = 7;
+            picboxLogo.TabStop = false;
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitulo.ForeColor = SystemColors.ControlLightLight;
+            lblTitulo.Location = new Point(106, 24);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(75, 32);
+            lblTitulo.TabIndex = 2;
+            lblTitulo.Text = "Titulo";
+            // 
             // HorarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1368, 720);
+            Controls.Add(pnlMenu);
             Controls.Add(weekScheduleProfesores);
             Controls.Add(weekScheduleInstalaciones);
             Controls.Add(btnAgregar);
-            Controls.Add(lblTitulo);
             Controls.Add(lblDiaSemana);
             Controls.Add(listboxDias);
             Controls.Add(lblHoraFin);
@@ -157,6 +206,10 @@
             Name = "HorarioForm";
             Text = "HorarioForm";
             Load += HorarioForm_Load;
+            pnlMenu.ResumeLayout(false);
+            pnlMenu.PerformLayout();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picboxLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -169,9 +222,13 @@
         private Label lblHoraFin;
         private ListBox listboxDias;
         private Label lblDiaSemana;
-        private Label lblTitulo;
         private Button btnAgregar;
         private Componentes.WeeklySchedule weekScheduleInstalaciones;
         private Componentes.WeeklySchedule weekScheduleProfesores;
+        private Panel pnlMenu;
+        private Panel panel1;
+        private Button bntMenuPrincipal;
+        private PictureBox picboxLogo;
+        private Label lblTitulo;
     }
 }

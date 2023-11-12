@@ -32,7 +32,7 @@ namespace WinForm
                 }
                 catch (IOException)
                 {
-                    MessageBox.Show("No se encontro la imagen del usuario", "Imagen no encontrada",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se encontro la imagen del usuario", "Imagen no encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.picboxEmpleado.Image = System.Drawing.Image.FromFile(Entidades.Rutas.RutaImagenesPerfil + "\\default.png");
                 }
             }
@@ -67,9 +67,7 @@ namespace WinForm
         private void btnAdministrarActividades_Click(object sender, EventArgs e)
         {
             AdministrarActividadesForm administrarActividades = new AdministrarActividadesForm();
-            administrarActividades.FormClosing += (s, args) => { this.Show(); };
-            administrarActividades.Show();
-            this.Hide();
+            administrarActividades.ShowDialog();
         }
 
         private void btnManejarInstalaciones_Click(object sender, EventArgs e)
@@ -89,6 +87,16 @@ namespace WinForm
             ReporteHistoricoPreciosActividad reporteForm = new ReporteHistoricoPreciosActividad();
             reporteForm.Show();
 
+        }
+
+        private void btnMiCuenta_Click(object sender, EventArgs e)
+        {
+            UsuarioForm editarCuentaForm = new UsuarioForm(DatosLogin.UsuarioLogueado.Id);
+            editarCuentaForm.ShowDialog();
+            if (editarCuentaForm.DialogResult == DialogResult.OK)
+            {
+                MessageBox.Show("Usuario creado con exito!!");
+            }
         }
     }
 }

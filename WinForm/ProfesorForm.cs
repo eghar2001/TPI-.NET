@@ -43,7 +43,9 @@ namespace WinForm
             {
                 salario = decimal.Parse(txtSalario.Text);
             }
-            catch (FormatException) { MessageBox.Show("El salario no tiene el formato pedido", "Problema de salario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            catch (FormatException)
+            {
+                MessageBox.Show("El salario no tiene el formato pedido", "Problema de salario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -86,11 +88,16 @@ namespace WinForm
                 {
                     MessageBox.Show("El Salario debe ser mayor a 0", "Problema de salario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.DialogResult = DialogResult.OK;
-                     return;
+                    return;
                 }
             }
 
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void bntMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

@@ -42,7 +42,7 @@ namespace WinForm
 
             this.dgvTurnos.Columns.Add(colAnotarse);
 
-            
+
         }
 
         private void Listar()
@@ -80,7 +80,7 @@ namespace WinForm
                 {
                     DataGridViewRow row = dgvTurnos.Rows[e.RowIndex];
                     int idTurno = ids_turno[e.RowIndex];
-                    InscripcionTurnoSocio inscripcionTurnoSocio = new InscripcionTurnoSocio( idTurno);
+                    InscripcionTurnoSocio inscripcionTurnoSocio = new InscripcionTurnoSocio(idTurno);
                     inscripcionTurnoSocio.ShowDialog();
                     if (inscripcionTurnoSocio.DialogResult == DialogResult.OK)
                     {
@@ -89,6 +89,11 @@ namespace WinForm
 
                 }
             }
+        }
+
+        private void bntMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

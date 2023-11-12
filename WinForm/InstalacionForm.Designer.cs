@@ -31,19 +31,26 @@
             lblTituloInstalacion = new Label();
             lblDescripcion = new Label();
             lblCupo = new Label();
-            lblTitulo = new Label();
             txtTitulo = new TextBox();
             txtDesc = new TextBox();
             txtCupo = new TextBox();
             btnGuardar = new Button();
             lblPrecio = new Label();
             txtPrecio = new TextBox();
+            pnlMenu = new Panel();
+            bntMenuPrincipal = new Button();
+            picboxLogo = new PictureBox();
+            lblTitulo = new Label();
+            panel1 = new Panel();
+            pnlMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picboxLogo).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // lblTituloInstalacion
             // 
             lblTituloInstalacion.AutoSize = true;
-            lblTituloInstalacion.Location = new Point(56, 106);
+            lblTituloInstalacion.Location = new Point(56, 140);
             lblTituloInstalacion.Name = "lblTituloInstalacion";
             lblTituloInstalacion.Size = new Size(46, 15);
             lblTituloInstalacion.TabIndex = 0;
@@ -52,7 +59,7 @@
             // lblDescripcion
             // 
             lblDescripcion.AutoSize = true;
-            lblDescripcion.Location = new Point(27, 164);
+            lblDescripcion.Location = new Point(27, 198);
             lblDescripcion.Name = "lblDescripcion";
             lblDescripcion.Size = new Size(75, 15);
             lblDescripcion.TabIndex = 1;
@@ -61,25 +68,15 @@
             // lblCupo
             // 
             lblCupo.AutoSize = true;
-            lblCupo.Location = new Point(358, 103);
+            lblCupo.Location = new Point(358, 137);
             lblCupo.Name = "lblCupo";
             lblCupo.Size = new Size(42, 15);
             lblCupo.TabIndex = 2;
             lblCupo.Text = "Cupo :";
             // 
-            // lblTitulo
-            // 
-            lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitulo.Location = new Point(141, 35);
-            lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(190, 22);
-            lblTitulo.TabIndex = 3;
-            lblTitulo.Text = "Agregar Instalacion";
-            // 
             // txtTitulo
             // 
-            txtTitulo.Location = new Point(108, 103);
+            txtTitulo.Location = new Point(108, 137);
             txtTitulo.Name = "txtTitulo";
             txtTitulo.Size = new Size(181, 23);
             txtTitulo.TabIndex = 4;
@@ -87,7 +84,7 @@
             // 
             // txtDesc
             // 
-            txtDesc.Location = new Point(108, 164);
+            txtDesc.Location = new Point(108, 198);
             txtDesc.Multiline = true;
             txtDesc.Name = "txtDesc";
             txtDesc.Size = new Size(181, 67);
@@ -96,14 +93,14 @@
             // 
             // txtCupo
             // 
-            txtCupo.Location = new Point(406, 100);
+            txtCupo.Location = new Point(406, 134);
             txtCupo.Name = "txtCupo";
             txtCupo.Size = new Size(68, 23);
             txtCupo.TabIndex = 6;
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(381, 265);
+            btnGuardar.Location = new Point(381, 299);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(93, 43);
             btnGuardar.TabIndex = 7;
@@ -114,7 +111,7 @@
             // lblPrecio
             // 
             lblPrecio.AutoSize = true;
-            lblPrecio.Location = new Point(358, 189);
+            lblPrecio.Location = new Point(358, 223);
             lblPrecio.Name = "lblPrecio";
             lblPrecio.Size = new Size(43, 15);
             lblPrecio.TabIndex = 8;
@@ -122,28 +119,84 @@
             // 
             // txtPrecio
             // 
-            txtPrecio.Location = new Point(406, 186);
+            txtPrecio.Location = new Point(406, 220);
             txtPrecio.Name = "txtPrecio";
             txtPrecio.Size = new Size(68, 23);
             txtPrecio.TabIndex = 9;
+            // 
+            // pnlMenu
+            // 
+            pnlMenu.BackColor = Color.MediumPurple;
+            pnlMenu.Controls.Add(panel1);
+            pnlMenu.Controls.Add(picboxLogo);
+            pnlMenu.Controls.Add(lblTitulo);
+            pnlMenu.Dock = DockStyle.Top;
+            pnlMenu.Location = new Point(0, 0);
+            pnlMenu.Name = "pnlMenu";
+            pnlMenu.Size = new Size(547, 89);
+            pnlMenu.TabIndex = 27;
+            // 
+            // bntMenuPrincipal
+            // 
+            bntMenuPrincipal.Location = new Point(0, 34);
+            bntMenuPrincipal.Name = "bntMenuPrincipal";
+            bntMenuPrincipal.Size = new Size(75, 23);
+            bntMenuPrincipal.TabIndex = 8;
+            bntMenuPrincipal.Text = "Volver";
+            bntMenuPrincipal.UseVisualStyleBackColor = true;
+            bntMenuPrincipal.Click += bntMenuPrincipal_Click;
+            // 
+            // picboxLogo
+            // 
+            picboxLogo.Image = Properties.Resources.sacachispas;
+            picboxLogo.Location = new Point(3, 3);
+            picboxLogo.Name = "picboxLogo";
+            picboxLogo.Size = new Size(69, 79);
+            picboxLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picboxLogo.TabIndex = 7;
+            picboxLogo.TabStop = false;
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitulo.ForeColor = SystemColors.ControlLightLight;
+            lblTitulo.Location = new Point(106, 24);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(75, 32);
+            lblTitulo.TabIndex = 2;
+            lblTitulo.Text = "Titulo";
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(bntMenuPrincipal);
+            panel1.Dock = DockStyle.Right;
+            panel1.Location = new Point(405, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(142, 89);
+            panel1.TabIndex = 9;
             // 
             // InstalacionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(490, 356);
+            ClientSize = new Size(547, 369);
+            Controls.Add(pnlMenu);
             Controls.Add(txtPrecio);
             Controls.Add(lblPrecio);
             Controls.Add(btnGuardar);
             Controls.Add(txtCupo);
             Controls.Add(txtDesc);
             Controls.Add(txtTitulo);
-            Controls.Add(lblTitulo);
             Controls.Add(lblCupo);
             Controls.Add(lblDescripcion);
             Controls.Add(lblTituloInstalacion);
             Name = "InstalacionForm";
-            Text = "AgregarInstalacion";
+            Text = "Instalacion Form";
+            pnlMenu.ResumeLayout(false);
+            pnlMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picboxLogo).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -153,12 +206,16 @@
         private Label lblTituloInstalacion;
         private Label lblDescripcion;
         private Label lblCupo;
-        private Label lblTitulo;
         private TextBox txtTitulo;
         private TextBox txtDesc;
         private TextBox txtCupo;
         private Button btnGuardar;
         private Label lblPrecio;
         private TextBox txtPrecio;
+        private Panel pnlMenu;
+        private Panel panel1;
+        private Button bntMenuPrincipal;
+        private PictureBox picboxLogo;
+        private Label lblTitulo;
     }
 }

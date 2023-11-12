@@ -28,31 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblNombreActividad = new Label();
             lblPrecioActividad = new Label();
             lblDescripcion = new Label();
             dgvTurnos = new DataGridView();
             Turnos = new Label();
             btnAgregarTurno = new Button();
+            pnlMenu = new Panel();
+            panel1 = new Panel();
+            bntMenuPrincipal = new Button();
+            picboxLogo = new PictureBox();
+            lblTitulo = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvTurnos).BeginInit();
+            pnlMenu.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picboxLogo).BeginInit();
             SuspendLayout();
-            // 
-            // lblNombreActividad
-            // 
-            lblNombreActividad.AutoSize = true;
-            lblNombreActividad.Font = new Font("Arial Rounded MT Bold", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNombreActividad.ForeColor = SystemColors.HotTrack;
-            lblNombreActividad.Location = new Point(55, 39);
-            lblNombreActividad.Name = "lblNombreActividad";
-            lblNombreActividad.Size = new Size(269, 33);
-            lblNombreActividad.TabIndex = 0;
-            lblNombreActividad.Text = "Nombre Actividad";
             // 
             // lblPrecioActividad
             // 
             lblPrecioActividad.AutoSize = true;
             lblPrecioActividad.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPrecioActividad.Location = new Point(591, 96);
+            lblPrecioActividad.Location = new Point(589, 158);
             lblPrecioActividad.Name = "lblPrecioActividad";
             lblPrecioActividad.Size = new Size(163, 25);
             lblPrecioActividad.TabIndex = 1;
@@ -62,7 +58,7 @@
             // 
             lblDescripcion.AutoSize = true;
             lblDescripcion.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDescripcion.Location = new Point(55, 100);
+            lblDescripcion.Location = new Point(53, 158);
             lblDescripcion.Name = "lblDescripcion";
             lblDescripcion.Size = new Size(154, 20);
             lblDescripcion.TabIndex = 2;
@@ -99,33 +95,92 @@
             btnAgregarTurno.UseVisualStyleBackColor = true;
             btnAgregarTurno.Click += btnAgregarTurno_Click;
             // 
+            // pnlMenu
+            // 
+            pnlMenu.BackColor = Color.MediumPurple;
+            pnlMenu.Controls.Add(panel1);
+            pnlMenu.Controls.Add(picboxLogo);
+            pnlMenu.Controls.Add(lblTitulo);
+            pnlMenu.Dock = DockStyle.Top;
+            pnlMenu.Location = new Point(0, 0);
+            pnlMenu.Name = "pnlMenu";
+            pnlMenu.Size = new Size(1029, 89);
+            pnlMenu.TabIndex = 28;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(bntMenuPrincipal);
+            panel1.Dock = DockStyle.Right;
+            panel1.Location = new Point(887, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(142, 89);
+            panel1.TabIndex = 9;
+            // 
+            // bntMenuPrincipal
+            // 
+            bntMenuPrincipal.Location = new Point(0, 34);
+            bntMenuPrincipal.Name = "bntMenuPrincipal";
+            bntMenuPrincipal.Size = new Size(75, 23);
+            bntMenuPrincipal.TabIndex = 8;
+            bntMenuPrincipal.Text = "Volver";
+            bntMenuPrincipal.UseVisualStyleBackColor = true;
+            bntMenuPrincipal.Click += bntMenuPrincipal_Click;
+            // 
+            // picboxLogo
+            // 
+            picboxLogo.Image = Properties.Resources.sacachispas;
+            picboxLogo.Location = new Point(3, 3);
+            picboxLogo.Name = "picboxLogo";
+            picboxLogo.Size = new Size(69, 79);
+            picboxLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picboxLogo.TabIndex = 7;
+            picboxLogo.TabStop = false;
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitulo.ForeColor = SystemColors.ControlLightLight;
+            lblTitulo.Location = new Point(106, 24);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(75, 32);
+            lblTitulo.TabIndex = 2;
+            lblTitulo.Text = "Titulo";
+            // 
             // AdministrarTurnosActividadForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(1029, 590);
+            Controls.Add(pnlMenu);
             Controls.Add(btnAgregarTurno);
             Controls.Add(Turnos);
             Controls.Add(dgvTurnos);
             Controls.Add(lblDescripcion);
             Controls.Add(lblPrecioActividad);
-            Controls.Add(lblNombreActividad);
             Name = "AdministrarTurnosActividadForm";
             Text = "Turnos";
             Load += AdministrarTurnosActividadForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvTurnos).EndInit();
+            pnlMenu.ResumeLayout(false);
+            pnlMenu.PerformLayout();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picboxLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label lblNombreActividad;
         private Label lblPrecioActividad;
         private Label lblDescripcion;
         private DataGridView dgvTurnos;
         private Label Turnos;
         private Button btnAgregarTurno;
+        private Panel pnlMenu;
+        private Panel panel1;
+        private Button bntMenuPrincipal;
+        private PictureBox picboxLogo;
+        private Label lblTitulo;
     }
 }

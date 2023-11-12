@@ -27,7 +27,7 @@ namespace WinForm
 
         private void AdministrarActividadesForm_Load(object sender, EventArgs e)
         {
-            
+
             this.Listar();
             DataGridViewButtonColumn colTurnos = new DataGridViewButtonColumn();
             colTurnos.HeaderText = "Turnos";
@@ -44,13 +44,13 @@ namespace WinForm
             colBorrar.Text = "Borrar";
             colBorrar.UseColumnTextForButtonValue = true;
 
-            
+
 
             this.dgvActividades.Columns.Add(colTurnos);
             this.dgvActividades.Columns.Add(colEditar);
-            
+
             this.dgvActividades.Columns.Add(colBorrar);
-            
+
 
 
 
@@ -101,14 +101,19 @@ namespace WinForm
             }
             else if (dgvActividades.Columns[e.ColumnIndex].HeaderText == "Turnos")
             {
-                
-                AdministrarTurnosActividadForm turnosActividadForm = new AdministrarTurnosActividadForm(actividad); 
-                
+
+                AdministrarTurnosActividadForm turnosActividadForm = new AdministrarTurnosActividadForm(actividad);
+
                 turnosActividadForm.FormClosed += (s, args) => { this.Show(); };
                 turnosActividadForm.Show();
                 this.Hide();
-                
+
             }
+        }
+
+        private void bntMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

@@ -31,10 +31,13 @@
             lblNombreActividad = new Label();
             txtNombreActividad = new TextBox();
             dgvActividades = new DataGridView();
-            btnCancelar = new Button();
-            label1 = new Label();
+            pnlMenu = new Panel();
+            bntMenuPrincipal = new Button();
+            picboxLogo = new PictureBox();
             lblTitulo = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvActividades).BeginInit();
+            pnlMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picboxLogo).BeginInit();
             SuspendLayout();
             // 
             // lblNombreActividad
@@ -50,7 +53,7 @@
             // 
             txtNombreActividad.Location = new Point(181, 112);
             txtNombreActividad.Name = "txtNombreActividad";
-            txtNombreActividad.Size = new Size(146, 23);
+            txtNombreActividad.Size = new Size(520, 23);
             txtNombreActividad.TabIndex = 6;
             txtNombreActividad.TextChanged += txtNombreActividad_TextChanged;
             // 
@@ -62,51 +65,63 @@
             dgvActividades.BackgroundColor = SystemColors.ScrollBar;
             dgvActividades.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvActividades.GridColor = SystemColors.ScrollBar;
-            dgvActividades.Location = new Point(333, 112);
+            dgvActividades.Location = new Point(40, 162);
             dgvActividades.Name = "dgvActividades";
             dgvActividades.RowTemplate.Height = 25;
             dgvActividades.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            dgvActividades.Size = new Size(774, 316);
+            dgvActividades.Size = new Size(661, 316);
             dgvActividades.TabIndex = 10;
             dgvActividades.CellClick += dgvActividades_CellClick;
             // 
-            // btnCancelar
+            // pnlMenu
             // 
-            btnCancelar.Location = new Point(120, 405);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
-            btnCancelar.TabIndex = 13;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click;
+            pnlMenu.BackColor = Color.MediumPurple;
+            pnlMenu.Controls.Add(bntMenuPrincipal);
+            pnlMenu.Controls.Add(picboxLogo);
+            pnlMenu.Controls.Add(lblTitulo);
+            pnlMenu.Dock = DockStyle.Top;
+            pnlMenu.Location = new Point(0, 0);
+            pnlMenu.Name = "pnlMenu";
+            pnlMenu.Size = new Size(762, 89);
+            pnlMenu.TabIndex = 27;
             // 
-            // label1
+            // bntMenuPrincipal
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(-29, 432);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 14;
-            label1.Text = "label1";
+            bntMenuPrincipal.Location = new Point(626, 34);
+            bntMenuPrincipal.Name = "bntMenuPrincipal";
+            bntMenuPrincipal.Size = new Size(75, 23);
+            bntMenuPrincipal.TabIndex = 8;
+            bntMenuPrincipal.Text = "Volver";
+            bntMenuPrincipal.UseVisualStyleBackColor = true;
+            bntMenuPrincipal.Click += bntMenuPrincipal_Click;
+            // 
+            // picboxLogo
+            // 
+            picboxLogo.Image = Properties.Resources.sacachispas;
+            picboxLogo.Location = new Point(3, 3);
+            picboxLogo.Name = "picboxLogo";
+            picboxLogo.Size = new Size(69, 79);
+            picboxLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picboxLogo.TabIndex = 7;
+            picboxLogo.TabStop = false;
             // 
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitulo.Location = new Point(40, 51);
+            lblTitulo.ForeColor = SystemColors.ControlLightLight;
+            lblTitulo.Location = new Point(106, 24);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(348, 32);
-            lblTitulo.TabIndex = 15;
-            lblTitulo.Text = "Seleccionar actividad a reportar";
+            lblTitulo.Size = new Size(293, 32);
+            lblTitulo.TabIndex = 2;
+            lblTitulo.Text = "Generar Reporte Actividad";
             // 
             // ReporteHistoricoPreciosActividad
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1185, 490);
-            Controls.Add(lblTitulo);
-            Controls.Add(label1);
-            Controls.Add(btnCancelar);
+            ClientSize = new Size(762, 490);
+            Controls.Add(pnlMenu);
             Controls.Add(dgvActividades);
             Controls.Add(lblNombreActividad);
             Controls.Add(txtNombreActividad);
@@ -114,6 +129,9 @@
             Text = "Reporte Actividad";
             Load += ReservarActividad_Load;
             ((System.ComponentModel.ISupportInitialize)dgvActividades).EndInit();
+            pnlMenu.ResumeLayout(false);
+            pnlMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picboxLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -123,8 +141,9 @@
         private Label lblNombreActividad;
         private TextBox txtNombreActividad;
         private DataGridView dgvActividades;
-        private Button btnCancelar;
-        private Label label1;
+        private Panel pnlMenu;
+        private Button bntMenuPrincipal;
+        private PictureBox picboxLogo;
         private Label lblTitulo;
     }
 }

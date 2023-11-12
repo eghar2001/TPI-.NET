@@ -64,8 +64,8 @@
             // 
             lblNombre.AutoSize = true;
             lblNombre.Font = new Font("Segoe UI Semilight", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNombre.ForeColor = Color.Maroon;
-            lblNombre.Location = new Point(88, 11);
+            lblNombre.ForeColor = SystemColors.ControlText;
+            lblNombre.Location = new Point(67, 11);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(193, 30);
             lblNombre.TabIndex = 0;
@@ -76,7 +76,7 @@
             lblDni.AutoSize = true;
             lblDni.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             lblDni.ForeColor = Color.Black;
-            lblDni.Location = new Point(88, 217);
+            lblDni.Location = new Point(67, 217);
             lblDni.Name = "lblDni";
             lblDni.Size = new Size(43, 25);
             lblDni.TabIndex = 1;
@@ -148,13 +148,15 @@
             // 
             btnMisActividades.Dock = DockStyle.Top;
             btnMisActividades.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnMisActividades.Image = Properties.Resources.activity;
+            btnMisActividades.ImageAlign = ContentAlignment.MiddleRight;
             btnMisActividades.Location = new Point(0, 212);
             btnMisActividades.Margin = new Padding(3, 2, 3, 2);
             btnMisActividades.Name = "btnMisActividades";
             btnMisActividades.Size = new Size(254, 34);
             btnMisActividades.TabIndex = 7;
             btnMisActividades.Text = "Mis Actividades";
-            btnMisActividades.TextAlign = ContentAlignment.MiddleRight;
+            btnMisActividades.TextAlign = ContentAlignment.MiddleLeft;
             btnMisActividades.UseVisualStyleBackColor = true;
             btnMisActividades.Click += btnMisActividades_Click;
             // 
@@ -208,13 +210,15 @@
             // 
             btnInstalaciones.Dock = DockStyle.Top;
             btnInstalaciones.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnInstalaciones.Image = Properties.Resources.footbal_pitch;
+            btnInstalaciones.ImageAlign = ContentAlignment.MiddleRight;
             btnInstalaciones.Location = new Point(0, 127);
             btnInstalaciones.Margin = new Padding(3, 2, 3, 2);
             btnInstalaciones.Name = "btnInstalaciones";
             btnInstalaciones.Size = new Size(254, 34);
             btnInstalaciones.TabIndex = 5;
             btnInstalaciones.Text = "Instalaciones";
-            btnInstalaciones.TextAlign = ContentAlignment.MiddleRight;
+            btnInstalaciones.TextAlign = ContentAlignment.MiddleLeft;
             btnInstalaciones.UseVisualStyleBackColor = true;
             btnInstalaciones.Click += btnInstalaciones_Click;
             // 
@@ -222,13 +226,15 @@
             // 
             btnMisCompras.Dock = DockStyle.Top;
             btnMisCompras.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnMisCompras.Image = Properties.Resources.product;
+            btnMisCompras.ImageAlign = ContentAlignment.MiddleRight;
             btnMisCompras.Location = new Point(0, 93);
             btnMisCompras.Margin = new Padding(3, 2, 3, 2);
             btnMisCompras.Name = "btnMisCompras";
             btnMisCompras.Size = new Size(254, 34);
             btnMisCompras.TabIndex = 2;
             btnMisCompras.Text = "Mis Compras";
-            btnMisCompras.TextAlign = ContentAlignment.MiddleRight;
+            btnMisCompras.TextAlign = ContentAlignment.MiddleLeft;
             btnMisCompras.UseVisualStyleBackColor = true;
             // 
             // panelLogo
@@ -300,7 +306,8 @@
             // 
             lblMenu.AutoSize = true;
             lblMenu.Font = new Font("Arial Rounded MT Bold", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMenu.Location = new Point(428, 3);
+            lblMenu.ForeColor = Color.MediumBlue;
+            lblMenu.Location = new Point(438, 22);
             lblMenu.Name = "lblMenu";
             lblMenu.Size = new Size(234, 44);
             lblMenu.TabIndex = 4;

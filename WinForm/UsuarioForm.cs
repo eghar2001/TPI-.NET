@@ -22,7 +22,7 @@ namespace WinForm
         Negocio.Usuario negocio_usuario = new Negocio.Usuario();
         Entidades.Usuario? socio_a_editar = null;
         private string nombre_imagen = "default.png";
-       
+
 
         public UsuarioForm()
         {
@@ -31,7 +31,11 @@ namespace WinForm
             this.picboxImagen.ImageLocation = Rutas.RutaImagenesPerfil + "\\default.png";
             this.Text = "Crear Usuario";
             this.lblTitulo.Text = "Crear Usuario";
-           
+
+            checkContrasenia.Visible = false;
+            ActivarContrasenia();
+
+
         }
         public UsuarioForm(int id_socio)
         {
@@ -120,7 +124,7 @@ namespace WinForm
 
         private bool ContraseniaValida()
         {
-            if (!checkContrasenia.Checked)
+            if (!checkContrasenia.Checked && checkContrasenia.Visible)
             {
                 return true;
             }
@@ -148,6 +152,8 @@ namespace WinForm
             lblErrorContrasenia.Text = "";
             return true;
         }
+
+
 
         private bool FormValido()
         {
@@ -295,30 +301,42 @@ namespace WinForm
                 nombre_imagen = "default.png";
             }
         }
+        private void ActivarContrasenia()
+        {
+            lblContrasenia.Visible = true;
+            lblConfirmarContrasenia.Visible = true;
 
+            txtContrasenia.Visible = true;
+            txtConfirmarContraseña.Visible = true;
+
+            lblErrorContrasenia.Visible = true;
+        }
+        private void DesactivarContrasenia()
+        {
+            lblContrasenia.Visible = false;
+            lblConfirmarContrasenia.Visible = false;
+
+            txtContrasenia.Visible = false;
+            txtConfirmarContraseña.Visible = false;
+
+            lblErrorContrasenia.Visible = false;
+        }
         private void checkContrasenia_CheckedChanged(object sender, EventArgs e)
         {
             if (checkContrasenia.Checked)
             {
-                lblContrasenia.Visible = true;
-                lblConfirmarContrasenia.Visible = true;
 
-                txtContrasenia.Visible = true;
-                txtConfirmarContraseña.Visible = true;
-
-                lblErrorContrasenia.Visible = true;
-
+                ActivarContrasenia();
             }
             else
             {
-                lblContrasenia.Visible = false;
-                lblConfirmarContrasenia.Visible = false;
-
-                txtContrasenia.Visible = false;
-                txtConfirmarContraseña.Visible = false;
-
-                lblErrorContrasenia.Visible = false;
+                DesactivarContrasenia();
             }
+        }
+
+        private void bntMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

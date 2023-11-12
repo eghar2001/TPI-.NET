@@ -34,7 +34,7 @@ namespace WinForm
         }
         private void TurnoForm_Load(object sender, EventArgs e)
         {
-            this.lblNombreActividad.Text = turno.Actividad + "(" + turno.Descripcion + ")";
+            this.lblTitulo.Text = turno.Actividad + "(" + turno.Descripcion + ")";
             this.lblPrecio.Text = "Precio: $" + turno.Actividad.UltimoPrecio;
             this.lblUbicacion.Text = "Ubicacion: " + turno.Instalacion;
             this.lblProfesor.Text = "Profesor: " + turno.Profesor;
@@ -71,6 +71,11 @@ namespace WinForm
             {
                 this.ListarHorarios();
             }
+        }
+
+        private void bntMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

@@ -145,6 +145,11 @@ namespace WinForm
         {
             if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar))) { e.Handled = true; }
         }
+
+        private void bntMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
 

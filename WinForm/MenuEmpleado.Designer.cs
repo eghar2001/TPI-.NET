@@ -33,6 +33,7 @@
             lblDni = new Label();
             toolTip1 = new ToolTip(components);
             panelMenuLateral = new Panel();
+            btnMiCuenta = new Button();
             btnAdministrarProfes = new Button();
             subPanelActividades = new Panel();
             btnReporteActividades = new Button();
@@ -66,8 +67,8 @@
             // 
             lblNombre.AutoSize = true;
             lblNombre.Font = new Font("Segoe UI Semilight", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNombre.ForeColor = Color.Maroon;
-            lblNombre.Location = new Point(75, 12);
+            lblNombre.ForeColor = SystemColors.ControlText;
+            lblNombre.Location = new Point(50, 19);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(193, 30);
             lblNombre.TabIndex = 0;
@@ -78,7 +79,7 @@
             lblDni.AutoSize = true;
             lblDni.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             lblDni.ForeColor = Color.Black;
-            lblDni.Location = new Point(75, 253);
+            lblDni.Location = new Point(50, 253);
             lblDni.Name = "lblDni";
             lblDni.Size = new Size(43, 25);
             lblDni.TabIndex = 1;
@@ -87,6 +88,7 @@
             // panelMenuLateral
             // 
             panelMenuLateral.BackColor = Color.MediumPurple;
+            panelMenuLateral.Controls.Add(btnMiCuenta);
             panelMenuLateral.Controls.Add(btnAdministrarProfes);
             panelMenuLateral.Controls.Add(subPanelActividades);
             panelMenuLateral.Controls.Add(btnActividades);
@@ -103,16 +105,35 @@
             panelMenuLateral.Size = new Size(254, 553);
             panelMenuLateral.TabIndex = 2;
             // 
+            // btnMiCuenta
+            // 
+            btnMiCuenta.Dock = DockStyle.Bottom;
+            btnMiCuenta.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnMiCuenta.Image = Properties.Resources.account;
+            btnMiCuenta.ImageAlign = ContentAlignment.MiddleRight;
+            btnMiCuenta.Location = new Point(0, 519);
+            btnMiCuenta.Margin = new Padding(3, 2, 3, 2);
+            btnMiCuenta.Name = "btnMiCuenta";
+            btnMiCuenta.Size = new Size(254, 34);
+            btnMiCuenta.TabIndex = 10;
+            btnMiCuenta.Text = "Mi Cuenta";
+            btnMiCuenta.TextAlign = ContentAlignment.MiddleLeft;
+            btnMiCuenta.UseVisualStyleBackColor = true;
+            btnMiCuenta.Click += btnMiCuenta_Click;
+            // 
             // btnAdministrarProfes
             // 
             btnAdministrarProfes.Dock = DockStyle.Top;
             btnAdministrarProfes.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAdministrarProfes.Image = Properties.Resources.pe_teacher;
+            btnAdministrarProfes.ImageAlign = ContentAlignment.MiddleRight;
             btnAdministrarProfes.Location = new Point(0, 364);
             btnAdministrarProfes.Margin = new Padding(3, 2, 3, 2);
             btnAdministrarProfes.Name = "btnAdministrarProfes";
             btnAdministrarProfes.Size = new Size(254, 34);
             btnAdministrarProfes.TabIndex = 9;
             btnAdministrarProfes.Text = "Administrar Profesores";
+            btnAdministrarProfes.TextAlign = ContentAlignment.MiddleLeft;
             btnAdministrarProfes.UseVisualStyleBackColor = true;
             btnAdministrarProfes.Click += btnAdministrarProfes_Click;
             // 
@@ -166,12 +187,15 @@
             // 
             btnActividades.Dock = DockStyle.Top;
             btnActividades.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnActividades.Image = Properties.Resources.activity;
+            btnActividades.ImageAlign = ContentAlignment.MiddleRight;
             btnActividades.Location = new Point(0, 277);
             btnActividades.Margin = new Padding(3, 2, 3, 2);
             btnActividades.Name = "btnActividades";
             btnActividades.Size = new Size(254, 34);
             btnActividades.TabIndex = 7;
             btnActividades.Text = "Actividades";
+            btnActividades.TextAlign = ContentAlignment.MiddleLeft;
             btnActividades.UseVisualStyleBackColor = true;
             btnActividades.Click += btnActividades_Click;
             // 
@@ -208,12 +232,15 @@
             // 
             btnInstalaciones.Dock = DockStyle.Top;
             btnInstalaciones.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnInstalaciones.Image = Properties.Resources.footbal_pitch;
+            btnInstalaciones.ImageAlign = ContentAlignment.MiddleRight;
             btnInstalaciones.Location = new Point(0, 214);
             btnInstalaciones.Margin = new Padding(3, 2, 3, 2);
             btnInstalaciones.Name = "btnInstalaciones";
             btnInstalaciones.Size = new Size(254, 34);
             btnInstalaciones.TabIndex = 5;
             btnInstalaciones.Text = "Instalaciones";
+            btnInstalaciones.TextAlign = ContentAlignment.MiddleLeft;
             btnInstalaciones.UseVisualStyleBackColor = true;
             btnInstalaciones.Click += btnInstalaciones_Click;
             // 
@@ -265,12 +292,15 @@
             // 
             btnProductos.Dock = DockStyle.Top;
             btnProductos.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnProductos.Image = Properties.Resources.product;
+            btnProductos.ImageAlign = ContentAlignment.MiddleRight;
             btnProductos.Location = new Point(0, 128);
             btnProductos.Margin = new Padding(3, 2, 3, 2);
             btnProductos.Name = "btnProductos";
             btnProductos.Size = new Size(254, 34);
             btnProductos.TabIndex = 2;
             btnProductos.Text = "Productos";
+            btnProductos.TextAlign = ContentAlignment.MiddleLeft;
             btnProductos.UseVisualStyleBackColor = true;
             btnProductos.Click += btnProductos_Click;
             // 
@@ -278,12 +308,15 @@
             // 
             btnManejoSocios.Dock = DockStyle.Top;
             btnManejoSocios.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnManejoSocios.Image = Properties.Resources.socio;
+            btnManejoSocios.ImageAlign = ContentAlignment.MiddleRight;
             btnManejoSocios.Location = new Point(0, 94);
             btnManejoSocios.Margin = new Padding(3, 2, 3, 2);
             btnManejoSocios.Name = "btnManejoSocios";
             btnManejoSocios.Size = new Size(254, 34);
             btnManejoSocios.TabIndex = 1;
             btnManejoSocios.Text = "Administrar Socios";
+            btnManejoSocios.TextAlign = ContentAlignment.MiddleLeft;
             btnManejoSocios.UseVisualStyleBackColor = true;
             btnManejoSocios.Click += btnManejoSocios_Click;
             // 
@@ -334,7 +367,8 @@
             // 
             lblMenu.AutoSize = true;
             lblMenu.Font = new Font("Segoe UI", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMenu.Location = new Point(338, 34);
+            lblMenu.ForeColor = Color.DarkRed;
+            lblMenu.Location = new Point(395, 77);
             lblMenu.Name = "lblMenu";
             lblMenu.Size = new Size(296, 51);
             lblMenu.TabIndex = 4;
@@ -404,5 +438,6 @@
         private Label lblTituloClub;
         private PictureBox picboxLogo;
         private Panel panel1;
+        private Button btnMiCuenta;
     }
 }

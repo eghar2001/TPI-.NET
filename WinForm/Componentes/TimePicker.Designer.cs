@@ -40,9 +40,10 @@
             // 
             // txtHora
             // 
-            txtHora.Location = new Point(28, 101);
+            txtHora.Location = new Point(24, 76);
+            txtHora.Margin = new Padding(3, 2, 3, 2);
             txtHora.Name = "txtHora";
-            txtHora.Size = new Size(125, 27);
+            txtHora.Size = new Size(110, 23);
             txtHora.TabIndex = 0;
             txtHora.Text = "0";
             txtHora.TextAlign = HorizontalAlignment.Center;
@@ -52,10 +53,10 @@
             // lblHora
             // 
             lblHora.AutoSize = true;
-            lblHora.ForeColor = SystemColors.GrayText;
-            lblHora.Location = new Point(67, 16);
+            lblHora.ForeColor = SystemColors.ControlText;
+            lblHora.Location = new Point(59, 12);
             lblHora.Name = "lblHora";
-            lblHora.Size = new Size(42, 20);
+            lblHora.Size = new Size(33, 15);
             lblHora.TabIndex = 1;
             lblHora.Text = "Hora";
             // 
@@ -63,10 +64,10 @@
             // 
             btnBajarHora.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             btnBajarHora.ImageAlign = ContentAlignment.TopCenter;
-            btnBajarHora.Location = new Point(28, 131);
+            btnBajarHora.Location = new Point(24, 98);
             btnBajarHora.Margin = new Padding(0);
             btnBajarHora.Name = "btnBajarHora";
-            btnBajarHora.Size = new Size(125, 52);
+            btnBajarHora.Size = new Size(109, 39);
             btnBajarHora.TabIndex = 4;
             btnBajarHora.Text = " ⇩";
             btnBajarHora.TextAlign = ContentAlignment.TopCenter;
@@ -77,10 +78,10 @@
             // 
             btnBajarMinuto.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             btnBajarMinuto.ImageAlign = ContentAlignment.TopCenter;
-            btnBajarMinuto.Location = new Point(178, 131);
+            btnBajarMinuto.Location = new Point(156, 98);
             btnBajarMinuto.Margin = new Padding(0);
             btnBajarMinuto.Name = "btnBajarMinuto";
-            btnBajarMinuto.Size = new Size(125, 52);
+            btnBajarMinuto.Size = new Size(109, 39);
             btnBajarMinuto.TabIndex = 8;
             btnBajarMinuto.Text = " ⇩";
             btnBajarMinuto.TextAlign = ContentAlignment.TopCenter;
@@ -91,10 +92,10 @@
             // 
             btnSubirMinuto.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             btnSubirMinuto.ImageAlign = ContentAlignment.TopCenter;
-            btnSubirMinuto.Location = new Point(178, 46);
+            btnSubirMinuto.Location = new Point(156, 34);
             btnSubirMinuto.Margin = new Padding(0);
             btnSubirMinuto.Name = "btnSubirMinuto";
-            btnSubirMinuto.Size = new Size(125, 52);
+            btnSubirMinuto.Size = new Size(109, 39);
             btnSubirMinuto.TabIndex = 7;
             btnSubirMinuto.Text = " ⇧";
             btnSubirMinuto.TextAlign = ContentAlignment.TopCenter;
@@ -104,18 +105,19 @@
             // lblMinutos
             // 
             lblMinutos.AutoSize = true;
-            lblMinutos.ForeColor = SystemColors.GrayText;
-            lblMinutos.Location = new Point(207, 16);
+            lblMinutos.ForeColor = SystemColors.Desktop;
+            lblMinutos.Location = new Point(181, 12);
             lblMinutos.Name = "lblMinutos";
-            lblMinutos.Size = new Size(62, 20);
+            lblMinutos.Size = new Size(51, 15);
             lblMinutos.TabIndex = 6;
             lblMinutos.Text = "Minutos";
             // 
             // txtMinutos
             // 
-            txtMinutos.Location = new Point(178, 101);
+            txtMinutos.Location = new Point(156, 76);
+            txtMinutos.Margin = new Padding(3, 2, 3, 2);
             txtMinutos.Name = "txtMinutos";
-            txtMinutos.Size = new Size(125, 27);
+            txtMinutos.Size = new Size(110, 23);
             txtMinutos.TabIndex = 5;
             txtMinutos.Text = "0";
             txtMinutos.TextAlign = HorizontalAlignment.Center;
@@ -126,10 +128,10 @@
             // 
             btnSubirHora.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             btnSubirHora.ImageAlign = ContentAlignment.TopCenter;
-            btnSubirHora.Location = new Point(28, 46);
+            btnSubirHora.Location = new Point(24, 34);
             btnSubirHora.Margin = new Padding(0);
             btnSubirHora.Name = "btnSubirHora";
-            btnSubirHora.Size = new Size(125, 52);
+            btnSubirHora.Size = new Size(109, 39);
             btnSubirHora.TabIndex = 9;
             btnSubirHora.Text = " ⇧";
             btnSubirHora.TextAlign = ContentAlignment.TopCenter;
@@ -138,8 +140,9 @@
             // 
             // TimePicker
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Thistle;
             Controls.Add(btnSubirHora);
             Controls.Add(btnBajarMinuto);
             Controls.Add(btnSubirMinuto);
@@ -148,8 +151,9 @@
             Controls.Add(btnBajarHora);
             Controls.Add(lblHora);
             Controls.Add(txtHora);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "TimePicker";
-            Size = new Size(328, 220);
+            Size = new Size(287, 165);
             ResumeLayout(false);
             PerformLayout();
         }

@@ -31,15 +31,22 @@
             btnListar = new Button();
             btnAgregar = new Button();
             dgvInstalaciones = new DataGridView();
+            pnlMenu = new Panel();
+            panel1 = new Panel();
+            bntMenuPrincipal = new Button();
+            picboxLogo = new PictureBox();
             lblTitulo = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvInstalaciones).BeginInit();
+            pnlMenu.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picboxLogo).BeginInit();
             SuspendLayout();
             // 
             // btnListar
             // 
-            btnListar.Location = new Point(50, 399);
+            btnListar.Location = new Point(51, 461);
             btnListar.Name = "btnListar";
-            btnListar.Size = new Size(136, 25);
+            btnListar.Size = new Size(80, 25);
             btnListar.TabIndex = 0;
             btnListar.Text = "Listar";
             btnListar.UseVisualStyleBackColor = true;
@@ -47,9 +54,9 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(620, 48);
+            btnAgregar.Location = new Point(658, 110);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(136, 25);
+            btnAgregar.Size = new Size(75, 25);
             btnAgregar.TabIndex = 1;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -58,29 +65,71 @@
             // dgvInstalaciones
             // 
             dgvInstalaciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvInstalaciones.Location = new Point(50, 93);
+            dgvInstalaciones.Location = new Point(51, 155);
             dgvInstalaciones.Name = "dgvInstalaciones";
             dgvInstalaciones.RowTemplate.Height = 25;
             dgvInstalaciones.Size = new Size(706, 300);
             dgvInstalaciones.TabIndex = 3;
             dgvInstalaciones.CellClick += dgvInstalaciones_CellClick;
             // 
+            // pnlMenu
+            // 
+            pnlMenu.BackColor = Color.MediumPurple;
+            pnlMenu.Controls.Add(panel1);
+            pnlMenu.Controls.Add(picboxLogo);
+            pnlMenu.Controls.Add(lblTitulo);
+            pnlMenu.Dock = DockStyle.Top;
+            pnlMenu.Location = new Point(0, 0);
+            pnlMenu.Name = "pnlMenu";
+            pnlMenu.Size = new Size(800, 89);
+            pnlMenu.TabIndex = 28;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(bntMenuPrincipal);
+            panel1.Dock = DockStyle.Right;
+            panel1.Location = new Point(658, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(142, 89);
+            panel1.TabIndex = 9;
+            // 
+            // bntMenuPrincipal
+            // 
+            bntMenuPrincipal.Location = new Point(0, 34);
+            bntMenuPrincipal.Name = "bntMenuPrincipal";
+            bntMenuPrincipal.Size = new Size(75, 23);
+            bntMenuPrincipal.TabIndex = 8;
+            bntMenuPrincipal.Text = "Volver";
+            bntMenuPrincipal.UseVisualStyleBackColor = true;
+            bntMenuPrincipal.Click += bntMenuPrincipal_Click;
+            // 
+            // picboxLogo
+            // 
+            picboxLogo.Image = Properties.Resources.sacachispas;
+            picboxLogo.Location = new Point(3, 3);
+            picboxLogo.Name = "picboxLogo";
+            picboxLogo.Size = new Size(69, 79);
+            picboxLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picboxLogo.TabIndex = 7;
+            picboxLogo.TabStop = false;
+            // 
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitulo.Location = new Point(50, 33);
+            lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitulo.ForeColor = SystemColors.ControlLightLight;
+            lblTitulo.Location = new Point(106, 24);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(261, 40);
-            lblTitulo.TabIndex = 4;
-            lblTitulo.Text = "Menu Instalaciones";
+            lblTitulo.Size = new Size(220, 32);
+            lblTitulo.TabIndex = 2;
+            lblTitulo.Text = "Menu instalaciones";
             // 
             // AdministrarInstalacionesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(lblTitulo);
+            ClientSize = new Size(800, 502);
+            Controls.Add(pnlMenu);
             Controls.Add(dgvInstalaciones);
             Controls.Add(btnAgregar);
             Controls.Add(btnListar);
@@ -88,8 +137,11 @@
             Text = "Administrar Instalaciones";
             Load += ManejarInstalacionesForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvInstalaciones).EndInit();
+            pnlMenu.ResumeLayout(false);
+            pnlMenu.PerformLayout();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picboxLogo).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -97,6 +149,10 @@
         private Button btnListar;
         private Button btnAgregar;
         private DataGridView dgvInstalaciones;
+        private Panel pnlMenu;
+        private Panel panel1;
+        private Button bntMenuPrincipal;
+        private PictureBox picboxLogo;
         private Label lblTitulo;
     }
 }

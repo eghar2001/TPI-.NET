@@ -64,7 +64,7 @@ namespace WinForm
         }
         private bool NombreValido()
         {
-            
+
             if (txtNombre.Text.Length == 0)
             {
                 this.lblErrorNombre.Text = "Debe ingresar un nombre";
@@ -174,6 +174,9 @@ namespace WinForm
             }
         }
 
-
+        private void bntMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

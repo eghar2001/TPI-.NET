@@ -40,7 +40,7 @@
             // 
             listboxInstalaciones.Dock = DockStyle.Bottom;
             listboxInstalaciones.FormattingEnabled = true;
-            listboxInstalaciones.ItemHeight = 20;
+            listboxInstalaciones.ItemHeight = 15;
             listboxInstalaciones.Location = new Point(0, 89);
             listboxInstalaciones.Name = "listboxInstalaciones";
             listboxInstalaciones.Size = new Size(660, 304);
@@ -49,7 +49,7 @@
             // 
             // pnlBusqueda
             // 
-            pnlBusqueda.BackColor = SystemColors.ControlDark;
+            pnlBusqueda.BackColor = Color.Thistle;
             pnlBusqueda.Controls.Add(btnLimpiar);
             pnlBusqueda.Controls.Add(txtTitulo);
             pnlBusqueda.Controls.Add(lblFiltrar);
@@ -73,16 +73,18 @@
             // 
             txtTitulo.Location = new Point(182, 12);
             txtTitulo.Name = "txtTitulo";
-            txtTitulo.Size = new Size(445, 27);
+            txtTitulo.Size = new Size(445, 23);
             txtTitulo.TabIndex = 6;
             txtTitulo.TextChanged += txtTitulo_TextChanged;
             // 
             // lblFiltrar
             // 
             lblFiltrar.AutoSize = true;
+            lblFiltrar.BackColor = Color.Thistle;
+            lblFiltrar.ForeColor = SystemColors.ControlText;
             lblFiltrar.Location = new Point(16, 12);
             lblFiltrar.Name = "lblFiltrar";
-            lblFiltrar.Size = new Size(120, 20);
+            lblFiltrar.Size = new Size(95, 15);
             lblFiltrar.TabIndex = 5;
             lblFiltrar.Text = "Filtrar por titulo: ";
             // 

@@ -27,7 +27,7 @@ namespace WinForm
         private void AdministrarTurnosActividadForm_Load(object sender, EventArgs e)
         {
             this.Text += " - " + this.actividad.Nombre;
-            this.lblNombreActividad.Text = actividad.Nombre;
+            this.lblTitulo.Text = actividad.Nombre;
             this.lblDescripcion.Text = actividad.Descripcion;
             this.lblPrecioActividad.Text = "Coste Inscripcion: $" + actividad.UltimoPrecio.ToString();
 
@@ -36,7 +36,7 @@ namespace WinForm
             ListarTurnos();
 
 
-            
+
             DataGridViewButtonColumn colHorarios = new DataGridViewButtonColumn();
             colHorarios.HeaderText = "Horarios";
             colHorarios.Text = "Horarios";
@@ -92,7 +92,7 @@ namespace WinForm
             {
                 string messageBoxString = "Esta seguro que desea borrar el turno '" + turno.Descripcion + "' de la actividad +" + turno.Actividad.Nombre + "'";
                 DialogResult resultado = MessageBox.Show(messageBoxString, "Borrar Turno", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                
+
                 if (resultado == DialogResult.OK)
                 {
                     negocio_turno.borrarTurno(turno);
@@ -109,6 +109,11 @@ namespace WinForm
             {
                 this.ListarTurnos();
             }
+        }
+
+        private void bntMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

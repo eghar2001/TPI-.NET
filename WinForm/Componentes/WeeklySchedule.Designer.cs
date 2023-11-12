@@ -49,7 +49,7 @@
             // 
             // pnlHorarios
             // 
-            pnlHorarios.BackColor = SystemColors.ActiveBorder;
+            pnlHorarios.BackColor = Color.Thistle;
             pnlHorarios.Controls.Add(lblDomingo);
             pnlHorarios.Controls.Add(lblSabado);
             pnlHorarios.Controls.Add(lblViernes);
@@ -73,6 +73,7 @@
             // lblDomingo
             // 
             lblDomingo.AutoSize = true;
+            lblDomingo.ForeColor = SystemColors.ControlText;
             lblDomingo.Location = new Point(792, 74);
             lblDomingo.Name = "lblDomingo";
             lblDomingo.Size = new Size(57, 15);
@@ -82,6 +83,7 @@
             // lblSabado
             // 
             lblSabado.AutoSize = true;
+            lblSabado.ForeColor = SystemColors.ControlText;
             lblSabado.Location = new Point(650, 74);
             lblSabado.Name = "lblSabado";
             lblSabado.Size = new Size(46, 15);
@@ -91,6 +93,7 @@
             // lblViernes
             // 
             lblViernes.AutoSize = true;
+            lblViernes.ForeColor = SystemColors.ControlText;
             lblViernes.Location = new Point(526, 71);
             lblViernes.Name = "lblViernes";
             lblViernes.Size = new Size(45, 15);
@@ -100,6 +103,7 @@
             // lblJueves
             // 
             lblJueves.AutoSize = true;
+            lblJueves.ForeColor = SystemColors.ControlText;
             lblJueves.Location = new Point(405, 71);
             lblJueves.Name = "lblJueves";
             lblJueves.Size = new Size(41, 15);
@@ -109,6 +113,7 @@
             // lblMiercoles
             // 
             lblMiercoles.AutoSize = true;
+            lblMiercoles.ForeColor = SystemColors.ControlText;
             lblMiercoles.Location = new Point(257, 71);
             lblMiercoles.Name = "lblMiercoles";
             lblMiercoles.Size = new Size(58, 15);
@@ -118,6 +123,7 @@
             // lblMartes
             // 
             lblMartes.AutoSize = true;
+            lblMartes.ForeColor = SystemColors.ControlText;
             lblMartes.Location = new Point(134, 71);
             lblMartes.Name = "lblMartes";
             lblMartes.Size = new Size(43, 15);
@@ -127,6 +133,7 @@
             // lblLunes
             // 
             lblLunes.AutoSize = true;
+            lblLunes.ForeColor = SystemColors.ControlText;
             lblLunes.Location = new Point(11, 71);
             lblLunes.Name = "lblLunes";
             lblLunes.Size = new Size(38, 15);
@@ -207,18 +214,19 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitulo.ForeColor = SystemColors.ControlText;
             lblTitulo.Location = new Point(12, 10);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(75, 32);
             lblTitulo.TabIndex = 8;
             lblTitulo.Text = "Titulo";
             // 
-            // WeekSchedule
+            // WeeklySchedule
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(pnlHorarios);
-            Name = "WeekSchedule";
+            Name = "WeeklySchedule";
             Size = new Size(937, 302);
             pnlHorarios.ResumeLayout(false);
             pnlHorarios.PerformLayout();

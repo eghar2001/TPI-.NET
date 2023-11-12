@@ -38,7 +38,7 @@ namespace WinForm
         {
             actividades = negocio_usuario.actividadesNoInscriptas(DatosLogin.UsuarioLogueado.Id);
 
-            dgvActividades.DataSource = actividades ;
+            dgvActividades.DataSource = actividades;
 
 
             dgvActividades.Refresh();
@@ -70,7 +70,7 @@ namespace WinForm
                     {
                         this.DialogResult = DialogResult.OK;
                     }
-                    else if(reservarTurnoActividad.DialogResult == DialogResult.Cancel)
+                    else if (reservarTurnoActividad.DialogResult == DialogResult.Cancel)
                     {
                         MessageBox.Show("La actividad seleccionada no tiene turnos cargados todavia");
                     }
@@ -81,6 +81,11 @@ namespace WinForm
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void bntMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

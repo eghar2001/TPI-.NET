@@ -56,7 +56,7 @@ namespace WinForm
                 negocio_turno.agregarHorarioTurno(horario_nuevo);
                 this.DialogResult = DialogResult.OK;
             }
-            catch(DiaOcupadoException ex)
+            catch (DiaOcupadoException ex)
             {
                 MessageBox.Show(ex.Message, "Dia Ocupado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -64,11 +64,11 @@ namespace WinForm
             {
                 MessageBox.Show(ex.Message, "Horario no valido", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            catch(HorarioSuperpuestoException ex)
+            catch (HorarioSuperpuestoException ex)
             {
                 MessageBox.Show(ex.Message, "Horario Ocupado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
+
 
 
 
@@ -76,11 +76,16 @@ namespace WinForm
 
         private void HorarioForm_Load(object sender, EventArgs e)
         {
-            weekScheduleInstalaciones.Titulo = "Horarios Ocupados de Instalacion: "+turno.Instalacion.Titulo;
+            weekScheduleInstalaciones.Titulo = "Horarios Ocupados de Instalacion: " + turno.Instalacion.Titulo;
             weekScheduleInstalaciones.Horarios = negocio_instalacion.GetHorariosInstalacion(turno.Instalacion);
 
-            weekScheduleProfesores.Titulo = "Horarios Ocupados de Profesor: "+ turno.Profesor.getNombApell();
+            weekScheduleProfesores.Titulo = "Horarios Ocupados de Profesor: " + turno.Profesor.getNombApell();
             weekScheduleProfesores.Horarios = negocio_profesor.getHorariosProfesor(turno.Profesor);
+        }
+
+        private void bntMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

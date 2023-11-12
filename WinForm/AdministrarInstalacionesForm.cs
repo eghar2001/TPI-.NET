@@ -127,5 +127,10 @@ namespace WinForm
                 }
             }
         }
+
+        private void bntMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

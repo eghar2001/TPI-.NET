@@ -85,7 +85,7 @@ namespace WinForm.Componentes
             }
             AsignarMinutos(Convert.ToInt32(txtMinutos.Text));
         }
-        
+
 
         private void btnSubirHora_Click(object sender, EventArgs e)
         {
@@ -136,7 +136,7 @@ namespace WinForm.Componentes
                 this.txtMinutos.Text = this.minutos.ToString();
                 return false;
             }
-            
+
         }
         private bool SubirHora()
         {
@@ -190,6 +190,6 @@ namespace WinForm.Componentes
             }
         }
 
-        
+
     }
 }

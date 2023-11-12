@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             lblActividad = new Label();
-            lblNombreActividad = new Label();
             lblProfesor = new Label();
             lblHorarios = new Label();
             listboxHorarios = new ListBox();
@@ -37,6 +36,14 @@
             btnAgregar = new Button();
             lblUbicacion = new Label();
             lblPrecio = new Label();
+            pnlMenu = new Panel();
+            panel1 = new Panel();
+            bntMenuPrincipal = new Button();
+            picboxLogo = new PictureBox();
+            lblTitulo = new Label();
+            pnlMenu.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picboxLogo).BeginInit();
             SuspendLayout();
             // 
             // lblActividad
@@ -46,17 +53,6 @@
             lblActividad.Name = "lblActividad";
             lblActividad.Size = new Size(0, 15);
             lblActividad.TabIndex = 0;
-            // 
-            // lblNombreActividad
-            // 
-            lblNombreActividad.AutoSize = true;
-            lblNombreActividad.Font = new Font("Arial Rounded MT Bold", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNombreActividad.ForeColor = SystemColors.HotTrack;
-            lblNombreActividad.Location = new Point(75, 57);
-            lblNombreActividad.Name = "lblNombreActividad";
-            lblNombreActividad.Size = new Size(269, 33);
-            lblNombreActividad.TabIndex = 1;
-            lblNombreActividad.Text = "Nombre Actividad";
             // 
             // lblProfesor
             // 
@@ -113,7 +109,7 @@
             // 
             lblUbicacion.AutoSize = true;
             lblUbicacion.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            lblUbicacion.Location = new Point(84, 102);
+            lblUbicacion.Location = new Point(84, 112);
             lblUbicacion.Name = "lblUbicacion";
             lblUbicacion.Size = new Size(75, 20);
             lblUbicacion.TabIndex = 10;
@@ -123,17 +119,70 @@
             // 
             lblPrecio.AutoSize = true;
             lblPrecio.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPrecio.Location = new Point(653, 100);
+            lblPrecio.Location = new Point(658, 110);
             lblPrecio.Name = "lblPrecio";
             lblPrecio.Size = new Size(53, 21);
             lblPrecio.TabIndex = 11;
             lblPrecio.Text = "Precio";
             // 
+            // pnlMenu
+            // 
+            pnlMenu.BackColor = Color.MediumPurple;
+            pnlMenu.Controls.Add(panel1);
+            pnlMenu.Controls.Add(picboxLogo);
+            pnlMenu.Controls.Add(lblTitulo);
+            pnlMenu.Dock = DockStyle.Top;
+            pnlMenu.Location = new Point(0, 0);
+            pnlMenu.Name = "pnlMenu";
+            pnlMenu.Size = new Size(791, 89);
+            pnlMenu.TabIndex = 28;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(bntMenuPrincipal);
+            panel1.Dock = DockStyle.Right;
+            panel1.Location = new Point(649, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(142, 89);
+            panel1.TabIndex = 9;
+            // 
+            // bntMenuPrincipal
+            // 
+            bntMenuPrincipal.Location = new Point(0, 34);
+            bntMenuPrincipal.Name = "bntMenuPrincipal";
+            bntMenuPrincipal.Size = new Size(75, 23);
+            bntMenuPrincipal.TabIndex = 8;
+            bntMenuPrincipal.Text = "Volver";
+            bntMenuPrincipal.UseVisualStyleBackColor = true;
+            bntMenuPrincipal.Click += bntMenuPrincipal_Click;
+            // 
+            // picboxLogo
+            // 
+            picboxLogo.Image = Properties.Resources.sacachispas;
+            picboxLogo.Location = new Point(3, 3);
+            picboxLogo.Name = "picboxLogo";
+            picboxLogo.Size = new Size(69, 79);
+            picboxLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picboxLogo.TabIndex = 7;
+            picboxLogo.TabStop = false;
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitulo.ForeColor = SystemColors.ControlLightLight;
+            lblTitulo.Location = new Point(106, 24);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(75, 32);
+            lblTitulo.TabIndex = 2;
+            lblTitulo.Text = "Titulo";
+            // 
             // AdministrarTurnoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(928, 531);
+            ClientSize = new Size(791, 531);
+            Controls.Add(pnlMenu);
             Controls.Add(lblPrecio);
             Controls.Add(lblUbicacion);
             Controls.Add(btnAgregar);
@@ -141,11 +190,14 @@
             Controls.Add(listboxHorarios);
             Controls.Add(lblHorarios);
             Controls.Add(lblProfesor);
-            Controls.Add(lblNombreActividad);
             Controls.Add(lblActividad);
             Name = "AdministrarTurnoForm";
-            Text = "TurnoForm";
+            Text = "Turnos";
             Load += TurnoForm_Load;
+            pnlMenu.ResumeLayout(false);
+            pnlMenu.PerformLayout();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picboxLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -153,7 +205,6 @@
         #endregion
 
         private Label lblActividad;
-        private Label lblNombreActividad;
         private Label lblProfesor;
         private Label lblHorarios;
         private ListBox listboxHorarios;
@@ -161,5 +212,10 @@
         private Button btnAgregar;
         private Label lblUbicacion;
         private Label lblPrecio;
+        private Panel pnlMenu;
+        private Panel panel1;
+        private Button bntMenuPrincipal;
+        private PictureBox picboxLogo;
+        private Label lblTitulo;
     }
 }
