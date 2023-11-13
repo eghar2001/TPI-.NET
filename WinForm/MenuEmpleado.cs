@@ -64,6 +64,19 @@ namespace WinForm
             administrarSocios.ShowDialog();
         }
 
+        private void btnAdministrarProductos_Click(object sender, EventArgs e)
+        {
+            AdministrarProductosForm administrarProductosForm = new AdministrarProductosForm();
+            administrarProductosForm.ShowDialog();
+        }
+
+        private void btnCompraProducto_Click(object sender, EventArgs e)
+        {
+            EleccionClienteCompraProducto eleccionClienteCompraProducto = new EleccionClienteCompraProducto();
+
+            eleccionClienteCompraProducto.ShowDialog();
+        }
+
         private void btnAdministrarActividades_Click(object sender, EventArgs e)
         {
             AdministrarActividadesForm administrarActividades = new AdministrarActividadesForm();

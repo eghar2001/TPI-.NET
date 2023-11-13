@@ -9,16 +9,28 @@ namespace Entidades
 {
     public class Producto
     {
+        [Required]
         private int stock;
-
-        [Key]
+        [Required]
         public int Id { get; set; }
         [Required]
         public string Nombre { get; set; } = null!;
-
-        [MaxLength(400)]
+        [Required]
         public string Descripcion {get; set; }
 
+        
+        public Producto(string nombreProducto, string descripcion, int stock) 
+        { 
+           Nombre = nombreProducto;
+           Descripcion = descripcion;
+           Stock = stock;
+        }
+
+        
+        public Producto() 
+        { 
+
+        }
         [Required]
         public int Stock
         {
@@ -34,7 +46,9 @@ namespace Entidades
                 }
                 this.stock = value;
             }
-        } 
+        }
+        //[Required]
+      //  public decimal UltPrecio { get; set; }
         public List<ValorProducto> Valores { get; set; } = new List<ValorProducto>();
     }
 }

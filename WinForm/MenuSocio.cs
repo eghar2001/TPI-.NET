@@ -46,6 +46,13 @@ namespace WinForm
             administrarSocios.ShowDialog();
         }
 
+        private void btnMisCompras_Click(object sender, EventArgs e)
+        {
+            VerComprasSocio verComprasSocio = new VerComprasSocio();
+
+            verComprasSocio.ShowDialog();
+        }
+
         private void btnReservarInstalacion_Click(object sender, EventArgs e)
         {
             ReservarInstalacionForm reservarInstalacion = new ReservarInstalacionForm();

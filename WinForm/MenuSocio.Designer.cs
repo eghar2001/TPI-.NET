@@ -72,6 +72,7 @@
             lblNombre.Location = new Point(67, 11);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(193, 30);
+            lblNombre.Size = new Size(193, 30);
             lblNombre.TabIndex = 0;
             lblNombre.Text = "Nombre y Apellido";
             // 
@@ -82,6 +83,7 @@
             lblDni.ForeColor = Color.Black;
             lblDni.Location = new Point(67, 217);
             lblDni.Name = "lblDni";
+            lblDni.Size = new Size(43, 25);
             lblDni.Size = new Size(43, 25);
             lblDni.TabIndex = 1;
             lblDni.Text = "DNI";
@@ -99,7 +101,9 @@
             panelMenuLateral.Dock = DockStyle.Left;
             panelMenuLateral.Location = new Point(0, 0);
             panelMenuLateral.Margin = new Padding(3, 2, 3, 2);
+            panelMenuLateral.Margin = new Padding(3, 2, 3, 2);
             panelMenuLateral.Name = "panelMenuLateral";
+            panelMenuLateral.Size = new Size(254, 451);
             panelMenuLateral.Size = new Size(254, 451);
             panelMenuLateral.TabIndex = 2;
             // 
@@ -175,6 +179,7 @@
             btnMisActividades.Margin = new Padding(3, 2, 3, 2);
             btnMisActividades.Name = "btnMisActividades";
             btnMisActividades.Size = new Size(254, 34);
+            btnMisActividades.Size = new Size(254, 34);
             btnMisActividades.TabIndex = 7;
             btnMisActividades.Text = "Mis Actividades";
             btnMisActividades.TextAlign = ContentAlignment.MiddleLeft;
@@ -203,7 +208,10 @@
             btnVerReservas.ImageAlign = ContentAlignment.BottomLeft;
             btnVerReservas.Location = new Point(4, 26);
             btnVerReservas.Margin = new Padding(3, 2, 3, 2);
+            btnVerReservas.Location = new Point(4, 26);
+            btnVerReservas.Margin = new Padding(3, 2, 3, 2);
             btnVerReservas.Name = "btnVerReservas";
+            btnVerReservas.Size = new Size(246, 22);
             btnVerReservas.Size = new Size(246, 22);
             btnVerReservas.TabIndex = 1;
             btnVerReservas.Text = "Ver Reservas";
@@ -219,7 +227,10 @@
             btnReservarInstalacion.ImageAlign = ContentAlignment.BottomLeft;
             btnReservarInstalacion.Location = new Point(4, 4);
             btnReservarInstalacion.Margin = new Padding(3, 2, 3, 2);
+            btnReservarInstalacion.Location = new Point(4, 4);
+            btnReservarInstalacion.Margin = new Padding(3, 2, 3, 2);
             btnReservarInstalacion.Name = "btnReservarInstalacion";
+            btnReservarInstalacion.Size = new Size(246, 22);
             btnReservarInstalacion.Size = new Size(246, 22);
             btnReservarInstalacion.TabIndex = 0;
             btnReservarInstalacion.Text = "Reservar Instalacion";
@@ -237,6 +248,7 @@
             btnInstalaciones.Margin = new Padding(3, 2, 3, 2);
             btnInstalaciones.Name = "btnInstalaciones";
             btnInstalaciones.Size = new Size(254, 34);
+            btnInstalaciones.Size = new Size(254, 34);
             btnInstalaciones.TabIndex = 5;
             btnInstalaciones.Text = "Instalaciones";
             btnInstalaciones.TextAlign = ContentAlignment.MiddleLeft;
@@ -253,10 +265,12 @@
             btnMisCompras.Margin = new Padding(3, 2, 3, 2);
             btnMisCompras.Name = "btnMisCompras";
             btnMisCompras.Size = new Size(254, 34);
+            btnMisCompras.Size = new Size(254, 34);
             btnMisCompras.TabIndex = 2;
             btnMisCompras.Text = "Mis Compras";
             btnMisCompras.TextAlign = ContentAlignment.MiddleLeft;
             btnMisCompras.UseVisualStyleBackColor = true;
+            btnMisCompras.Click += btnMisCompras_Click;
             // 
             // panelLogo
             // 
@@ -264,6 +278,7 @@
             panelLogo.Controls.Add(lblLogo);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
+            panelLogo.Margin = new Padding(3, 2, 3, 2);
             panelLogo.Margin = new Padding(3, 2, 3, 2);
             panelLogo.Name = "panelLogo";
             panelLogo.Size = new Size(254, 93);
@@ -308,7 +323,9 @@
             lblLogo.BackColor = Color.White;
             lblLogo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             lblLogo.Location = new Point(29, 22);
+            lblLogo.Location = new Point(29, 22);
             lblLogo.Name = "lblLogo";
+            lblLogo.Size = new Size(185, 32);
             lblLogo.Size = new Size(185, 32);
             lblLogo.TabIndex = 0;
             lblLogo.Text = "INSERTAR LOGO";
@@ -330,6 +347,7 @@
             lblMenu.ForeColor = Color.MediumBlue;
             lblMenu.Location = new Point(438, 56);
             lblMenu.Name = "lblMenu";
+            lblMenu.Size = new Size(234, 44);
             lblMenu.Size = new Size(234, 44);
             lblMenu.TabIndex = 4;
             lblMenu.Text = "Menu Socio";
@@ -367,6 +385,7 @@
             // MenuSocio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonFace;
             ClientSize = new Size(824, 451);
@@ -374,6 +393,7 @@
             Controls.Add(panel2);
             Controls.Add(lblMenu);
             Controls.Add(panelMenuLateral);
+            Margin = new Padding(3, 2, 3, 2);
             Margin = new Padding(3, 2, 3, 2);
             Name = "MenuSocio";
             Text = "Menu Socio";
