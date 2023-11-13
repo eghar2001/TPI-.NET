@@ -73,6 +73,9 @@ namespace Negocio
                 throw new NombreUsuarioRepetidoException();
             }
             usuario.TipoUsuarioId = 1;
+            
+            
+            
             datos_usuario.agregar_usuario(usuario);
             
         }
@@ -91,7 +94,7 @@ namespace Negocio
             {
                 throw new NombreUsuarioRepetidoException();
             }
-            usuario_modificado.TipoUsuarioId = 1;
+            usuario_modificado.TipoUsuarioId = user_original.TipoUsuarioId;
             datos_usuario.modificar_usuario(usuario_modificado);
         }
         public List<Entidades.Usuario> find_all()

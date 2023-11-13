@@ -69,5 +69,25 @@ namespace WinForm
             VerInscripciones inscripcionesUsuario = new VerInscripciones();
             inscripcionesUsuario.ShowDialog();
         }
+
+        private void btnGenerarCarnet_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("Desea generar carnet digital para '" + DatosLogin.UsuarioLogueado.NombreApellido + "'", "Generar Carnet Digital", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (resultado == DialogResult.OK)
+            {
+                Reportes.GenerarCarnet(DatosLogin.UsuarioLogueado);
+                MessageBox.Show("El carnet se ha generado con exito", "Carnet Creado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+
+        private void tsbCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            DatosLogin.UsuarioLogueado = null;
+            login.Show();
+            this.Hide();
+        }
     }
+    
 }

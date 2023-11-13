@@ -128,7 +128,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(564, 389);
+            ClientSize = new Size(564, 403);
             Controls.Add(picboxLogo);
             Controls.Add(pnlLogin);
             Margin = new Padding(3, 2, 3, 2);

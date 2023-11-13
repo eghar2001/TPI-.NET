@@ -22,7 +22,7 @@ namespace WinForm.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace WinForm.Properties {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WinForm.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace WinForm.Properties {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace WinForm.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap account {
+        public static System.Drawing.Bitmap account {
             get {
                 object obj = ResourceManager.GetObject("account", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace WinForm.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap activity {
+        public static System.Drawing.Bitmap activity {
             get {
                 object obj = ResourceManager.GetObject("activity", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +83,45 @@ namespace WinForm.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap footbal_pitch {
+        public static System.Drawing.Bitmap carnet_foto {
+            get {
+                object obj = ResourceManager.GetObject("carnet_foto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;&lt;/meta&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;&lt;/meta&gt;
+        ///    &lt;style&gt;
+        ///        *{
+        ///            margin:0;
+        ///            padding: 0;
+        ///            outline:0;
+        ///            font-family:&apos;Gill Sans&apos;, &apos;Gill Sans MT&apos;, Calibri, &apos;Trebuchet MS&apos;, sans-serif;
+        ///            text-align:left;
+        ///        }
+        ///        
+        ///        span{
+        ///            border-bottom:2px solid gray;
+        ///        }
+        ///        
+        ///        .parte-carnet
+        ///        {        /// [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        public static string carnet_socio {
+            get {
+                return ResourceManager.GetString("carnet_socio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap footbal_pitch {
             get {
                 object obj = ResourceManager.GetObject("footbal-pitch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +131,17 @@ namespace WinForm.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pe_teacher {
+        public static System.Drawing.Bitmap logout_icon {
+            get {
+                object obj = ResourceManager.GetObject("logout_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap pe_teacher {
             get {
                 object obj = ResourceManager.GetObject("pe-teacher", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +151,7 @@ namespace WinForm.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap product {
+        public static System.Drawing.Bitmap product {
             get {
                 object obj = ResourceManager.GetObject("product", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -129,7 +177,7 @@ namespace WinForm.Properties {
         ///        .valores_table  tr, .valores_table tr td, .valores_table tr th {
         ///            border [resto de la cadena truncado]&quot;;.
         /// </summary>
-        internal static string reporte_historico_precios_actividad {
+        public static string reporte_historico_precios_actividad {
             get {
                 return ResourceManager.GetString("reporte_historico_precios_actividad", resourceCulture);
             }
@@ -138,7 +186,7 @@ namespace WinForm.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap sacachispas {
+        public static System.Drawing.Bitmap sacachispas {
             get {
                 object obj = ResourceManager.GetObject("sacachispas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -148,9 +196,29 @@ namespace WinForm.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap socio {
+        public static System.Drawing.Bitmap sacachispas_logo {
+            get {
+                object obj = ResourceManager.GetObject("sacachispas_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap socio {
             get {
                 object obj = ResourceManager.GetObject("socio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap socio1 {
+            get {
+                object obj = ResourceManager.GetObject("socio1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

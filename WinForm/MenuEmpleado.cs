@@ -98,5 +98,13 @@ namespace WinForm
                 MessageBox.Show("Usuario creado con exito!!");
             }
         }
+
+        private void tsbCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            DatosLogin.UsuarioLogueado = null;
+            login.Show();
+            this.Hide();
+        }
     }
 }

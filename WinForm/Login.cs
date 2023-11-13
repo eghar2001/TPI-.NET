@@ -57,7 +57,10 @@ namespace WinForm
 
                     DatosLogin.UsuarioLogueado = usuario;
                     menu.Show();
+
                     this.Hide();
+
+                  
                 }
 
             }

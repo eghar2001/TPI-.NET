@@ -19,10 +19,9 @@ namespace WinForm
 {
     public partial class UsuarioForm : Form
     {
-        Negocio.Usuario negocio_usuario = new Negocio.Usuario();
-        Entidades.Usuario? socio_a_editar = null;
+        private readonly Negocio.Usuario negocio_usuario = new Negocio.Usuario();
+        private Entidades.Usuario? socio_a_editar = null;
         private string nombre_imagen = "default.png";
-
 
         public UsuarioForm()
         {
@@ -37,7 +36,7 @@ namespace WinForm
 
 
         }
-        public UsuarioForm(int id_socio)
+        public UsuarioForm(int id_socio )
         {
             socio_a_editar = negocio_usuario.get(id_socio);
             InitializeComponent();
@@ -49,8 +48,6 @@ namespace WinForm
             this.txtApellido.Text = socio_a_editar.Apellido;
             this.txtDni.Text = socio_a_editar.Dni.ToString();
             this.txtNombreUsuario.Text = socio_a_editar.NombreUsuario;
-
-
         }
         private bool NombreValido()
         {
@@ -189,51 +186,39 @@ namespace WinForm
 
             string foto_filename = socio.NombreUsuario + DateTime.Now.ToString("ddMMyyyyhhmmss") + Path.GetExtension(nombre_imagen);
             socio.FotoNombre = foto_filename;
-            if (socio_a_editar == null)
+            
+            try
             {
-
-                try
+                if(socio_a_editar == null)
                 {
                     negocio_usuario.agregar_socio(socio);
-                    picboxImagen.Image.Save(Rutas.RutaImagenesPerfil + "\\" + foto_filename);
-                    this.DialogResult = DialogResult.OK;
                 }
-                catch (DniRepetidoException)
+                else
                 {
-                    MessageBox.Show("El DNI se encuentra repetido", "Problema de socio", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                catch (NombreUsuarioRepetidoException)
-                {
-                    MessageBox.Show("El nombre de usuario se encuentra repetido", "Problema de socio", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Hubo un error inesperado. Por favor, intente mas tarde", "Hubo un problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                socio.Id = socio_a_editar.Id;
-                try
-                {
+                    socio.Id = socio_a_editar.Id;
                     negocio_usuario.modificar_socio(socio);
-                    picboxImagen.Image.Save(Rutas.RutaImagenesPerfil + "\\" + foto_filename);
-                    this.DialogResult = DialogResult.OK;
                 }
-                catch (DniRepetidoException)
-                {
-                    MessageBox.Show("El DNI se encuentra repetido", "Problema de socio", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                catch (NombreUsuarioRepetidoException)
-                {
-                    MessageBox.Show("El nombre de usuario se encuentra repetido", "Problema de socio", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                catch (ArgumentException)
-                {
-                    MessageBox.Show("No se encontro el usuario a editar", "Problema de socio", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
+                string ruta_archivo_guardado = Rutas.RutaImagenesPerfil + "\\" + foto_filename;
+                
+                picboxImagen.Image.Save(ruta_archivo_guardado);
+                this.DialogResult = DialogResult.OK;
+                
             }
+            catch (DniRepetidoException)
+            {
+                MessageBox.Show("El DNI se encuentra repetido", "Problema de socio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            catch (NombreUsuarioRepetidoException)
+            {
+                MessageBox.Show("El nombre de usuario se encuentra repetido", "Problema de socio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
+            
+         
+            
+            
 
 
         }
@@ -280,15 +265,17 @@ namespace WinForm
         private void btnExaminar_Click(object sender, EventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "Image Files(*.PNG; *.JPG;| *.PNG; *.JPG| All files(*.*) | *.*";
+            fileDialog.Filter = "Image Files(*.PNG; *.JPG;*.JPEG| *.PNG; *.JPG; *.JPEG| All files(*.*) | *.*";
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                if (fileDialog.SafeFileName.EndsWith(".jpg") || fileDialog.SafeFileName.EndsWith(".png"))
+                if (fileDialog.SafeFileName.EndsWith(".jpg") || fileDialog.SafeFileName.EndsWith(".png") || fileDialog.SafeFileName.EndsWith(".jpeg"))
                 {
                     nombre_imagen = fileDialog.SafeFileName;
                     Image imagen = Image.FromStream(fileDialog.OpenFile());
-                    imagen = Utils.FixImageOrientation(imagen);
-                    picboxImagen.Image = imagen;
+
+                    Image imagen_arreglada = Utils.ResizeImage(imagen, new Size(150,150));
+                    imagen_arreglada = Utils.FixImageOrientation(imagen_arreglada);
+                    picboxImagen.Image = imagen_arreglada;
                 }
                 else
                 {

@@ -53,6 +53,8 @@
             picboxEmpleado = new PictureBox();
             lblMenu = new Label();
             panel1 = new Panel();
+            toolStrip1 = new ToolStrip();
+            tsbCerrarSesion = new ToolStripButton();
             panelMenuLateral.SuspendLayout();
             subPanelActividades.SuspendLayout();
             subPanelnstalaciones.SuspendLayout();
@@ -61,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)picboxLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picboxEmpleado).BeginInit();
             panel1.SuspendLayout();
+            toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // lblNombre
@@ -385,11 +388,31 @@
             panel1.Size = new Size(338, 298);
             panel1.TabIndex = 5;
             // 
+            // toolStrip1
+            // 
+            toolStrip1.Items.AddRange(new ToolStripItem[] { tsbCerrarSesion });
+            toolStrip1.Location = new Point(254, 0);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(644, 25);
+            toolStrip1.TabIndex = 7;
+            toolStrip1.Text = "toolStrip1";
+            // 
+            // tsbCerrarSesion
+            // 
+            tsbCerrarSesion.ForeColor = SystemColors.HotTrack;
+            tsbCerrarSesion.Image = Properties.Resources.logout_icon;
+            tsbCerrarSesion.ImageTransparentColor = Color.Magenta;
+            tsbCerrarSesion.Name = "tsbCerrarSesion";
+            tsbCerrarSesion.Size = new Size(96, 22);
+            tsbCerrarSesion.Text = "Cerrar Sesion";
+            tsbCerrarSesion.Click += tsbCerrarSesion_Click;
+            // 
             // MenuEmpleado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(898, 553);
+            Controls.Add(toolStrip1);
             Controls.Add(panel1);
             Controls.Add(lblMenu);
             Controls.Add(panelMenuLateral);
@@ -407,6 +430,8 @@
             ((System.ComponentModel.ISupportInitialize)picboxEmpleado).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -439,5 +464,7 @@
         private PictureBox picboxLogo;
         private Panel panel1;
         private Button btnMiCuenta;
+        private ToolStrip toolStrip1;
+        private ToolStripButton tsbCerrarSesion;
     }
 }

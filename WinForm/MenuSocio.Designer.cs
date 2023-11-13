@@ -33,6 +33,7 @@
             lblDni = new Label();
             toolTip1 = new ToolTip(components);
             panelMenuLateral = new Panel();
+            btnGenerarCarnet = new Button();
             subPanelActividades = new Panel();
             btnVerReservasActividad = new Button();
             btnReservarActividad = new Button();
@@ -50,6 +51,8 @@
             picboxSocio = new PictureBox();
             lblMenu = new Label();
             panel2 = new Panel();
+            toolStrip1 = new ToolStrip();
+            tsbCerrarSesion = new ToolStripButton();
             panelMenuLateral.SuspendLayout();
             subPanelActividades.SuspendLayout();
             subPanelnstalaciones.SuspendLayout();
@@ -58,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)picboxLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picboxSocio).BeginInit();
             panel2.SuspendLayout();
+            toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // lblNombre
@@ -85,6 +89,7 @@
             // panelMenuLateral
             // 
             panelMenuLateral.BackColor = Color.MediumPurple;
+            panelMenuLateral.Controls.Add(btnGenerarCarnet);
             panelMenuLateral.Controls.Add(subPanelActividades);
             panelMenuLateral.Controls.Add(btnMisActividades);
             panelMenuLateral.Controls.Add(subPanelnstalaciones);
@@ -97,6 +102,22 @@
             panelMenuLateral.Name = "panelMenuLateral";
             panelMenuLateral.Size = new Size(254, 451);
             panelMenuLateral.TabIndex = 2;
+            // 
+            // btnGenerarCarnet
+            // 
+            btnGenerarCarnet.Dock = DockStyle.Bottom;
+            btnGenerarCarnet.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnGenerarCarnet.Image = Properties.Resources.socio1;
+            btnGenerarCarnet.ImageAlign = ContentAlignment.MiddleRight;
+            btnGenerarCarnet.Location = new Point(0, 417);
+            btnGenerarCarnet.Margin = new Padding(3, 2, 3, 2);
+            btnGenerarCarnet.Name = "btnGenerarCarnet";
+            btnGenerarCarnet.Size = new Size(254, 34);
+            btnGenerarCarnet.TabIndex = 9;
+            btnGenerarCarnet.Text = "Generar Carnet";
+            btnGenerarCarnet.TextAlign = ContentAlignment.MiddleLeft;
+            btnGenerarCarnet.UseVisualStyleBackColor = true;
+            btnGenerarCarnet.Click += btnGenerarCarnet_Click;
             // 
             // subPanelActividades
             // 
@@ -307,7 +328,7 @@
             lblMenu.AutoSize = true;
             lblMenu.Font = new Font("Arial Rounded MT Bold", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
             lblMenu.ForeColor = Color.MediumBlue;
-            lblMenu.Location = new Point(438, 22);
+            lblMenu.Location = new Point(438, 56);
             lblMenu.Name = "lblMenu";
             lblMenu.Size = new Size(234, 44);
             lblMenu.TabIndex = 4;
@@ -319,10 +340,29 @@
             panel2.Controls.Add(picboxSocio);
             panel2.Controls.Add(lblDni);
             panel2.Controls.Add(lblNombre);
-            panel2.Location = new Point(366, 93);
+            panel2.Location = new Point(366, 127);
             panel2.Name = "panel2";
             panel2.Size = new Size(372, 266);
             panel2.TabIndex = 5;
+            // 
+            // toolStrip1
+            // 
+            toolStrip1.Items.AddRange(new ToolStripItem[] { tsbCerrarSesion });
+            toolStrip1.Location = new Point(254, 0);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(570, 25);
+            toolStrip1.TabIndex = 6;
+            toolStrip1.Text = "toolStrip1";
+            // 
+            // tsbCerrarSesion
+            // 
+            tsbCerrarSesion.ForeColor = SystemColors.HotTrack;
+            tsbCerrarSesion.Image = Properties.Resources.logout_icon;
+            tsbCerrarSesion.ImageTransparentColor = Color.Magenta;
+            tsbCerrarSesion.Name = "tsbCerrarSesion";
+            tsbCerrarSesion.Size = new Size(96, 22);
+            tsbCerrarSesion.Text = "Cerrar Sesion";
+            tsbCerrarSesion.Click += tsbCerrarSesion_Click;
             // 
             // MenuSocio
             // 
@@ -330,6 +370,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonFace;
             ClientSize = new Size(824, 451);
+            Controls.Add(toolStrip1);
             Controls.Add(panel2);
             Controls.Add(lblMenu);
             Controls.Add(panelMenuLateral);
@@ -348,6 +389,8 @@
             ((System.ComponentModel.ISupportInitialize)picboxSocio).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -380,5 +423,8 @@
         private Label lblTituloClub;
         private PictureBox picboxLogo;
         private Panel panel2;
+        private Button btnGenerarCarnet;
+        private ToolStrip toolStrip1;
+        private ToolStripButton tsbCerrarSesion;
     }
 }
