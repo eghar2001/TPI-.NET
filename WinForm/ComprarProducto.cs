@@ -32,8 +32,21 @@ namespace WinForm
         {
             this.Listar();
 
+            DataGridViewButtonColumn eliminar = new DataGridViewButtonColumn();
+
+            eliminar.Text = "Eliminar";
+            eliminar.Name = "Eliminar";
+            eliminar.UseColumnTextForButtonValue = true;
+
+            dgvProductosCliente.Columns.Add(eliminar);
+
 
             dgvProductosCliente.DataSource = carrito.Select(c => new { Id = c.ProductoId, c.Cantidad }).ToList();
+
+            DataGridViewTextBoxColumn cantidad = new DataGridViewTextBoxColumn();
+
+            cantidad.Name = "Cantidad";
+            dgvProductos.Columns.Add(cantidad);
 
             DataGridViewButtonColumn seleccionar = new DataGridViewButtonColumn();
 
@@ -55,7 +68,8 @@ namespace WinForm
 
         private void txtNombreProducto_TextChanged(object sender, EventArgs e)
         {
-            dgvProductos.DataSource = negocio_producto.find_all().Where(p => p.Nombre.ToLower().Contains(txtNombreProducto.Text.ToLower()));
+            dgvProductos.DataSource = negocio_producto.find_all().Where(p => p.Nombre.ToLower().Contains(txtNombreProducto.Text.ToLower())).ToList();
+            this.AgregarColumnaPrecio(this.dgvProductos);
         }
 
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -67,13 +81,15 @@ namespace WinForm
                 {
                     DataGridViewRow row = dgvProductos.Rows[e.RowIndex];
 
-                    if (Int32.Parse(row.Cells["Stock"].Value.ToString()) > 0)
+                    int cantidad = row.Cells["Cantidad"].Value != null? Int32.Parse(row.Cells["Cantidad"].Value.ToString()):0;
+                    int stock = Int32.Parse(row.Cells["Stock"].Value.ToString());
+                    if (stock > 0 && cantidad > 0 && stock >= cantidad)
                     {
                         Entidades.Venta venta = new Entidades.Venta
                         {
                             ProductoId = Int32.Parse(row.Cells["Id"].Value.ToString()),
-                            Cantidad = 1,
-                            
+                            Cantidad = Int32.Parse(row.Cells["Cantidad"].Value.ToString()),
+
                         };
 
                         bool band = true;
@@ -85,10 +101,10 @@ namespace WinForm
                                 band = false;
                                 DataGridViewRow rowCliente = dgvProductosCliente.Rows.Cast<DataGridViewRow>().Where(r => Convert.ToInt32(r.Cells["Id"].Value) == ca.ProductoId).FirstOrDefault();
                                 int cantidadAnterior = Int32.Parse(rowCliente.Cells["Cantidad"].Value.ToString());
-                                if (cantidadAnterior < Int32.Parse(row.Cells["Stock"].Value.ToString()))
+                                if ((cantidadAnterior + Int32.Parse(row.Cells["Cantidad"].Value.ToString())) <= Int32.Parse(row.Cells["Stock"].Value.ToString()))
                                 {
 
-                                    ca.Cantidad = cantidadAnterior + 1;
+                                    ca.Cantidad = cantidadAnterior + Int32.Parse(row.Cells["Cantidad"].Value.ToString());
 
                                     var carritoCompleto = from carr in carrito join p in productos on carr.ProductoId equals p.Id select new { p.Id, p.Nombre, p.Descripcion, carr.Cantidad };
 
@@ -119,9 +135,15 @@ namespace WinForm
                         }
 
                     }
+                    else
+                    {
+                        MessageBox.Show("La cantidad debe ser mayor a 0 o el stock es insuficiente");
+                    }
 
 
                 }
+
+
             }
         }
 
@@ -148,11 +170,11 @@ namespace WinForm
                 c.PrecioUnitario = decimal.Parse(rowCliente.Cells["Precio"].Value.ToString());
 
 
-
-                negocio_producto.modificar_producto(producto_a_modificar);
                 negocio_venta.agregar_venta(c);
-
+                negocio_producto.modificar_producto(producto_a_modificar);
                 
+
+
             }
             DialogResult = DialogResult.OK;
         }
@@ -188,6 +210,45 @@ namespace WinForm
             {
                 MessageBox.Show("Error al obtener el precio: " + ex.Message);
             }
+        }
+
+        private void dgvProductosCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if ("Eliminar" == dgvProductosCliente.Columns[e.ColumnIndex].HeaderText)
+                {
+                    DialogResult dialogResult = MessageBox.Show("¿Está seguro que quiere eliminar este producto?", "Advertencia", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        DataGridViewRow producto = dgvProductosCliente.Rows[e.RowIndex];
+
+                        Entidades.Venta venta = null;
+
+                        foreach (Entidades.Venta v in carrito)
+                        {
+                            if (v.ProductoId == Int32.Parse(producto.Cells["Id"].Value.ToString()))
+                            {
+                                venta = v; break;
+                            }
+
+                        }
+
+                        carrito.Remove(venta);
+
+                        List<Entidades.Producto> productos = negocio_producto.find_all();
+                        var carritoCompleto = from carr in carrito join p in productos on carr.ProductoId equals p.Id select new { p.Id, p.Nombre, p.Descripcion, carr.Cantidad };
+
+                        dgvProductosCliente.DataSource = null;
+                        dgvProductosCliente.DataSource = carritoCompleto.ToList();
+                        this.AgregarColumnaPrecio(this.dgvProductosCliente);
+                        dgvProductosCliente.Refresh();
+
+                    }
+                }
+            }
+
+
         }
     }
 }

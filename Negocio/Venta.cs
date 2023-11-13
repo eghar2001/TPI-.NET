@@ -19,12 +19,6 @@ namespace Negocio
         public void agregar_venta(Entidades.Venta venta)
         {
 
-            if(venta.Cantidad > venta.Producto.Stock)
-            {
-                throw new StockInsuficienteException();
-            }
-            venta.Producto.Stock -= venta.Cantidad;
-
             datos_venta.agregar_venta(venta);
 
         }
