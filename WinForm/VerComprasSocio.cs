@@ -33,9 +33,9 @@ namespace WinForm
             List<Entidades.Venta> ventas = negocio_venta.find_all(DatosLogin.UsuarioLogueado);
             List<Entidades.Producto> productos = negocio_producto.find_all();
 
-            var productosCompletos = from v in ventas join p in productos on v.ProductoId equals p.Id select new { p.Nombre, p.Descripcion, v.FechaVenta, v.Cantidad, v.PrecioUnitario, SubTotal = v.Cantidad*v.PrecioUnitario };
+            var productosCompletos = from v in ventas join p in productos on v.ProductoId equals p.Id select new { p.Nombre, p.Descripcion, v.FechaVenta, v.Cantidad, v.PrecioUnitario, SubTotal = v.Cantidad * v.PrecioUnitario };
 
-            dgvProductos.DataSource = productosCompletos.ToList() ;
+            dgvProductos.DataSource = productosCompletos.ToList();
 
             dgvProductos.Refresh();
         }
@@ -43,6 +43,11 @@ namespace WinForm
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void bntMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
