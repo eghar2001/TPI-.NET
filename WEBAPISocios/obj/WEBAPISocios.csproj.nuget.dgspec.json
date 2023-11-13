@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\WEBAPISocios\\WEBAPISocios.csproj": {}
+    "D:\\Proyectos\\TPI-.NET\\WEBAPISocios\\WEBAPISocios.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Datos\\Datos.csproj": {
+    "D:\\Proyectos\\TPI-.NET\\Datos\\Datos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Datos\\Datos.csproj",
+        "projectUniqueName": "D:\\Proyectos\\TPI-.NET\\Datos\\Datos.csproj",
         "projectName": "Datos",
-        "projectPath": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Datos\\Datos.csproj",
-        "packagesPath": "C:\\Users\\Pedro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Datos\\obj\\",
+        "projectPath": "D:\\Proyectos\\TPI-.NET\\Datos\\Datos.csproj",
+        "packagesPath": "C:\\Users\\eghar\\.nuget\\packages\\",
+        "outputPath": "D:\\Proyectos\\TPI-.NET\\Datos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\eghar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Entidades\\Entidades.csproj"
+              "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj": {
+                "projectPath": "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj"
               }
             }
           }
@@ -44,10 +44,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.Data.SqlClient": {
-              "target": "Package",
-              "version": "[5.1.1, )"
-            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[7.0.10, )"
@@ -57,6 +53,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.10, )"
+            },
+            "Microsoft.ReportingServices.ReportViewerControl.Winforms": {
+              "target": "Package",
+              "version": "[150.1586.0, )"
             }
           },
           "imports": [
@@ -75,21 +75,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Entidades\\Entidades.csproj": {
+    "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Entidades\\Entidades.csproj",
-        "packagesPath": "C:\\Users\\Pedro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Entidades\\obj\\",
+        "projectPath": "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj",
+        "packagesPath": "C:\\Users\\eghar\\.nuget\\packages\\",
+        "outputPath": "D:\\Proyectos\\TPI-.NET\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\eghar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -124,6 +124,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.10, )"
+            },
+            "Microsoft.ReportingServices.ReportViewerControl.Winforms": {
+              "target": "Package",
+              "version": "[150.1586.0, )"
             }
           },
           "imports": [
@@ -142,21 +146,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Negocio\\Negocio.csproj": {
+    "D:\\Proyectos\\TPI-.NET\\Negocio\\Negocio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Negocio\\Negocio.csproj",
+        "projectUniqueName": "D:\\Proyectos\\TPI-.NET\\Negocio\\Negocio.csproj",
         "projectName": "Negocio",
-        "projectPath": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Negocio\\Negocio.csproj",
-        "packagesPath": "C:\\Users\\Pedro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Negocio\\obj\\",
+        "projectPath": "D:\\Proyectos\\TPI-.NET\\Negocio\\Negocio.csproj",
+        "packagesPath": "C:\\Users\\eghar\\.nuget\\packages\\",
+        "outputPath": "D:\\Proyectos\\TPI-.NET\\Negocio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\eghar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -170,11 +174,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Datos\\Datos.csproj": {
-                "projectPath": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Datos\\Datos.csproj"
+              "D:\\Proyectos\\TPI-.NET\\Datos\\Datos.csproj": {
+                "projectPath": "D:\\Proyectos\\TPI-.NET\\Datos\\Datos.csproj"
               },
-              "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Entidades\\Entidades.csproj"
+              "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj": {
+                "projectPath": "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj"
               }
             }
           }
@@ -199,6 +203,10 @@
               "target": "Package",
               "version": "[7.0.10, )"
             },
+            "Microsoft.ReportingServices.ReportViewerControl.Winforms": {
+              "target": "Package",
+              "version": "[150.1586.0, )"
+            },
             "NETCore.Encrypt": {
               "target": "Package",
               "version": "[2.1.1, )"
@@ -220,21 +228,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\WEBAPISocios\\WEBAPISocios.csproj": {
+    "D:\\Proyectos\\TPI-.NET\\WEBAPISocios\\WEBAPISocios.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\WEBAPISocios\\WEBAPISocios.csproj",
+        "projectUniqueName": "D:\\Proyectos\\TPI-.NET\\WEBAPISocios\\WEBAPISocios.csproj",
         "projectName": "WEBAPISocios",
-        "projectPath": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\WEBAPISocios\\WEBAPISocios.csproj",
-        "packagesPath": "C:\\Users\\Pedro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\WEBAPISocios\\obj\\",
+        "projectPath": "D:\\Proyectos\\TPI-.NET\\WEBAPISocios\\WEBAPISocios.csproj",
+        "packagesPath": "C:\\Users\\eghar\\.nuget\\packages\\",
+        "outputPath": "D:\\Proyectos\\TPI-.NET\\WEBAPISocios\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\eghar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -248,14 +256,14 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Datos\\Datos.csproj": {
-                "projectPath": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Datos\\Datos.csproj"
+              "D:\\Proyectos\\TPI-.NET\\Datos\\Datos.csproj": {
+                "projectPath": "D:\\Proyectos\\TPI-.NET\\Datos\\Datos.csproj"
               },
-              "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Entidades\\Entidades.csproj"
+              "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj": {
+                "projectPath": "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj"
               },
-              "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Negocio\\Negocio.csproj": {
-                "projectPath": "C:\\Users\\Pedro\\source\\repos\\TPI-.NET\\Negocio\\Negocio.csproj"
+              "D:\\Proyectos\\TPI-.NET\\Negocio\\Negocio.csproj": {
+                "projectPath": "D:\\Proyectos\\TPI-.NET\\Negocio\\Negocio.csproj"
               }
             }
           }
@@ -302,7 +310,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

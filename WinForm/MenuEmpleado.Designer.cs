@@ -224,18 +224,7 @@
             // 
             // btnManejarProductos
             // 
-            btnManejarProductos.Dock = DockStyle.Top;
-            btnManejarProductos.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnManejarProductos.ForeColor = Color.FromArgb(64, 64, 64);
-            btnManejarProductos.ImageAlign = ContentAlignment.BottomLeft;
-            btnManejarProductos.Location = new Point(4, 26);
-            btnManejarProductos.Margin = new Padding(3, 2, 3, 2);
-            btnManejarProductos.Name = "btnManejarProductos";
-            btnManejarProductos.Size = new Size(246, 22);
-            btnManejarProductos.TabIndex = 1;
-            btnManejarProductos.Text = "Reporte Instalaciones\r\n";
-            btnManejarProductos.TextAlign = ContentAlignment.MiddleRight;
-            btnManejarProductos.UseVisualStyleBackColor = true;
+        
             // 
             // btnManejarInstalaciones
             // 
@@ -471,6 +460,11 @@
             toolStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void BtnAdministrarActividades_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

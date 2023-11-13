@@ -23,8 +23,7 @@ namespace WinForm
             InitializeComponent();
 
             this.usuario_seleccionado = negocio_usuario.get(idUsuario);
-
-            lblCliente.Text = usuario_seleccionado.Nombre + ' ' + usuario_seleccionado.Apellido;
+            lblTitulo.Text = "Comprar productos para: '" + usuario_seleccionado.NombreApellido + "'";
 
         }
 
@@ -81,7 +80,7 @@ namespace WinForm
                 {
                     DataGridViewRow row = dgvProductos.Rows[e.RowIndex];
 
-                    int cantidad = row.Cells["Cantidad"].Value != null? Int32.Parse(row.Cells["Cantidad"].Value.ToString()):0;
+                    int cantidad = row.Cells["Cantidad"].Value != null ? Int32.Parse(row.Cells["Cantidad"].Value.ToString()) : 0;
                     int stock = Int32.Parse(row.Cells["Stock"].Value.ToString());
                     if (stock > 0 && cantidad > 0 && stock >= cantidad)
                     {
@@ -172,7 +171,7 @@ namespace WinForm
 
                 negocio_venta.agregar_venta(c);
                 negocio_producto.modificar_producto(producto_a_modificar);
-                
+
 
 
             }
@@ -249,6 +248,11 @@ namespace WinForm
             }
 
 
+        }
+
+        private void bntMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

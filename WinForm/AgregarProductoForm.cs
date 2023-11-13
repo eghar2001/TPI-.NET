@@ -17,13 +17,17 @@ namespace WinForm
         private Entidades.Producto? producto_a_modificar = null;
         public AgregarProductoForm()
         {
+           
             InitializeComponent();
+            this.Text = "Producto Form";
+            this.lblTitulo.Text = "Agregar Producto";
         }
 
         public AgregarProductoForm(Entidades.Producto producto_original)
         {
             InitializeComponent();
-
+            this.Text = "Producto Form";
+            this.lblTitulo.Text = "Modificar Producto";
             this.txtNombreProducto.Text = producto_original.Nombre;
             this.txtDescripcion.Text = producto_original.Descripcion;
             this.txtStock.Text = Convert.ToString(producto_original.Stock);
@@ -88,18 +92,18 @@ namespace WinForm
 
                     }
                 }
-               
+
             }
             else
             {
-                if(string.IsNullOrEmpty(txtNombreProducto.Text) || string.IsNullOrEmpty(txtDescripcion.Text) || string.IsNullOrEmpty(txtStock.Text) || string.IsNullOrEmpty(txtPrecio.Text))
+                if (string.IsNullOrEmpty(txtNombreProducto.Text) || string.IsNullOrEmpty(txtDescripcion.Text) || string.IsNullOrEmpty(txtStock.Text) || string.IsNullOrEmpty(txtPrecio.Text))
                 {
                     MessageBox.Show("No deben haber campos vacíos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
 
-                    
+
                     Entidades.Producto producto1 = new Entidades.Producto()
                     {
                         Id = producto_a_modificar.Id,
@@ -131,9 +135,14 @@ namespace WinForm
                         }
                     }
                 }
-              
+
 
             }
+        }
+
+        private void bntMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

@@ -5,6 +5,7 @@
 .vs
 .idea
 Imagenes/PerfilUsuario/*
+
 .vs
 .idea
 # User-specific files
@@ -404,3 +405,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+!.gitkeep

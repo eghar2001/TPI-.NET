@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -16,8 +17,6 @@ namespace Entidades
         
         private string contrasenia;
 
-
-         
         public Usuario( int id,int dni, string nombre, string apellido, string nombreUsuario, string contrasenia)
         {
 
@@ -87,10 +86,7 @@ namespace Entidades
         } = null!;
 
         [Required]
-        public string FotoNombre
-        {
-            get; set;
-        } = null!;
+        public string FotoNombre { get; set; } = "default.jpg";
 
         [Required]
         [ForeignKey("TipoUsuario")]

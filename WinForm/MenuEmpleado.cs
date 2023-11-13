@@ -108,7 +108,12 @@ namespace WinForm
             editarCuentaForm.ShowDialog();
             if (editarCuentaForm.DialogResult == DialogResult.OK)
             {
-                MessageBox.Show("Usuario creado con exito!!");
+                Negocio.Usuario negocio_usuario = new Negocio.Usuario(); ;
+                MessageBox.Show("Usuario Editado con exito!!");
+                DatosLogin.UsuarioLogueado = negocio_usuario.get(DatosLogin.UsuarioLogueado.Id);
+                this.lblNombre.Text = DatosLogin.UsuarioLogueado.NombreApellido;
+                this.lblDni.Text = DatosLogin.UsuarioLogueado.Dni.ToString();
+                this.picboxEmpleado.Image = System.Drawing.Image.FromFile(DatosLogin.UsuarioLogueado.FotoAbsolutePath);
             }
         }
 
