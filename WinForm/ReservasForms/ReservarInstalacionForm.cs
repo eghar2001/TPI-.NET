@@ -17,15 +17,40 @@ namespace WinForm
         private Negocio.Reserva negocio_reserva = new Negocio.Reserva();
         private Negocio.Instalacion negocio_instalacion = new Negocio.Instalacion();
         private Entidades.Instalacion instalacion_a_reservar = new Entidades.Instalacion();
+        List<int> idsInstalaciones;
         public ReservarInstalacionForm()
         {
             InitializeComponent();
 
         }
 
+        private void actualizardgv(List <Entidades.Instalacion>? instalaciones) 
+        {
+            List<Entidades.Instalacion> listado;
+            if (instalaciones == null)
+            {
+                listado = new List<Entidades.Instalacion>();
+            }
+            else
+            { listado = instalaciones; };
+                
+            this.idsInstalaciones = listado.Select(i => i.Id).ToList();
+            var InstalacionesDisplay = listado.Select(i => new { i.Titulo, i.Descripcion, Precio = i.UltimoPrecio }).ToList();
+                this.dgvInstalaciones.DataSource = InstalacionesDisplay;
+            
+        }
+
+
 
         private void ReservarInstalacionForm_Load(object sender, EventArgs e)
         {
+            DataGridViewButtonColumn colReservar = new DataGridViewButtonColumn();
+            colReservar.Name = "Reservar";
+
+            colReservar.Text = "Reservar";
+            colReservar.UseColumnTextForButtonValue = true;
+            this.dgvInstalaciones.Columns.Add(colReservar);
+            this.dgvInstalaciones.Columns["Reservar"].Visible = false;
         }
 
 
@@ -74,18 +99,15 @@ namespace WinForm
                 MessageBox.Show("Duración inválida. La duración debe ser mayor que cero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            this.dgvInstalaciones.DataSource = negocio_instalacion.BuscarInstalacionesDisponibles(fecha_inicio, duracion, cant);
+            List<Entidades.Instalacion> instalaciones = negocio_instalacion.BuscarInstalacionesDisponibles(fecha_inicio, duracion, cant);
 
-            DataGridViewButtonColumn colReservar = new DataGridViewButtonColumn();
-            colReservar.Name = "Reservar";
+            this.actualizardgv(instalaciones);
 
-            colReservar.Text = "Reservar";
-            colReservar.UseColumnTextForButtonValue = true;
 
-            dgvInstalaciones.Columns[4].HeaderText = "Precio";
-            this.dgvInstalaciones.Columns.Add(colReservar);
-            this.dgvInstalaciones.Columns["Reservar"].Visible = true;
-            dgvInstalaciones.Columns[1].Visible = false; dgvInstalaciones.Columns[0].Visible = false;
+            
+
+
+       
             dgvInstalaciones.RowsDefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
 
 
@@ -113,7 +135,7 @@ namespace WinForm
 
                 int cant = int.Parse(txtCant.Text);
                 DataGridViewRow row = dgvInstalaciones.Rows[e.RowIndex];
-                int colId = int.Parse(row.Cells["Id"].Value.ToString());
+                int colId = idsInstalaciones[e.RowIndex];
                 Entidades.Reserva reserva = new Entidades.Reserva()
                 {
                     DuracionEnHoras = duracion,
@@ -128,7 +150,7 @@ namespace WinForm
                 };
                 negocio_reserva.agregar_reserva(reserva);
                 MessageBox.Show("Has reservado correctamente la instalacion ", "Reserva Completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.dgvInstalaciones.DataSource = null;
+                this.actualizardgv(null);
             }
             else
             {
@@ -149,6 +171,16 @@ namespace WinForm
         private void bntMenuPrincipal_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void dgvInstalaciones_DataSourceChanged(object sender, EventArgs e)
+        {
+            if (idsInstalaciones.Count() == 0)
+            {
+                this.dgvInstalaciones.Columns["Reservar"].Visible = false;
+            }
+            else { this.dgvInstalaciones.Columns["Reservar"].Visible = true; }
+            
         }
     }
 }

@@ -111,6 +111,7 @@ namespace Negocio
 
         public List<Entidades.Instalacion> BuscarInstalacionesDisponibles(DateTime fechaHoraReserva, int duracionEnHoras, int cant)
         {
+            
             return datos_instalacion.BuscarInstalacionesDisponibles(fechaHoraReserva, duracionEnHoras, cant);
         }
         public List<Entidades.Horario> GetHorariosInstalacion(Entidades.Instalacion instalacion)

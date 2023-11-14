@@ -42,7 +42,7 @@ namespace Entidades
         {
             get 
             {
-                return this.FechaHoraReserva.AddHours((double)DuracionEnHoras);
+                return this.FechaHoraUso.AddHours((double)DuracionEnHoras);
             }
         }
 

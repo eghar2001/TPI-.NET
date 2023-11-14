@@ -57,6 +57,7 @@
             dgvInstalaciones.RowTemplate.Height = 25;
             dgvInstalaciones.Size = new Size(442, 336);
             dgvInstalaciones.TabIndex = 0;
+            dgvInstalaciones.DataSourceChanged += dgvInstalaciones_DataSourceChanged;
             dgvInstalaciones.CellClick += dgvInstalaciones_CellClick;
             // 
             // lblTitulo
@@ -70,7 +71,7 @@
             // 
             // dateTimePickerInicio
             // 
-            dateTimePickerInicio.CustomFormat = "dd/MM/yyyy h:mm";
+            dateTimePickerInicio.CustomFormat = "dd/MM/yyyy HH:mm";
             dateTimePickerInicio.Format = DateTimePickerFormat.Custom;
             dateTimePickerInicio.Location = new Point(13, 173);
             dateTimePickerInicio.Name = "dateTimePickerInicio";

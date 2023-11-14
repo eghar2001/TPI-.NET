@@ -102,6 +102,21 @@ namespace Entidades
             return !(otro_horario.HoraFinTime < this.HoraInicioTime || otro_horario.HoraInicioTime > this.HoraFinTime);
         }
 
-        
+        public bool seSuperponeCon(DateTime fechaHoraInicioBuscada, DateTime fechaHoraFinBuscada)
+        {
+            //Por definiciion fechaHoraiInicioBUsqueda y fechHoraFinBusqueda suceden un mismo dia
+
+            TimeOnly horaInicio = TimeOnly.Parse(fechaHoraInicioBuscada.TimeOfDay.ToString());
+            TimeOnly horaFin = TimeOnly.Parse(fechaHoraFinBuscada.TimeOfDay.ToString());
+            if (!(fechaHoraInicioBuscada.DayOfWeek == this.DiaSemana))
+            {
+                return false;
+            }
+            bool superpuesto = !(horaFin < this.HoraInicioTime || horaInicio > this.HoraFinTime);
+            return superpuesto;
+
+
+        }
+
     }
 }
