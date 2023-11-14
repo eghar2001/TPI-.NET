@@ -68,8 +68,9 @@ namespace Datos
                         InstalacionId = instalacion_modificada.Id,
                         Precio = instalacion_modificada.UltimoPrecio
                     });
-                    context.SaveChanges();
+                   
                 }
+                context.SaveChanges();
             }
         }
 

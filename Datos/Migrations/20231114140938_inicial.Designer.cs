@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Datos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231001183403_horario")]
-    partial class horario
+    [Migration("20231114140938_inicial")]
+    partial class inicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,8 +34,8 @@ namespace Datos.Migrations
 
                     b.Property<string>("Descripcion")
                         .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -118,13 +118,16 @@ namespace Datos.Migrations
 
                     b.Property<string>("Descripcion")
                         .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("Titulo")
                         .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
+
+                    b.Property<decimal>("UltimoPrecio")
+                        .HasColumnType("decimal(10,2)");
 
                     b.HasKey("Id");
 
@@ -141,8 +144,8 @@ namespace Datos.Migrations
 
                     b.Property<string>("Descripcion")
                         .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -294,6 +297,13 @@ namespace Datos.Migrations
                     b.Property<int>("Dni")
                         .HasColumnType("int");
 
+                    b.Property<string>("FotoNombre")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)")
+                        .HasDefaultValue("default.png");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasMaxLength(150)
@@ -439,7 +449,7 @@ namespace Datos.Migrations
             modelBuilder.Entity("Entidades.Horario", b =>
                 {
                     b.HasOne("Entidades.Turno", "Turno")
-                        .WithMany()
+                        .WithMany("Horarios")
                         .HasForeignKey("TurnoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -576,6 +586,11 @@ namespace Datos.Migrations
             modelBuilder.Entity("Entidades.Producto", b =>
                 {
                     b.Navigation("Valores");
+                });
+
+            modelBuilder.Entity("Entidades.Turno", b =>
+                {
+                    b.Navigation("Horarios");
                 });
 #pragma warning restore 612, 618
         }

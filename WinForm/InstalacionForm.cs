@@ -1,4 +1,5 @@
-﻿using Negocio;
+﻿using Microsoft.IdentityModel.Tokens;
+using Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,6 +35,8 @@ namespace WinForm
             this.txtTitulo.Text = instalacion_a_editar.Titulo;
             this.lblTitulo.Text = "Modificar Instalacion";
             this.txtPrecio.Text = (instalacion_a_editar.UltimoPrecio).ToString();
+            
+            this.instalacion_a_editar.Id = instalacion_a_editar.Id;
         }
 
 
@@ -42,14 +45,40 @@ namespace WinForm
         {
             string titulo = txtTitulo.Text;
             string desc = txtDesc.Text;
-            int cupo = 0;
-            decimal precio = Convert.ToDecimal(txtPrecio.Text);
+            int cupo = 0 ;
+            decimal precio = 0;
+            string mensajeError = "";
+
+            if (titulo.IsNullOrEmpty())
+            {
+                mensajeError += "El tituno no puede estar vacío \n";
+            }
+
+
             try
             {
                 cupo = int.Parse(txtCupo.Text);
+            }
+            catch (FormatException) { mensajeError += "El cupo debe ser un entero  \n "; };
+            try
+            {
                 precio = Convert.ToDecimal(txtPrecio.Text);
             }
-            catch (FormatException) { MessageBox.Show("El Cupo o precio debe ser un entero", "Problema de Cupo", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch (FormatException) { mensajeError += "El precio tiene formato incorrecto \n"; };
+
+            if( precio <= 0 ) {
+                mensajeError += "El precio debe ser mayor a 0 \n";
+            }
+            if (cupo <= 0)
+            {
+                mensajeError += "El cupo debe ser mayor a 0 \n";
+            }
+
+            if (!mensajeError.IsNullOrEmpty())
+            {
+                MessageBox.Show(mensajeError, "Error en el formulario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             if (this.instalacion_a_editar == null)
             {
@@ -72,27 +101,27 @@ namespace WinForm
                 }
                 catch (ArgumentOutOfRangeException)
                 {
-                    MessageBox.Show("El Cupo debe ser mayor a 0", "Problema de Cupo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El Cupo o el Precio debe ser mayor a 0", "Problema de Cupo/Precio", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
             else
             {
-                Entidades.Instalacion instalacion = new Entidades.Instalacion()
-                {
-                    Id = instalacion_a_editar.Id,
-                    Titulo = titulo,
-                    Cupo = cupo,
-                    Descripcion = desc,
-                    UltimoPrecio = precio
-                };
+
+               
+                instalacion_a_editar.Titulo = titulo;
+                instalacion_a_editar.Cupo = cupo;
+                instalacion_a_editar.Descripcion = desc;
+                instalacion_a_editar.UltimoPrecio = precio;
+
                 try
                 {
-                    negocio_instalacion.modificar_Instalacion(instalacion);
+                    negocio_instalacion.modificar_Instalacion(instalacion_a_editar);
                 }
                 catch (ArgumentOutOfRangeException)
                 {
-                    MessageBox.Show("El Cupo debe ser mayor a 0", "Problema de Cupo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    MessageBox.Show("El Cupo o el Precio debe ser mayor a 0", "Problema de Cupo/Precio", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (TituloInstalacionRepetidoException)
                 {
@@ -108,5 +137,19 @@ namespace WinForm
         {
             this.Dispose();
         }
+
+        private void txtCupo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar))) { e.Handled = true; }
+        }
+
+        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar) || (e.KeyChar == ','))) { e.Handled = true; }
+
+        }
+
+        
     }
 }

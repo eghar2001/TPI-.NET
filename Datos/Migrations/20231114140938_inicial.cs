@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Datos.Migrations
 {
     /// <inheritdoc />
-    public partial class Inicial : Migration
+    public partial class inicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,7 +18,8 @@ namespace Datos.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nombre = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
-                    Descripcion = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false)
+                    Descripcion = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    UltimoPrecio = table.Column<decimal>(type: "decimal(10,2)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -32,8 +33,9 @@ namespace Datos.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Titulo = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
-                    Descripcion = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
-                    Cupo = table.Column<int>(type: "int", nullable: false)
+                    Descripcion = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Cupo = table.Column<int>(type: "int", nullable: false),
+                    UltimoPrecio = table.Column<decimal>(type: "decimal(10,2)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -47,7 +49,7 @@ namespace Datos.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nombre = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
-                    Descripcion = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
+                    Descripcion = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     Stock = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -191,6 +193,7 @@ namespace Datos.Migrations
                     Dni = table.Column<int>(type: "int", nullable: false),
                     Contrasenia = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
                     NombreUsuario = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
+                    FotoNombre = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false, defaultValue: "default.png"),
                     TipoUsuarioId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -200,6 +203,26 @@ namespace Datos.Migrations
                         name: "FK_Usuarios_TiposUsuario_TipoUsuarioId",
                         column: x => x.TipoUsuarioId,
                         principalTable: "TiposUsuario",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Horarios",
+                columns: table => new
+                {
+                    TurnoId = table.Column<int>(type: "int", nullable: false),
+                    DiaSemana = table.Column<int>(type: "int", nullable: false),
+                    HoraInicio = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
+                    HoraFin = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Horarios", x => new { x.TurnoId, x.DiaSemana });
+                    table.ForeignKey(
+                        name: "FK_Horarios_Turnos_TurnoId",
+                        column: x => x.TurnoId,
+                        principalTable: "Turnos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -389,6 +412,9 @@ namespace Datos.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Horarios");
+
             migrationBuilder.DropTable(
                 name: "InscripcionesTurno");
 

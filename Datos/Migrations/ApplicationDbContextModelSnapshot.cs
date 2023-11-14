@@ -296,9 +296,10 @@ namespace Datos.Migrations
 
                     b.Property<string>("FotoNombre")
                         .IsRequired()
+                        .ValueGeneratedOnAdd()
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)")
-                        .HasDefaultValue("default.jpg");
+                        .HasDefaultValue("default.png");
 
                     b.Property<string>("Nombre")
                         .IsRequired()

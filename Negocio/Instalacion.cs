@@ -67,6 +67,10 @@ namespace Negocio
             {
                 throw new ArgumentOutOfRangeException();
             }
+            else if (instalacion.UltimoPrecio <= 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
 
             datos_instalacion.agregar_instalacion(instalacion);
         }
@@ -80,6 +84,10 @@ namespace Negocio
                 throw new TituloInstalacionRepetidoException();
             }
             else if (instalacion_a_editar.Cupo <= 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            else if (instalacion_a_editar.UltimoPrecio <= 0)
             {
                 throw new ArgumentOutOfRangeException();
             }

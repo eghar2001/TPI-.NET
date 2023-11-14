@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Proyectos\\TPI-.NET\\WEBAPISocios\\WEBAPISocios.csproj": {}
+    "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\WEBAPISocios\\WEBAPISocios.csproj": {}
   },
   "projects": {
-    "D:\\Proyectos\\TPI-.NET\\Datos\\Datos.csproj": {
+    "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Datos\\Datos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos\\TPI-.NET\\Datos\\Datos.csproj",
+        "projectUniqueName": "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Datos\\Datos.csproj",
         "projectName": "Datos",
-        "projectPath": "D:\\Proyectos\\TPI-.NET\\Datos\\Datos.csproj",
-        "packagesPath": "C:\\Users\\eghar\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos\\TPI-.NET\\Datos\\obj\\",
+        "projectPath": "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Datos\\Datos.csproj",
+        "packagesPath": "C:\\Users\\rinor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Datos\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\eghar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rinor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +32,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj": {
-                "projectPath": "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj"
+              "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Entidades\\Entidades.csproj"
               }
             }
           }
@@ -75,21 +79,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj",
-        "packagesPath": "C:\\Users\\eghar\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos\\TPI-.NET\\Entidades\\obj\\",
+        "projectPath": "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Entidades\\Entidades.csproj",
+        "packagesPath": "C:\\Users\\rinor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\eghar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rinor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -146,21 +154,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Proyectos\\TPI-.NET\\Negocio\\Negocio.csproj": {
+    "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Negocio\\Negocio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos\\TPI-.NET\\Negocio\\Negocio.csproj",
+        "projectUniqueName": "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Negocio\\Negocio.csproj",
         "projectName": "Negocio",
-        "projectPath": "D:\\Proyectos\\TPI-.NET\\Negocio\\Negocio.csproj",
-        "packagesPath": "C:\\Users\\eghar\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos\\TPI-.NET\\Negocio\\obj\\",
+        "projectPath": "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Negocio\\Negocio.csproj",
+        "packagesPath": "C:\\Users\\rinor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Negocio\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\eghar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rinor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -174,11 +186,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Proyectos\\TPI-.NET\\Datos\\Datos.csproj": {
-                "projectPath": "D:\\Proyectos\\TPI-.NET\\Datos\\Datos.csproj"
+              "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Datos\\Datos.csproj": {
+                "projectPath": "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Datos\\Datos.csproj"
               },
-              "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj": {
-                "projectPath": "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj"
+              "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Entidades\\Entidades.csproj"
               }
             }
           }
@@ -228,21 +240,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Proyectos\\TPI-.NET\\WEBAPISocios\\WEBAPISocios.csproj": {
+    "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\WEBAPISocios\\WEBAPISocios.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos\\TPI-.NET\\WEBAPISocios\\WEBAPISocios.csproj",
+        "projectUniqueName": "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\WEBAPISocios\\WEBAPISocios.csproj",
         "projectName": "WEBAPISocios",
-        "projectPath": "D:\\Proyectos\\TPI-.NET\\WEBAPISocios\\WEBAPISocios.csproj",
-        "packagesPath": "C:\\Users\\eghar\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos\\TPI-.NET\\WEBAPISocios\\obj\\",
+        "projectPath": "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\WEBAPISocios\\WEBAPISocios.csproj",
+        "packagesPath": "C:\\Users\\rinor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\WEBAPISocios\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\eghar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rinor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -256,14 +272,14 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\Proyectos\\TPI-.NET\\Datos\\Datos.csproj": {
-                "projectPath": "D:\\Proyectos\\TPI-.NET\\Datos\\Datos.csproj"
+              "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Datos\\Datos.csproj": {
+                "projectPath": "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Datos\\Datos.csproj"
               },
-              "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj": {
-                "projectPath": "D:\\Proyectos\\TPI-.NET\\Entidades\\Entidades.csproj"
+              "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Entidades\\Entidades.csproj"
               },
-              "D:\\Proyectos\\TPI-.NET\\Negocio\\Negocio.csproj": {
-                "projectPath": "D:\\Proyectos\\TPI-.NET\\Negocio\\Negocio.csproj"
+              "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Negocio\\Negocio.csproj": {
+                "projectPath": "C:\\Users\\rinor\\Desktop\\TP NET\\TPI-.NET\\Negocio\\Negocio.csproj"
               }
             }
           }
@@ -310,7 +326,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

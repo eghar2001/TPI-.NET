@@ -145,6 +145,7 @@
             bntMenuPrincipal.TabIndex = 8;
             bntMenuPrincipal.Text = "Volver";
             bntMenuPrincipal.UseVisualStyleBackColor = true;
+            bntMenuPrincipal.Click += bntMenuPrincipal_Click;
             // 
             // picboxLogo
             // 

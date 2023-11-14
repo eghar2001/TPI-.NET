@@ -38,13 +38,13 @@
             lblPrecio = new Label();
             txtPrecio = new TextBox();
             pnlMenu = new Panel();
+            panel1 = new Panel();
             bntMenuPrincipal = new Button();
             picboxLogo = new PictureBox();
             lblTitulo = new Label();
-            panel1 = new Panel();
             pnlMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picboxLogo).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picboxLogo).BeginInit();
             SuspendLayout();
             // 
             // lblTituloInstalacion
@@ -97,6 +97,7 @@
             txtCupo.Name = "txtCupo";
             txtCupo.Size = new Size(68, 23);
             txtCupo.TabIndex = 6;
+            txtCupo.KeyPress += txtCupo_KeyPress;
             // 
             // btnGuardar
             // 
@@ -123,6 +124,7 @@
             txtPrecio.Name = "txtPrecio";
             txtPrecio.Size = new Size(68, 23);
             txtPrecio.TabIndex = 9;
+            txtPrecio.KeyPress += txtPrecio_KeyPress;
             // 
             // pnlMenu
             // 
@@ -135,6 +137,15 @@
             pnlMenu.Name = "pnlMenu";
             pnlMenu.Size = new Size(547, 89);
             pnlMenu.TabIndex = 27;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(bntMenuPrincipal);
+            panel1.Dock = DockStyle.Right;
+            panel1.Location = new Point(405, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(142, 89);
+            panel1.TabIndex = 9;
             // 
             // bntMenuPrincipal
             // 
@@ -167,15 +178,6 @@
             lblTitulo.TabIndex = 2;
             lblTitulo.Text = "Titulo";
             // 
-            // panel1
-            // 
-            panel1.Controls.Add(bntMenuPrincipal);
-            panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(405, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(142, 89);
-            panel1.TabIndex = 9;
-            // 
             // InstalacionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -193,10 +195,11 @@
             Controls.Add(lblTituloInstalacion);
             Name = "InstalacionForm";
             Text = "Instalacion Form";
+           
             pnlMenu.ResumeLayout(false);
             pnlMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picboxLogo).EndInit();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picboxLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
